@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Volt China Intelligence | EV Market Analysis</title>
+    <meta name="description" content="Unrivaled Intelligence on China's EV Revolution. Expert analysis and curated data for institutional investors." />
+    <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="/favicon.png" type="image/png" sizes="16x16" />
+    <link rel="icon" href="/favicon.png" type="image/png" sizes="any" />
+    <link rel="shortcut icon" href="/favicon.png" />
+    <link rel="canonical" href="https://voltchina.net/" />
+    <meta property="og:title" content="Volt China Intelligence | EV Market Analysis" />
+    <meta property="og:description" content="Unrivaled Intelligence on China's EV Revolution. Expert analysis and curated data for institutional investors." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://voltchina.net/" />
+    <meta property="og:site_name" content="Volt China Intelligence" />
+    <meta property="og:image" content="/og-image.jpg" />
+    <meta property="og:image:secure_url" content="https://voltchina.net/og-image.jpg" />
+    <meta property="og:image:alt" content="Volt China Intelligence — EV Technology & Market Analysis" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@VoltChinaEV" />
+    <meta name="twitter:title" content="Volt China Intelligence | EV Market Analysis" />
+    <meta name="twitter:description" content="Unrivaled Intelligence on China's EV Revolution. Expert analysis and curated data for institutional investors." />
+    <meta name="twitter:image" content="https://voltchina.net/og-image.jpg" />
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              volt: {
+                DEFAULT: '#F97316', // Orange-500
+                hover: '#EA580C',   // Orange-600
+                light: '#FB923C',
+              },
+              slate: {
+                850: '#1e293b',
+                900: '#0f172a',
+                950: '#020617',
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* Custom scrollbar for webkit */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0f172a; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #334155; 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #475569; 
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-slate-950 text-slate-200 antialiased selection:bg-volt selection:text-white">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
