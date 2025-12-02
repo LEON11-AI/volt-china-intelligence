@@ -175,23 +175,15 @@ const SolidStateReport: React.FC = () => {
                   </div>
                   <h3 className="text-xl font-bold text-gray-900">Sulfide Route</h3>
                 </div>
-                <div className="space-y-3">
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Ionic Conductivity</span>
-                    <span className="font-bold text-blue-600">10⁻² to 10⁻³ S/cm</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Theoretical Energy Density</span>
-                    <span className="font-bold text-blue-600">600Wh/kg+</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Key Challenges</span>
-                    <span className="font-bold text-red-500">High cost, strict environment</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Key Companies</span>
-                    <span className="font-bold text-blue-600">Toyota, CATL</span>
-                  </div>
+                <div className="grid grid-cols-[160px_1fr] gap-y-2">
+                  <div className="text-gray-600 whitespace-nowrap">Ionic Conductivity</div>
+                  <div className="text-right font-bold text-blue-600">10⁻² to 10⁻³ S/cm</div>
+                  <div className="text-gray-600 whitespace-nowrap">Theoretical Energy Density</div>
+                  <div className="text-right font-bold text-blue-600">600Wh/kg+</div>
+                  <div className="text-gray-600 whitespace-nowrap">Key Challenges</div>
+                  <div className="text-right font-bold text-red-500">High cost, strict environment</div>
+                  <div className="text-gray-600 whitespace-nowrap">Key Companies</div>
+                  <div className="text-right font-bold text-blue-600">Toyota, CATL</div>
                 </div>
               </div>
 
@@ -202,23 +194,15 @@ const SolidStateReport: React.FC = () => {
                   </div>
                   <h3 className="text-xl font-bold text-gray-900">Oxide Route</h3>
                 </div>
-                <div className="space-y-3">
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Ionic Conductivity</span>
-                    <span className="font-bold text-green-600">10⁻³ S/cm</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Theoretical Energy Density</span>
-                    <span className="font-bold text-green-600">300-400Wh/kg</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Key Advantages</span>
-                    <span className="font-bold text-green-600">Good stability, low cost</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Key Companies</span>
-                    <span className="font-bold text-green-600">WeLion, QingTao</span>
-                  </div>
+                <div className="grid grid-cols-[160px_1fr] gap-y-2">
+                  <div className="text-gray-600 whitespace-nowrap">Ionic Conductivity</div>
+                  <div className="text-right font-bold text-green-600">10⁻³ S/cm</div>
+                  <div className="text-gray-600 whitespace-nowrap">Theoretical Energy Density</div>
+                  <div className="text-right font-bold text-green-600">300-400Wh/kg</div>
+                  <div className="text-gray-600 whitespace-nowrap">Key Advantages</div>
+                  <div className="text-right font-bold text-green-600">Good stability, low cost</div>
+                  <div className="text-gray-600 whitespace-nowrap">Key Companies</div>
+                  <div className="text-right font-bold text-green-600">WeLion, QingTao</div>
                 </div>
               </div>
 
@@ -229,23 +213,15 @@ const SolidStateReport: React.FC = () => {
                   </div>
                   <h3 className="text-xl font-bold text-gray-900">Polymer Route</h3>
                 </div>
-                <div className="space-y-3">
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Ionic Conductivity</span>
-                    <span className="font-bold text-purple-600">Low</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Theoretical Energy Density</span>
-                    <span className="font-bold text-purple-600">200-300Wh/kg</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Key Advantages</span>
-                    <span className="font-bold text-purple-600">Good processability, low cost</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Key Companies</span>
-                    <span className="font-bold text-purple-600">Bolloré Group</span>
-                  </div>
+                <div className="grid grid-cols-[160px_1fr] gap-y-2">
+                  <div className="text-gray-600 whitespace-nowrap">Ionic Conductivity</div>
+                  <div className="text-right font-bold text-purple-600">Low</div>
+                  <div className="text-gray-600 whitespace-nowrap">Theoretical Energy Density</div>
+                  <div className="text-right font-bold text-purple-600">200-300Wh/kg</div>
+                  <div className="text-gray-600 whitespace-nowrap">Key Advantages</div>
+                  <div className="text-right font-bold text-purple-600">Good processability, low cost</div>
+                  <div className="text-gray-600 whitespace-nowrap">Key Companies</div>
+                  <div className="text-right font-bold text-purple-600">Bolloré Group</div>
                 </div>
               </div>
             </div>
