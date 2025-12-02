@@ -23,7 +23,9 @@ const ResearchIndex: React.FC = () => {
                   <img src="/og-image.jpg" alt="Solid State Battery Report" className="w-full h-full object-cover" />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-2">BYD Solid-State Battery & Market Landscape</h3>
+                  <Link to="/research/solid-state-battery" className="text-xl font-bold text-white mb-2 hover:text-volt" aria-label="Read BYD solid-state breakthroughs">
+                    BYD solid-state breakthroughs
+                  </Link>
                   <p className="text-slate-400 mb-4">A comprehensive analysis of technical routes and 2030 market forecast.</p>
                   <div className="flex items-center justify-between">
                     <div className="text-xs text-slate-500">Report • Technology</div>
@@ -44,4 +46,3 @@ const ResearchIndex: React.FC = () => {
 };
 
 export default ResearchIndex;
-

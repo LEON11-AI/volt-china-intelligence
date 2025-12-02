@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-const Navbar: React.FC = () => {
+const Navbar: React.FC<{ forceDark?: boolean }> = ({ forceDark = false }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 border-b border-white/5 ${
-      scrolled ? 'bg-slate-950/90 backdrop-blur-md py-4' : 'bg-transparent py-6'
+      scrolled || forceDark ? 'bg-slate-950/90 backdrop-blur-md py-4' : 'bg-transparent py-6'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
