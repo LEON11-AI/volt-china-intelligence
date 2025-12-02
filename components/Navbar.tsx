@@ -16,6 +16,7 @@ const Navbar: React.FC = () => {
     { name: 'Latest Research', href: '#research' },
     { name: 'Expert Services', href: '#services' },
     { name: 'About', href: '#about' },
+    { name: 'Blog', href: '/blog' },
   ];
 
   const handleScrollTo = (href: string) => {

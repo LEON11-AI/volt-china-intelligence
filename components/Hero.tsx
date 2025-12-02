@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Hero: React.FC = () => {
   return (
@@ -40,13 +41,13 @@ const Hero: React.FC = () => {
             <i className="fa-solid fa-arrow-right text-sm"></i>
           </a>
           
-          <a 
-            href="#research"
+          <Link 
+            to="/research"
             className="w-full sm:w-auto px-8 py-4 bg-slate-800/50 hover:bg-slate-800 text-white border border-slate-700 hover:border-slate-600 text-base font-semibold rounded-lg transition-all flex items-center justify-center gap-2 backdrop-blur-sm"
           >
             <i className="fa-regular fa-file-lines"></i>
             <span>Read Latest Research</span>
-          </a>
+          </Link>
         </div>
 
         {/* Stats / Mini Grid */}

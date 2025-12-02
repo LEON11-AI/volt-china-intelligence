@@ -1,25 +1,18 @@
 import React from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import SocialProof from './components/SocialProof';
-import ExpertServices from './components/ExpertServices';
-import Research from './components/Research';
-import About from './components/About';
-import Footer from './components/Footer';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './src/pages/Home';
+import ResearchIndex from './src/pages/ResearchIndex';
+import SolidStateReport from './src/pages/reports/SolidStateReport';
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen bg-slate-950 font-sans">
-      <Navbar />
-      <main>
-        <Hero />
-        <SocialProof />
-        <ExpertServices />
-        <Research />
-        <About />
-      </main>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/research" element={<ResearchIndex />} />
+        <Route path="/research/solid-state-battery" element={<SolidStateReport />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
