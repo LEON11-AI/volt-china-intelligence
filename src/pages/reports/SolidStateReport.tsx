@@ -116,16 +116,13 @@ const penetrationOptions: any = {
 };
 
 const SolidStateReport: React.FC = () => {
-  const handleDownloadPdf = () => {
-    window.print();
-  };
 
   return (
     <div className="bg-white">
       <div className="max-w-7xl mx-auto p-4 md:p-8">
         <div className="flex justify-between items-center mb-6">
           <Link to="/" className="text-blue-600 hover:text-blue-700">Back to Home</Link>
-          <button onClick={handleDownloadPdf} className="px-4 py-2 rounded-md bg-slate-900 text-white hover:bg-slate-800">Download PDF</button>
+          <a href="https://voltchina.gumroad.com/l/qa" target="_blank" rel="noopener noreferrer" className="px-4 py-2 rounded-md bg-volt hover:bg-volt-hover text-white">Download Full PDF Report</a>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
@@ -179,7 +176,7 @@ const SolidStateReport: React.FC = () => {
                 <div className="space-y-3">
                   <div className="flex justify-between">
                     <span className="text-gray-600">Ionic Conductivity</span>
-                    <span className="font-bold text-blue-600">10⁻²至10⁻³ S/cm</span>
+                    <span className="font-bold text-blue-600">10⁻² to 10⁻³ S/cm</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Theoretical Energy Density</span>
@@ -233,7 +230,7 @@ const SolidStateReport: React.FC = () => {
                 <div className="space-y-3">
                   <div className="flex justify-between">
                     <span className="text-gray-600">Ionic Conductivity</span>
-                    <span className="font-bold text-purple-600">较低</span>
+                    <span className="font-bold text-purple-600">Low</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Theoretical Energy Density</span>
@@ -558,6 +555,14 @@ const SolidStateReport: React.FC = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        <div className="max-w-7xl mx-auto p-4 md:p-8">
+          <div className="flex justify-center mt-8">
+            <a href="https://voltchina.gumroad.com/l/qa" target="_blank" rel="noopener noreferrer" className="px-6 py-3 rounded-lg bg-volt hover:bg-volt-hover text-white font-semibold inline-flex items-center gap-2">
+              <i className="fa-regular fa-file-lines" />
+              <span>Download Full PDF Report</span>
+            </a>
           </div>
         </div>
       </div>

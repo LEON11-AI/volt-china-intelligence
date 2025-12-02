@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -37,12 +38,12 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center">
-            <a href="#" className="flex items-center gap-2 group">
+            <Link to="/" className="flex items-center gap-2 group">
               <img src="/favicon.png" alt="Volt China Logo" className="w-16 h-16 rounded-sm object-cover" />
               <span className="text-xl font-bold tracking-tight text-white">
                 VOLT CHINA <span className="font-light text-slate-400">| Intelligence</span>
               </span>
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Nav */}

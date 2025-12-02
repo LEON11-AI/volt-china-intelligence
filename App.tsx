@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './src/pages/Home';
 import ResearchIndex from './src/pages/ResearchIndex';
 import SolidStateReport from './src/pages/reports/SolidStateReport';
+import BlogPage from './pages/BlogPage';
 
 const App: React.FC = () => {
   return (
@@ -11,6 +12,7 @@ const App: React.FC = () => {
         <Route path="/" element={<Home />} />
         <Route path="/research" element={<ResearchIndex />} />
         <Route path="/research/solid-state-battery" element={<SolidStateReport />} />
+        <Route path="/blog" element={<BlogPage />} />
       </Routes>
     </BrowserRouter>
   );
