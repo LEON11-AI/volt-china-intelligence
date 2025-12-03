@@ -39,7 +39,7 @@ const Navbar: React.FC<{ forceDark?: boolean }> = ({ forceDark = false }) => {
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center gap-2 group">
-              <img src="/favicon.png" alt="Volt China Logo" className="w-16 h-16 rounded-sm object-cover" />
+              <img src="/favicon.png" alt="Volt China Logo" className="w-16 h-16 rounded-xl object-cover" />
               <span className="text-xl font-bold tracking-tight text-white">
                 VOLT CHINA <span className="font-light text-slate-400">| Intelligence</span>
               </span>
