@@ -7,3 +7,22 @@
   to = "/index.html"
   status = 200
 
+[[headers]]
+  for = "/exclusive/huawei-ads-cost-breakdown"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+  for = "/exclusive/huawei-supply-chain-alpha"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+  for = "/exclusive/huawei-cost.html"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+  for = "/exclusive/huawei-stocks.html"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
