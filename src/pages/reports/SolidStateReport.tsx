@@ -120,10 +120,16 @@ const SolidStateReport: React.FC = () => {
   const navigate = useNavigate();
   const handleBack = (e: React.MouseEvent) => {
     e.preventDefault();
-    if (window.history.length > 2) {
-      navigate(-1);
-    } else {
-      navigate('/');
+    const ref = document.referrer;
+    try {
+      const sameOrigin = ref && new URL(ref).origin === window.location.origin;
+      if (sameOrigin) {
+        navigate(-1);
+      } else {
+        navigate('/research');
+      }
+    } catch {
+      navigate('/research');
     }
   };
 
