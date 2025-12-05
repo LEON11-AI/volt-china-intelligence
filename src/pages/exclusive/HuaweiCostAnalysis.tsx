@@ -7,10 +7,7 @@ const HuaweiCostAnalysis: React.FC = () => {
   const [src, setSrc] = useState<string>('');
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
   const location = useLocation();
-  const isCost = location.pathname.includes('/exclusive/huawei-ads-cost-breakdown');
-  const requiredToken = (import.meta as any).env?.VITE_EXCLUSIVE_TOKEN?.trim();
-  const currentToken = new URLSearchParams(location.search).get('token')?.trim();
-  const authorized = !requiredToken || (currentToken && currentToken === requiredToken);
+  const isCost = location.pathname.includes('/exclusive/vip-cost-8848');
 
   useEffect(() => {
     const pickSrc = async () => {
@@ -57,13 +54,13 @@ const HuaweiCostAnalysis: React.FC = () => {
             <h1 className="text-3xl md:text-5xl font-bold text-white tracking-tight">Huawei Cost Analysis</h1>
             <div className="flex items-center justify-between">
               <div className="inline-flex items-center gap-2 rounded-full bg-slate-800/60 border border-slate-700/60 p-1">
-                <Link to="/exclusive/huawei-ads-cost-breakdown" className={`px-4 py-2 rounded-full transition-colors ${isCost ? 'bg-slate-900 text-white' : 'text-slate-300 hover:text-white'}`}>Cost Analysis</Link>
-                <Link to="/exclusive/huawei-supply-chain-alpha" className={`px-4 py-2 rounded-full transition-colors ${!isCost ? 'bg-slate-900 text-white' : 'text-slate-300 hover:text-white'}`}>Supply Chain Alpha</Link>
+                <Link to="/exclusive/vip-cost-8848" className={`px-4 py-2 rounded-full transition-colors ${isCost ? 'bg-slate-900 text-white' : 'text-slate-300 hover:text-white'}`}>Cost Analysis</Link>
+                <Link to="/exclusive/vip-supply-9961" className={`px-4 py-2 rounded-full transition-colors ${!isCost ? 'bg-slate-900 text-white' : 'text-slate-300 hover:text-white'}`}>Supply Chain Alpha</Link>
               </div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-600 text-white text-xs font-bold">CONFIDENTIAL REPORT</div>
             </div>
           </div>
-          {authorized && src ? (
+          {src ? (
             <iframe
               ref={iframeRef}
               src={src}
@@ -113,11 +110,6 @@ const HuaweiCostAnalysis: React.FC = () => {
             />
           ) : (
             <div className="bg-slate-900 border border-slate-800 rounded-xl p-6 text-slate-400">Content not available. Please place the HTML file under <code>/public/exclusive/huawei-cost.html</code>.</div>
-          )}
-          {!authorized && (
-            <div className="bg-slate-900 border border-slate-800 rounded-xl p-6 text-slate-300 mt-4">
-              Access denied. This page requires a valid token via <code>?token=...</code>.
-            </div>
           )}
         </div>
       </main>

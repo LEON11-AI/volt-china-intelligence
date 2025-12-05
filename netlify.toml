@@ -8,12 +8,12 @@
   status = 200
 
 [[headers]]
-  for = "/exclusive/huawei-ads-cost-breakdown"
+  for = "/exclusive/vip-cost-8848"
   [headers.values]
     X-Robots-Tag = "noindex, nofollow"
 
 [[headers]]
-  for = "/exclusive/huawei-supply-chain-alpha"
+  for = "/exclusive/vip-supply-9961"
   [headers.values]
     X-Robots-Tag = "noindex, nofollow"
 

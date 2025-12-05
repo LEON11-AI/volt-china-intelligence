@@ -15,10 +15,8 @@ const App: React.FC = () => {
         <Route path="/research" element={<ResearchIndex />} />
         <Route path="/research/solid-state-battery" element={<SolidStateReport />} />
         <Route path="/blog" element={<BlogPage />} />
-        <Route path="/exclusive/huawei-cost" element={<HuaweiCostAnalysis />} />
-        <Route path="/exclusive/huawei-stocks" element={<HuaweiStocksList />} />
-        <Route path="/exclusive/huawei-ads-cost-breakdown" element={<HuaweiCostAnalysis />} />
-        <Route path="/exclusive/huawei-supply-chain-alpha" element={<HuaweiStocksList />} />
+        <Route path="/exclusive/vip-cost-8848" element={<HuaweiCostAnalysis />} />
+        <Route path="/exclusive/vip-supply-9961" element={<HuaweiStocksList />} />
       </Routes>
     </BrowserRouter>
   );
