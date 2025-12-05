@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huawei ADS 3.0 vs Tesla HW 4.0 Cost Comparison Analysis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/v4-shims.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        huawei: '#E60000',
+                        tesla: '#3B82F6',
+                        primary: '#1E40AF',
+                        secondary: '#3B82F6',
+                        accent: '#F59E0B',
+                        success: '#10B981',
+                        warning: '#F59E0B',
+                        danger: '#EF4444'
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                },
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .gradient-bg {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            }
+            .card-shadow {
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+            .hover-lift {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .hover-lift:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-inter">
+    <!-- Page Container -->
+    <div class="min-h-screen flex flex-col">
+        <!-- Top Navigation -->
+        <nav class="bg-white shadow-md">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-16">
+                    <div class="flex items-center">
+                        <i class="fa fa-car text-2xl text-primary mr-3"></i>
+                        <h1 class="text-xl font-bold text-gray-800">Autonomous Driving System Cost Comparison</h1>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <span class="text-sm text-gray-600">Data Updated: December 2025</span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <!-- Title Section -->
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Huawei ADS 3.0 vs Tesla HW 4.0</h2>
+                <p class="text-xl text-gray-600">In-depth Cost Comparison Analysis of Autonomous Driving Hardware</p>
+                <div class="mt-6 flex justify-center space-x-8">
+                    <div class="flex items-center">
+                        <div class="w-4 h-4 bg-huawei rounded-full mr-2"></div>
+                        <span class="text-sm font-medium">Huawei ADS 3.0</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-4 h-4 bg-tesla rounded-full mr-2"></div>
+                        <span class="text-sm font-medium">Tesla HW 4.0</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comparison Table -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-12 hover-lift">
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gradient-to-r from-blue-600 to-indigo-600">
+                            <tr>
+                                <th scope="col" class="px-6 py-4 text-left text-xs font-medium text-white uppercase tracking-wider">
+                                    Key Component
+                                </th>
+                                <th scope="col" class="px-6 py-4 text-center text-xs font-medium text-white uppercase tracking-wider">
+                                    Huawei ADS 3.0 (Estimate)
+                                    <div class="mt-1 flex items-center justify-center">
+                                        <i class="fa fa-info-circle mr-1"></i>
+                                        <span class="text-xs">(LiDAR + Vision)</span>
+                                    </div>
+                                </th>
+                                <th scope="col" class="px-6 py-4 text-center text-xs font-medium text-white uppercase tracking-wider">
+                                    Tesla HW 4.0 (Estimate)
+                                    <div class="mt-1 flex items-center justify-center">
+                                        <i class="fa fa-info-circle mr-1"></i>
+                                        <span class="text-xs">(Pure Vision)</span>
+                                    </div>
+                                </th>
+                                <th scope="col" class="px-6 py-4 text-center text-xs font-medium text-white uppercase tracking-wider">
+                                    Cost Comparison
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <!-- Compute Chip -->
+                            <tr class="hover:bg-gray-50 transition-colors duration-200">
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <i class="fa fa-microchip text-blue-500 mr-3"></i>
+                                        <div class="text-sm font-medium text-gray-900">Compute Chip</div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center">
+                                    <div class="text-lg font-semibold text-huawei">$2,500</div>
+                                    <div class="text-xs text-gray-500 mt-1">Ascend Chip</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center">
+                                    <div class="text-lg font-semibold text-tesla">$1,500</div>
+                                    <div class="text-xs text-gray-500 mt-1">2x Gen 2 FSD Chips</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center">
+                                    <div class="text-sm text-danger font-medium">
+                                        <i class="fa fa-arrow-up mr-1"></i>Tesla $1,000 lower
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- LiDAR -->
+                            <tr class="hover:bg-gray-50 transition-colors duration-200">
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <i class="fa fa-bullseye text-green-500 mr-3"></i>
+                                        <div class="text-sm font-medium text-gray-900">LiDAR Sensor</div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center">
+                                    <div class="text-lg font-semibold text-huawei">$420</div>
+                                    <div class="text-xs text-gray-500 mt-1">192-line LiDAR</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center">
+                                    <div class="text-lg font-semibold text-tesla">$0</div>
+                                    <div class="text-xs text-gray-500 mt-1">No LiDAR</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center">
+                                    <div class="text-sm text-success font-medium">
+                                        <i class="fa fa-check-circle mr-1"></i>Huawei exclusive safety redundancy
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Cameras -->
+                            <tr class="hover:bg-gray-50 transition-colors duration-200">
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <i class="fa fa-camera text-purple-500 mr-3"></i>
+                                        <div class="text-sm font-medium text-gray-900">Camera System</div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center">
+                                    <div class="text-lg font-semibold text-huawei">$700</div>
+                                    <div class="text-xs text-gray-500 mt-1">Multi-camera system</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center">
+                                    <div class="text-lg font-semibold text-tesla">$240</div>
+                                    <div class="text-xs text-gray-500 mt-1">11x 5MP cameras</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center">
+                                    <div class="text-sm text-danger font-medium">
+                                        <i class="fa fa-arrow-up mr-1"></i>Tesla $460 lower
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Radar -->
+                            <tr class="hover:bg-gray-50 transition-colors duration-200">
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <i class="fa fa-signal text-orange-500 mr-3"></i>
+                                        <div class="text-sm font-medium text-gray-900">Millimeter Wave Radar</div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center">
+                                    <div class="text-lg font-semibold text-huawei">$0</div>
+                                    <div class="text-xs text-gray-500 mt-1">No radar</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center">
+                                    <div class="text-lg font-semibold text-tesla">$170</div>
+                                    <div class="text-xs text-gray-500 mt-1">1x 4D radar</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center">
+                                    <div class="text-sm text-success font-medium">
+                                        <i class="fa fa-arrow-down mr-1"></i>Huawei $170 lower
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Other Components -->
+                            <tr class="hover:bg-gray-50 transition-colors duration-200">
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <i class="fa fa-cogs text-gray-500 mr-3"></i>
+                                        <div class="text-sm font-medium text-gray-900">Other Components</div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center">
+                                    <div class="text-lg font-semibold text-huawei">$140</div>
+                                    <div class="text-xs text-gray-500 mt-1">Supporting hardware</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center">
+                                    <div class="text-lg font-semibold text-tesla">$750</div>
+                                    <div class="text-xs text-gray-500 mt-1">Memory, storage, etc.</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center">
+                                    <div class="text-sm text-success font-medium">
+                                        <i class="fa fa-arrow-down mr-1"></i>Huawei $610 lower
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Total Hardware Cost -->
+                            <tr class="bg-gradient-to-r from-blue-50 to-indigo-50">
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <i class="fa fa-calculator text-accent mr-3"></i>
+                                        <div class="text-sm font-bold text-gray-900">Total Hardware Cost</div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center">
+                                    <div class="text-xl font-bold text-huawei">$3,760</div>
+                                    <div class="text-xs text-gray-500 mt-1">BOM Cost</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center">
+                                    <div class="text-xl font-bold text-tesla">$3,360</div>
+                                    <div class="text-xs text-gray-500 mt-1">BOM Cost</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center">
+                                    <div class="text-lg font-bold text-success">
+                                        <i class="fa fa-arrow-down mr-1"></i>Huawei only $400 higher
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Target System Cost -->
+                            <tr class="bg-gradient-to-r from-green-50 to-emerald-50">
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <i class="fa fa-bullseye text-success mr-3"></i>
+                                        <div class="text-sm font-bold text-gray-900">Target System Cost</div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center">
+                                    <div class="text-xl font-bold text-success">$1,650 - $2,500</div>
+                                    <div class="text-xs text-gray-500 mt-1">After supply chain integration</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center">
+                                    <div class="text-xl font-bold text-success">$1,380 - $2,070</div>
+                                    <div class="text-xs text-gray-500 mt-1">After mass production</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center">
+                                    <div class="text-lg font-bold text-success">
+                                        <i class="fa fa-check-circle mr-1"></i>Costs are converging
+                                    </div>
+                                    <div class="text-xs text-gray-500 mt-1">$1.65k vs $1.38k</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Key Insights -->
+            <div class="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl shadow-lg p-8 text-white mb-12">
+                <div class="flex items-center mb-6">
+                    <i class="fa fa-lightbulb-o text-3xl mr-4"></i>
+                    <h3 class="text-2xl font-bold">Key Insights</h3>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition-colors duration-300">
+                        <h4 class="text-lg font-semibold mb-2 flex items-center">
+                            <i class="fa fa-star mr-2"></i>Fundamental Technology Differences
+                        </h4>
+                        <p class="text-lg leading-relaxed">
+                            Huawei ADS 3.0 adopts a LiDAR+Vision fusion approach, while Tesla HW 4.0坚持 a pure vision strategy. This reflects different philosophies on autonomous driving technology development.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition-colors duration-300">
+                        <h4 class="text-lg font-semibold mb-2 flex items-center">
+                            <i class="fa fa-line-chart mr-2"></i>Cost Control Breakthrough
+                        </h4>
+                        <p class="text-lg leading-relaxed">
+                            Surprisingly, despite including expensive LiDAR ($420), Huawei's system cost ($1,650-2,500) is converging with Tesla's pure vision solution ($1,380-2,070) through supply chain optimization.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition-colors duration-300">
+                        <h4 class="text-lg font-semibold mb-2 flex items-center">
+                            <i class="fa fa-shield mr-2"></i>Safety Redundancy No Longer Expensive
+                        </h4>
+                        <p class="text-lg leading-relaxed">
+                            Huawei has achieved the breakthrough of "safety redundancy without premium pricing". The LiDAR+Vision fusion solution shows strong competitiveness in both safety and cost-effectiveness.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition-colors duration-300">
+                        <h4 class="text-lg font-semibold mb-2 flex items-center">
+                            <i class="fa fa-rocket mr-2"></i>Future Trend Outlook
+                        </h4>
+                        <p class="text-lg leading-relaxed">
+                            As LiDAR costs continue to decrease, fusion solutions will become more competitive. Huawei's strategy may have advantages in complex road conditions compared to Tesla's pure vision approach.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Highlights -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <div class="bg-white rounded-xl shadow-lg p-6 hover-lift">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fa fa-microchip text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Computing Power</h3>
+                        <div class="flex items-center justify-center space-x-4">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-huawei">~400</div>
+                                <div class="text-sm text-gray-500">TOPS</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-tesla">720</div>
+                                <div class="text-sm text-gray-500">TOPS</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-6 hover-lift">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fa fa-bullseye text-green-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">LiDAR</h3>
+                        <div class="flex items-center justify-center space-x-4">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-huawei">192-line</div>
+                                <div class="text-sm text-gray-500">Included</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-tesla">None</div>
+                                <div class="text-sm text-gray-500">Pure Vision</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-6 hover-lift">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fa fa-camera text-purple-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Cameras</h3>
+                        <div class="flex items-center justify-center space-x-4">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-huawei">8-11</div>
+                                <div class="text-sm text-gray-500">Multiple specs</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-tesla">11</div>
+                                <div class="text-sm text-gray-500">5MP each</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-6 hover-lift">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fa fa-signal text-orange-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Radar</h3>
+                        <div class="flex items-center justify-center space-x-4">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-huawei">None</div>
+                                <div class="text-sm text-gray-500">LiDAR替代</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-tesla">1</div>
+                                <div class="text-sm text-gray-500">4D Radar</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cost Structure Analysis -->
+            <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                    <i class="fa fa-pie-chart text-accent mr-3"></i>
+                    Cost Structure Analysis
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-lg font-semibold text-gray-800 mb-4">Huawei ADS 3.0 Cost Breakdown</h4>
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-medium text-gray-700">Compute Chip</span>
+                                <span class="text-sm font-medium text-huawei">66.7%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-huawei h-2 rounded-full" style="width: 66.7%"></div>
+                            </div>
+                            
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-medium text-gray-700">LiDAR</span>
+                                <span class="text-sm font-medium text-huawei">11.1%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-huawei h-2 rounded-full" style="width: 11.1%"></div>
+                            </div>
+                            
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-medium text-gray-700">Cameras</span>
+                                <span class="text-sm font-medium text-huawei">18.5%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-huawei h-2 rounded-full" style="width: 18.5%"></div>
+                            </div>
+                            
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-medium text-gray-700">Other Components</span>
+                                <span class="text-sm font-medium text-huawei">3.7%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-huawei h-2 rounded-full" style="width: 3.7%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold text-gray-800 mb-4">Tesla HW 4.0 Cost Breakdown</h4>
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-medium text-gray-700">Compute Chip</span>
+                                <span class="text-sm font-medium text-tesla">44.6%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-tesla h-2 rounded-full" style="width: 44.6%"></div>
+                            </div>
+                            
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-medium text-gray-700">Cameras</span>
+                                <span class="text-sm font-medium text-tesla">7.1%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-tesla h-2 rounded-full" style="width: 7.1%"></div>
+                            </div>
+                            
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-medium text-gray-700">Radar</span>
+                                <span class="text-sm font-medium text-tesla">5.1%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-tesla h-2 rounded-full" style="width: 5.1%"></div>
+                            </div>
+                            
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-medium text-gray-700">Other Components</span>
+                                <span class="text-sm font-medium text-tesla">43.2%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-tesla h-2 rounded-full" style="width: 43.2%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white py-8">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="mb-4 md:mb-0">
+                        <p class="text-sm text-gray-400">© 2025 Autonomous Driving Technology Research Center</p>
+                        <p class="text-xs text-gray-500 mt-1">Data Sources: Industry Reports, Teardown Analysis, Publicly Available Information</p>
+                    </div>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-info-circle mr-1"></i>About Us
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-envelope mr-1"></i>Contact Us
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-file-text mr-1"></i>Data Sources
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Add page loading animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add fade-in effect to table rows
+            const rows = document.querySelectorAll('tbody tr');
+            rows.forEach((row, index) => {
+                setTimeout(() => {
+                    row.style.opacity = '0';
+                    row.style.transform = 'translateY(20px)';
+                    row.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    
+                    setTimeout(() => {
+                        row.style.opacity = '1';
+                        row.style.transform = 'translateY(0)';
+                    }, 100);
+                }, index * 100);
+            });
+
+            // Add hover effects to cards
+            const cards = document.querySelectorAll('.hover-lift');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                    this.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
