@@ -52,12 +52,12 @@ const HuaweiCostAnalysis: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-3 mb-6">
             <h1 className="text-3xl md:text-5xl font-bold text-white tracking-tight">Huawei Cost Analysis</h1>
-            <div className="flex items-center justify-between">
-              <div className="inline-flex items-center gap-2 rounded-full bg-slate-800/60 border border-slate-700/60 p-1">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div className="inline-flex items-center gap-2 rounded-full bg-slate-800/60 border border-slate-700/60 p-1 self-start md:self-auto">
                 <Link to="/exclusive/vip-cost-8848" className={`px-4 py-2 rounded-full transition-colors ${isCost ? 'bg-slate-900 text-white' : 'text-slate-300 hover:text-white'}`}>Cost Analysis</Link>
                 <Link to="/exclusive/vip-supply-9961" className={`px-4 py-2 rounded-full transition-colors ${!isCost ? 'bg-slate-900 text-white' : 'text-slate-300 hover:text-white'}`}>Supply Chain Alpha</Link>
               </div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-600 text-white text-xs font-bold">CONFIDENTIAL REPORT</div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-600 text-white text-xs font-bold self-start md:self-auto">CONFIDENTIAL REPORT</div>
             </div>
           </div>
           {src ? (
