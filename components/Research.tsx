@@ -22,9 +22,12 @@ const Research: React.FC = () => {
               alt="Battery Technology"
               loading="lazy"
               decoding="async"
-              srcSet="/battery-cover.webp 1x, /battery-cover@2x.webp 2x"
               className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
-              onError={(e) => { (e.currentTarget as HTMLImageElement).src = 'https://images.unsplash.com/photo-1598209279122-8541213a0383?q=80&w=1000&auto=format&fit=crop'; }}
+              onError={(e) => { 
+                const img = e.currentTarget as HTMLImageElement;
+                img.srcset = '';
+                img.src = 'https://images.unsplash.com/photo-1598209279122-8541213a0383?q=80&w=1000&auto=format&fit=crop'; 
+              }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-90"></div>
             <div className="absolute bottom-4 left-4">
