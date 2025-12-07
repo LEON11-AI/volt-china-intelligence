@@ -17,19 +17,22 @@ const FeaturedReport: React.FC = () => {
         <div className="max-w-5xl mx-auto bg-slate-900 rounded-2xl overflow-hidden border border-slate-700 shadow-2xl flex flex-col md:flex-row relative group">
           
           {/* Image Side */}
-          <div className="w-full md:w-3/5 relative h-64 md:h-auto bg-black overflow-hidden z-10 flex items-center justify-center">
+          <div className="w-full md:w-3/5 relative h-64 md:h-auto bg-black overflow-hidden z-10 flex items-center justify-center shadow-[inset_0_0_40px_rgba(0,0,0,0.5)]">
             {images.map((img, index) => (
               <img 
                 key={img}
                 src={img}
                 alt="Huawei ADS 3.0 Analysis"
                 loading="lazy"
-                className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ${
-                  index === currentImageIndex ? 'opacity-100 scale-105' : 'opacity-0 scale-100'
+                className={`absolute inset-0 w-full h-full object-cover object-center transition-all duration-[2000ms] ease-out ${
+                  index === currentImageIndex ? 'opacity-100 scale-105 brightness-95' : 'opacity-0 scale-100 brightness-50'
                 }`}
               />
             ))}
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-20 pointer-events-none"></div>
+            {/* Cinematic Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60 pointer-events-none"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent opacity-40 pointer-events-none"></div>
+            
             <div className="absolute top-4 left-4 z-20">
               <span className="bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg flex items-center gap-2">
                 <span className="relative flex h-2 w-2">
