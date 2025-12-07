@@ -34,8 +34,8 @@ const ResearchIndex: React.FC = () => {
                   <h3 className="text-xl font-bold text-white mb-2">
                     Huawei ADS 3.0: The Hardware-Fusion Moat
                   </h3>
-                  <p className="text-slate-400 mb-4 text-sm flex-grow">
-                    Exclusive BOM cost breakdown vs Tesla FSD, and a supply chain investment watchlist (12 Tickers).
+                  <p className="text-slate-400 mb-4 line-clamp-3">
+                    Exclusive BOM cost breakdown vs Tesla FSD, and a supply chain investment watchlist (10 Tickers). We reveal how Huawei achieves 5x safety redundancy.
                   </p>
                   <div className="flex items-center justify-between mt-auto pt-4 border-t border-slate-800">
                     <div className="text-xs text-slate-500">Report • Hardware</div>

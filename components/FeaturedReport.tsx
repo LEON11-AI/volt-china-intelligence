@@ -55,7 +55,7 @@ const FeaturedReport: React.FC = () => {
             </div>
             
             <p className="text-slate-300 mb-6 text-sm md:text-base leading-relaxed">
-              Exclusive BOM cost breakdown vs Tesla FSD, and a supply chain investment watchlist (12 Tickers). We reveal how Huawei achieves 5x safety redundancy.
+              Exclusive BOM cost breakdown vs Tesla FSD, and a supply chain investment watchlist (10 Tickers). We reveal how Huawei achieves 5x safety redundancy.
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-between gap-3 mt-auto w-full">
