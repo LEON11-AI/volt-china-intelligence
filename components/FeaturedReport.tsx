@@ -17,14 +17,14 @@ const FeaturedReport: React.FC = () => {
         <div className="max-w-5xl mx-auto bg-slate-900 rounded-2xl overflow-hidden border border-slate-700 shadow-2xl flex flex-col md:flex-row relative group">
           
           {/* Image Side */}
-          <div className="w-full md:w-1/2 relative h-64 md:h-auto bg-black overflow-hidden z-10 flex items-center justify-center">
+          <div className="w-full md:w-3/5 relative h-64 md:h-auto bg-black overflow-hidden z-10 flex items-center justify-center">
             {images.map((img, index) => (
               <img 
                 key={img}
                 src={img}
                 alt="Huawei ADS 3.0 Analysis"
                 loading="lazy"
-                className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 ${
+                className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ${
                   index === currentImageIndex ? 'opacity-100 scale-105' : 'opacity-0 scale-100'
                 }`}
               />
@@ -42,30 +42,30 @@ const FeaturedReport: React.FC = () => {
           </div>
 
           {/* Content Side */}
-          <div className="w-full md:w-1/2 p-8 md:p-10 flex flex-col justify-center relative z-10">
-            <div className="mb-4">
-              <span className="text-volt font-bold tracking-wider text-xs uppercase mb-2 block">Premium Intelligence</span>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+          <div className="w-full md:w-2/5 p-6 md:p-8 flex flex-col justify-center relative z-10">
+            <div className="mb-3">
+              <span className="text-volt font-bold tracking-wider text-xs uppercase mb-1 block">Premium Intelligence</span>
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-3 leading-tight">
                 Huawei ADS 3.0: <br/>
                 <span className="text-slate-400">The Hardware-Fusion Moat</span>
               </h2>
             </div>
             
-            <p className="text-slate-300 mb-8 text-base md:text-lg leading-relaxed">
+            <p className="text-slate-300 mb-6 text-sm md:text-base leading-relaxed">
               Exclusive BOM cost breakdown vs Tesla FSD, and a supply chain investment watchlist (12 Tickers). We reveal how Huawei achieves 5x safety redundancy.
             </p>
             
-            <div className="flex flex-col sm:flex-row items-center gap-4 mt-auto">
+            <div className="flex flex-col sm:flex-row items-center gap-3 mt-auto">
               <a 
                 href="https://voltchina.gumroad.com/l/huawei-ads" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto px-8 py-4 bg-volt hover:bg-volt-hover text-white rounded-lg font-bold text-center transition-all shadow-lg shadow-volt/20 hover:shadow-volt/40 flex items-center justify-center gap-2"
+                className="w-full sm:w-auto px-6 py-3 bg-volt hover:bg-volt-hover text-white rounded-lg font-bold text-center transition-all shadow-lg shadow-volt/20 hover:shadow-volt/40 flex items-center justify-center gap-2 text-sm"
               >
                 <span>Get the Report ($49)</span>
                 <i className="fa-solid fa-arrow-right"></i>
               </a>
-              <div className="text-slate-500 text-sm">
+              <div className="text-slate-500 text-xs">
                 Instant PDF Download
               </div>
             </div>
