@@ -30,23 +30,85 @@ const Hero: React.FC = () => {
           We bridge the context gap. Delivering expert analysis and curated data on the world's fastest-moving automotive market for institutional investors.
         </p>
         
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a 
-            href="https://voltchina.gumroad.com/l/qa"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full sm:w-auto px-8 py-4 bg-volt hover:bg-volt-hover text-white text-base font-bold rounded-lg transition-all shadow-xl shadow-volt/20 hover:shadow-volt/40 flex items-center justify-center gap-2"
-          >
-            <span>Ask an Expert ($149)</span>
-            <i className="fa-solid fa-arrow-right text-sm"></i>
-          </a>
-          
-          <Link 
+        {/* Pricing/Action Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12 text-left">
+          {/* Existing Offer - Standard/Q&A */}
+          <div className="bg-slate-800/50 border border-slate-700 rounded-2xl p-6 flex flex-col hover:bg-slate-800 transition-colors">
+            <div className="mb-4">
+              <span className="inline-block px-3 py-1 bg-volt/10 text-volt text-xs font-bold rounded-full mb-2">INDIVIDUAL ACCESS</span>
+              <h3 className="text-xl font-bold text-white">Expert Q&A Service</h3>
+              <p className="text-sm text-slate-400 mt-2">Get verified answers to specific technical or market questions from our network.</p>
+            </div>
+            <div className="mt-auto pt-6 border-t border-slate-700/50">
+               <div className="flex items-end justify-between mb-4">
+                 <div>
+                   <span className="text-2xl font-bold text-white">$149</span>
+                   <span className="text-sm text-slate-500"> / query</span>
+                 </div>
+               </div>
+               <a 
+                href="https://voltchina.gumroad.com/l/qa"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full px-6 py-3 bg-volt hover:bg-volt-hover text-white font-bold rounded-lg transition-colors flex items-center justify-center gap-2"
+              >
+                <span>Ask an Expert</span>
+                <i className="fa-solid fa-arrow-right text-sm"></i>
+              </a>
+            </div>
+          </div>
+
+          {/* New Offer - Enterprise */}
+          <div className="bg-slate-900 border border-amber-500/30 rounded-2xl p-6 flex flex-col relative overflow-hidden group hover:border-amber-500/50 transition-all shadow-xl shadow-amber-900/10">
+            <div className="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
+              <i className="fa-solid fa-building-columns text-8xl text-amber-500"></i>
+            </div>
+            <div className="mb-4 relative z-10">
+              <span className="inline-block px-3 py-1 bg-amber-500/10 text-amber-500 text-xs font-bold rounded-full mb-2">ENTERPRISE</span>
+              <h3 className="text-xl font-bold text-amber-400">Enterprise Research & Advisory</h3>
+              <p className="text-sm text-slate-400 mt-2">For Institutional Investors & Strategy Teams</p>
+              
+              <ul className="space-y-3 mt-4">
+                <li className="flex items-start gap-2 text-sm text-slate-300">
+                  <i className="fa-solid fa-check text-amber-500 mt-1"></i>
+                  <span>Bespoke Supply Chain Due Diligence</span>
+                </li>
+                <li className="flex items-start gap-2 text-sm text-slate-300">
+                  <i className="fa-solid fa-check text-amber-500 mt-1"></i>
+                  <span>Custom Competitor Benchmarking</span>
+                </li>
+                <li className="flex items-start gap-2 text-sm text-slate-300">
+                  <i className="fa-solid fa-check text-amber-500 mt-1"></i>
+                  <span>On-the-ground Factory Validation</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div className="mt-auto pt-6 border-t border-slate-800 relative z-10">
+               <div className="flex items-end justify-between mb-4">
+                 <div>
+                   <span className="text-xl font-bold text-white">Custom Quote</span>
+                 </div>
+               </div>
+               <a 
+                href="mailto:business@voltchina.net"
+                className="w-full px-6 py-3 bg-amber-500 hover:bg-amber-400 text-black font-bold rounded-lg transition-colors flex items-center justify-center gap-2"
+              >
+                <i className="fa-solid fa-envelope"></i>
+                <span>Contact Us</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Secondary Link */}
+        <div className="mb-12">
+           <Link 
             to="/blog"
-            className="w-full sm:w-auto px-8 py-4 bg-slate-800/50 hover:bg-slate-800 text-white border border-slate-700 hover:border-slate-600 text-base font-semibold rounded-lg transition-all flex items-center justify-center gap-2 backdrop-blur-sm"
+            className="inline-flex items-center gap-2 text-slate-400 hover:text-white transition-colors border-b border-transparent hover:border-white pb-0.5"
           >
             <i className="fa-regular fa-file-lines"></i>
-            <span>Read Latest Research</span>
+            <span>Or read our latest public research</span>
           </Link>
         </div>
 
