@@ -21,8 +21,6 @@ const BlogPage: React.FC = () => {
       isExternal: false,
       tag: 'Report'
     },
-    { id: 2, title: 'CATL LFP cost curve 2025', date: '2025-10-05', tag: 'Note' },
-    { id: 3, title: 'EV supply chain stress points', date: '2025-09-12', tag: 'Note' },
   ];
 
   return (
