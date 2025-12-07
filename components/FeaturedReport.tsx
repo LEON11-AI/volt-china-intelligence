@@ -4,10 +4,7 @@ const FeaturedReport: React.FC = () => {
   return (
     <section className="py-12 bg-slate-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto bg-slate-800/50 rounded-2xl overflow-hidden border border-slate-700 shadow-2xl flex flex-col md:flex-row relative group">
-          
-          {/* Glow Effect */}
-          <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-volt opacity-20 blur-xl group-hover:opacity-30 transition-opacity duration-1000"></div>
+        <div className="max-w-5xl mx-auto bg-slate-900 rounded-2xl overflow-hidden border border-slate-700 shadow-2xl flex flex-col md:flex-row relative group">
           
           {/* Image Side */}
           <div className="w-full md:w-1/2 relative h-64 md:h-auto bg-black overflow-hidden z-10 flex items-center justify-center">
