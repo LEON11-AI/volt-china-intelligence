@@ -1,6 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const FeaturedReport: React.FC = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const images = ['/huawei-cover.webp', '/huawei-Stock.webp'];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % images.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="py-12 bg-slate-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -8,14 +18,19 @@ const FeaturedReport: React.FC = () => {
           
           {/* Image Side */}
           <div className="w-full md:w-1/2 relative h-64 md:h-auto bg-black overflow-hidden z-10 flex items-center justify-center">
-            <img 
-              src="/huawei-cover.webp"
-              alt="Huawei ADS 3.0 Analysis"
-              loading="lazy"
-              className="absolute inset-0 w-full h-full object-contain opacity-90 group-hover:scale-105 transition-transform duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-20"></div>
-            <div className="absolute top-4 left-4">
+            {images.map((img, index) => (
+              <img 
+                key={img}
+                src={img}
+                alt="Huawei ADS 3.0 Analysis"
+                loading="lazy"
+                className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 ${
+                  index === currentImageIndex ? 'opacity-100 scale-105' : 'opacity-0 scale-100'
+                }`}
+              />
+            ))}
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-20 pointer-events-none"></div>
+            <div className="absolute top-4 left-4 z-20">
               <span className="bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg flex items-center gap-2">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
