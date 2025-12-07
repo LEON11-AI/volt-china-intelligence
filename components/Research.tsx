@@ -37,7 +37,7 @@ const Research: React.FC = () => {
 
           {/* Content Side */}
           <div className="w-full md:w-3/5 p-8 flex flex-col justify-center">
-            <div className="flex justify-between items-start mb-4">
+            <div className="w-full flex justify-between items-center mb-4">
               <span className="text-xs font-mono text-slate-400 border border-slate-600 px-2 py-0.5 rounded">REPORT #VC-2025-01</span>
               <span className="text-xs font-bold text-green-400 flex items-center gap-1">
                 <i className="fa-solid fa-clock"></i> Limited Time Free
