@@ -24,9 +24,9 @@ const FeaturedReport: React.FC = () => {
                 src={img}
                 alt="Huawei ADS 3.0 Analysis"
                 loading="lazy"
-                className={`absolute w-full object-cover transition-all duration-[2000ms] ease-out ${
-                  index === currentImageIndex ? 'opacity-100 scale-105 brightness-95' : 'opacity-0 scale-100 brightness-50'
-                } ${index === 1 ? 'top-14 h-[calc(100%-3.5rem)] object-top' : 'inset-0 h-full object-center'}`}
+                className={`absolute w-full transition-all duration-[2000ms] ease-out ${
+                  index === currentImageIndex ? `opacity-100 brightness-95 ${index === 0 ? 'scale-100' : 'scale-105'}` : 'opacity-0 scale-100 brightness-50'
+                } ${index === 1 ? 'top-14 h-[calc(100%-3.5rem)] object-top object-cover' : 'inset-0 h-full object-center object-contain'}`}
               />
             ))}
             {/* Cinematic Gradient Overlay */}
