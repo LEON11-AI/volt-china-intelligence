@@ -55,7 +55,7 @@ const FeaturedReport: React.FC = () => {
               Exclusive BOM cost breakdown vs Tesla FSD, and a supply chain investment watchlist (12 Tickers). We reveal how Huawei achieves 5x safety redundancy.
             </p>
             
-            <div className="flex flex-col sm:flex-row items-center gap-3 mt-auto">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-3 mt-auto w-full">
               <a 
                 href="https://voltchina.gumroad.com/l/huawei-ads" 
                 target="_blank" 
@@ -65,7 +65,7 @@ const FeaturedReport: React.FC = () => {
                 <span>Get the Report ($49)</span>
                 <i className="fa-solid fa-arrow-right"></i>
               </a>
-              <div className="text-slate-500 text-xs">
+              <div className="text-slate-500 text-xs text-right">
                 Instant PDF Download
               </div>
             </div>
