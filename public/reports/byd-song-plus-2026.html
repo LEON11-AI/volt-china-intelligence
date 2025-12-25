@@ -12,11 +12,11 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#165DFF',
-                        secondary: '#FF7D00',
-                        accent: '#36BFFA',
-                        dark: '#1D2939',
-                        light: '#F9FAFB'
+                        primary: '#3B82F6',
+                        secondary: '#F97316',
+                        accent: '#06B6D4',
+                        dark: '#F8FAFC',
+                        light: '#020617'
                     },
                     fontFamily: {
                         inter: ['Inter', 'sans-serif'],
@@ -38,13 +38,13 @@
             }
             .card-hover:hover {
                 transform: translateY(-5px);
-                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
             }
             .text-gradient {
                 background-clip: text;
                 -webkit-background-clip: text;
                 color: transparent;
-                background-image: linear-gradient(135deg, #165DFF, #36BFFA);
+                background-image: linear-gradient(135deg, #3B82F6, #06B6D4);
             }
         }
     </style>
@@ -66,48 +66,48 @@
     </header>
 
     <!-- Research Background Section -->
-    <section class="py-16 px-6 bg-white">
+    <section class="py-16 px-6 bg-slate-900 border-b border-slate-800">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-12">
                 <h3 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-gradient mb-4">Research Background & Objectives</h3>
-                <p class="text-gray-600 max-w-3xl mx-auto">The 2026 BYD Song PLUS, as the core model of BYD's globalization strategy, has become a benchmark product for Chinese brands in the Brazilian market, with sales exceeding 17,000 units in 2024, reshaping the Brazilian plug-in hybrid SUV market.</p>
+                <p class="text-slate-400 max-w-3xl mx-auto">The 2026 BYD Song PLUS, as the core model of BYD's globalization strategy, has become a benchmark product for Chinese brands in the Brazilian market, with sales exceeding 17,000 units in 2024, reshaping the Brazilian plug-in hybrid SUV market.</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-gradient-to-br from-primary/5 to-accent/5 p-8 rounded-2xl card-hover border border-primary/10">
+                <div class="bg-gradient-to-br from-primary/10 to-accent/10 p-8 rounded-2xl card-hover border border-primary/20">
                     <div class="text-4xl font-bold text-primary mb-4">17,000+</div>
-                    <div class="text-gray-700">2024 Sales in Brazilian Market</div>
+                    <div class="text-slate-300">2024 Sales in Brazilian Market</div>
                 </div>
                 
-                <div class="bg-gradient-to-br from-secondary/5 to-primary/5 p-8 rounded-2xl card-hover border border-secondary/10">
+                <div class="bg-gradient-to-br from-secondary/10 to-primary/10 p-8 rounded-2xl card-hover border border-secondary/20">
                     <div class="text-2xl font-bold text-secondary mb-4">Market Redefined</div>
-                    <div class="text-gray-700">Reshaping the Brazilian PHEV SUV market</div>
+                    <div class="text-slate-300">Reshaping the Brazilian PHEV SUV market</div>
                 </div>
             </div>
             
-            <div class="mt-12 bg-gray-50 p-8 rounded-2xl">
-                <h4 class="text-xl font-bold mb-4">Research Focus</h4>
-                <p class="text-gray-600">This study focuses on its core competitiveness in three dimensions: technological innovation, market positioning, and pricing strategy, revealing the success factors and challenges of BYD's globalization strategy.</p>
+            <div class="mt-12 bg-slate-950 p-8 rounded-2xl border border-slate-800">
+                <h4 class="text-xl font-bold mb-4 text-white">Research Focus</h4>
+                <p class="text-slate-400">This study focuses on its core competitiveness in three dimensions: technological innovation, market positioning, and pricing strategy, revealing the success factors and challenges of BYD's globalization strategy.</p>
             </div>
         </div>
     </section>
 
     <!-- Technological Innovation Section -->
-    <section class="py-16 px-6 bg-gray-50">
+    <section class="py-16 px-6 bg-slate-950">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-12">
                 <h3 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-gradient mb-4">In-depth Analysis of Technological Innovation</h3>
-                <p class="text-gray-600 max-w-3xl mx-auto">Cutting-edge technologies that drive BYD Song PLUS's competitive advantage</p>
+                <p class="text-slate-400 max-w-3xl mx-auto">Cutting-edge technologies that drive BYD Song PLUS's competitive advantage</p>
             </div>
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
                 <!-- Blade Battery Technology -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
-                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                <div class="bg-slate-900 p-8 rounded-2xl shadow-xl shadow-black/20 card-hover border border-slate-800">
+                    <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-6">
                         <i class="fa fa-battery-full text-2xl text-primary"></i>
                     </div>
-                    <h4 class="text-2xl font-bold mb-4">2nd Generation Blade Battery Technology</h4>
-                    <ul class="space-y-4">
+                    <h4 class="text-2xl font-bold mb-4 text-white">2nd Generation Blade Battery Technology</h4>
+                    <ul class="space-y-4 text-slate-300">
                         <li class="flex items-start">
                             <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
                             <span>Energy density up to 210Wh/kg; volume utilization improved by 40%</span>
@@ -124,12 +124,12 @@
                 </div>
                 
                 <!-- DM5.0 Hybrid System -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
-                    <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mb-6">
+                <div class="bg-slate-900 p-8 rounded-2xl shadow-xl shadow-black/20 card-hover border border-slate-800">
+                    <div class="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mb-6">
                         <i class="fa fa-cogs text-2xl text-secondary"></i>
                     </div>
-                    <h4 class="text-2xl font-bold mb-4">DM5.0 Hybrid System</h4>
-                    <ul class="space-y-4">
+                    <h4 class="text-2xl font-bold mb-4 text-white">DM5.0 Hybrid System</h4>
+                    <ul class="space-y-4 text-slate-300">
                         <li class="flex items-start">
                             <i class="fa fa-check-circle text-secondary mt-1 mr-3"></i>
                             <span>Total System Power 228kW, torque 480N·m</span>
@@ -148,40 +148,40 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Range Performance -->
-                <div class="bg-gradient-to-br from-primary/5 to-accent/5 p-6 rounded-2xl card-hover">
+                <div class="bg-gradient-to-br from-primary/10 to-accent/10 p-6 rounded-2xl card-hover border border-primary/20">
                     <div class="text-4xl font-bold text-primary mb-2">720</div>
-                    <div class="text-gray-700 mb-2">km</div>
-                    <div class="text-sm text-gray-600">BEV version CLTC range</div>
+                    <div class="text-slate-300 mb-2">km</div>
+                    <div class="text-sm text-slate-400">BEV version CLTC range</div>
                 </div>
                 
-                <div class="bg-gradient-to-br from-secondary/5 to-primary/5 p-6 rounded-2xl card-hover">
+                <div class="bg-gradient-to-br from-secondary/10 to-primary/10 p-6 rounded-2xl card-hover border border-secondary/20">
                     <div class="text-4xl font-bold text-secondary mb-2">1500</div>
-                    <div class="text-gray-700 mb-2">km</div>
-                    <div class="text-sm text-gray-600">Hybrid version combined range</div>
+                    <div class="text-slate-300 mb-2">km</div>
+                    <div class="text-sm text-slate-400">Hybrid version combined range</div>
                 </div>
                 
                 <!-- DiPilot ADAS -->
-                <div class="bg-gradient-to-br from-accent/5 to-secondary/5 p-6 rounded-2xl card-hover">
+                <div class="bg-gradient-to-br from-accent/10 to-secondary/10 p-6 rounded-2xl card-hover border border-accent/20">
                     <div class="text-4xl font-bold text-accent mb-2">29</div>
-                    <div class="text-gray-700 mb-2">pcs</div>
-                    <div class="text-sm text-gray-600">ADAS sensor quantity</div>
+                    <div class="text-slate-300 mb-2">pcs</div>
+                    <div class="text-sm text-slate-400">ADAS sensor quantity</div>
                 </div>
                 
-                <div class="bg-gradient-to-br from-primary/5 to-secondary/5 p-6 rounded-2xl card-hover">
+                <div class="bg-gradient-to-br from-primary/10 to-secondary/10 p-6 rounded-2xl card-hover border border-primary/20">
                     <div class="text-4xl font-bold text-primary mb-2">84</div>
-                    <div class="text-gray-700 mb-2">TOPS</div>
-                    <div class="text-sm text-gray-600">Computing power</div>
+                    <div class="text-slate-300 mb-2">TOPS</div>
+                    <div class="text-sm text-slate-400">Computing power</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Market Positioning Section -->
-    <section class="py-16 px-6 bg-white">
+    <section class="py-16 px-6 bg-slate-900 border-t border-slate-800">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-12">
                 <h3 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-gradient mb-4">Targeted Market Positioning</h3>
-                <p class="text-gray-600 max-w-3xl mx-auto">Global market strategy and localization approaches</p>
+                <p class="text-slate-400 max-w-3xl mx-auto">Global market strategy and localization approaches</p>
             </div>
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
@@ -190,32 +190,32 @@
                     <h4 class="text-2xl font-bold mb-6 text-primary">Global Market Strategy</h4>
                     <div class="space-y-6">
                         <div class="flex items-start">
-                            <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mr-4">
+                            <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0 mr-4">
                                 <span class="font-bold text-primary">1</span>
                             </div>
                             <div>
-                                <h5 class="font-semibold mb-1">2014</h5>
-                                <p class="text-gray-600">Entered public transportation sector with electric buses</p>
+                                <h5 class="font-semibold mb-1 text-white">2014</h5>
+                                <p class="text-slate-400">Entered public transportation sector with electric buses</p>
                             </div>
                         </div>
                         
                         <div class="flex items-start">
-                            <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mr-4">
+                            <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0 mr-4">
                                 <span class="font-bold text-primary">2</span>
                             </div>
                             <div>
-                                <h5 class="font-semibold mb-1">2021</h5>
-                                <p class="text-gray-600">Launched first passenger car Tang EV, established distribution network</p>
+                                <h5 class="font-semibold mb-1 text-white">2021</h5>
+                                <p class="text-slate-400">Launched first passenger car Tang EV, established distribution network</p>
                             </div>
                         </div>
                         
                         <div class="flex items-start">
-                            <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mr-4">
+                            <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0 mr-4">
                                 <span class="font-bold text-primary">3</span>
                             </div>
                             <div>
-                                <h5 class="font-semibold mb-1">July 2025</h5>
-                                <p class="text-gray-600">First vehicle rolled off the production line at Brazilian factory, achieving localized production</p>
+                                <h5 class="font-semibold mb-1 text-white">July 2025</h5>
+                                <p class="text-slate-400">First vehicle rolled off the production line at Brazilian factory, achieving localized production</p>
                             </div>
                         </div>
                     </div>
@@ -225,55 +225,55 @@
                 <div>
                     <h4 class="text-2xl font-bold mb-6 text-secondary">Brazil Localization Strategy</h4>
                     <div class="space-y-4">
-                        <div class="flex items-start bg-secondary/5 p-4 rounded-lg">
+                        <div class="flex items-start bg-secondary/10 p-4 rounded-lg border border-secondary/20">
                             <i class="fa fa-check text-secondary mt-1 mr-3"></i>
-                            <span>Offers 5-7 seat full range models to meet family needs</span>
+                            <span class="text-slate-300">Offers 5-7 seat full range models to meet family needs</span>
                         </div>
                         
-                        <div class="flex items-start bg-secondary/5 p-4 rounded-lg">
+                        <div class="flex items-start bg-secondary/10 p-4 rounded-lg border border-secondary/20">
                             <i class="fa fa-check text-secondary mt-1 mr-3"></i>
-                            <span>Ground clearance increased by 15mm compared to Chinese market</span>
+                            <span class="text-slate-300">Ground clearance increased by 15mm compared to Chinese market</span>
                         </div>
                         
-                        <div class="flex items-start bg-secondary/5 p-4 rounded-lg">
+                        <div class="flex items-start bg-secondary/10 p-4 rounded-lg border border-secondary/20">
                             <i class="fa fa-check text-secondary mt-1 mr-3"></i>
-                            <span>Localization procurement rate increased from 48% to 65%</span>
+                            <span class="text-slate-300">Localization procurement rate increased from 48% to 65%</span>
                         </div>
                         
-                        <div class="flex items-start bg-secondary/5 p-4 rounded-lg">
+                        <div class="flex items-start bg-secondary/10 p-4 rounded-lg border border-secondary/20">
                             <i class="fa fa-check text-secondary mt-1 mr-3"></i>
-                            <span>Voice recognition function specifically adapted for Brazilian accent</span>
+                            <span class="text-slate-300">Voice recognition function specifically adapted for Brazilian accent</span>
                         </div>
                     </div>
                 </div>
             </div>
             
             <!-- Target Customer Groups -->
-            <div class="bg-gradient-to-br from-primary/5 to-accent/5 p-8 rounded-2xl">
-                <h4 class="text-2xl font-bold mb-6 text-center">Target Customer Groups</h4>
+            <div class="bg-gradient-to-br from-primary/10 to-accent/10 p-8 rounded-2xl border border-primary/20">
+                <h4 class="text-2xl font-bold mb-6 text-center text-white">Target Customer Groups</h4>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="text-center">
-                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
                             <i class="fa fa-map-marker text-2xl text-primary"></i>
                         </div>
-                        <h5 class="font-semibold mb-2">Brazilian Market</h5>
-                        <p class="text-gray-600 text-sm">Family users as main target, focusing on practicality and cost-effectiveness</p>
+                        <h5 class="font-semibold mb-2 text-white">Brazilian Market</h5>
+                        <p class="text-slate-400 text-sm">Family users as main target, focusing on practicality and cost-effectiveness</p>
                     </div>
                     
                     <div class="text-center">
-                        <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <div class="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mx-auto mb-4">
                             <i class="fa fa-map-marker text-2xl text-secondary"></i>
                         </div>
-                        <h5 class="font-semibold mb-2">Chinese Market</h5>
-                        <p class="text-gray-600 text-sm">Technology enthusiasts, environmentally conscious consumers</p>
+                        <h5 class="font-semibold mb-2 text-white">Chinese Market</h5>
+                        <p class="text-slate-400 text-sm">Technology enthusiasts, environmentally conscious consumers</p>
                     </div>
                     
                     <div class="text-center">
-                        <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
                             <i class="fa fa-map-marker text-2xl text-accent"></i>
                         </div>
-                        <h5 class="font-semibold mb-2">European Market</h5>
-                        <p class="text-gray-600 text-sm">High acceptance of Chinese brands, focusing on quality and design</p>
+                        <h5 class="font-semibold mb-2 text-white">European Market</h5>
+                        <p class="text-slate-400 text-sm">High acceptance of Chinese brands, focusing on quality and design</p>
                     </div>
                 </div>
             </div>
@@ -281,75 +281,75 @@
     </section>
 
     <!-- Pricing Strategy Section -->
-    <section class="py-16 px-6 bg-gray-50">
+    <section class="py-16 px-6 bg-slate-950">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-12">
                 <h3 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-gradient mb-4">Pricing Strategy System Analysis</h3>
-                <p class="text-gray-600 max-w-3xl mx-auto">Cost structure analysis and global market pricing strategy</p>
+                <p class="text-slate-400 max-w-3xl mx-auto">Cost structure analysis and global market pricing strategy</p>
             </div>
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <!-- Cost Structure Analysis -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                <div class="bg-slate-900 p-8 rounded-2xl shadow-xl shadow-black/20 border border-slate-800">
                     <h4 class="text-2xl font-bold mb-6 text-primary">Cost Structure In-depth Analysis</h4>
                     <div class="space-y-4">
-                        <div class="flex justify-between items-center p-4 bg-primary/5 rounded-lg">
-                            <span class="font-medium">Powertrain System Cost</span>
+                        <div class="flex justify-between items-center p-4 bg-primary/10 rounded-lg border border-primary/20">
+                            <span class="font-medium text-white">Powertrain System Cost</span>
                             <span class="font-bold text-primary">¥24,000</span>
                         </div>
                         
-                        <div class="flex justify-between items-center p-4 bg-primary/5 rounded-lg">
-                            <span class="font-medium">ADAS System Cost</span>
+                        <div class="flex justify-between items-center p-4 bg-primary/10 rounded-lg border border-primary/20">
+                            <span class="font-medium text-white">ADAS System Cost</span>
                             <span class="font-bold text-primary">¥14,000</span>
                         </div>
                         
-                        <div class="flex justify-between items-center p-4 bg-primary/5 rounded-lg">
-                            <span class="font-medium">Other Costs</span>
+                        <div class="flex justify-between items-center p-4 bg-primary/10 rounded-lg border border-primary/20">
+                            <span class="font-medium text-white">Other Costs</span>
                             <span class="font-bold text-primary">¥20,000</span>
                         </div>
                         
-                        <div class="border-t border-gray-200 pt-4 mt-4">
-                            <div class="flex justify-between items-center font-bold">
+                        <div class="border-t border-slate-800 pt-4 mt-4">
+                            <div class="flex justify-between items-center font-bold text-white">
                                 <span>Total Cost</span>
                                 <span class="text-primary">¥121,000</span>
                             </div>
                             <div class="flex justify-between items-center mt-2">
-                                <span class="text-gray-600">Gross Profit Margin</span>
-                                <span class="font-bold text-green-600">~27%</span>
+                                <span class="text-slate-400">Gross Profit Margin</span>
+                                <span class="font-bold text-green-500">~27%</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Global Pricing Strategy -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                <div class="bg-slate-900 p-8 rounded-2xl shadow-xl shadow-black/20 border border-slate-800">
                     <h4 class="text-2xl font-bold mb-6 text-secondary">Global Pricing Strategy</h4>
                     <div class="space-y-6">
                         <div class="border-l-4 border-primary pl-4">
-                            <h5 class="font-semibold mb-2">Chinese Market</h5>
+                            <h5 class="font-semibold mb-2 text-white">Chinese Market</h5>
                             <div class="text-2xl font-bold text-primary mb-2">¥159,800 - ¥189,800</div>
-                            <p class="text-gray-600 text-sm">Actual purchase has ¥5,000-8,000 comprehensive discount</p>
+                            <p class="text-slate-400 text-sm">Actual purchase has ¥5,000-8,000 comprehensive discount</p>
                         </div>
                         
                         <div class="border-l-4 border-secondary pl-4">
-                            <h5 class="font-semibold mb-2">Brazilian Market</h5>
+                            <h5 class="font-semibold mb-2 text-white">Brazilian Market</h5>
                             <div class="text-2xl font-bold text-secondary mb-2">R$249,990 - 299,800</div>
-                            <p class="text-gray-600 text-sm">Approximately ¥357,000 - 429,000</p>
+                            <p class="text-slate-400 text-sm">Approximately ¥357,000 - 429,000</p>
                         </div>
                         
                         <div class="mt-6">
-                            <h5 class="font-semibold mb-3">Main Reasons for Price Differences:</h5>
-                            <ul class="space-y-2 text-gray-600">
+                            <h5 class="font-semibold mb-3 text-white">Main Reasons for Price Differences:</h5>
+                            <ul class="space-y-2 text-slate-400">
                                 <li class="flex items-start">
-                                    <i class="fa fa-circle text-xs text-gray-400 mt-1.5 mr-2"></i>
+                                    <i class="fa fa-circle text-xs text-slate-600 mt-1.5 mr-2"></i>
                                     <span>Import tariffs and transportation costs</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fa fa-circle text-xs text-gray-400 mt-1.5 mr-2"></i>
+                                    <i class="fa fa-circle text-xs text-slate-600 mt-1.5 mr-2"></i>
                                     <span>Localized production costs</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fa fa-circle text-xs text-gray-400 mt-1.5 mr-2"></i>
+                                    <i class="fa fa-circle text-xs text-slate-600 mt-1.5 mr-2"></i>
                                     <span>Market positioning differences</span>
                                 </li>
                             </ul>
@@ -361,83 +361,83 @@
     </section>
 
     <!-- Market Performance Section -->
-    <section class="py-16 px-6 bg-white">
+    <section class="py-16 px-6 bg-slate-900 border-t border-slate-800">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-12">
                 <h3 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-gradient mb-4">Brazilian Market Performance & Global Comparison</h3>
-                <p class="text-gray-600 max-w-3xl mx-auto">Sales performance across different markets</p>
+                <p class="text-slate-400 max-w-3xl mx-auto">Sales performance across different markets</p>
             </div>
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
                 <!-- Brazil Market Performance -->
-                <div class="bg-gradient-to-br from-primary/5 to-accent/5 p-8 rounded-2xl">
+                <div class="bg-gradient-to-br from-primary/10 to-accent/10 p-8 rounded-2xl border border-primary/20">
                     <h4 class="text-2xl font-bold mb-6 text-primary">Brazilian Market Sales Performance</h4>
                     <div class="space-y-6">
-                        <div class="flex justify-between items-center p-4 bg-white rounded-lg">
-                            <span class="font-medium">January 2025</span>
+                        <div class="flex justify-between items-center p-4 bg-slate-900 rounded-lg border border-slate-800">
+                            <span class="font-medium text-white">January 2025</span>
                             <span class="font-bold text-primary">3,185 units</span>
                         </div>
                         
-                        <div class="flex justify-between items-center p-4 bg-white rounded-lg">
-                            <span class="font-medium">June 2025</span>
+                        <div class="flex justify-between items-center p-4 bg-slate-900 rounded-lg border border-slate-800">
+                            <span class="font-medium text-white">June 2025</span>
                             <span class="font-bold text-primary">2,805 units</span>
                         </div>
                         
-                        <div class="flex justify-between items-center p-4 bg-white rounded-lg">
-                            <span class="font-medium">Jan-Jun 2025 Cumulative</span>
+                        <div class="flex justify-between items-center p-4 bg-slate-900 rounded-lg border border-slate-800">
+                            <span class="font-medium text-white">Jan-Jun 2025 Cumulative</span>
                             <span class="font-bold text-primary">9,000+ units</span>
                         </div>
                         
-                        <div class="flex justify-between items-center p-4 bg-primary/10 rounded-lg mt-6">
-                            <span class="font-medium">PHEV Market Share</span>
+                        <div class="flex justify-between items-center p-4 bg-primary/20 rounded-lg mt-6 border border-primary/30">
+                            <span class="font-medium text-white">PHEV Market Share</span>
                             <span class="font-bold text-primary">37.5%</span>
                         </div>
                     </div>
                 </div>
                 
                 <!-- European Market Breakthrough -->
-                <div class="bg-gradient-to-br from-secondary/5 to-primary/5 p-8 rounded-2xl">
+                <div class="bg-gradient-to-br from-secondary/10 to-primary/10 p-8 rounded-2xl border border-secondary/20">
                     <h4 class="text-2xl font-bold mb-6 text-secondary">European Market Breakthrough Analysis</h4>
                     <div class="space-y-6">
-                        <div class="flex justify-between items-center p-4 bg-white rounded-lg">
-                            <span class="font-medium">German Market (Nov 2025)</span>
+                        <div class="flex justify-between items-center p-4 bg-slate-900 rounded-lg border border-slate-800">
+                            <span class="font-medium text-white">German Market (Nov 2025)</span>
                             <span class="font-bold text-secondary">4,026 units</span>
                         </div>
                         
-                        <div class="p-4 bg-white rounded-lg">
+                        <div class="p-4 bg-slate-900 rounded-lg border border-slate-800">
                             <div class="flex justify-between items-center">
-                                <span class="font-medium">PHEV Sales Champion</span>
-                                <span class="font-bold text-green-600">+834.1% YoY</span>
+                                <span class="font-medium text-white">PHEV Sales Champion</span>
+                                <span class="font-bold text-green-500">+834.1% YoY</span>
                             </div>
                         </div>
                         
-                        <div class="flex justify-between items-center p-4 bg-white rounded-lg">
-                            <span class="font-medium">Spanish Market Share</span>
+                        <div class="flex justify-between items-center p-4 bg-slate-900 rounded-lg border border-slate-800">
+                            <span class="font-medium text-white">Spanish Market Share</span>
                             <span class="font-bold text-secondary">19.2%</span>
                         </div>
                         
-                        <div class="flex justify-between items-center p-4 bg-white rounded-lg">
-                            <span class="font-medium">Italian Market Growth</span>
-                            <span class="font-bold text-green-600">+4878.1% YoY</span>
+                        <div class="flex justify-between items-center p-4 bg-slate-900 rounded-lg border border-slate-800">
+                            <span class="font-medium text-white">Italian Market Growth</span>
+                            <span class="font-bold text-green-500">+4878.1% YoY</span>
                         </div>
                     </div>
                 </div>
             </div>
             
             <!-- China vs Brazil Comparison -->
-            <div class="bg-gray-50 p-8 rounded-2xl">
-                <h4 class="text-xl font-bold mb-6 text-center">China vs Brazil Market Sales Comparison</h4>
+            <div class="bg-slate-950 p-8 rounded-2xl border border-slate-800">
+                <h4 class="text-xl font-bold mb-6 text-center text-white">China vs Brazil Market Sales Comparison</h4>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div class="text-center">
                         <div class="text-3xl font-bold text-primary mb-2">150,000+</div>
-                        <div class="text-gray-700 mb-2">units/year</div>
-                        <div class="text-sm text-gray-600">Chinese Market Annual Sales</div>
+                        <div class="text-slate-300 mb-2">units/year</div>
+                        <div class="text-sm text-slate-400">Chinese Market Annual Sales</div>
                     </div>
                     
                     <div class="text-center">
                         <div class="text-3xl font-bold text-secondary mb-2">25,000+</div>
-                        <div class="text-gray-700 mb-2">units/year</div>
-                        <div class="text-sm text-gray-600">Brazilian Market Annual Sales</div>
+                        <div class="text-slate-300 mb-2">units/year</div>
+                        <div class="text-sm text-slate-400">Brazilian Market Annual Sales</div>
                     </div>
                 </div>
             </div>
@@ -449,7 +449,7 @@
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-12">
                 <h3 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-gradient mb-4">Development Prospects & Strategic Recommendations</h3>
-                <p class="text-gray-600 max-w-3xl mx-auto">Technology development trends and strategic suggestions</p>
+                <p class="text-slate-400 max-w-3xl mx-auto">Technology development trends and strategic suggestions</p>
             </div>
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
@@ -457,28 +457,28 @@
                 <div>
                     <h4 class="text-2xl font-bold mb-6 text-primary">Technology Trends Forecast</h4>
                     <div class="space-y-6">
-                        <div class="bg-white p-6 rounded-xl shadow">
+                        <div class="bg-slate-900 p-6 rounded-xl shadow-lg border border-slate-800">
                             <div class="flex items-center mb-3">
                                 <i class="fa fa-battery-three-quarters text-primary text-xl mr-3"></i>
-                                <h5 class="font-semibold">Battery Technology Continuous Evolution</h5>
+                                <h5 class="font-semibold text-white">Battery Technology Continuous Evolution</h5>
                             </div>
-                            <p class="text-gray-600 text-sm">Energy density target above 250Wh/kg, achieving "5 minutes charging for 500km range"</p>
+                            <p class="text-slate-400 text-sm">Energy density target above 250Wh/kg, achieving "5 minutes charging for 500km range"</p>
                         </div>
                         
-                        <div class="bg-white p-6 rounded-xl shadow">
+                        <div class="bg-slate-900 p-6 rounded-xl shadow-lg border border-slate-800">
                             <div class="flex items-center mb-3">
                                 <i class="fa fa-microchip text-primary text-xl mr-3"></i>
-                                <h5 class="font-semibold">Leap in Intelligence</h5>
+                                <h5 class="font-semibold text-white">Leap in Intelligence</h5>
                             </div>
-                            <p class="text-gray-600 text-sm">Evolution from L2 to L3, L4 autonomous driving, deep integration of vehicle connectivity</p>
+                            <p class="text-slate-400 text-sm">Evolution from L2 to L3, L4 autonomous driving, deep integration of vehicle connectivity</p>
                         </div>
                         
-                        <div class="bg-white p-6 rounded-xl shadow">
+                        <div class="bg-slate-900 p-6 rounded-xl shadow-lg border border-slate-800">
                             <div class="flex items-center mb-3">
                                 <i class="fa fa-cubes text-primary text-xl mr-3"></i>
-                                <h5 class="font-semibold">Platform Technology Innovation</h5>
+                                <h5 class="font-semibold text-white">Platform Technology Innovation</h5>
                             </div>
-                            <p class="text-gray-600 text-sm">Develop global market modular platform, enhance compatibility and adaptability</p>
+                            <p class="text-slate-400 text-sm">Develop global market modular platform, enhance compatibility and adaptability</p>
                         </div>
                     </div>
                 </div>
@@ -487,29 +487,29 @@
                 <div>
                     <h4 class="text-2xl font-bold mb-6 text-secondary">Strategic Recommendations</h4>
                     <div class="space-y-4">
-                        <div class="flex items-start bg-white p-4 rounded-lg shadow">
+                        <div class="flex items-start bg-slate-900 p-4 rounded-lg shadow-lg border border-slate-800">
                             <i class="fa fa-lightbulb-o text-secondary mt-1 mr-3"></i>
-                            <span>Continue to increase R&D investment to maintain technological leadership</span>
+                            <span class="text-slate-300">Continue to increase R&D investment to maintain technological leadership</span>
                         </div>
                         
-                        <div class="flex items-start bg-white p-4 rounded-lg shadow">
+                        <div class="flex items-start bg-slate-900 p-4 rounded-lg shadow-lg border border-slate-800">
                             <i class="fa fa-lightbulb-o text-secondary mt-1 mr-3"></i>
-                            <span>Deepen localization strategy in key markets like Brazil</span>
+                            <span class="text-slate-300">Deepen localization strategy in key markets like Brazil</span>
                         </div>
                         
-                        <div class="flex items-start bg-white p-4 rounded-lg shadow">
+                        <div class="flex items-start bg-slate-900 p-4 rounded-lg shadow-lg border border-slate-800">
                             <i class="fa fa-lightbulb-o text-secondary mt-1 mr-3"></i>
-                            <span>Accelerate channel construction and brand promotion in European markets</span>
+                            <span class="text-slate-300">Accelerate channel construction and brand promotion in European markets</span>
                         </div>
                         
-                        <div class="flex items-start bg-white p-4 rounded-lg shadow">
+                        <div class="flex items-start bg-slate-900 p-4 rounded-lg shadow-lg border border-slate-800">
                             <i class="fa fa-lightbulb-o text-secondary mt-1 mr-3"></i>
-                            <span>Continue to advance global supply chain layout, improve localization rate of key components</span>
+                            <span class="text-slate-300">Continue to advance global supply chain layout, improve localization rate of key components</span>
                         </div>
                         
-                        <div class="flex items-start bg-white p-4 rounded-lg shadow">
+                        <div class="flex items-start bg-slate-900 p-4 rounded-lg shadow-lg border border-slate-800">
                             <i class="fa fa-lightbulb-o text-secondary mt-1 mr-3"></i>
-                            <span>Diversify market layout to reduce single market risks</span>
+                            <span class="text-slate-300">Diversify market layout to reduce single market risks</span>
                         </div>
                     </div>
                 </div>
@@ -518,14 +518,14 @@
     </section>
 
     <!-- Conclusion Section -->
-    <section class="py-16 px-6 bg-white">
+    <section class="py-16 px-6 bg-slate-900 border-t border-slate-800">
         <div class="max-w-4xl mx-auto text-center">
             <h3 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-gradient mb-6">Conclusion</h3>
-            <div class="bg-gray-50 p-8 rounded-2xl">
-                <p class="text-gray-700 leading-relaxed mb-6">
+            <div class="bg-slate-950 p-8 rounded-2xl border border-slate-800">
+                <p class="text-slate-300 leading-relaxed mb-6">
                     The success of the 2026 BYD Song PLUS is a microcosm of the rise of China's new energy vehicle industry. Through technological innovation, precise positioning, and flexible pricing strategies, BYD has achieved remarkable results in the global market.
                 </p>
-                <p class="text-gray-700 leading-relaxed mb-8">
+                <p class="text-slate-300 leading-relaxed mb-8">
                     In the future, with the acceleration of global electrification and the continuous advancement of China's new energy vehicle technology, BYD is expected to achieve success on a larger scale.
                 </p>
                 <div class="text-xl font-semibold text-gradient">
@@ -534,25 +534,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Footer
-    <footer class="bg-dark text-white py-12 px-6">
-        <div class="max-w-7xl mx-auto text-center">
-            <div class="mb-8">
-                <h4 class="text-2xl font-bold mb-4">2026 BYD Song PLUS Industry Analysis</h4>
-                <p class="text-gray-400 max-w-2xl mx-auto">
-                    This report provides a comprehensive analysis of BYD Song PLUS's technological innovation, market positioning, and global strategic layout.
-                </p>
-            </div>
-            
-            <div class="border-t border-gray-700 pt-8">
-                <p class="text-gray-400">
-                    © 2025 2026 BYD Song PLUS Industry Analysis Report. All rights reserved.
-                </p>
-            </div>
-        </div>
-    </footer>
-    -->
 
     <!-- JavaScript for animations -->
     <script>

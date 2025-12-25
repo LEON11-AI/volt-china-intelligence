@@ -20,7 +20,6 @@ const BYD_Humanoid_Robot: React.FC = () => {
   useEffect(() => {
     const pickSrc = async () => {
       const candidates = [
-        "/reports/BYD's Secret Robot Division.html",
         '/reports/byd-humanoid-robot.html',
         '/exclusive/byd-humanoid-robot.html',
         '/byd-humanoid-robot.html'
@@ -59,7 +58,7 @@ const BYD_Humanoid_Robot: React.FC = () => {
                   if (h) el.style.height = h + 'px';
                 } catch {}
               }}
-              style={{ width: '100%', height: '100vh', border: '0', background: 'white', borderRadius: '12px' }}
+              style={{ width: '100%', height: '100vh', border: '0', background: '#020617', borderRadius: '12px' }}
             />
           ) : (
             <div className="bg-slate-900 border border-slate-800 rounded-xl p-6 text-slate-400">Place the HTML file under <code>/public/reports/byd-humanoid-robot.html</code>.</div>
