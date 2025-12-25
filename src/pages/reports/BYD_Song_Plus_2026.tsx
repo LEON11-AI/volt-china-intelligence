@@ -66,6 +66,7 @@ const BYD_Song_Plus_2026: React.FC = () => {
           )}
         </div>
       </main>
+      <Footer />
     </div>
   );
 };

@@ -65,6 +65,7 @@ const BYD_ADAS_Strategy: React.FC = () => {
           )}
         </div>
       </main>
+      <Footer />
     </div>
   );
 };

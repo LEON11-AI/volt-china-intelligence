@@ -66,6 +66,7 @@ const BYD_Humanoid_Robot: React.FC = () => {
           )}
         </div>
       </main>
+      <Footer />
     </div>
   );
 };
