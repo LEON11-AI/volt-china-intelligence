@@ -40,7 +40,7 @@ const BlogPage: React.FC = () => {
     {
       id: 4,
       title: "BYD's Secret Robot Division",
-      date: '2025-12-10',
+      date: '2025-12-25',
       link: '/research/byd-humanoid-robot',
       isExternal: false,
       tag: 'Report'
