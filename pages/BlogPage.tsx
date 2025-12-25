@@ -21,6 +21,30 @@ const BlogPage: React.FC = () => {
       isExternal: false,
       tag: 'Report'
     },
+    {
+      id: 2,
+      title: "BYD's ADAS Revolution",
+      date: '2025-12-10',
+      link: '/research/byd-adas-strategy',
+      isExternal: false,
+      tag: 'Report'
+    },
+    {
+      id: 3,
+      title: '2026 BYD Song Plus Deep Dive',
+      date: '2025-12-10',
+      link: '/research/byd-song-plus-2026',
+      isExternal: false,
+      tag: 'Report'
+    },
+    {
+      id: 4,
+      title: "BYD's Secret Robot Division",
+      date: '2025-12-10',
+      link: '/research/byd-humanoid-robot',
+      isExternal: false,
+      tag: 'Report'
+    },
   ];
 
   return (

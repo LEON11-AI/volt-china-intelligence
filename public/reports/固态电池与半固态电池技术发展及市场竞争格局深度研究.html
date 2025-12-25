@@ -1,0 +1,619 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>固态电池与半固态电池技术发展及市场竞争格局深度研究</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFFFFF;
+        }
+        .card {
+            background-color: white;
+            border: 1px solid #E5E7EB;
+            border-radius: 1.25rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            overflow: hidden;
+            position: relative;
+        }
+        .highlight-gradient-blue {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0), rgba(59, 130, 246, 0.05));
+        }
+        .highlight-gradient-purple {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0), rgba(139, 92, 246, 0.05));
+        }
+        .highlight-gradient-green {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0), rgba(34, 197, 94, 0.05));
+        }
+        .highlight-gradient-orange {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0), rgba(249, 115, 22, 0.05));
+        }
+        .highlight-gradient-red {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0), rgba(239, 68, 68, 0.05));
+        }
+        .tech-line-item {
+            border-left: 3px solid #E5E7EB;
+            padding-left: 1rem;
+            margin-left: 0.5rem;
+        }
+        .tech-line-item.active {
+            border-left-color: #3B82F6;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <div class="max-w-7xl mx-auto p-4 md:p-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
+            <!-- 标题卡片 -->
+            <div class="card md:col-span-4 p-8 flex flex-col justify-center items-center text-center relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-blue"></div>
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-4">固态电池与半固态电池</h1>
+                <p class="text-xl md:text-2xl text-gray-600 mb-6">技术发展及市场竞争格局深度研究</p>
+                <div class="flex flex-wrap justify-center gap-4 text-sm md:text-base">
+                    <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full">技术路线分析</span>
+                    <span class="bg-purple-100 text-purple-800 px-4 py-2 rounded-full">产业化进程</span>
+                    <span class="bg-green-100 text-green-800 px-4 py-2 rounded-full">厂商竞争格局</span>
+                    <span class="bg-orange-100 text-orange-800 px-4 py-2 rounded-full">投资机会</span>
+                </div>
+            </div>
+
+            <!-- 关键数据卡片1 -->
+            <div class="card md:col-span-2 p-6 flex flex-col justify-center relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-purple"></div>
+                <div class="flex items-center mb-4">
+                    <i class="fa-solid fa-battery-full text-4xl text-purple-500 mr-4"></i>
+                    <div>
+                        <p class="text-gray-500 text-sm">2030年市场规模</p>
+                        <p class="text-4xl font-bold text-gray-900">5000亿元</p>
+                    </div>
+                </div>
+                <p class="text-gray-600">全球固态电池市场规模预计2030年将突破5000亿元人民币，年复合增长率超过60%。</p>
+            </div>
+
+            <!-- 关键数据卡片2 -->
+            <div class="card md:col-span-2 p-6 flex flex-col justify-center relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-green"></div>
+                <div class="flex items-center mb-4">
+                    <i class="fa-solid fa-chart-line text-4xl text-green-500 mr-4"></i>
+                    <div>
+                        <p class="text-gray-500 text-sm">2025年出货量</p>
+                        <p class="text-4xl font-bold text-gray-900">8.5GWh</p>
+                    </div>
+                </div>
+                <p class="text-gray-600">半固态电池已进入商业化元年，2025年全球出货量预计达8.5GWh，中国市场渗透率约5%。</p>
+            </div>
+
+            <!-- 技术路线对比卡片 -->
+            <div class="card md:col-span-4 p-6 relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-blue"></div>
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">三大技术路线对比</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- 硫化物路线 -->
+                    <div class="border border-gray-200 rounded-lg p-5 bg-white">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                                <i class="fa-solid fa-bolt text-blue-500"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900">硫化物路线</h3>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">离子电导率</span>
+                                <span class="font-bold text-blue-600">10⁻²至10⁻³ S/cm</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">理论能量密度</span>
+                                <span class="font-bold text-blue-600">600Wh/kg+</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">主要挑战</span>
+                                <span class="font-bold text-red-500">成本高、环境要求严</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">主要企业</span>
+                                <span class="font-bold text-blue-600">丰田、宁德时代</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 氧化物路线 -->
+                    <div class="border border-gray-200 rounded-lg p-5 bg-white">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mr-3">
+                                <i class="fa-solid fa-shield-halved text-green-500"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900">氧化物路线</h3>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">离子电导率</span>
+                                <span class="font-bold text-green-600">10⁻³ S/cm</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">理论能量密度</span>
+                                <span class="font-bold text-green-600">300-400Wh/kg</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">主要优势</span>
+                                <span class="font-bold text-green-600">稳定性好、成本低</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">主要企业</span>
+                                <span class="font-bold text-green-600">卫蓝新能源、清陶能源</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 聚合物路线 -->
+                    <div class="border border-gray-200 rounded-lg p-5 bg-white">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center mr-3">
+                                <i class="fa-solid fa-layer-group text-purple-500"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900">聚合物路线</h3>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">离子电导率</span>
+                                <span class="font-bold text-purple-600">较低</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">理论能量密度</span>
+                                <span class="font-bold text-purple-600">200-300Wh/kg</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">主要优势</span>
+                                <span class="font-bold text-purple-600">加工性好、成本低</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">主要企业</span>
+                                <span class="font-bold text-purple-600">Bolloré集团</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 市场预测图表卡片 -->
+            <div class="card md:col-span-4 p-6 relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-green"></div>
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">固态电池市场预测</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="h-80">
+                        <canvas id="marketSizeChart"></canvas>
+                    </div>
+                    <div class="h-80">
+                        <canvas id="penetrationChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 厂商竞争格局卡片 -->
+            <div class="card md:col-span-4 p-6 relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-orange"></div>
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">全球主要厂商竞争格局</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- 中国企业 -->
+                    <div class="border border-gray-200 rounded-lg p-5 bg-white">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center mr-3">
+                                <i class="fa-solid fa-flag text-red-500"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900">中国企业</h3>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="tech-line-item active">
+                                <h4 class="font-bold text-gray-900">宁德时代</h4>
+                                <p class="text-gray-600 text-sm">多路线布局，硫化物全固态电池中试线已投产，能量密度达450Wh/kg</p>
+                            </div>
+                            <div class="tech-line-item">
+                                <h4 class="font-bold text-gray-900">比亚迪</h4>
+                                <p class="text-gray-600 text-sm">硫化物复合电解质技术，全固态电池能量密度达400Wh/kg</p>
+                            </div>
+                            <div class="tech-line-item">
+                                <h4 class="font-bold text-gray-900">卫蓝新能源</h4>
+                                <p class="text-gray-600 text-sm">氧化物半固态电池已应用于蔚来ET7，能量密度达360Wh/kg</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 日本企业 -->
+                    <div class="border border-gray-200 rounded-lg p-5 bg-white">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                                <i class="fa-solid fa-flag text-blue-500"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900">日本企业</h3>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="tech-line-item active">
+                                <h4 class="font-bold text-gray-900">丰田汽车</h4>
+                                <p class="text-gray-600 text-sm">硫化物路线领军企业，拥有超过1300项相关专利，量产计划推迟至2027-2028年</p>
+                            </div>
+                            <div class="tech-line-item">
+                                <h4 class="font-bold text-gray-900">松下</h4>
+                                <p class="text-gray-600 text-sm">多路线布局，半固态电池能量密度达380Wh/kg</p>
+                            </div>
+                            <div class="tech-line-item">
+                                <h4 class="font-bold text-gray-900">旭硝子</h4>
+                                <p class="text-gray-600 text-sm">专注于氧化物电解质技术，薄膜制备工艺领先</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 欧美企业 -->
+                    <div class="border border-gray-200 rounded-lg p-5 bg-white">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mr-3">
+                                <i class="fa-solid fa-flag text-green-500"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900">欧美企业</h3>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="tech-line-item active">
+                                <h4 class="font-bold text-gray-900">QuantumScape</h4>
+                                <p class="text-gray-600 text-sm">氧化物/聚合物复合电解质，获得大众汽车投资</p>
+                            </div>
+                            <div class="tech-line-item">
+                                <h4 class="font-bold text-gray-900">Solid Power</h4>
+                                <p class="text-gray-600 text-sm">双层卷绕式全固态电池，与宝马、福特合作</p>
+                            </div>
+                            <div class="tech-line-item">
+                                <h4 class="font-bold text-gray-900">Bolloré</h4>
+                                <p class="text-gray-600 text-sm">聚合物固态电池先驱，LMP电池系统已商业化运营</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 半固态电池优势卡片 -->
+            <div class="card md:col-span-2 p-6 relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-purple"></div>
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">半固态电池：中国企业的"降维打击"</h2>
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center mr-3 mt-1">
+                            <i class="fa-solid fa-rocket text-purple-500 text-sm"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-900">技术原理创新</h3>
+                            <p class="text-gray-600">采用固态电解质骨架+少量液态电解液，实现性能与成本的最佳平衡</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center mr-3 mt-1">
+                            <i class="fa-solid fa-shield-virus text-purple-500 text-sm"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-900">安全性显著提升</h3>
+                            <p class="text-gray-600">热失控温度超过300℃，针刺测试无起火爆炸，从根本上解决安全隐患</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center mr-3 mt-1">
+                            <i class="fa-solid fa-charging-station text-purple-500 text-sm"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-900">快充性能优异</h3>
+                            <p class="text-gray-600">支持更高充电功率，如智己L6支持400kW峰值功率，12分钟充电400公里</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 应用案例卡片 -->
+            <div class="card md:col-span-2 p-6 relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-green"></div>
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">半固态电池应用案例</h2>
+                <div class="space-y-4">
+                    <div class="border border-gray-200 rounded-lg p-4 bg-white">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-bold text-gray-900">蔚来ET7</h3>
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">高端车型</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-2">搭载卫蓝新能源150kWh半固态电池包</p>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-500">能量密度: <span class="font-bold text-blue-600">360Wh/kg</span></span>
+                            <span class="text-gray-500">实测续航: <span class="font-bold text-blue-600">1044公里</span></span>
+                        </div>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4 bg-white">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-bold text-gray-900">智己L6</h3>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">主流高端</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-2">搭载清陶能源133kWh半固态电池包</p>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-500">能量密度: <span class="font-bold text-green-600">368Wh/kg</span></span>
+                            <span class="text-gray-500">充电功率: <span class="font-bold text-green-600">400kW</span></span>
+                        </div>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4 bg-white">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-bold text-gray-900">名爵MG4</h3>
+                            <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs">经济型</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-2">首个搭载半固态电池的经济型车型</p>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-500">售价: <span class="font-bold text-orange-600">9.98万元</span></span>
+                            <span class="text-gray-500">目标: <span class="font-bold text-orange-600">普及化</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 投资机会卡片 -->
+            <div class="card md:col-span-4 p-6 relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-red"></div>
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">产业链投资机会分析</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- 上游材料 -->
+                    <div class="border border-gray-200 rounded-lg p-5 bg-white">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center mr-3">
+                                <i class="fa-solid fa-mountain-sun text-red-500"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900">上游材料</h3>
+                        </div>
+                        <div class="space-y-3">
+                            <div>
+                                <h4 class="font-bold text-gray-900">氧化锆</h4>
+                                <p class="text-gray-600 text-sm">2025-2028年需求年复合增长率达15%，2028年需求规模将达5万吨</p>
+                                <p class="text-blue-600 font-bold text-sm">东方锆业、宁德时代</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">高镍正极</h4>
+                                <p class="text-gray-600 text-sm">2025年市场规模将达到100亿元以上，高镍材料占比超60%</p>
+                                <p class="text-blue-600 font-bold text-sm">容百科技、当升科技</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">硅基负极</h4>
+                                <p class="text-gray-600 text-sm">2025年锂金属负极市场规模达30亿元，是2023年的5倍</p>
+                                <p class="text-blue-600 font-bold text-sm">赣锋锂业、贝特瑞</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 中游设备 -->
+                    <div class="border border-gray-200 rounded-lg p-5 bg-white">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                                <i class="fa-solid fa-cogs text-blue-500"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900">中游设备</h3>
+                        </div>
+                        <div class="space-y-3">
+                            <div>
+                                <h4 class="font-bold text-gray-900">干法电极设备</h4>
+                                <p class="text-gray-600 text-sm">无需使用溶剂，将生产成本降低30%，2025-2027年需求爆发</p>
+                                <p class="text-blue-600 font-bold text-sm">先导智能、赢合科技</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">等静压机</h4>
+                                <p class="text-gray-600 text-sm">全固态电池制造关键设备，用于将电池各层结构在高压下紧密压合</p>
+                                <p class="text-blue-600 font-bold text-sm">合肥汇通、烟台台海</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">真空干燥设备</h4>
+                                <p class="text-gray-600 text-sm">需要将环境露点控制在-80℃以下，对设备性能要求极高</p>
+                                <p class="text-blue-600 font-bold text-sm">国产设备逐步替代进口</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 下游应用 -->
+                    <div class="border border-gray-200 rounded-lg p-5 bg-white">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mr-3">
+                                <i class="fa-solid fa-car text-green-500"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900">下游应用</h3>
+                        </div>
+                        <div class="space-y-3">
+                            <div>
+                                <h4 class="font-bold text-gray-900">电动汽车</h4>
+                                <p class="text-gray-600 text-sm">2030年渗透率将达25%，对应年需求超过100GWh</p>
+                                <p class="text-blue-600 font-bold text-sm">蔚来、智己、比亚迪</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">储能市场</h4>
+                                <p class="text-gray-600 text-sm">凭借高安全性和长循环寿命，2030年渗透率将达10%</p>
+                                <p class="text-blue-600 font-bold text-sm">电网储能、工商业储能</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">航空航天</h4>
+                                <p class="text-gray-600 text-sm">宁德时代凝聚态电池已应用于4吨级电动飞机</p>
+                                <p class="text-blue-600 font-bold text-sm">eVTOL领域潜力巨大</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 未来趋势卡片 -->
+            <div class="card md:col-span-4 p-6 relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-blue"></div>
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">未来发展趋势与"赢家"预测</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">技术演进路径</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4 flex-shrink-0">
+                                    <span class="font-bold text-blue-500">1</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900">半固态电池主导期 (2025-2027)</h4>
+                                    <p class="text-gray-600">能量密度提升至450-500Wh/kg，循环寿命突破1500次，2027年装车量超50万辆</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center mr-4 flex-shrink-0">
+                                    <span class="font-bold text-purple-500">2</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900">全固态电池突破期 (2027-2030)</h4>
+                                    <p class="text-gray-600">2027-2028年实现小批量生产，2030年成本降至0.8-1.0元/Wh，渗透率达15-20%</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mr-4 flex-shrink-0">
+                                    <span class="font-bold text-green-500">3</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900">技术融合与路线收敛 (2030年后)</h4>
+                                    <p class="text-gray-600">多技术路线并存，复合电解质技术成为主流，AI技术加速创新</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">"赢家"预测</h3>
+                        <div class="space-y-4">
+                            <div class="border border-gray-200 rounded-lg p-4 bg-white">
+                                <h4 class="font-bold text-gray-900 mb-2">技术路线"赢家"</h4>
+                                <p class="text-gray-600 text-sm mb-2">短期内氧化物半固态电池主导市场，中期硫化物全固态电池占据高端市场，长期多技术路线并存</p>
+                            </div>
+                            <div class="border border-gray-200 rounded-lg p-4 bg-white">
+                                <h4 class="font-bold text-gray-900 mb-2">企业竞争"赢家"</h4>
+                                <p class="text-gray-600 text-sm mb-2">中国企业凭借技术创新、产业化执行力和产业链优势，将成为最大"赢家"，预计2030年占据全球35%以上市场份额</p>
+                            </div>
+                            <div class="border border-gray-200 rounded-lg p-4 bg-white">
+                                <h4 class="font-bold text-gray-900 mb-2">"赢家"特征</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">技术领先</span>
+                                    <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">成本优势</span>
+                                    <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">产业化能力</span>
+                                    <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">市场资源</span>
+                                    <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">生态构建</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    // 市场规模预测图表
+    const marketSizeCtx = document.getElementById('marketSizeChart').getContext('2d');
+    new Chart(marketSizeCtx, {
+        type: 'bar',
+        data: {
+            labels: ['2025', '2026', '2027', '2028', '2029', '2030'],
+            datasets: [
+                {
+                    label: '半固态电池市场规模 (亿元)',
+                    data: [150, 300, 600, 1200, 2000, 3000],
+                    backgroundColor: 'rgba(59, 130, 246, 0.7)',
+                    borderColor: 'rgba(59, 130, 246, 1)',
+                    borderWidth: 1
+                },
+                {
+                    label: '全固态电池市场规模 (亿元)',
+                    data: [0, 50, 150, 400, 800, 2000],
+                    backgroundColor: 'rgba(139, 92, 246, 0.7)',
+                    borderColor: 'rgba(139, 92, 246, 1)',
+                    borderWidth: 1
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                title: {
+                    display: true,
+                    text: '全球固态电池市场规模预测',
+                    font: {
+                        size: 16,
+                        weight: 'bold'
+                    }
+                },
+                legend: {
+                    position: 'top',
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: '市场规模 (亿元)'
+                    }
+                }
+            }
+        }
+    });
+
+    // 渗透率预测图表
+    const penetrationCtx = document.getElementById('penetrationChart').getContext('2d');
+    new Chart(penetrationCtx, {
+        type: 'line',
+        data: {
+            labels: ['2025', '2026', '2027', '2028', '2029', '2030'],
+            datasets: [
+                {
+                    label: '半固态电池渗透率 (%)',
+                    data: [5, 10, 15, 18, 20, 21],
+                    borderColor: 'rgba(34, 197, 94, 1)',
+                    backgroundColor: 'rgba(34, 197, 94, 0.1)',
+                    tension: 0.3,
+                    fill: true
+                },
+                {
+                    label: '全固态电池渗透率 (%)',
+                    data: [0, 0.5, 2, 5, 7, 9],
+                    borderColor: 'rgba(249, 115, 22, 1)',
+                    backgroundColor: 'rgba(249, 115, 22, 0.1)',
+                    tension: 0.3,
+                    fill: true
+                },
+                {
+                    label: '总渗透率 (%)',
+                    data: [5, 10.5, 17, 23, 27, 30],
+                    borderColor: 'rgba(239, 68, 68, 1)',
+                    backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                    tension: 0.3,
+                    fill: true
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                title: {
+                    display: true,
+                    text: '固态电池在新能源汽车市场渗透率预测',
+                    font: {
+                        size: 16,
+                        weight: 'bold'
+                    }
+                },
+                legend: {
+                    position: 'top',
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 35,
+                    title: {
+                        display: true,
+                        text: '渗透率 (%)'
+                    }
+                }
+            }
+        }
+    });
+</script>
+</html>
