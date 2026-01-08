@@ -38,14 +38,14 @@ const Research: React.FC = () => {
           {/* Content Side */}
           <div className="w-full md:w-3/5 p-8 flex flex-col justify-center">
             <div className="w-full flex flex-wrap justify-between items-center gap-2 mb-4">
-              <span className="text-xs font-mono text-slate-400 border border-slate-600 px-2 py-0.5 rounded whitespace-nowrap">REPORT #VC-2025-01</span>
+              <span className="text-xs font-mono text-slate-400 border border-slate-600 px-2 py-0.5 rounded whitespace-nowrap">REPORT #VC-2026-01</span>
               <span className="text-xs font-bold text-green-400 flex items-center gap-1 whitespace-nowrap">
                 <i className="fa-solid fa-clock"></i> Limited Time Free
               </span>
             </div>
             
             <h3 className="text-2xl font-bold text-white mb-3">
-              BYD Solid-State Battery Report 2025
+              BYD Solid-State Battery Report 2026
             </h3>
             
             <p className="text-slate-300 mb-6 leading-relaxed text-sm">
