@@ -14,15 +14,14 @@ const About: React.FC = () => {
               2. Change the src below to: src="/leon-avatar.png"
             */}
             <img 
-                src="/avatar-default.svg"
+                src="/leon-avatar.webp"
                 alt="Leon, Founder"
                 loading="lazy"
                 decoding="async"
                 width={128}
                 height={128}
-                srcSet="/avatar-default.svg 1x"
                 className="relative w-full h-full object-cover rounded-full border-2 border-slate-700 shadow-2xl bg-slate-900"
-                onError={(e) => { (e.currentTarget as HTMLImageElement).src = 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=400&auto=format&fit=crop'; }}
+                onError={(e) => { (e.currentTarget as HTMLImageElement).src = '/avatar-default.svg'; }}
             />
         </div>
         
