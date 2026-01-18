@@ -8,9 +8,9 @@ const SocialProof: React.FC = () => {
       title: "EV Market Observer",
     },
     {
-      text: "It's about time we realize that Chinese [EV makers] are ahead of legacy automakers in many areas. Being the world's factory makes them unbeatable.",
-      name: "John Simpson",
-      title: "Industry Analyst",
+      text: "The Intel Inside comparison is sharper than most analyses I've seen... The Galapagos Effect framing nails why protectionism might backfire.",
+      name: "Neural Foundry",
+      title: "AI Infrastructure Engineer at Fortune 500",
     },
   ];
 
