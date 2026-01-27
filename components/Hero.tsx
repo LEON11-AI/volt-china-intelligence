@@ -71,7 +71,7 @@ const Hero: React.FC = () => {
               <ul className="space-y-3 mt-4">
                 <li className="flex items-start gap-2 text-sm text-slate-300">
                   <i className="fa-solid fa-check text-amber-500 mt-1"></i>
-                  <span>Bespoke Supply Chain Due Diligence</span>
+                  <span>Supplier Identification & Due Diligence</span>
                 </li>
                 <li className="flex items-start gap-2 text-sm text-slate-300">
                   <i className="fa-solid fa-check text-amber-500 mt-1"></i>
