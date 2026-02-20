@@ -27,8 +27,46 @@ const Hero: React.FC = () => {
         </h1>
         
         <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-          We bridge the context gap. Delivering expert analysis and curated data on the world's fastest-moving automotive market for institutional investors.
+          We bridge the context gap. Delivering expert analysis and curated engineering data on the world's fastest-moving automotive market for institutional investors.
         </p>
+
+        {/* Lead Magnet / Email Capture */}
+        <div className="max-w-2xl mx-auto mb-16 bg-slate-900/80 border border-volt/20 rounded-2xl p-6 backdrop-blur-sm shadow-2xl shadow-volt/10">
+          <div className="flex items-center justify-center gap-2 mb-4 text-volt">
+            <i className="fa-solid fa-file-pdf"></i>
+            <span className="text-sm font-bold uppercase tracking-wider">Free Engineering Report</span>
+          </div>
+          <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
+            Get our exclusive 15-page BYD Solid-State Battery Engineering Report.
+          </h3>
+          <p className="text-slate-400 text-sm mb-6">
+            Join 5,000+ investors and engineers. Direct to your inbox.
+          </p>
+          
+          <form 
+            action="https://voltchina.substack.com/api/v1/free" 
+            method="post"
+            target="_blank"
+            className="flex flex-col sm:flex-row gap-3"
+          >
+            <input 
+              type="email" 
+              name="email"
+              placeholder="Enter your work email..." 
+              required
+              className="flex-1 bg-slate-800 border border-slate-700 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-volt focus:ring-1 focus:ring-volt transition-all placeholder-slate-500"
+            />
+            <button 
+              type="submit"
+              className="bg-volt hover:bg-volt-hover text-white font-bold px-6 py-3 rounded-lg transition-all shadow-lg shadow-volt/20 hover:shadow-volt/40 whitespace-nowrap"
+            >
+              Download Free Report
+            </button>
+          </form>
+          <p className="text-xs text-slate-600 mt-3">
+            We respect your inbox. Unsubscribe at any time.
+          </p>
+        </div>
         
         {/* Pricing/Action Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12 text-left">

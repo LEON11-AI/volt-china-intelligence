@@ -14,10 +14,9 @@ const Navbar: React.FC<{ forceDark?: boolean }> = ({ forceDark = false }) => {
   }, []);
 
   const navLinks = [
-    { name: 'Latest Research', href: '#research' },
+    { name: 'Read on Substack', href: 'https://voltchina.substack.com' },
     { name: 'Expert Services', href: '#services' },
     { name: 'About', href: '#about' },
-    { name: 'Blog', href: '/blog' },
   ];
 
   const handleScrollTo = (href: string) => {
@@ -64,7 +63,7 @@ const Navbar: React.FC<{ forceDark?: boolean }> = ({ forceDark = false }) => {
               rel="noopener noreferrer"
               className="px-5 py-2.5 bg-volt hover:bg-volt-hover text-white text-sm font-semibold rounded transition-all shadow-lg shadow-volt/20 hover:shadow-volt/40"
             >
-              Subscribe to Pro
+              Join 5,000+ Investors
             </a>
           </div>
 
@@ -102,7 +101,7 @@ const Navbar: React.FC<{ forceDark?: boolean }> = ({ forceDark = false }) => {
                 className="block w-full text-center px-5 py-3 bg-volt hover:bg-volt-hover text-white text-base font-semibold rounded"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Subscribe to Pro
+                Join 5,000+ Investors
               </a>
             </div>
           </div>
