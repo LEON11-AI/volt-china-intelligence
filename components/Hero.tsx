@@ -88,13 +88,13 @@ const Hero: React.FC = () => {
                    <span className="text-xl font-bold text-white">Custom Quote</span>
                  </div>
                </div>
-               <Link 
-                to="/submit-query"
+               <a 
+                href="mailto:business@voltchina.net"
                 className="w-full px-6 py-3 bg-amber-500 hover:bg-amber-400 text-black font-bold rounded-lg transition-colors flex items-center justify-center gap-2"
               >
                 <i className="fa-solid fa-envelope"></i>
                 <span>Contact Us</span>
-              </Link>
+              </a>
             </div>
           </div>
         </div>
