@@ -59,12 +59,12 @@ const Navbar: React.FC<{ forceDark?: boolean }> = ({ forceDark = false }) => {
               </a>
             ))}
             <a 
-              href="https://voltchina.gumroad.com/l/qa" 
+              href="https://voltchina.substack.com/subscribe" 
               target="_blank"
               rel="noopener noreferrer"
               className="px-5 py-2.5 bg-volt hover:bg-volt-hover text-white text-sm font-semibold rounded transition-all shadow-lg shadow-volt/20 hover:shadow-volt/40"
             >
-              Get Priority Access
+              Subscribe to Pro
             </a>
           </div>
 
@@ -96,12 +96,13 @@ const Navbar: React.FC<{ forceDark?: boolean }> = ({ forceDark = false }) => {
             ))}
             <div className="pt-4">
               <a 
-                href="https://voltchina.gumroad.com/l/qa"
+                href="https://voltchina.substack.com/subscribe"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full text-center px-5 py-3 bg-volt hover:bg-volt-hover text-white text-base font-semibold rounded"
+                onClick={() => setMobileMenuOpen(false)}
               >
-                Get Priority Access
+                Subscribe to Pro
               </a>
             </div>
           </div>

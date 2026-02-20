@@ -46,15 +46,13 @@ const Hero: React.FC = () => {
                    <span className="text-sm text-slate-500"> / query</span>
                  </div>
                </div>
-               <a 
-                href="https://voltchina.gumroad.com/l/qa"
-                target="_blank"
-                rel="noopener noreferrer"
+               <Link 
+                to="/submit-query"
                 className="w-full px-6 py-3 bg-volt hover:bg-volt-hover text-white font-bold rounded-lg transition-colors flex items-center justify-center gap-2"
               >
-                <span>Ask an Expert</span>
+                <span>Submit Your Query</span>
                 <i className="fa-solid fa-arrow-right text-sm"></i>
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -90,13 +88,13 @@ const Hero: React.FC = () => {
                    <span className="text-xl font-bold text-white">Custom Quote</span>
                  </div>
                </div>
-               <a 
-                href="mailto:business@voltchina.net"
+               <Link 
+                to="/submit-query"
                 className="w-full px-6 py-3 bg-amber-500 hover:bg-amber-400 text-black font-bold rounded-lg transition-colors flex items-center justify-center gap-2"
               >
                 <i className="fa-solid fa-envelope"></i>
                 <span>Contact Us</span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

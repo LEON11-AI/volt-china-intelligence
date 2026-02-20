@@ -54,17 +54,13 @@ const Research: React.FC = () => {
             
             <div className="flex items-center gap-4 mt-auto">
               <a 
-                href="https://voltchina.gumroad.com/l/byd-solid-state-report" 
-                target="_blank" 
+                href="https://voltchina.substack.com/subscribe" 
+                target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 bg-white hover:bg-slate-200 text-slate-900 py-3 rounded font-bold text-center transition-colors flex items-center justify-center gap-2"
+                className="w-full text-center px-4 py-3 bg-volt hover:bg-volt-hover text-white rounded-lg font-bold transition-all shadow-lg shadow-volt/20 hover:shadow-volt/40 text-sm"
               >
-                <i className="fa-solid fa-download"></i>
-                Download for $0
+                Subscribe for Access
               </a>
-              <div className="text-center px-4">
-                <div className="text-lg font-bold text-slate-400 line-through">$49</div>
-              </div>
             </div>
           </div>
         </div>

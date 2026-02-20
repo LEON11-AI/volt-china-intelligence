@@ -40,12 +40,12 @@ const ResearchIndex: React.FC = () => {
                   <div className="flex items-center justify-between mt-auto pt-4 border-t border-slate-800">
                     <div className="text-xs text-slate-500">Report • Hardware</div>
                     <a 
-                      href="https://voltchina.gumroad.com/l/huawei-ads" 
+                      href="https://voltchina.substack.com/subscribe" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="px-4 py-2 bg-volt hover:bg-volt-hover text-white rounded-lg font-semibold inline-flex items-center gap-2 text-sm transition-colors"
                     >
-                      <span>Get Report ($49)</span>
+                      <span>Subscribe for Access</span>
                       <i className="fa-solid fa-arrow-right text-xs" />
                     </a>
                   </div>

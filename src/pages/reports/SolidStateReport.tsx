@@ -146,7 +146,7 @@ const SolidStateReport: React.FC = () => {
             <i className="fa-solid fa-arrow-left"></i>
             Back
           </a>
-          <a href="https://voltchina.gumroad.com/l/qa" target="_blank" rel="noopener noreferrer" className="px-4 py-2 rounded-md bg-volt hover:bg-volt-hover text-white text-sm font-semibold">Download Full PDF Report</a>
+          <a href="https://voltchina.substack.com/subscribe" target="_blank" rel="noopener noreferrer" className="px-4 py-2 rounded-md bg-volt hover:bg-volt-hover text-white text-sm font-semibold">Subscribe for Access</a>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
@@ -557,9 +557,9 @@ const SolidStateReport: React.FC = () => {
         </div>
         <div className="max-w-7xl mx-auto p-4 md:p-8">
           <div className="flex justify-center mt-8">
-            <a href="https://voltchina.gumroad.com/l/qa" target="_blank" rel="noopener noreferrer" className="px-6 py-3 rounded-lg bg-volt hover:bg-volt-hover text-white font-semibold inline-flex items-center gap-2 shadow-lg shadow-volt/20 hover:shadow-volt/40 transition-all">
+            <a href="https://voltchina.substack.com/subscribe" target="_blank" rel="noopener noreferrer" className="px-6 py-3 rounded-lg bg-volt hover:bg-volt-hover text-white font-semibold inline-flex items-center gap-2 shadow-lg shadow-volt/20 hover:shadow-volt/40 transition-all">
               <i className="fa-regular fa-file-lines" />
-              <span>Download Full PDF Report</span>
+              <span>Subscribe for Access</span>
             </a>
           </div>
         </div>

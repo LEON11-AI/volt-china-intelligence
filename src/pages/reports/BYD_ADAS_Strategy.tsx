@@ -45,7 +45,7 @@ const BYD_ADAS_Strategy: React.FC = () => {
               <i className="fa-solid fa-arrow-left"></i>
               Back
             </a>
-            <a href="https://voltchina.gumroad.com/l/qa" target="_blank" rel="noopener noreferrer" className="px-4 py-2 rounded-md bg-volt hover:bg-volt-hover text-white text-sm font-semibold">Download Full PDF Report</a>
+            <a href="https://voltchina.substack.com/subscribe" target="_blank" rel="noopener noreferrer" className="px-4 py-2 rounded-md bg-volt hover:bg-volt-hover text-white text-sm font-semibold">Subscribe for Access</a>
           </div>
           {src ? (
             <iframe

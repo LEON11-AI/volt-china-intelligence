@@ -60,14 +60,14 @@ const FeaturedReport: React.FC = () => {
             
             <div className="flex flex-col sm:flex-row items-center justify-between gap-3 mt-auto w-full">
               <a 
-                href="https://voltchina.gumroad.com/l/huawei-ads" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto px-6 py-3 bg-volt hover:bg-volt-hover text-white rounded-lg font-bold text-center transition-all shadow-lg shadow-volt/20 hover:shadow-volt/40 flex items-center justify-center gap-2 text-sm"
-              >
-                <span>Get the Report ($49)</span>
-                <i className="fa-solid fa-arrow-right"></i>
-              </a>
+                  href="https://voltchina.substack.com/subscribe" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto px-6 py-3 bg-volt hover:bg-volt-hover text-white rounded-lg font-bold text-center transition-all shadow-lg shadow-volt/20 hover:shadow-volt/40 flex items-center justify-center gap-2 text-sm"
+                >
+                  <span>Subscribe for Access</span>
+                  <i className="fa-solid fa-arrow-right"></i>
+                </a>
               <div className="text-slate-500 text-xs text-right">
                 Instant PDF Download
               </div>
