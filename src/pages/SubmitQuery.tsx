@@ -44,8 +44,11 @@ const SubmitQuery: React.FC = () => {
       {/* Header */}
       <header className="relative z-10 p-6 border-b border-slate-800">
         <div className="max-w-3xl mx-auto flex justify-between items-center">
-          <Link to="/" className="text-xl font-bold flex items-center gap-2">
-            <span className="text-volt">⚡</span> VOLT
+          <Link to="/" className="flex items-center gap-2 group">
+            <img src="/favicon.png" alt="Volt China Logo" className="w-12 h-12 rounded-xl object-cover" />
+            <span className="text-xl font-bold tracking-tight text-white">
+              VOLT CHINA <span className="font-light text-slate-400">| Intelligence</span>
+            </span>
           </Link>
           <div className="text-sm text-slate-400">
             Step {step} of 3
