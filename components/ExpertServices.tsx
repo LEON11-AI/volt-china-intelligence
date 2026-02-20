@@ -47,29 +47,23 @@ const ExpertServices: React.FC = () => {
                   <h3 className="text-xl font-bold text-white">Priority Q&A Service</h3>
                   <p className="text-sm text-slate-400 mt-1">For immediate, specific inquiries.</p>
                 </div>
-                <div className="text-right">
-                  <div className="text-3xl font-bold text-white">$149</div>
-                  <div className="text-xs text-slate-500">per query</div>
-                </div>
               </div>
 
               <div className="h-px w-full bg-slate-800 mb-8"></div>
 
               <div className="space-y-4 mb-8">
-                <FeatureRow icon="fa-stopwatch" text="48-hour turnaround time" />
+                <FeatureRow icon="fa-stopwatch" text="5-7 days turnaround time" />
                 <FeatureRow icon="fa-file-lines" text="Written report delivered via email" />
                 <FeatureRow icon="fa-phone-slash" text="No calls required - Asynchronous" />
                 <FeatureRow icon="fa-user-tie" text="Researched by Senior Analysts" />
               </div>
 
-              <a 
-                href="https://voltchina.substack.com/subscribe"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link 
+                to="/submit-query"
                 className="block w-full py-4 text-center bg-white text-slate-950 hover:bg-slate-200 font-bold rounded-lg transition-colors"
               >
                 Submit Your Question
-              </a>
+              </Link>
               <p className="text-xs text-center text-slate-500 mt-4">
                 100% Satisfaction Guarantee or full refund.
               </p>

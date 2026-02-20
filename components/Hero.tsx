@@ -40,21 +40,13 @@ const Hero: React.FC = () => {
               <p className="text-sm text-slate-400 mt-2">Get verified answers to specific technical or market questions from our network.</p>
             </div>
             <div className="mt-auto pt-6 border-t border-slate-700/50">
-               <div className="flex items-end justify-between mb-4">
-                 <div>
-                   <span className="text-2xl font-bold text-white">$149</span>
-                   <span className="text-sm text-slate-500"> / query</span>
-                 </div>
-               </div>
-               <a 
-                href="https://voltchina.substack.com/subscribe"
-                target="_blank"
-                rel="noopener noreferrer"
+               <Link 
+                to="/submit-query"
                 className="w-full px-6 py-3 bg-volt hover:bg-volt-hover text-white font-bold rounded-lg transition-colors flex items-center justify-center gap-2"
               >
                 <span>Submit Your Query</span>
                 <i className="fa-solid fa-arrow-right text-sm"></i>
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -115,7 +107,7 @@ const Hero: React.FC = () => {
         {/* Stats / Mini Grid */}
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto border-t border-slate-800/50 pt-8">
             <div className="text-center">
-                <div className="text-2xl font-bold text-white">48hr</div>
+                <div className="text-2xl font-bold text-white">5-7 Days</div>
                 <div className="text-xs text-slate-500 uppercase tracking-wider">Turnaround</div>
             </div>
             <div className="text-center">
