@@ -47,6 +47,10 @@ const ExpertServices: React.FC = () => {
                   <h3 className="text-xl font-bold text-white">Priority Q&A Service</h3>
                   <p className="text-sm text-slate-400 mt-1">For immediate, specific inquiries.</p>
                 </div>
+                <div className="text-right">
+                  <div className="text-xl font-bold text-white">Starting at $800</div>
+                  <div className="text-xs text-slate-500">per query</div>
+                </div>
               </div>
 
               <div className="h-px w-full bg-slate-800 mb-8"></div>

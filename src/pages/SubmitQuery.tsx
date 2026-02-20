@@ -212,7 +212,7 @@ const SubmitQuery: React.FC = () => {
                   </div>
                   <div className="flex justify-between border-t border-slate-700 pt-3 mt-3">
                     <span className="text-white font-bold">Deposit Required</span>
-                    <span className="text-volt font-bold">$149.00</span>
+                    <span className="text-volt font-bold">$800.00</span>
                   </div>
                 </div>
               </div>

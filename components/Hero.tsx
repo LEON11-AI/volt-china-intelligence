@@ -40,6 +40,12 @@ const Hero: React.FC = () => {
               <p className="text-sm text-slate-400 mt-2">Get verified answers to specific technical or market questions from our network.</p>
             </div>
             <div className="mt-auto pt-6 border-t border-slate-700/50">
+               <div className="flex items-end justify-between mb-4">
+                 <div>
+                   <span className="text-xl font-bold text-white">Starting at $800</span>
+                   <span className="text-sm text-slate-500"> / query</span>
+                 </div>
+               </div>
                <Link 
                 to="/submit-query"
                 className="w-full px-6 py-3 bg-volt hover:bg-volt-hover text-white font-bold rounded-lg transition-colors flex items-center justify-center gap-2"
