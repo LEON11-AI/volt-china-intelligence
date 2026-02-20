@@ -46,13 +46,15 @@ const Hero: React.FC = () => {
                    <span className="text-sm text-slate-500"> / query</span>
                  </div>
                </div>
-               <Link 
-                to="/submit-query"
+               <a 
+                href="https://voltchina.substack.com/subscribe"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full px-6 py-3 bg-volt hover:bg-volt-hover text-white font-bold rounded-lg transition-colors flex items-center justify-center gap-2"
               >
                 <span>Submit Your Query</span>
                 <i className="fa-solid fa-arrow-right text-sm"></i>
-              </Link>
+              </a>
             </div>
           </div>
 

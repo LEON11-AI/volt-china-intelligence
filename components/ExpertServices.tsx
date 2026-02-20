@@ -62,12 +62,14 @@ const ExpertServices: React.FC = () => {
                 <FeatureRow icon="fa-user-tie" text="Researched by Senior Analysts" />
               </div>
 
-              <Link 
-                to="/submit-query"
+              <a 
+                href="https://voltchina.substack.com/subscribe"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block w-full py-4 text-center bg-white text-slate-950 hover:bg-slate-200 font-bold rounded-lg transition-colors"
               >
                 Submit Your Question
-              </Link>
+              </a>
               <p className="text-xs text-center text-slate-500 mt-4">
                 100% Satisfaction Guarantee or full refund.
               </p>
