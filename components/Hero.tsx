@@ -44,11 +44,17 @@ const Hero: React.FC = () => {
           </p>
           
           <form 
-            action="https://voltchina.substack.com/subscribe" 
-            method="get"
+            action="https://voltchina.substack.com/api/v1/free" 
+            method="post"
             target="_blank"
             className="flex flex-col sm:flex-row gap-3"
           >
+            <input type="hidden" name="first_url" value="https://voltchina.substack.com/subscribe" />
+            <input type="hidden" name="first_referrer" value="https://substack.com/signup" />
+            <input type="hidden" name="current_url" value="https://voltchina.substack.com/subscribe" />
+            <input type="hidden" name="current_referrer" value="https://substack.com/signup" />
+            <input type="hidden" name="referral_code" value="" />
+            <input type="hidden" name="source" value="embed" />
             <input 
               type="email" 
               name="email"
