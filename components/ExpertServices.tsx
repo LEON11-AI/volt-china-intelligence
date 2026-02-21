@@ -64,7 +64,7 @@ const ExpertServices: React.FC = () => {
 
               <Link 
                 to="/submit-query"
-                className="block w-full py-4 text-center bg-white text-slate-950 hover:bg-slate-200 font-bold rounded-lg transition-colors"
+                className="block w-full py-4 text-center bg-volt text-white hover:bg-volt-hover font-bold rounded-lg transition-colors shadow-lg shadow-volt/20 hover:shadow-volt/40"
               >
                 Submit Your Question
               </Link>
