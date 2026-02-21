@@ -44,8 +44,8 @@ const Hero: React.FC = () => {
           </p>
           
           <form 
-            action="https://voltchina.substack.com/api/v1/free" 
-            method="post"
+            action="https://voltchina.substack.com/subscribe" 
+            method="get"
             target="_blank"
             className="flex flex-col sm:flex-row gap-3"
           >
