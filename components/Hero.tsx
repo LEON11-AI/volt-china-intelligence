@@ -2,8 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Hero: React.FC = () => {
-  const [submitted, setSubmitted] = React.useState(false);
-
   return (
     <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
       {/* Background Elements */}
@@ -46,46 +44,27 @@ const Hero: React.FC = () => {
           </p>
           
           <div className="relative">
-            {!submitted ? (
-              <form 
-                action="https://voltchina.substack.com/api/v1/free" 
-                method="post"
-                target="hidden_iframe"
-                onSubmit={() => setTimeout(() => setSubmitted(true), 500)}
-                className="flex flex-col sm:flex-row gap-3"
+            <form 
+              action="https://voltchina.substack.com/subscribe" 
+              method="get"
+              target="_blank"
+              className="flex flex-col sm:flex-row gap-3"
+            >
+              <input type="hidden" name="simple" value="true" />
+              <input 
+                type="email" 
+                name="email"
+                placeholder="Enter your work email..." 
+                required
+                className="flex-1 bg-slate-800 border border-slate-700 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-volt focus:ring-1 focus:ring-volt transition-all placeholder-slate-500"
+              />
+              <button 
+                type="submit"
+                className="bg-volt hover:bg-volt-hover text-white font-bold px-6 py-3 rounded-lg transition-all shadow-lg shadow-volt/20 hover:shadow-volt/40 whitespace-nowrap"
               >
-                <input type="hidden" name="first_url" value="https://voltchina.substack.com/subscribe" />
-                <input type="hidden" name="first_referrer" value="https://substack.com/signup" />
-                <input type="hidden" name="current_url" value="https://voltchina.substack.com/subscribe" />
-                <input type="hidden" name="current_referrer" value="https://substack.com/signup" />
-                <input type="hidden" name="referral_code" value="" />
-                <input type="hidden" name="source" value="embed" />
-                <input 
-                  type="email" 
-                  name="email"
-                  placeholder="Enter your work email..." 
-                  required
-                  className="flex-1 bg-slate-800 border border-slate-700 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-volt focus:ring-1 focus:ring-volt transition-all placeholder-slate-500"
-                />
-                <button 
-                  type="submit"
-                  className="bg-volt hover:bg-volt-hover text-white font-bold px-6 py-3 rounded-lg transition-all shadow-lg shadow-volt/20 hover:shadow-volt/40 whitespace-nowrap"
-                >
-                  Download Free Report
-                </button>
-              </form>
-            ) : (
-              <div className="bg-green-500/10 border border-green-500/20 rounded-lg p-4 text-center animate-fade-in">
-                <div className="flex items-center justify-center gap-2 text-green-400 mb-2">
-                  <i className="fa-solid fa-check-circle text-xl"></i>
-                  <span className="font-bold">Almost there!</span>
-                </div>
-                <p className="text-slate-300 text-sm">
-                  Please check your inbox to confirm your subscription and get the report.
-                </p>
-              </div>
-            )}
-            <iframe name="hidden_iframe" style={{ display: 'none' }}></iframe>
+                Download Free Report
+              </button>
+            </form>
           </div>
           <p className="text-xs text-slate-600 mt-3">
             We respect your inbox. Unsubscribe at any time.
