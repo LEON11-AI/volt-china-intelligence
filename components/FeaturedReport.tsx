@@ -14,6 +14,12 @@ const FeaturedReport: React.FC = () => {
   return (
     <section className="py-12 bg-slate-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-white mb-4">Deep Dive Reports</h2>
+          <p className="text-slate-400 max-w-2xl mx-auto">
+            Our premium research papers break down the engineering and economics behind the headlines.
+          </p>
+        </div>
         <div className="max-w-5xl mx-auto bg-slate-900 rounded-2xl overflow-hidden border border-slate-700 shadow-2xl flex flex-col md:flex-row relative group">
           
           {/* Image Side */}

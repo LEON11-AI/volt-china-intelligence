@@ -4,7 +4,7 @@ import Hero from '../../components/Hero';
 import FeaturedReport from '../../components/FeaturedReport';
 import SocialProof from '../../components/SocialProof';
 import ExpertServices from '../../components/ExpertServices';
-import Research from '../../components/Research';
+import Enterprise from '../../components/Enterprise';
 import About from '../../components/About';
 import Footer from '../../components/Footer';
 
@@ -14,10 +14,10 @@ const Home: React.FC = () => {
       <Navbar />
       <main>
         <Hero />
-        <FeaturedReport />
         <SocialProof />
+        <FeaturedReport />
         <ExpertServices />
-        <Research />
+        <Enterprise />
         <About />
       </main>
       <Footer />
