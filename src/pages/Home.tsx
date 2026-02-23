@@ -19,7 +19,6 @@ const Home: React.FC = () => {
         <FeaturedReport />
         <ExpertServices />
         <PricingPlans />
-        <Enterprise />
         <About />
       </main>
       <Footer />
