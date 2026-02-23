@@ -138,11 +138,11 @@ const PricingPlans: React.FC = () => {
                 </li>
                 <li className="flex items-start gap-3 text-sm text-slate-300">
                   <i className="fa-solid fa-check text-amber-500 mt-1"></i>
-                  <span>Custom Competitor Benchmarking</span>
+                  <span>Priority Asynchronous Q&A</span>
                 </li>
                 <li className="flex items-start gap-3 text-sm text-slate-300">
                   <i className="fa-solid fa-check text-amber-500 mt-1"></i>
-                  <span>On-the-ground Factory Validation</span>
+                  <span>Raw Document Translation</span>
                 </li>
               </ul>
             </div>
