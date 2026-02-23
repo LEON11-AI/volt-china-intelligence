@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
         
         <div className="text-center md:text-left">
           <div className="text-lg font-bold text-white mb-1">VOLT CHINA</div>
-          <p className="text-sm text-slate-500">© 2025 Volt China Intelligence. All rights reserved.</p>
+          <p className="text-sm text-slate-500">© 2026 Volt China Intelligence. All rights reserved.</p>
           <p className="mt-2 text-[11px] text-slate-500 max-w-xl">
             Disclaimer: Volt China Intelligence provides market analysis for informational purposes only and does not constitute financial investment advice.
           </p>
