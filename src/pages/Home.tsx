@@ -16,8 +16,8 @@ const Home: React.FC = () => {
       <main>
         <Hero />
         <SocialProof />
-        <PricingPlans />
         <FeaturedReport />
+        <PricingPlans />
         <ExpertServices />
         <About />
       </main>
