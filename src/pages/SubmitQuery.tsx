@@ -6,13 +6,15 @@ const SubmitQuery: React.FC = () => {
   const [formData, setFormData] = useState({
     company: '',
     supplyChain: '',
-    budget: '',
-    timeline: '',
-    email: ''
+    email: '',
+    agreed: false
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
+    const target = e.target as HTMLInputElement;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+    
     setFormData(prev => ({
       ...prev,
       [name]: value
@@ -114,48 +116,13 @@ const SubmitQuery: React.FC = () => {
             </div>
           )}
 
-          {/* Step 2: Budget & Timeline */}
+          {/* Step 2: Confirmation & Email */}
           {step === 2 && (
             <div className="animate-fade-in">
               <h2 className="text-3xl font-bold mb-2">Project Parameters</h2>
               <p className="text-slate-400 mb-8">Help us understand your constraints and requirements.</p>
               
               <div className="space-y-6">
-                <div>
-                  <label htmlFor="budget" className="block text-sm font-medium text-slate-300 mb-2">Estimated Budget (USD)</label>
-                  <select
-                    id="budget"
-                    name="budget"
-                    value={formData.budget}
-                    onChange={handleInputChange}
-                    className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-volt focus:ring-1 focus:ring-volt transition-colors appearance-none"
-                  >
-                    <option value="" disabled>Select a range</option>
-                    <option value="1k-5k">$1,000 - $5,000</option>
-                    <option value="5k-10k">$5,000 - $10,000</option>
-                    <option value="10k-50k">$10,000 - $50,000</option>
-                    <option value="50k+">$50,000+</option>
-                  </select>
-                </div>
-                
-                <div>
-                  <label htmlFor="timeline" className="block text-sm font-medium text-slate-300 mb-2">Desired Timeline</label>
-                  <select
-                    id="timeline"
-                    name="timeline"
-                    value={formData.timeline}
-                    onChange={handleInputChange}
-                    className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-volt focus:ring-1 focus:ring-volt transition-colors appearance-none"
-                  >
-                    <option value="" disabled>Select a timeline</option>
-                    <option value="asap">ASAP (Urgent)</option>
-                    <option value="1-week">Within 1 week</option>
-                    <option value="2-weeks">Within 2 weeks</option>
-                    <option value="1-month">Within 1 month</option>
-                    <option value="flexible">Flexible</option>
-                  </select>
-                </div>
-
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-2">Your Business Email</label>
                   <input
@@ -168,6 +135,25 @@ const SubmitQuery: React.FC = () => {
                     className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-volt focus:ring-1 focus:ring-volt transition-colors"
                   />
                 </div>
+
+                <div className="bg-slate-800/50 rounded-lg p-4 border border-slate-700">
+                   <h3 className="text-sm font-medium text-slate-300 mb-3">Service Agreement</h3>
+                   <label className="flex items-start gap-3 cursor-pointer">
+                     <div className="relative flex items-center">
+                       <input 
+                        type="checkbox"
+                        name="agreed"
+                        checked={formData.agreed}
+                        onChange={handleInputChange}
+                        className="peer h-5 w-5 cursor-pointer appearance-none rounded border border-slate-600 bg-slate-800 transition-all checked:border-volt checked:bg-volt focus:outline-none"
+                       />
+                       <i className="fa-solid fa-check absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-xs opacity-0 peer-checked:opacity-100 pointer-events-none"></i>
+                     </div>
+                     <span className="text-sm text-slate-400 leading-relaxed select-none">
+                       I understand that this Priority Q&A is a standardized brief delivered within 5-7 business days for a flat fee of $800.
+                     </span>
+                   </label>
+                </div>
               </div>
 
               <div className="mt-8 flex justify-between">
@@ -179,7 +165,7 @@ const SubmitQuery: React.FC = () => {
                 </button>
                 <button
                   onClick={nextStep}
-                  disabled={!formData.budget || !formData.timeline || !formData.email}
+                  disabled={!formData.email || !formData.agreed}
                   className="px-6 py-3 bg-volt hover:bg-volt-hover text-white font-bold rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
                 >
                   Next <i className="fa-solid fa-arrow-right"></i>
