@@ -121,7 +121,7 @@ const PricingPlans: React.FC = () => {
             
             <a 
               href="mailto:business@voltchina.net"
-              className="block w-full py-3 text-center bg-amber-500 hover:bg-amber-400 text-black font-bold rounded-lg transition-colors mt-4"
+              className="block w-full py-3 text-center bg-transparent hover:bg-amber-500/10 text-amber-500 font-bold rounded-lg transition-colors border border-amber-500/50 mt-4"
             >
               Contact Us
             </a>
