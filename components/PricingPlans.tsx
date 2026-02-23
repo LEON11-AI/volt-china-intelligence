@@ -14,7 +14,7 @@ const PricingPlans: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
           
           {/* Column 1: The Observer (Free) */}
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-8 flex flex-col">
+          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-8 flex flex-col hover:border-slate-700 transition-colors">
             <div className="mb-4">
               <h3 className="text-xl font-bold text-white">Newsletter</h3>
               <div className="mt-4 flex items-baseline">
@@ -58,8 +58,8 @@ const PricingPlans: React.FC = () => {
           </div>
 
           {/* Column 2: The Investor (Institutional Access) - Recommended */}
-          <div className="bg-slate-900 border-2 border-volt rounded-2xl p-8 flex flex-col relative transform md:-translate-y-4 shadow-2xl shadow-volt/10">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-volt text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wide">
+          <div className="bg-slate-900 border-2 border-volt rounded-2xl p-8 flex flex-col relative transform md:-translate-y-4 shadow-2xl shadow-volt/10 transition-transform duration-300 hover:scale-105 z-10">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-volt text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wide shadow-lg shadow-volt/20">
               Most Popular
             </div>
             
@@ -108,7 +108,7 @@ const PricingPlans: React.FC = () => {
           </div>
 
           {/* Column 3: Enterprise (Custom) */}
-          <div className="bg-slate-900 border border-amber-500/30 rounded-2xl p-8 flex flex-col">
+          <div className="bg-slate-900 border border-amber-500/30 rounded-2xl p-8 flex flex-col hover:border-amber-500/50 transition-colors">
             <div className="mb-4">
               <h3 className="text-xl font-bold text-amber-400">Enterprise</h3>
               <div className="mt-4 flex items-baseline">
