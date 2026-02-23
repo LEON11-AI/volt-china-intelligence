@@ -97,11 +97,11 @@ const PricingPlans: React.FC = () => {
                 </li>
                 <li className="flex items-start gap-3 text-sm text-slate-300">
                   <i className="fa-solid fa-check text-volt mt-1"></i>
-                  <span><strong className="text-white">Priority Topic Request</strong>: Direct line to suggest research topics.</span>
+                  <span><strong className="text-white">Priority Asynchronous Q&A</strong>: Direct line to suggest research topics.</span>
                 </li>
                 <li className="flex items-start gap-3 text-sm text-slate-300">
                   <i className="fa-solid fa-check text-volt mt-1"></i>
-                  <span><strong className="text-white">Team License</strong>: Share reports within your organization (up to 5 seats).</span>
+                  <span><strong className="text-white">Raw Document Translation</strong>: Share reports within your organization (up to 5 seats).</span>
                 </li>
               </ul>
             </div>
