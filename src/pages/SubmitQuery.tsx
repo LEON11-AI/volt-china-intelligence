@@ -32,7 +32,7 @@ const SubmitQuery: React.FC = () => {
   // This would be replaced with your actual Stripe Payment Link or integration
   const handlePayment = () => {
     // Example: Redirect to Stripe Payment Link
-    window.location.href = 'https://buy.stripe.com/test_cNi8wH0TX9Dh3jt6kmeIw03'; 
+    window.location.href = 'https://buy.stripe.com/aFa00b6fwgwY6xu90q4F205'; 
   };
 
   return (
