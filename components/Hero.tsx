@@ -4,6 +4,14 @@ import { Link } from 'react-router-dom';
 const Hero: React.FC = () => {
   const [email, setEmail] = React.useState('');
 
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+    // 尝试构建完整的订阅链接，并将 email 参数放在最前面
+    const subscribeUrl = `https://voltchina.substack.com/subscribe?email=${encodeURIComponent(email)}&simple=true`;
+    window.open(subscribeUrl, '_blank');
+  };
+
   return (
     <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
       {/* Background Elements */}
@@ -46,23 +54,22 @@ const Hero: React.FC = () => {
           </p>
           
           <div className="relative">
-            <div className="flex flex-col sm:flex-row gap-3">
+            <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3">
               <input 
                 type="email" 
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your work email..." 
+                required
                 className="flex-1 bg-slate-800 border border-slate-700 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-volt focus:ring-1 focus:ring-volt transition-all placeholder-slate-500"
               />
-              <a 
-                href={`https://voltchina.substack.com/subscribe?simple=true&email=${encodeURIComponent(email)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-volt hover:bg-volt-hover text-white font-bold px-6 py-3 rounded-lg transition-all shadow-lg shadow-volt/20 hover:shadow-volt/40 whitespace-nowrap text-center flex items-center justify-center"
+              <button 
+                type="submit"
+                className="bg-volt hover:bg-volt-hover text-white font-bold px-6 py-3 rounded-lg transition-all shadow-lg shadow-volt/20 hover:shadow-volt/40 whitespace-nowrap text-center flex items-center justify-center cursor-pointer"
               >
                 Download Free Report
-              </a>
-            </div>
+              </button>
+            </form>
           </div>
           <p className="text-xs text-slate-600 mt-3">
             We respect your inbox. Unsubscribe at any time.
