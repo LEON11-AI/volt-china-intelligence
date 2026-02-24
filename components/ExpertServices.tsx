@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 const ExpertServices: React.FC = () => {
   return (
@@ -62,12 +61,12 @@ const ExpertServices: React.FC = () => {
                 <FeatureRow icon="fa-user-tie" text="Researched by Senior Analysts" />
               </div>
 
-              <Link 
-                to="/submit-query"
+              <a 
+                href="https://buy.stripe.com/aFa00b6fwgwY6xu90q4F205"
                 className="block w-full py-4 text-center bg-volt text-white hover:bg-volt-hover font-bold rounded-lg transition-colors shadow-lg shadow-volt/20 hover:shadow-volt/40"
               >
                 Submit Your Question
-              </Link>
+              </a>
               <p className="text-xs text-center text-slate-500 mt-4">
                 100% Satisfaction Guarantee or full refund.
               </p>

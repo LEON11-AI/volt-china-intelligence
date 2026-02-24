@@ -75,7 +75,7 @@ const PricingPlans: React.FC = () => {
             </div>
             
             <a 
-              href="https://buy.stripe.com/test_cNi8wH0TX9Dh3jt6kmeIw03" 
+              href="https://buy.stripe.com/aFa14fcDU0y0f40foO4F204" 
               className="block w-full py-3 text-center bg-volt hover:bg-volt-hover text-white font-bold rounded-lg transition-colors shadow-lg shadow-volt/20 hover:shadow-volt/40 mt-4"
             >
               Get Instant Access
