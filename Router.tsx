@@ -8,12 +8,14 @@ import ResearchIndex from './src/pages/ResearchIndex';
 import BYD_ADAS_Strategy from './src/pages/reports/BYD_ADAS_Strategy';
 import BYD_Song_Plus_2026 from './src/pages/reports/BYD_Song_Plus_2026';
 import BYD_Humanoid_Robot from './src/pages/reports/BYD_Humanoid_Robot';
+import SubmitQuery from './src/pages/SubmitQuery';
 
 const Router: React.FC = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
+        <Route path="/submit-query" element={<SubmitQuery />} />
         <Route path="/research" element={<ResearchPage />} />
         <Route path="/research/index" element={<ResearchIndex />} />
         <Route path="/research/solid-state-battery" element={<SolidStateReport />} />
