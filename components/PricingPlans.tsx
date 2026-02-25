@@ -1,4 +1,4 @@
-import React from 'react';
+import { Link } from 'react-router-dom';
 
 const PricingPlans: React.FC = () => {
   return (
@@ -74,12 +74,12 @@ const PricingPlans: React.FC = () => {
               </p>
             </div>
             
-            <a 
-              href="https://buy.stripe.com/aFa14fcDU0y0f40foO4F204" 
+            <Link 
+              to="/request-access"
               className="block w-full py-3 text-center bg-volt hover:bg-volt-hover text-white font-bold rounded-lg transition-colors shadow-lg shadow-volt/20 hover:shadow-volt/40 mt-4"
             >
-              Get Instant Access
-            </a>
+              Request Invoice
+            </Link>
 
             <div className="mt-8 pt-8 border-t border-slate-800">
               <ul className="space-y-4">

@@ -29,10 +29,29 @@ const SubmitQuery: React.FC = () => {
     setStep(prev => prev - 1);
   };
 
-  // This would be replaced with your actual Stripe Payment Link or integration
-  const handlePayment = () => {
-    // Example: Redirect to Stripe Payment Link
-    window.location.href = 'https://buy.stripe.com/aFa00b6fwgwY6xu90q4F205'; 
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = () => {
+    // 构建邮件主题和正文
+    const subject = `New Priority Query Request: ${formData.company}`;
+    const body = `
+New Priority Query Request
+
+Target Company: ${formData.company}
+Specific Supply Chain / Component: ${formData.supplyChain}
+Business Email: ${formData.email}
+
+Agreed to Service Terms: Yes
+    `.trim();
+
+    // 构建 mailto 链接
+    const mailtoLink = `mailto:business@voltchina.net?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    // 打开邮件客户端
+    window.location.href = mailtoLink;
+    
+    // 显示提交成功状态
+    setIsSubmitted(true);
   };
 
   return (
@@ -174,15 +193,15 @@ const SubmitQuery: React.FC = () => {
             </div>
           )}
 
-          {/* Step 3: Payment & Confirmation */}
-          {step === 3 && (
+          {/* Step 3: Review & Submit */}
+          {step === 3 && !isSubmitted && (
             <div className="animate-fade-in text-center">
               <div className="w-16 h-16 bg-volt/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                <i className="fa-solid fa-shield-halved text-2xl text-volt"></i>
+                <i className="fa-solid fa-file-contract text-2xl text-volt"></i>
               </div>
-              <h2 className="text-3xl font-bold mb-4">Secure Pre-authorization</h2>
+              <h2 className="text-3xl font-bold mb-4">Review Request</h2>
               <p className="text-slate-400 mb-8 max-w-md mx-auto">
-                To initiate this request, a fully refundable deposit is required. We will review your request and confirm feasibility within 24 hours.
+                Please review your query details before submitting for analysis.
               </p>
               
               <div className="bg-slate-800/50 rounded-xl p-6 mb-8 text-left border border-slate-700">
@@ -196,20 +215,23 @@ const SubmitQuery: React.FC = () => {
                     <span className="text-slate-400">Focus</span>
                     <span className="font-medium truncate max-w-[200px]">{formData.supplyChain}</span>
                   </div>
-                  <div className="flex justify-between border-t border-slate-700 pt-3 mt-3">
-                    <span className="text-white font-bold">Deposit Required</span>
-                    <span className="text-volt font-bold">$800.00</span>
-                  </div>
                 </div>
+              </div>
+
+              <div className="mb-6 p-4 bg-slate-900/80 border border-slate-700 rounded-lg text-left">
+                <p className="text-xs text-slate-400 leading-relaxed font-mono">
+                  <span className="text-volt font-bold uppercase mr-1">Please note:</span> 
+                  Submitting this form does not guarantee acceptance. Our senior analysts will review your query within 24 hours to ensure we have the on-the-ground data to answer it. If accepted, you will receive an official invoice for $800. Research begins once the invoice is cleared.
+                </p>
               </div>
 
               <div className="space-y-4">
                 <button
-                  onClick={handlePayment}
+                  onClick={handleSubmit}
                   className="w-full px-6 py-4 bg-gradient-to-r from-volt to-orange-600 hover:from-volt-hover hover:to-orange-500 text-white font-bold rounded-xl transition-all transform hover:scale-[1.02] shadow-lg shadow-volt/20 flex items-center justify-center gap-2"
                 >
-                  <span>Proceed to Payment</span>
-                  <i className="fa-solid fa-lock text-sm"></i>
+                  <span>Submit Query for Review</span>
+                  <i className="fa-solid fa-paper-plane text-sm"></i>
                 </button>
                 
                 <button
@@ -219,11 +241,29 @@ const SubmitQuery: React.FC = () => {
                   Go Back
                 </button>
               </div>
-              
-              <p className="text-xs text-slate-500 mt-6">
-                <i className="fa-brands fa-stripe text-slate-400 mr-1"></i>
-                Secure payment powered by Stripe. No charges will be finalized until an expert accepts your request.
+            </div>
+          )}
+
+          {/* Success State */}
+          {step === 3 && isSubmitted && (
+            <div className="animate-fade-in text-center">
+              <div className="w-16 h-16 bg-volt/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i className="fa-solid fa-check text-2xl text-volt"></i>
+              </div>
+              <h2 className="text-3xl font-bold mb-4">Query Received</h2>
+              <p className="text-slate-400 mb-8 max-w-md mx-auto">
+                Our analysts are currently reviewing your request. We will contact you at your provided email shortly.
               </p>
+              
+              <div className="space-y-4">
+                <Link
+                  to="/"
+                  className="w-full px-6 py-4 bg-gradient-to-r from-volt to-orange-600 hover:from-volt-hover hover:to-orange-500 text-white font-bold rounded-xl transition-all transform hover:scale-[1.02] shadow-lg shadow-volt/20 flex items-center justify-center gap-2"
+                >
+                  <span>Back to Home</span>
+                  <i className="fa-solid fa-house text-sm"></i>
+                </Link>
+              </div>
             </div>
           )}
 
