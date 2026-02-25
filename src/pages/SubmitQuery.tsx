@@ -56,7 +56,7 @@ const SubmitQuery: React.FC = () => {
         <div className="w-full max-w-2xl bg-slate-900/50 border border-slate-800 rounded-2xl p-8 shadow-2xl backdrop-blur-sm overflow-hidden">
           <iframe 
             data-tally-src="https://tally.so/embed/GxzNPO?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
-            loading="lazy" 
+            loading="eager" 
             width="100%" 
             height="100%" 
             frameBorder="0" 
