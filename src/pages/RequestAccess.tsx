@@ -66,8 +66,8 @@ const RequestAccess: React.FC = () => {
       </header>
 
       {/* Main Content */}
-      <main className="flex-grow flex items-center justify-center p-6 relative z-10">
-        <div className="w-full max-w-xl bg-slate-900/50 border border-slate-800 rounded-2xl p-8 shadow-2xl backdrop-blur-sm animate-fade-in relative min-h-[650px]">
+      <main className="flex-grow flex items-center justify-center p-4 md:p-6 relative z-10">
+        <div className="w-full max-w-xl bg-slate-900/50 border border-slate-800 rounded-2xl p-4 md:p-8 shadow-2xl backdrop-blur-sm animate-fade-in relative min-h-[650px]">
           {isLoading && (
             <div className="absolute inset-0 flex flex-col items-center justify-center bg-slate-900/80 z-20">
               <div className="w-12 h-12 border-4 border-volt border-t-transparent rounded-full animate-spin mb-4"></div>

@@ -71,7 +71,7 @@ const SubmitQuery: React.FC = () => {
       {/* Main Content */}
       <main className="flex-grow flex flex-col items-center justify-center p-6 relative z-10 h-full">
         <h1 className="text-3xl font-bold mb-8 text-center">Priority Intelligence Request</h1>
-        <div className="w-full max-w-2xl bg-slate-900/50 border border-slate-800 rounded-2xl p-8 shadow-2xl backdrop-blur-sm overflow-hidden relative min-h-[650px]">
+        <div className="w-full max-w-2xl bg-slate-900/50 border border-slate-800 rounded-2xl p-4 md:p-8 shadow-2xl backdrop-blur-sm overflow-hidden relative min-h-[650px]">
           {isLoading && (
             <div className="absolute inset-0 flex flex-col items-center justify-center bg-slate-900/80 z-20">
               <div className="w-12 h-12 border-4 border-volt border-t-transparent rounded-full animate-spin mb-4"></div>
