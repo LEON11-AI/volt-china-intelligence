@@ -78,7 +78,7 @@ const PricingPlans: React.FC = () => {
               to="/request-access"
               className="block w-full py-3 text-center bg-volt hover:bg-volt-hover text-white font-bold rounded-lg transition-colors shadow-lg shadow-volt/20 hover:shadow-volt/40 mt-4"
             >
-              Request Invoice
+              Apply for Access
             </Link>
 
             <div className="mt-8 pt-8 border-t border-slate-800">
