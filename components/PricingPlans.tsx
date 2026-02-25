@@ -119,12 +119,12 @@ const PricingPlans: React.FC = () => {
               </p>
             </div>
             
-            <a 
-              href="mailto:business@voltchina.net"
+            <Link 
+              to="/request-access"
               className="block w-full py-3 text-center bg-transparent hover:bg-amber-500/10 text-amber-500 font-bold rounded-lg transition-colors border border-amber-500/50 mt-4"
             >
               Contact Us
-            </a>
+            </Link>
 
             <div className="mt-8 pt-8 border-t border-slate-800">
               <ul className="space-y-4">
