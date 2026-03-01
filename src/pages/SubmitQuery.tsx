@@ -6,8 +6,13 @@ const SubmitQuery: React.FC = () => {
   const [showFallback, setShowFallback] = React.useState(false);
 
   React.useEffect(() => {
+    // 2秒后强制移除 Loading，避免无限等待
+    const loadingTimer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+
     // 设置超时计时器，5秒后显示备用按钮
-    const timer = setTimeout(() => {
+    const fallbackTimer = setTimeout(() => {
       if (isLoading) {
         setShowFallback(true);
       }
@@ -34,7 +39,10 @@ const SubmitQuery: React.FC = () => {
       document.body.appendChild(script);
     }
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(loadingTimer);
+      clearTimeout(fallbackTimer);
+    };
   }, [isLoading]);
 
   const handleIframeLoad = () => {
@@ -95,7 +103,13 @@ const SubmitQuery: React.FC = () => {
             height="100%" 
             frameBorder="0" 
             title="Priority Intelligence Request"
-            style={{ margin: 0, minHeight: '650px', overflow: 'hidden' }}
+            style={{ 
+              margin: 0, 
+              minHeight: '650px', 
+              overflow: 'hidden',
+              opacity: isLoading ? 0 : 1,
+              transition: 'opacity 0.5s ease-in-out'
+            }}
             onLoad={handleIframeLoad}
           ></iframe>
         </div>
