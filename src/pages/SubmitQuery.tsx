@@ -19,11 +19,7 @@ const SubmitQuery: React.FC = () => {
     const loadTally = () => {
       if (typeof (window as any).Tally !== 'undefined') {
         (window as any).Tally.loadEmbeds();
-        setIsLoading(false); // 脚本加载完成后标记为加载结束（但这不代表iframe内容加载完毕，iframe onload更准确）
-      } else {
-        document.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((e) => {
-          (e as HTMLIFrameElement).src = (e as HTMLElement).dataset.tallySrc || "";
-        });
+        // 脚本加载完成不直接 setIsLoaded(false)，等待 iframe onLoad
       }
     };
 
@@ -32,9 +28,9 @@ const SubmitQuery: React.FC = () => {
     } else if (document.querySelector(`script[src="${scriptUrl}"]`) === null) {
       const script = document.createElement("script");
       script.src = scriptUrl;
-      script.async = true; // 使用 async
+      script.async = true; 
       script.onload = loadTally;
-      script.onerror = () => setShowFallback(true); // 脚本加载失败显示备用
+      script.onerror = () => setShowFallback(true);
       document.body.appendChild(script);
     }
 
@@ -92,6 +88,7 @@ const SubmitQuery: React.FC = () => {
             </div>
           )}
           <iframe 
+            src="https://tally.so/embed/GxzNPO?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
             data-tally-src="https://tally.so/embed/GxzNPO?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
             loading="eager" 
             width="100%" 

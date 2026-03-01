@@ -19,11 +19,6 @@ const RequestAccess: React.FC = () => {
     const loadTally = () => {
       if (typeof (window as any).Tally !== 'undefined') {
         (window as any).Tally.loadEmbeds();
-        setIsLoading(false);
-      } else {
-        document.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((e) => {
-          (e as HTMLIFrameElement).src = (e as HTMLElement).dataset.tallySrc || "";
-        });
       }
     };
 
@@ -89,6 +84,7 @@ const RequestAccess: React.FC = () => {
           )}
           
           <iframe 
+            src="https://tally.so/embed/vGA7Rg?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
             data-tally-src="https://tally.so/embed/vGA7Rg?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
             loading="eager" 
             width="100%" 
