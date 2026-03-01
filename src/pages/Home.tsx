@@ -1,7 +1,6 @@
 import React from 'react';
 import Navbar from '../../components/Navbar';
 import Hero from '../../components/Hero';
-import FeaturedReport from '../../components/FeaturedReport';
 import SocialProof from '../../components/SocialProof';
 import ExpertServices from '../../components/ExpertServices';
 import Enterprise from '../../components/Enterprise';
@@ -16,7 +15,6 @@ const Home: React.FC = () => {
       <main>
         <Hero />
         <SocialProof />
-        <FeaturedReport />
         <PricingPlans />
         <ExpertServices />
         <About />
