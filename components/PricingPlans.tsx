@@ -115,7 +115,7 @@ const PricingPlans: React.FC = () => {
                 <span className="text-4xl font-bold text-white">Custom</span>
               </div>
               <p className="text-sm text-slate-400 mt-4 min-h-[40px]">
-                For large organizations needing bespoke research and on-the-ground validation.
+                For large organizations needing bespoke research, on-the-ground validation, and direct hardware sourcing.
               </p>
             </div>
             
@@ -143,6 +143,10 @@ const PricingPlans: React.FC = () => {
                 <li className="flex items-start gap-3 text-sm text-slate-300">
                   <i className="fa-solid fa-check text-amber-500 mt-1"></i>
                   <span>Raw Document Translation</span>
+                </li>
+                <li className="flex items-start gap-3 text-sm text-slate-300">
+                  <i className="fa-solid fa-check text-amber-500 mt-1"></i>
+                  <span><strong>Hardware Procurement & Matchmaking</strong> (Direct sourcing for Chinese robotics and EV components).</span>
                 </li>
               </ul>
             </div>
