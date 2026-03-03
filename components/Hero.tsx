@@ -32,12 +32,12 @@ const Hero: React.FC = () => {
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight mb-6 leading-tight max-w-5xl mx-auto">
           Unrivaled Intelligence on <br className="hidden md:block" />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400">
-            China's EV Revolution.
+            China's EV & Robotics Revolution.
           </span>
         </h1>
         
         <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-          We bridge the context gap. Delivering expert analysis and curated engineering data on the world's fastest-moving automotive market for institutional investors.
+          We bridge the context gap. Delivering expert analysis and curated engineering data on the world's fastest-moving hard tech supply chain for institutional investors.
         </p>
 
         {/* Lead Magnet / Email Capture */}
