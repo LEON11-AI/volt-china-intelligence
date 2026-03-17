@@ -38,7 +38,7 @@ const Navbar: React.FC<{ forceDark?: boolean }> = ({ forceDark = false }) => {
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center gap-2 group">
-              <img src="/favicon.png" alt="Volt China Logo" className="w-16 h-16 rounded-xl object-cover" />
+              <img src="/VC.png" alt="Volt China Logo" className="w-16 h-16 rounded-xl object-cover" />
               <span className="text-xl font-bold tracking-tight text-white">
                 VOLT CHINA <span className="font-light text-slate-400">| Intelligence</span>
               </span>
@@ -79,10 +79,18 @@ const Navbar: React.FC<{ forceDark?: boolean }> = ({ forceDark = false }) => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-slate-900 border-b border-slate-800">
+        <div className="md:hidden absolute top-20 left-0 w-full bg-slate-900 border-b border-slate-800 shadow-2xl z-50 animate-fade-in-up">
           <div className="px-4 pt-2 pb-6 space-y-1">
+            <div className="flex items-center mb-4 pb-4 border-b border-slate-800">
+              <Link to="/" className="flex items-center gap-2 group" onClick={() => setMobileMenuOpen(false)}>
+                <img src="/VC.png" alt="Volt China Logo" className="w-16 h-16 rounded-xl object-cover" />
+                <span className="text-xl font-bold tracking-tight text-white">
+                  VOLT CHINA <span className="font-light text-slate-400">| Intelligence</span>
+                </span>
+              </Link>
+            </div>
             {navLinks.map((link) => (
               <a
                 key={link.name}
