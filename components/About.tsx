@@ -27,11 +27,34 @@ const About: React.FC = () => {
         
         <h2 className="text-2xl font-bold text-white mb-4">Leon, Founder</h2>
         
-        <p className="text-lg text-slate-400 leading-relaxed mb-8">
-          Reporting from the ground in China. Focused on in-depth engineering and supply chain analysis. 
-          My mission is to cut through the hype and provide investors with the raw, unfiltered reality 
-          of the Chinese automotive manufacturing prowess.
-        </p>
+        <div className="text-base md:text-lg text-slate-400 leading-relaxed mb-8 text-left space-y-5 max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl font-semibold text-white text-center mb-8">
+            The Bridge to China's Hard-Tech Reality.
+          </p>
+          <p>
+            Volt China is an independent intelligence platform founded by a solo research analyst deeply immersed in the Chinese technology ecosystem.
+          </p>
+          <p>
+            I don't sell insider leaks, and I don't rely on corporate PR. Instead, I specialize in extreme OSINT (Open Source Intelligence).
+          </p>
+          <p>
+            While Western analysts wait for translated press releases, I directly mine and decode the raw, unfiltered data sources at the ground level:
+          </p>
+          <ul className="list-disc pl-5 md:pl-8 space-y-3 text-slate-300 py-2">
+            <li><strong className="text-white">CNIPA Engineering Patents</strong> (translating complex mechanical blueprints before they hit global markets).</li>
+            <li><strong className="text-white">Tier-2/Tier-3 Supplier Procurement Bids</strong> (tracking exactly who is supplying the lasers, motors, and chips).</li>
+            <li><strong className="text-white">Local Manufacturing Capacity Reports</strong> (verifying true yield rates and BOM costs).</li>
+          </ul>
+          <p>
+            The language barrier and fragmented nature of Chinese domestic data create a massive blind spot for global investors. My mission is to eliminate that blind spot.
+          </p>
+          <p>
+            Whether you are a hedge fund manager or an automotive strategist, Volt China saves you hundreds of hours of research by delivering the exact engineering and supply chain realities driving the world's fastest-moving market.
+          </p>
+          <p className="font-bold text-volt text-center pt-6 text-xl">
+            Strictly data-driven. Zero hype.
+          </p>
+        </div>
 
         <div className="flex justify-center gap-6">
           <a href="mailto:business@voltchina.net" className="text-slate-400 hover:text-volt transition-colors">
