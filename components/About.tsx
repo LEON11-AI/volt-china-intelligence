@@ -10,7 +10,7 @@ const About: React.FC = () => {
               <div className="absolute -inset-1 bg-gradient-to-tr from-yellow-400 via-volt to-orange-600 rounded-full blur opacity-40 group-hover:opacity-60 transition duration-500"></div>
               
               <img 
-                  src="/favicon.png"
+                  src="/VC.png"
                   alt="Volt China"
                   loading="lazy"
                   decoding="async"
