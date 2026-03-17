@@ -14,8 +14,8 @@ const About: React.FC = () => {
               2. Change the src below to: src="/leon-avatar.png"
             */}
             <img 
-                src="/leon-avatar.webp"
-                alt="Leon, Founder"
+                src="/vc.png"
+                alt="Volt China"
                 loading="lazy"
                 decoding="async"
                 width={128}
@@ -25,7 +25,7 @@ const About: React.FC = () => {
             />
         </div>
         
-        <h2 className="text-2xl font-bold text-white mb-4">Leon, Founder</h2>
+        <h2 className="text-2xl font-bold text-white mb-4">Volt China Intelligence</h2>
         
         <div className="text-base md:text-lg text-slate-400 leading-relaxed mb-8 text-left space-y-5 max-w-2xl mx-auto">
           <p className="text-xl md:text-2xl font-semibold text-white text-center mb-8">
