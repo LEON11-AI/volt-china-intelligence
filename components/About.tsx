@@ -30,13 +30,13 @@ const About: React.FC = () => {
         <div className="bg-slate-900/50 border border-slate-800 rounded-2xl p-8 md:p-12 shadow-2xl backdrop-blur-sm">
           <div className="text-base md:text-lg text-slate-300 leading-relaxed space-y-6">
             <p>
-              Volt China is an independent intelligence platform founded by a solo research analyst deeply immersed in the Chinese technology ecosystem.
+              Volt China is an independent intelligence platform deeply immersed in the Chinese technology ecosystem.
             </p>
             <p>
-              I don't sell insider leaks, and I don't rely on corporate PR. Instead, I specialize in extreme OSINT (Open Source Intelligence).
+              We don't sell insider leaks, and we don't rely on corporate PR. Instead, we specialize in extreme OSINT (Open Source Intelligence).
             </p>
             <p>
-              While Western analysts wait for translated press releases, I directly mine and decode the raw, unfiltered data sources at the ground level:
+              While Western analysts wait for translated press releases, we directly mine and decode the raw, unfiltered data sources at the ground level:
             </p>
             <div className="bg-slate-950/50 rounded-xl p-6 border border-slate-800/50 my-6">
               <ul className="space-y-4">
@@ -55,7 +55,7 @@ const About: React.FC = () => {
               </ul>
             </div>
             <p>
-              The language barrier and fragmented nature of Chinese domestic data create a massive blind spot for global investors. My mission is to eliminate that blind spot.
+              The language barrier and fragmented nature of Chinese domestic data create a massive blind spot for global investors. Our mission is to eliminate that blind spot.
             </p>
             <p>
               Whether you are a hedge fund manager or an automotive strategist, Volt China saves you hundreds of hours of research by delivering the exact engineering and supply chain realities driving the world's fastest-moving market.
