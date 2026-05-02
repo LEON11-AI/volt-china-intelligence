@@ -21,7 +21,7 @@ const DatabasePreview: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-tr from-slate-950/40 via-transparent to-slate-900/20 z-10 pointer-events-none"></div>
                 <img 
                   src="/database-preview.png" 
-                  alt="Master Tier-2 Supply Chain Database" 
+                  alt="Master Tier-2 and critical Tier-3 Supply Chain Database" 
                   className="w-full h-auto object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500"
                   onError={(e) => { (e.currentTarget as HTMLImageElement).src = '/database-preview.jpg'; }}
                 />
@@ -42,12 +42,12 @@ const DatabasePreview: React.FC = () => {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 tracking-tight leading-tight">
               Uncover the Hidden <br className="hidden lg:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400">
-                Tier-2 Supply Chain
+                Tier-2 & Critical Tier-3 Supply Chain
               </span>
             </h2>
             
             <p className="text-lg text-slate-400 leading-relaxed mb-8">
-              Stop guessing who actually builds the components. Our Master Database maps the exact Tier-2 and Tier-3 suppliers enabling China's EV dominance—complete with verifiable stock tickers, core categories, and exclusive OEM supply relationships.
+              Stop guessing who actually builds the components. Our Master Database maps the exact Tier-2 and critical Tier-3 suppliers enabling China's EV dominance—complete with verifiable stock tickers, core categories, and exclusive OEM supply relationships.
             </p>
           </div>
 

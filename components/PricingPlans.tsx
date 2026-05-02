@@ -85,7 +85,7 @@ const PricingPlans: React.FC = () => {
                 </li>
                 <li className="flex items-start gap-3 text-sm text-slate-300">
                   <i className="fa-solid fa-check text-slate-400 mt-1"></i>
-                  <span>1x Targeted Tier-2/3 Supplier List (Excel).</span>
+                  <span>1x Targeted Tier-2 and critical Tier-3 Supplier List (Excel).</span>
                 </li>
                 <li className="flex items-start gap-3 text-sm text-slate-300">
                   <i className="fa-solid fa-check text-slate-400 mt-1"></i>
@@ -127,7 +127,7 @@ const PricingPlans: React.FC = () => {
                 </li>
                 <li className="flex items-start gap-3 text-sm text-slate-300">
                   <i className="fa-solid fa-check text-volt mt-1"></i>
-                  <span><strong className="text-white">Master Supply Chain Database (Excel)</strong>: Full Tier-1/2 supplier lists & tickers (Updated Monthly).</span>
+                  <span><strong className="text-white">Master Supply Chain Database (Excel)</strong>: Full Tier-1, Tier-2 and critical Tier-3 supplier lists & tickers (Updated Monthly).</span>
                 </li>
                 <li className="flex items-start gap-3 text-sm text-slate-300">
                   <i className="fa-solid fa-check text-volt mt-1"></i>
@@ -135,7 +135,7 @@ const PricingPlans: React.FC = () => {
                 </li>
                 <li className="flex items-start gap-3 text-sm text-slate-300">
                   <i className="fa-solid fa-check text-volt mt-1"></i>
-                  <span><strong className="text-white">Priority Asynchronous Q&A</strong>: Direct line to suggest research topics.</span>
+                  <span><strong className="text-white">Priority Asynchronous Q&A</strong>: Submit topics for our public research roadmap.</span>
                 </li>
                 <li className="flex items-start gap-3 text-sm text-slate-300">
                   <i className="fa-solid fa-check text-volt mt-1"></i>

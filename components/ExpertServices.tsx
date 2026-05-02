@@ -59,7 +59,7 @@ const ExpertServices: React.FC = () => {
                 <FeatureRow icon="fa-stopwatch" text="5-7 days turnaround time" />
                 <FeatureRow icon="fa-file-lines" text="Written report delivered via email" />
                 <FeatureRow icon="fa-phone-slash" text="No calls required - Asynchronous" />
-                <FeatureRow icon="fa-user-tie" text="Researched by Senior Analysts" />
+                <FeatureRow icon="fa-user-tie" text="Researched by Our Core Intelligence Team" />
               </div>
 
               <Link 

@@ -46,7 +46,7 @@ const About: React.FC = () => {
                 </li>
                 <li className="flex items-start">
                   <i className="fa-solid fa-industry text-volt mt-1 mr-4 w-5 text-center"></i>
-                  <span><strong className="text-white">Tier-2/Tier-3 Supplier Procurement Bids</strong> (tracking exactly who is supplying the lasers, motors, and chips).</span>
+                  <span><strong className="text-white">Tier-2 and critical Tier-3 Supplier Procurement Bids</strong> (tracking exactly who is supplying the lasers, motors, and chips).</span>
                 </li>
                 <li className="flex items-start">
                   <i className="fa-solid fa-chart-line text-volt mt-1 mr-4 w-5 text-center"></i>
@@ -61,11 +61,11 @@ const About: React.FC = () => {
               Whether you are a hedge fund manager or an automotive strategist, Volt China saves you hundreds of hours of research by delivering the exact engineering and supply chain realities driving the world's fastest-moving market.
             </p>
             
-            <div className="pt-8 mt-8 border-t border-slate-800 text-center">
-              <p className="font-bold text-white text-xl tracking-wide uppercase flex items-center justify-center gap-3">
-                <span className="w-8 h-[1px] bg-volt"></span>
+            <div className="pt-10 mt-10 border-t border-slate-800/80 text-center">
+              <p className="font-extrabold text-white text-2xl md:text-3xl tracking-[0.2em] uppercase flex items-center justify-center gap-4">
+                <span className="w-12 md:w-20 h-[2px] bg-gradient-to-r from-transparent to-volt"></span>
                 Strictly data-driven. Zero hype.
-                <span className="w-8 h-[1px] bg-volt"></span>
+                <span className="w-12 md:w-20 h-[2px] bg-gradient-to-l from-transparent to-volt"></span>
               </p>
             </div>
           </div>
