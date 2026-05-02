@@ -15,7 +15,7 @@ const DatabasePreview: React.FC = () => {
             
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 tracking-tight leading-tight">
               Uncover the Hidden <br className="hidden md:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400">
+              <span className="text-transparent bg-clip-text bg-gradient-to-b md:bg-gradient-to-r from-white to-slate-400">
                 Tier-2 & Critical Tier-3 Supply Chain
               </span>
             </h2>

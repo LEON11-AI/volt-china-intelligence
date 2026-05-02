@@ -31,7 +31,7 @@ const Hero: React.FC = () => {
         
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight mb-6 leading-tight max-w-5xl mx-auto">
           Unrivaled Intelligence on <br className="hidden md:block" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400">
+          <span className="text-transparent bg-clip-text bg-gradient-to-b md:bg-gradient-to-r from-white to-slate-400">
             China's EV & Robotics Revolution.
           </span>
         </h1>
