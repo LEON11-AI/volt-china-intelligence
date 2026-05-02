@@ -135,7 +135,7 @@ const PricingPlans: React.FC = () => {
                 </li>
                 <li className="flex items-start gap-3 text-sm text-slate-300">
                   <i className="fa-solid fa-check text-volt mt-1"></i>
-                  <span><strong className="text-white">Priority Asynchronous Q&A</strong>: Submit topics for our public research roadmap.</span>
+                  <span><strong className="text-white">2x Priority Research Credits / Year</strong>: Nominate specific sub-sectors or companies for our deep-dive roadmap (Guaranteed inclusion).</span>
                 </li>
                 <li className="flex items-start gap-3 text-sm text-slate-300">
                   <i className="fa-solid fa-check text-volt mt-1"></i>
