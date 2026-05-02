@@ -21,7 +21,7 @@ const PricingPlans: React.FC = () => {
                 <span className="text-4xl font-bold text-white">$0</span>
                 <span className="ml-2 text-slate-500">/ forever</span>
               </div>
-              <p className="text-sm text-slate-400 mt-4 min-h-[40px]">
+              <p className="text-sm text-slate-400 mt-4 min-h-[60px] lg:min-h-[80px]">
                 For individual investors and enthusiasts following the headlines.
               </p>
             </div>
@@ -35,7 +35,7 @@ const PricingPlans: React.FC = () => {
               Join for Free
             </a>
 
-            <div className="mt-8 pt-8 border-t border-slate-800">
+            <div className="mt-8 pt-8 border-t border-slate-800 flex-1">
               <ul className="space-y-4">
                 <li className="flex items-start gap-3 text-sm text-slate-300">
                   <i className="fa-solid fa-check text-green-500 mt-1"></i>
@@ -65,7 +65,7 @@ const PricingPlans: React.FC = () => {
                 <span className="text-4xl font-bold text-white">$199</span>
                 <span className="ml-2 text-slate-500">/ Per Report</span>
               </div>
-              <p className="text-sm text-slate-400 mt-4 min-h-[40px]">
+              <p className="text-sm text-slate-400 mt-4 min-h-[60px] lg:min-h-[80px]">
                 For analysts seeking deep-dive data on a specific topic without an annual commitment.
               </p>
             </div>
@@ -77,19 +77,19 @@ const PricingPlans: React.FC = () => {
               Buy Single Report
             </Link>
 
-            <div className="mt-8 pt-8 border-t border-slate-800">
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3 text-sm text-slate-300">
+            <div className="mt-8 pt-8 border-t border-slate-800 flex-1">
+              <ul className="space-y-6">
+                <li className="flex items-start gap-3 text-sm text-slate-300 py-1">
                   <i className="fa-solid fa-check text-slate-400 mt-1"></i>
-                  <span>1x Deep-Dive Engineering PDF Report.</span>
+                  <span className="leading-relaxed">1x Deep-Dive Engineering PDF Report.</span>
                 </li>
-                <li className="flex items-start gap-3 text-sm text-slate-300">
+                <li className="flex items-start gap-3 text-sm text-slate-300 py-1">
                   <i className="fa-solid fa-check text-slate-400 mt-1"></i>
-                  <span>1x Targeted Tier-2 and critical Tier-3 Supplier List (Excel).</span>
+                  <span className="leading-relaxed">1x Targeted Tier-2 and critical Tier-3 Supplier List (Excel).</span>
                 </li>
-                <li className="flex items-start gap-3 text-sm text-slate-300">
+                <li className="flex items-start gap-3 text-sm text-slate-300 py-1">
                   <i className="fa-solid fa-check text-slate-400 mt-1"></i>
-                  <span>1x Full Cost-BOM Analysis for the topic.</span>
+                  <span className="leading-relaxed">1x Full Cost-BOM Analysis for the topic.</span>
                 </li>
               </ul>
             </div>
@@ -107,7 +107,7 @@ const PricingPlans: React.FC = () => {
                 <span className="text-4xl font-bold text-white">$1,499</span>
                 <span className="ml-2 text-slate-500">/ year</span>
               </div>
-              <p className="text-sm text-slate-400 mt-4 min-h-[40px]">
+              <p className="text-sm text-slate-400 mt-4 min-h-[60px] lg:min-h-[80px]">
                 For hedge funds, PE firms, and automotive strategy teams requiring raw data and supply chain alpha.
               </p>
             </div>
@@ -119,7 +119,7 @@ const PricingPlans: React.FC = () => {
               Apply for Access
             </Link>
 
-            <div className="mt-8 pt-8 border-t border-slate-800">
+            <div className="mt-8 pt-8 border-t border-slate-800 flex-1">
               <ul className="space-y-4">
                 <li className="flex items-start gap-3 text-sm text-slate-300">
                   <i className="fa-solid fa-check text-volt mt-1"></i>
@@ -152,7 +152,7 @@ const PricingPlans: React.FC = () => {
               <div className="mt-4 flex items-baseline">
                 <span className="text-4xl font-bold text-white">Custom</span>
               </div>
-              <p className="text-sm text-slate-400 mt-4 min-h-[40px]">
+              <p className="text-sm text-slate-400 mt-4 min-h-[60px] lg:min-h-[80px]">
                 For large organizations needing bespoke research, on-the-ground validation, and direct hardware sourcing.
               </p>
             </div>
@@ -164,7 +164,7 @@ const PricingPlans: React.FC = () => {
               Contact Us
             </Link>
 
-            <div className="mt-8 pt-8 border-t border-slate-800">
+            <div className="mt-8 pt-8 border-t border-slate-800 flex-1">
               <ul className="space-y-4">
                 <li className="flex items-start gap-3 text-sm text-slate-300">
                   <i className="fa-solid fa-check text-amber-500 mt-1"></i>
