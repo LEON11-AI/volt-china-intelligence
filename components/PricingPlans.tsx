@@ -11,7 +11,7 @@ const PricingPlans: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto items-stretch">
           
           {/* Column 1: The Observer (Free) */}
           <div className="bg-slate-900 border border-slate-800 rounded-2xl p-8 flex flex-col hover:border-slate-700 transition-colors">
@@ -57,7 +57,45 @@ const PricingPlans: React.FC = () => {
             </div>
           </div>
 
-          {/* Column 2: The Investor (Institutional Access) - Recommended */}
+          {/* Column 2: Single Report */}
+          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-8 flex flex-col hover:border-slate-700 transition-colors">
+            <div className="mb-4">
+              <h3 className="text-xl font-bold text-white">Single Topic Intelligence</h3>
+              <div className="mt-4 flex items-baseline">
+                <span className="text-4xl font-bold text-white">$199</span>
+                <span className="ml-2 text-slate-500">/ Per Report</span>
+              </div>
+              <p className="text-sm text-slate-400 mt-4 min-h-[40px]">
+                For analysts seeking deep-dive data on a specific topic without an annual commitment.
+              </p>
+            </div>
+            
+            <Link 
+              to="/request-access"
+              className="block w-full py-3 text-center bg-slate-800 hover:bg-slate-700 text-white font-bold rounded-lg transition-colors border border-slate-700 mt-4"
+            >
+              Buy Single Report
+            </Link>
+
+            <div className="mt-8 pt-8 border-t border-slate-800">
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3 text-sm text-slate-300">
+                  <i className="fa-solid fa-check text-slate-400 mt-1"></i>
+                  <span>1x Deep-Dive Engineering PDF Report.</span>
+                </li>
+                <li className="flex items-start gap-3 text-sm text-slate-300">
+                  <i className="fa-solid fa-check text-slate-400 mt-1"></i>
+                  <span>1x Targeted Tier-2/3 Supplier List (Excel).</span>
+                </li>
+                <li className="flex items-start gap-3 text-sm text-slate-300">
+                  <i className="fa-solid fa-check text-slate-400 mt-1"></i>
+                  <span>1x Full Cost-BOM Analysis for the topic.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Column 3: The Investor (Institutional Access) - Recommended */}
           <div className="bg-slate-900 border-2 border-volt rounded-2xl p-8 flex flex-col relative shadow-2xl shadow-volt/10 transition-transform duration-300 hover:scale-105 z-10">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-volt text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wide shadow-lg shadow-volt/20">
               Most Popular
@@ -107,7 +145,7 @@ const PricingPlans: React.FC = () => {
             </div>
           </div>
 
-          {/* Column 3: Enterprise (Custom) */}
+          {/* Column 4: Enterprise (Custom) */}
           <div className="bg-slate-900 border border-amber-500/30 rounded-2xl p-8 flex flex-col hover:border-amber-500/50 transition-colors">
             <div className="mb-4">
               <h3 className="text-xl font-bold text-amber-400">Enterprise</h3>

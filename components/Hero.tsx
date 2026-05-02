@@ -49,6 +49,9 @@ const Hero: React.FC = () => {
           <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
             Get our exclusive 15-page BYD Solid-State Battery Engineering Report.
           </h3>
+          <p className="text-sm md:text-base text-slate-300 mb-3">
+            <span className="text-orange-400 font-semibold">[BONUS]</span>: Includes a 1-page sample of our Master Tier-2 Supply Chain Database (with market tickers).
+          </p>
           <p className="text-slate-400 text-sm mb-6">
             Join 5,000+ investors and engineers. Direct to your inbox.
           </p>
