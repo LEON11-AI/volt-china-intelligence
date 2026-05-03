@@ -37,7 +37,7 @@ const Hero: React.FC = () => {
         </h1>
         
         <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-          We bridge the context gap. Delivering expert analysis and curated engineering data on the world's fastest-moving hard tech supply chain for institutional investors.
+          We bridge the context gap. We help institutional investors and automotive strategists <strong className="text-white font-semibold">de-risk portfolios and discover unpriced Alpha</strong> by decoding China's hidden Tier-2 hard tech supply chains.
         </p>
 
         {/* Lead Magnet / Email Capture */}
@@ -46,11 +46,12 @@ const Hero: React.FC = () => {
             <i className="fa-solid fa-file-pdf"></i>
             <span className="text-sm font-bold uppercase tracking-wider">Free Engineering Report</span>
           </div>
-          <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
-            Get our exclusive 15-page BYD Solid-State Battery Engineering Report.
+          <h3 className="text-lg md:text-xl font-medium text-slate-300 mb-3 leading-snug">
+            <span className="block text-2xl md:text-3xl font-bold text-white mb-2">De-risk your EV portfolio.</span>
+            Download the 15-page BYD Solid-State Engineering Report.
           </h3>
           <p className="text-slate-400 text-sm mb-6">
-            Join 5,000+ investors and engineers. Direct to your inbox.
+            Stop guessing the BOM costs. Join 5,000+ executives receiving actionable supply chain insights direct to their inbox.
           </p>
           
           <div className="relative">
