@@ -108,7 +108,7 @@ const PricingPlans: React.FC = () => {
                 <span className="ml-2 text-slate-500">/ year</span>
               </div>
               <p className="text-sm text-slate-400 mt-4 min-h-[60px] lg:min-h-[80px]">
-                For hedge funds, PE firms, and automotive strategy teams requiring raw data and supply chain alpha.
+                Your external intelligence engine in China. De-risk your strategic decisions with direct access to unvarnished engineering realities and Tier-2 supply chain alpha.
               </p>
             </div>
             
@@ -127,11 +127,11 @@ const PricingPlans: React.FC = () => {
                 </li>
                 <li className="flex items-start gap-3 text-sm text-slate-300">
                   <i className="fa-solid fa-check text-volt mt-1"></i>
-                  <span><strong className="text-white">Master Supply Chain Database (Excel)</strong>: Full Tier-1, Tier-2 and critical Tier-3 supplier lists & tickers (Updated Monthly).</span>
+                  <span><strong className="text-white">Master Supply Chain Database & Actionable Insights (Excel)</strong>: Full Tier-1, Tier-2 and critical Tier-3 supplier lists & tickers (Updated Monthly).</span>
                 </li>
                 <li className="flex items-start gap-3 text-sm text-slate-300">
                   <i className="fa-solid fa-check text-volt mt-1"></i>
-                  <span><strong className="text-white">Full Archive Unlock</strong>: Access to all past & future deep-dive PDF reports (Huawei, BYD, Xiaomi).</span>
+                  <span><strong className="text-white">Full Archive Unlock</strong>: Access all past & future strategic deep-dives (Huawei, BYD, Xiaomi).</span>
                 </li>
                 <li className="flex items-start gap-3 text-sm text-slate-300">
                   <i className="fa-solid fa-check text-volt mt-1"></i>
