@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
 
         <div className="flex gap-6">
           <SocialLink href="https://x.com/VoltChinaEV" icon="fa-x-twitter" />
-          <SocialLink href="https://www.youtube.com/@VoltChinaEV" icon="fa-youtube" />
+          <SocialLink href="https://www.youtube.com/@VoltChina" icon="fa-youtube" />
           <SocialLink href="mailto:business@voltchina.net" icon="fa-envelope" />
         </div>
 
