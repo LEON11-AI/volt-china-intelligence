@@ -20,9 +20,21 @@ const DatabasePreview: React.FC = () => {
               </span>
             </h2>
             
-            <p className="text-lg text-slate-400 leading-relaxed mb-4 max-w-3xl">
+            <p className="text-lg text-slate-400 leading-relaxed mb-6 max-w-3xl">
               Stop guessing who actually builds the components. Our Master Database maps the exact Tier-2 and critical Tier-3 suppliers enabling China's EV dominance—complete with verifiable stock tickers, core categories, and exclusive OEM supply relationships.
             </p>
+
+            {/* Callout Box */}
+            <div className="max-w-3xl w-full bg-slate-900/50 border border-slate-800/80 border-l-4 border-l-volt rounded-r-lg p-5 md:p-6 text-left shadow-lg shadow-black/20 mt-2">
+              <div className="flex items-start gap-4">
+                <div className="mt-1 bg-volt/10 p-2 rounded-full flex-shrink-0">
+                  <i className="fa-solid fa-bolt text-volt"></i>
+                </div>
+                <p className="text-[15px] md:text-base text-slate-300 leading-relaxed">
+                  <strong className="text-white font-semibold">More than just raw data.</strong> Every database update includes an <strong className="text-volt-hover">Executive Summary</strong> detailing exactly who is winning the cost war, which technical bottlenecks were solved, and actionable strategic takeaways for your portfolio.
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Bottom Column: Image with Classified Feel */}
