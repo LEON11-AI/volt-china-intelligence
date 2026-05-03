@@ -6,9 +6,6 @@ const About: React.FC = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <div className="relative w-28 h-28 mx-auto mb-6 group">
-              {/* Gradient Ring matching the yellow/orange theme */}
-              <div className="absolute -inset-1 bg-gradient-to-tr from-yellow-400 via-volt to-orange-600 rounded-full blur opacity-40 group-hover:opacity-60 transition duration-500"></div>
-              
               <img 
                   src="/VC.png"
                   alt="Volt China"
@@ -16,7 +13,7 @@ const About: React.FC = () => {
                   decoding="async"
                   width={112}
                   height={112}
-                  className="relative w-full h-full object-cover rounded-full border-2 border-slate-700 shadow-2xl bg-slate-900"
+                  className="relative w-full h-full object-cover rounded-xl shadow-2xl bg-slate-900"
                   onError={(e) => { (e.currentTarget as HTMLImageElement).src = '/avatar-default.svg'; }}
               />
           </div>
