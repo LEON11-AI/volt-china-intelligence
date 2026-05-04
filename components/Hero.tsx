@@ -51,7 +51,7 @@ const Hero: React.FC = () => {
             Download the 15-page BYD Solid-State Engineering Report.
           </h3>
           <p className="text-slate-400 text-sm mb-6">
-            Stop guessing the BOM costs. Join 5,000+ executives receiving actionable supply chain insights direct to their inbox.
+            Powered by an audience of 5,000+ across our intelligence network.
           </p>
           
           <div className="relative">
