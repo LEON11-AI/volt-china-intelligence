@@ -66,7 +66,7 @@ const Hero: React.FC = () => {
                 type="submit"
                 className="bg-volt hover:bg-volt-hover text-white font-bold px-6 py-3 rounded-lg transition-all shadow-lg shadow-volt/20 hover:shadow-volt/40 whitespace-nowrap text-center flex items-center justify-center cursor-pointer"
               >
-                Download Free Report
+                Subscribe Free
               </button>
             </form>
           </div>
