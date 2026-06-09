@@ -41,15 +41,17 @@ const Hero: React.FC = () => {
         </p>
 
         {/* Lead Magnet / Email Capture */}
-        <div className="max-w-2xl mx-auto mb-16 bg-slate-900/80 border border-volt/20 rounded-2xl p-6 md:p-8 backdrop-blur-sm shadow-2xl shadow-volt/10">
-          <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-snug">
-            Go beyond the headlines on China's EVs and robots.
+        <div className="max-w-2xl mx-auto mb-16 bg-slate-900/80 border border-volt/20 rounded-2xl p-6 backdrop-blur-sm shadow-2xl shadow-volt/10">
+          <div className="flex items-center justify-center gap-2 mb-4 text-volt">
+            <i className="fa-solid fa-file-pdf"></i>
+            <span className="text-sm font-bold uppercase tracking-wider">Free Engineering Report</span>
+          </div>
+          <h3 className="text-lg md:text-xl font-medium text-slate-300 mb-3 leading-snug">
+            <span className="block text-2xl md:text-3xl font-bold text-white mb-2">De-risk your EV portfolio.</span>
+            Download the 15-page BYD Solid-State Engineering Report.
           </h3>
-          <p className="text-slate-300 text-base md:text-lg mb-6 leading-relaxed">
-            Every week, VoltChina breaks down the engineering behind China's electric vehicles, batteries, smart driving systems, and humanoid robots — <span className="font-semibold text-white">in plain English.</span>
-          </p>
-          <p className="text-volt font-medium text-sm md:text-base mb-8">
-            Subscribe free and get the BYD Solid-State Battery Engineering Report as a bonus.
+          <p className="text-slate-400 text-sm mb-6">
+            Powered by an audience of 5,000+ across our intelligence network.
           </p>
           
           <div className="relative">
@@ -66,7 +68,7 @@ const Hero: React.FC = () => {
                 type="submit"
                 className="bg-volt hover:bg-volt-hover text-white font-bold px-6 py-3 rounded-lg transition-all shadow-lg shadow-volt/20 hover:shadow-volt/40 whitespace-nowrap text-center flex items-center justify-center cursor-pointer"
               >
-                Subscribe Free
+                Download Free Report
               </button>
             </form>
           </div>
