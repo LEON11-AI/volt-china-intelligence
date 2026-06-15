@@ -20,20 +20,20 @@ const About: React.FC = () => {
 
           <h2 className="text-3xl font-bold text-white mb-2 tracking-tight">About VoltChina</h2>
           <p className="text-xl md:text-2xl font-medium text-volt mb-8">
-            Engineering explanations from inside the Chinese tech signal layer.
+            Source-backed intelligence from inside China's hard-tech signal layer.
           </p>
         </div>
 
         <div className="bg-slate-900/50 border border-slate-800 rounded-2xl p-8 md:p-12 shadow-2xl backdrop-blur-sm">
           <div className="text-base md:text-lg text-slate-300 leading-relaxed space-y-6">
             <p>
-              VoltChina is an independent English-language media and research project focused on China's electric vehicles, batteries, smart-driving systems, humanoid robots, and advanced manufacturing.
+              VoltChina is an independent English-language media and research project focused on China's electric vehicles, batteries, smart-driving systems, humanoid robots, and advanced manufacturing supply chains.
             </p>
             <p>
               We do not sell investment advice, insider leaks, or undisclosed paid puff pieces. We may work with sponsors and partners when the product fits our audience, the relationship is clearly disclosed, and VoltChina keeps full editorial control.
             </p>
             <p>
-              The goal is simple: help global readers understand China's fastest-moving hard-tech sectors without hype.
+              The goal is simple: help global readers understand not just what China announced, but why it matters mechanically, industrially, and competitively.
             </p>
 
             <div className="bg-slate-950/50 rounded-xl p-6 border border-slate-800/50 my-6">

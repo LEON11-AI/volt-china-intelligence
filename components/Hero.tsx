@@ -36,7 +36,7 @@ const Hero: React.FC = () => {
         </h1>
         
         <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-          VoltChina explains the engineering behind China's batteries, smart-driving systems, EV architectures, humanoid robots, and manufacturing scale in clear English for global tech readers.
+          VoltChina decodes China's EV, battery, smart-driving, robotics, and manufacturing breakthroughs through engineering mechanisms, supply-chain signals, and manufacturing realities.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-10">
@@ -65,8 +65,8 @@ const Hero: React.FC = () => {
             <span className="text-sm font-bold uppercase tracking-wider">Free Weekly Brief</span>
           </div>
           <h3 className="text-lg md:text-xl font-medium text-slate-300 mb-3 leading-snug">
-            <span className="block text-2xl md:text-3xl font-bold text-white mb-2">Get the China EV & Robotics Engineering Brief.</span>
-            One clear weekly email explaining the Chinese technologies global audiences keep hearing about but rarely understand.
+            <span className="block text-2xl md:text-3xl font-bold text-white mb-2">Get the China EV & Hard-Tech Intelligence Brief.</span>
+            A weekly source-backed brief decoding China's EV, battery, smart-driving, robotics, and manufacturing breakthroughs through engineering, cost, yield, and supply-chain signals.
           </h3>
           <p className="text-slate-400 text-sm mb-6">
             Bonus: receive the 15-page BYD Solid-State Battery Engineering Report when you subscribe.
@@ -91,7 +91,7 @@ const Hero: React.FC = () => {
             </form>
           </div>
           <p className="text-xs text-slate-600 mt-3">
-            Engineering explanations. China-source context. No investment advice. Unsubscribe anytime.
+            Engineering mechanisms. Supply-chain context. Manufacturing signals. No investment advice. Unsubscribe anytime.
           </p>
         </div>
         
