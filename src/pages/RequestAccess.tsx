@@ -90,7 +90,7 @@ const RequestAccess: React.FC = () => {
             width="100%" 
             height="100%" 
             frameBorder="0" 
-            title="Institutional Membership Application"
+            title="Research and Partnership Inquiry"
             style={{ margin: 0, minHeight: '650px', overflow: 'hidden' }}
             onLoad={handleIframeLoad}
           ></iframe>

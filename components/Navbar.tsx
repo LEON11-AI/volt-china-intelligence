@@ -14,19 +14,24 @@ const Navbar: React.FC<{ forceDark?: boolean }> = ({ forceDark = false }) => {
   }, []);
 
   const navLinks = [
-    { name: 'Read on Substack', href: 'https://voltchina.substack.com' },
-    { name: 'Expert Services', href: '#services' },
+    { name: 'YouTube', href: 'https://www.youtube.com/@VoltChina' },
+    { name: 'Free Brief', href: '#brief' },
+    { name: 'For Business', href: '/business' },
     { name: 'About', href: '#about' },
   ];
 
   const handleScrollTo = (href: string) => {
-    if (!href.startsWith('#')) return;
+    if (!href.startsWith('#')) return false;
     const el = document.querySelector(href) as HTMLElement | null;
-    if (!el) return;
+    if (!el) {
+      window.location.href = `/${href}`;
+      return false;
+    }
     const header = document.querySelector('nav') as HTMLElement | null;
     const offset = header ? header.getBoundingClientRect().height : 80;
     const y = el.getBoundingClientRect().top + window.scrollY - offset;
     window.scrollTo({ top: y, behavior: 'smooth' });
+    return true;
   };
 
   return (
@@ -52,6 +57,8 @@ const Navbar: React.FC<{ forceDark?: boolean }> = ({ forceDark = false }) => {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => { if (link.href.startsWith('#')) { e.preventDefault(); handleScrollTo(link.href); } }}
+                target={link.href.startsWith('http') ? '_blank' : undefined}
+                rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                 className="text-sm font-medium text-slate-300 hover:text-white transition-colors"
               >
                 {link.name}
@@ -63,7 +70,7 @@ const Navbar: React.FC<{ forceDark?: boolean }> = ({ forceDark = false }) => {
               rel="noopener noreferrer"
               className="px-5 py-2.5 bg-volt hover:bg-volt-hover text-white text-sm font-semibold rounded transition-all shadow-lg shadow-volt/20 hover:shadow-volt/40"
             >
-              Join 5,000+ Investors
+              Subscribe Free
             </a>
           </div>
 
@@ -96,6 +103,8 @@ const Navbar: React.FC<{ forceDark?: boolean }> = ({ forceDark = false }) => {
                 key={link.name}
                 href={link.href}
                 className="block px-3 py-3 text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800 rounded-md"
+                target={link.href.startsWith('http') ? '_blank' : undefined}
+                rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                 onClick={(e) => { if (link.href.startsWith('#')) { e.preventDefault(); handleScrollTo(link.href); } setMobileMenuOpen(false); }}
               >
                 {link.name}
@@ -109,7 +118,7 @@ const Navbar: React.FC<{ forceDark?: boolean }> = ({ forceDark = false }) => {
                 className="block w-full text-center px-5 py-3 bg-volt hover:bg-volt-hover text-white text-base font-semibold rounded"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Join 5,000+ Investors
+                Subscribe Free
               </a>
             </div>
           </div>

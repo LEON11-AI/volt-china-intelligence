@@ -53,7 +53,7 @@ const FeaturedReport: React.FC = () => {
           {/* Content Side */}
           <div className="w-full md:w-2/5 p-6 md:p-8 flex flex-col justify-center relative z-10">
             <div className="mb-3">
-              <span className="text-volt font-bold tracking-wider text-xs uppercase mb-1 block">Premium Intelligence</span>
+              <span className="text-volt font-bold tracking-wider text-xs uppercase mb-1 block">Engineering Brief</span>
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-3 leading-tight">
                 Huawei ADS 3.0: <br/>
                 <span className="text-slate-400">The Hardware-Fusion Moat</span>
@@ -61,7 +61,7 @@ const FeaturedReport: React.FC = () => {
             </div>
             
             <p className="text-slate-300 mb-6 text-sm md:text-base leading-relaxed">
-              Exclusive BOM cost breakdown vs Tesla FSD, and a supply chain investment watchlist (10 Tickers). We reveal how Huawei achieves 5x safety redundancy.
+              Engineering breakdown of Huawei's sensor and compute stack, including architecture context, supplier signals, and safety-redundancy claims.
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-between gap-3 mt-auto w-full">
@@ -71,7 +71,7 @@ const FeaturedReport: React.FC = () => {
                   rel="noopener noreferrer"
                   className="w-full sm:w-auto px-6 py-3 bg-volt hover:bg-volt-hover text-white rounded-lg font-bold text-center transition-all shadow-lg shadow-volt/20 hover:shadow-volt/40 flex items-center justify-center gap-2 text-sm"
                 >
-                  <span>Subscribe for Access</span>
+                  <span>Read / Subscribe</span>
                   <i className="fa-solid fa-arrow-right"></i>
                 </a>
               <div className="text-slate-500 text-xs text-right">

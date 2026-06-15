@@ -67,14 +67,14 @@ const SubmitQuery: React.FC = () => {
             </span>
           </Link>
           <div className="text-sm text-slate-400">
-            Submit Query
+            Written Brief
           </div>
         </div>
       </header>
 
       {/* Main Content */}
       <main className="flex-grow flex flex-col items-center justify-center p-6 relative z-10 h-full">
-        <h1 className="text-3xl font-bold mb-8 text-center">Priority Intelligence Request</h1>
+        <h1 className="text-3xl font-bold mb-8 text-center">Request a Written Brief</h1>
         <div className="w-full max-w-2xl bg-slate-900/50 border border-slate-800 rounded-2xl p-4 md:p-8 shadow-2xl backdrop-blur-sm overflow-hidden relative min-h-[650px]">
           {isLoading && (
             <div className="absolute inset-0 flex flex-col items-center justify-center bg-slate-900/80 z-20">
@@ -102,7 +102,7 @@ const SubmitQuery: React.FC = () => {
             width="100%" 
             height="100%" 
             frameBorder="0" 
-            title="Priority Intelligence Request"
+            title="Written Brief Request"
             style={{ 
               margin: 0, 
               minHeight: '650px', 

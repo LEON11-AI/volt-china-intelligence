@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App';
+import Business from './src/pages/Business';
 import ResearchPage from './pages/ResearchPage';
 import BlogPage from './pages/BlogPage';
 import SolidStateReport from './src/pages/reports/SolidStateReport';
@@ -16,6 +17,7 @@ const Router: React.FC = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
+        <Route path="/business" element={<Business />} />
         <Route path="/submit-query" element={<SubmitQuery />} />
         <Route path="/request-access" element={<RequestAccess />} />
         <Route path="/research" element={<ResearchPage />} />

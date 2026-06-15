@@ -3,23 +3,32 @@ import React from 'react';
 const SocialProof: React.FC = () => {
   const testimonials = [
     {
-      text: "Very intelligently explained. I believe that BYD is there to stay and dominate. A new strong player is born.",
-      name: "Bruno L.",
-      title: "EV Market Observer",
+      text: "Very intelligently explained. The engineering breakdown made BYD's approach much easier to understand.",
+      name: "VoltChina viewer",
+      title: "EV technology reader",
     },
     {
-      text: "The Intel Inside comparison is sharper than most analyses I've seen... The Galapagos Effect framing nails why protectionism might backfire.",
-      name: "Neural Foundry",
-      title: "AI Infrastructure Engineer at Fortune 500",
+      text: "The clearest value is the mechanism-first framing: not just what China announced, but how the system works.",
+      name: "Newsletter reader",
+      title: "Global hard-tech audience",
     },
   ];
 
   return (
     <section className="py-12 bg-slate-900 border-y border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p className="text-lg md:text-xl font-semibold text-slate-400 mb-16">
-          Read by 5,000+ industry professionals, with 1M+ views on YouTube.
-        </p>
+        <div className="max-w-3xl mx-auto mb-14">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-volt mb-4">
+            Trusted by a global niche audience
+          </p>
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+            Engineering explanations for readers who want more than headlines.
+          </h2>
+          <p className="text-slate-400 leading-relaxed">
+            VoltChina reaches viewers and subscribers interested in Chinese EVs, batteries, smart-driving systems,
+            robotics, manufacturing, and the real mechanisms behind hard-tech announcements.
+          </p>
+        </div>
 
         <div className="max-w-3xl mx-auto space-y-8">
           {testimonials.map((t, i) => (

@@ -10,8 +10,8 @@ const ResearchIndex: React.FC = () => {
       <main>
         <section className="pt-24 pb-12 lg:pt-32 lg:pb-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 className="text-3xl md:text-5xl font-bold text-white tracking-tight mb-6">Deep Dive Research & Intelligence</h1>
-            <p className="text-slate-400 max-w-2xl">Curated analyses on EV technology and market dynamics for institutional investors.</p>
+            <h1 className="text-3xl md:text-5xl font-bold text-white tracking-tight mb-6">Engineering Reports & Briefs</h1>
+            <p className="text-slate-400 max-w-2xl">Source-backed explanations on China's EVs, batteries, smart-driving systems, robotics, and manufacturing. Informational only, with no investment advice.</p>
           </div>
         </section>
 
@@ -35,7 +35,7 @@ const ResearchIndex: React.FC = () => {
                     Huawei ADS 3.0: The Hardware-Fusion Moat
                   </h3>
                   <p className="text-slate-400 mb-4 line-clamp-3">
-                    Exclusive BOM cost breakdown vs Tesla FSD, and a supply chain investment watchlist (10 Tickers). We reveal how Huawei achieves 5x safety redundancy.
+                    Engineering breakdown of Huawei's sensor and compute stack, including architecture context, supplier signals, and safety-redundancy claims.
                   </p>
                   <div className="flex items-center justify-between mt-auto pt-4 border-t border-slate-800">
                     <div className="text-xs text-slate-500">Report • Hardware</div>
@@ -45,7 +45,7 @@ const ResearchIndex: React.FC = () => {
                       rel="noopener noreferrer"
                       className="px-4 py-2 bg-volt hover:bg-volt-hover text-white rounded-lg font-semibold inline-flex items-center gap-2 text-sm transition-colors"
                     >
-                      <span>Subscribe for Access</span>
+                      <span>Read / Subscribe</span>
                       <i className="fa-solid fa-arrow-right text-xs" />
                     </a>
                   </div>
