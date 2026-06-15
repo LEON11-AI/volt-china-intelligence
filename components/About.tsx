@@ -30,7 +30,7 @@ const About: React.FC = () => {
               VoltChina is an independent English-language media and research project focused on China's electric vehicles, batteries, smart-driving systems, humanoid robots, and advanced manufacturing.
             </p>
             <p>
-              We do not sell investment advice, insider leaks, or corporate PR. We use public Chinese-language sources, engineering materials, patents, filings, product launches, and industry discussions to explain how these technologies actually work.
+              We do not sell investment advice, insider leaks, or undisclosed paid puff pieces. We may work with sponsors and partners when the product fits our audience, the relationship is clearly disclosed, and VoltChina keeps full editorial control.
             </p>
             <p>
               The goal is simple: help global readers understand China's fastest-moving hard-tech sectors without hype.
