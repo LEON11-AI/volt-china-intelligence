@@ -1,4 +1,4 @@
-name: Deploy to Netlify
+name: Build and optional Netlify deploy
 
 on:
   push:
@@ -8,6 +8,8 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -23,23 +25,26 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Validate Netlify secrets
+      - name: Check Netlify deploy secrets
+        id: netlify-secrets
         run: |
-          if [ -z "$NETLIFY_AUTH_TOKEN" ]; then
-            echo "::error::Missing NETLIFY_AUTH_TOKEN secret"
-            exit 1
-          fi
-
-          if [ -z "$NETLIFY_SITE_ID" ]; then
-            echo "::error::Missing NETLIFY_SITE_ID secret"
-            exit 1
+          if [ -n "$NETLIFY_AUTH_TOKEN" ] && [ -n "$NETLIFY_SITE_ID" ]; then
+            echo "has_secrets=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "::notice::Netlify deploy secrets are not configured in GitHub Actions. Skipping the Actions deploy step; Netlify's Git integration can still deploy this repository."
+            echo "has_secrets=false" >> "$GITHUB_OUTPUT"
           fi
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
 
       - name: Deploy to Netlify
+        if: steps.netlify-secrets.outputs.has_secrets == 'true'
         run: npx --yes netlify-cli@26.1.0 deploy --dir=dist --prod --site="$NETLIFY_SITE_ID" --auth="$NETLIFY_AUTH_TOKEN" --message "GitHub Actions deploy"
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
+      - name: Deployment handled by Netlify Git integration
+        if: steps.netlify-secrets.outputs.has_secrets != 'true'
+        run: echo "Build passed. Netlify deploy is skipped because GitHub Actions deploy secrets are not configured."
