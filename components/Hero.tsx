@@ -111,7 +111,7 @@ const Hero: React.FC = () => {
             </div>
             <div className="text-center">
                 <div className="text-2xl font-bold text-white">Global</div>
-                <div className="text-xs text-slate-500 uppercase tracking-wider">Tech Readers</div>
+                <div className="text-xs text-slate-500 uppercase tracking-wider">Professional Readers</div>
             </div>
         </div>
       </div>

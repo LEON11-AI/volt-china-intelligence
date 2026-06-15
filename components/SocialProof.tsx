@@ -25,8 +25,8 @@ const SocialProof: React.FC = () => {
             Engineering explanations for readers who want more than headlines.
           </h2>
           <p className="text-slate-400 leading-relaxed">
-            VoltChina reaches viewers and subscribers interested in Chinese EVs, batteries, smart-driving systems,
-            robotics, manufacturing, and the real mechanisms behind hard-tech announcements.
+            VoltChina reaches a small but high-intent global audience across EV engineering, sourcing and supply-chain work,
+            investment research, and public-sector or regulatory domains tracking China's hard-tech ecosystem.
           </p>
         </div>
 
