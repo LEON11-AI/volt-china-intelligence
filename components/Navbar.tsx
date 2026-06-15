@@ -34,10 +34,12 @@ const Navbar: React.FC<{ forceDark?: boolean }> = ({ forceDark = false }) => {
     return true;
   };
 
+  const navTone = scrolled || forceDark
+    ? 'bg-slate-950/95 md:backdrop-blur-md'
+    : 'bg-slate-950/80 md:bg-transparent';
+
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 border-b border-white/5 ${
-      scrolled || forceDark ? 'bg-slate-950/90 backdrop-blur-md py-4' : 'bg-transparent py-6'
-    }`}>
+    <nav className={`fixed w-full z-50 border-b border-white/5 py-4 transition-colors duration-200 ${navTone}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}

@@ -10,8 +10,8 @@ const Business: React.FC = () => {
       <main>
         <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-28 overflow-hidden">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl pointer-events-none">
-            <div className="absolute top-24 left-10 w-80 h-80 bg-volt/10 rounded-full blur-[120px]"></div>
-            <div className="absolute bottom-10 right-10 w-96 h-96 bg-blue-900/10 rounded-full blur-[120px]"></div>
+            <div className="hidden md:block absolute top-24 left-10 w-80 h-80 bg-volt/10 rounded-full blur-[120px]"></div>
+            <div className="hidden md:block absolute bottom-10 right-10 w-96 h-96 bg-blue-900/10 rounded-full blur-[120px]"></div>
           </div>
 
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
