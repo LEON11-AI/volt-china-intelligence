@@ -29,9 +29,9 @@ const Hero: React.FC = () => {
         </div>
         
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight mb-6 leading-tight max-w-5xl mx-auto">
-          Understand How China's EV & Robotics <br className="hidden md:block" />
+          Decode China's EV & Robotics Edge. <br className="hidden md:block" />
           <span className="text-transparent bg-clip-text bg-gradient-to-b md:bg-gradient-to-r from-white to-slate-400">
-            Breakthroughs Actually Work.
+            Engineering. Supply Chains. Reality.
           </span>
         </h1>
         
