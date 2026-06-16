@@ -4,6 +4,8 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 
 const Business: React.FC = () => {
+  const supplierMapBetaHref = 'mailto:business@voltchina.net?subject=Supplier%20Map%20Beta&body=Hi%20VoltChina%2C%0A%0AI%27m%20interested%20in%20the%20Supplier%20Map%20Beta.%0A%0ACategory%20I%27m%20tracking%3A%0AUse%20case%20%2F%20role%3A%0A';
+
   return (
     <div className="min-h-screen bg-slate-950 font-sans">
       <Navbar forceDark />
@@ -43,6 +45,12 @@ const Business: React.FC = () => {
                   className="px-6 py-3 bg-slate-900/80 hover:bg-slate-800 text-white font-bold rounded-lg transition-all border border-slate-700 text-center"
                 >
                   Read the Free Brief First
+                </a>
+                <a
+                  href="#supplier-map-beta"
+                  className="px-6 py-3 bg-slate-950/80 hover:bg-slate-900 text-white font-bold rounded-lg transition-all border border-volt/40 hover:border-volt text-center"
+                >
+                  Join Supplier Map Beta
                 </a>
               </div>
 
@@ -109,6 +117,58 @@ const Business: React.FC = () => {
                 ctaLabel="Discuss Sponsorship"
                 to="/request-access"
               />
+            </div>
+          </div>
+        </section>
+
+        <section id="supplier-map-beta" className="py-20 bg-slate-950">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="relative overflow-hidden rounded-3xl border border-volt/25 bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 p-8 md:p-12 shadow-2xl shadow-volt/10">
+              <div className="absolute -right-24 -top-24 h-56 w-56 rounded-full bg-volt/10 blur-3xl"></div>
+              <div className="relative z-10 grid gap-8 lg:grid-cols-[1.35fr_0.65fr] lg:items-center">
+                <div>
+                  <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-volt/30 bg-volt/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-volt">
+                    <i className="fa-solid fa-flask"></i>
+                    Beta Demand Test
+                  </div>
+                  <h2 className="mb-4 text-3xl font-bold tracking-tight text-white md:text-4xl">
+                    Join the Supplier Map Beta.
+                  </h2>
+                  <p className="max-w-2xl text-lg leading-relaxed text-slate-300">
+                    We are testing demand for source-backed Chinese EV and robotics supplier maps behind VoltChina episodes.
+                  </p>
+                  <p className="mt-4 max-w-2xl text-slate-400">
+                    Join if you want early access to supplier shortlists, component categories, Chinese-source trails, and uncertainty notes before we build a full product.
+                  </p>
+                </div>
+
+                <div className="rounded-2xl border border-slate-800 bg-slate-950/70 p-6">
+                  <ul className="mb-6 space-y-3 text-sm text-slate-300">
+                    <li className="flex gap-3">
+                      <i className="fa-solid fa-check mt-1 text-volt"></i>
+                      <span>Supplier shortlists by category</span>
+                    </li>
+                    <li className="flex gap-3">
+                      <i className="fa-solid fa-check mt-1 text-volt"></i>
+                      <span>Chinese-source trail and public signals</span>
+                    </li>
+                    <li className="flex gap-3">
+                      <i className="fa-solid fa-check mt-1 text-volt"></i>
+                      <span>Uncertainty notes, not hype</span>
+                    </li>
+                  </ul>
+                  <a
+                    href={supplierMapBetaHref}
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-volt px-5 py-3 text-sm font-bold text-white shadow-lg shadow-volt/20 transition-all hover:bg-volt-hover hover:shadow-volt/40"
+                  >
+                    Join Supplier Map Beta
+                    <i className="fa-solid fa-arrow-right text-xs"></i>
+                  </a>
+                  <p className="mt-3 text-center text-xs text-slate-500">
+                    No payment required. This is a demand test.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
