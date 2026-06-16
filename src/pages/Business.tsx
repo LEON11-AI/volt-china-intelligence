@@ -39,14 +39,6 @@ const Business: React.FC = () => {
                   Discuss a Business Brief
                 </a>
                 <a
-                  href="https://voltchina.substack.com/subscribe"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-6 py-3 bg-slate-900/80 hover:bg-slate-800 text-white font-bold rounded-lg transition-all border border-slate-700 text-center"
-                >
-                  Read the Free Brief First
-                </a>
-                <a
                   href="#supplier-map-beta"
                   className="px-6 py-3 bg-slate-950/80 hover:bg-slate-900 text-white font-bold rounded-lg transition-all border border-volt/40 hover:border-volt text-center"
                 >
