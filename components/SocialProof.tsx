@@ -3,14 +3,14 @@ import React from 'react';
 const SocialProof: React.FC = () => {
   const testimonials = [
     {
-      text: "Very intelligently explained. The engineering breakdown made BYD's approach much easier to understand.",
-      name: "VoltChina viewer",
-      title: "EV technology reader",
+      text: "Very intelligently explained. I believe that BYD is there to stay and dominate. A new strong player is born.",
+      name: "Bruno L.",
+      title: "EV Market Observer",
     },
     {
-      text: "The clearest value is the mechanism-first framing: not just what China announced, but how the system works.",
-      name: "Newsletter reader",
-      title: "Global hard-tech audience",
+      text: "The Intel Inside comparison is sharper than most analyses I've seen... The Galapagos Effect framing nails why protectionism might backfire.",
+      name: "Neural Foundry",
+      title: "AI Infrastructure Engineer at Fortune 500",
     },
   ];
 
