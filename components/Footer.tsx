@@ -7,8 +7,8 @@ const Footer: React.FC = () => {
         <div className="text-center md:text-left">
           <div className="text-lg font-bold text-white mb-1">VOLT CHINA</div>
           <p className="text-sm text-slate-500">© 2026 VoltChina. All rights reserved.</p>
-          <p className="mt-2 text-[11px] text-slate-500 max-w-xl">
-            Disclaimer: VoltChina publishes engineering explanations and source-backed commentary for informational purposes only. Nothing on this site is investment, legal, or procurement advice.
+          <p className="mt-2 max-w-xl text-[11px] text-slate-500">
+            VoltChina publishes source-backed commentary and research for informational purposes only; it is not investment, legal, or procurement advice. Sponsored content is clearly disclosed and kept separate from commissioned research conclusions.
           </p>
         </div>
 

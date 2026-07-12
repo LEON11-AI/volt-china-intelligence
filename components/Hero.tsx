@@ -25,18 +25,18 @@ const Hero: React.FC = () => {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-volt opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-volt"></span>
           </span>
-          On-the-Ground Intelligence
+          Chinese-Language Source Intelligence
         </div>
         
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight mb-6 leading-tight max-w-5xl mx-auto">
-          Decode China's EV & Robotics Edge. <br className="hidden md:block" />
+          China-source intelligence for <br className="hidden md:block" />
           <span className="text-transparent bg-clip-text bg-gradient-to-b md:bg-gradient-to-r from-white to-slate-400">
-            Engineering. Supply Chains. Reality.
+            investment & strategy decisions.
           </span>
         </h1>
         
         <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-          VoltChina decodes China's EV, battery, smart-driving, robotics, and manufacturing breakthroughs through engineering mechanisms, supply-chain signals, and manufacturing realities.
+          VoltChina turns Chinese-language public sources into source-verified English context on EVs, batteries, smart driving, robotics, suppliers, and manufacturing—so focused teams can decide what deserves deeper diligence.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-10">
@@ -91,7 +91,7 @@ const Hero: React.FC = () => {
             </form>
           </div>
           <p className="text-xs text-slate-600 mt-3">
-            Engineering mechanisms. Supply-chain context. Manufacturing signals. No investment advice. Unsubscribe anytime.
+            Chinese-source context, engineering explanations, and manufacturing signals. Unsubscribe anytime.
           </p>
         </div>
         

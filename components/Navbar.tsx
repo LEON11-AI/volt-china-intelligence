@@ -16,7 +16,8 @@ const Navbar: React.FC<{ forceDark?: boolean }> = ({ forceDark = false }) => {
   const navLinks = [
     { name: 'YouTube', href: 'https://www.youtube.com/@VoltChina' },
     { name: 'Free Brief', href: '#brief' },
-    { name: 'For Business', href: '/business' },
+    { name: 'Intelligence', href: '/business' },
+    { name: 'Media', href: '/media' },
     { name: 'About', href: '#about' },
   ];
 
@@ -53,7 +54,7 @@ const Navbar: React.FC<{ forceDark?: boolean }> = ({ forceDark = false }) => {
           </div>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <a
                 key={link.name}

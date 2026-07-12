@@ -13,17 +13,17 @@ const ExpertServices: React.FC = () => {
               Written Research
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Need a Focused Written Brief?
+              Move from Chinese sources to a decision-ready brief.
             </h2>
             <p className="text-lg text-slate-400 mb-8 leading-relaxed">
-              If you have a specific question about a Chinese EV, battery, smart-driving, robotics, or manufacturing topic, VoltChina can prepare a concise written brief using public, verifiable Chinese-language sources.
+              For small investment firms, independent researchers, boutique consultancies, and corporate strategy teams: bring one focused question about a Chinese EV, battery, smart-driving, robotics, supplier, or manufacturing topic. VoltChina will return a concise English brief grounded in public, verifiable Chinese-language sources.
             </p>
 
             <ul className="space-y-4 mb-8">
               {[
                 'Written delivery by email or shared document',
-                'Source-backed, with no insider leaks or unsupported claims',
-                'Focused on EVs, batteries, smart driving, robotics, and manufacturing',
+                'Chinese-language sources screened, translated, and linked',
+                'Focused on a defined decision, company, technology, or category',
                 'Async-first workflow, so no live call is required',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3 text-slate-300">
@@ -66,7 +66,7 @@ const ExpertServices: React.FC = () => {
                 Request a Written Brief
               </Link>
               <p className="text-xs text-center text-slate-500 mt-4">
-                Informational research only. Not investment, legal, or procurement advice.
+                Research is source-backed and scope-defined; full terms and limitations are stated before work begins.
               </p>
             </div>
           </div>

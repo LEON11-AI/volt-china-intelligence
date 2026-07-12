@@ -12,6 +12,8 @@ import BYD_Song_Plus_2026 from './src/pages/reports/BYD_Song_Plus_2026';
 import BYD_Humanoid_Robot from './src/pages/reports/BYD_Humanoid_Robot';
 import SubmitQuery from './src/pages/SubmitQuery';
 import RequestAccess from './src/pages/RequestAccess';
+import Media from './src/pages/Media';
+import SupplierMapThanks from './src/pages/SupplierMapThanks';
 
 const App: React.FC = () => {
   return (
@@ -19,6 +21,8 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/business" element={<Business />} />
+        <Route path="/media" element={<Media />} />
+        <Route path="/supplier-map-beta/thanks" element={<SupplierMapThanks />} />
         <Route path="/submit-query" element={<SubmitQuery />} />
         <Route path="/request-access" element={<RequestAccess />} />
         <Route path="/research" element={<ResearchIndex />} />
