@@ -45,6 +45,28 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
 
+      - name: Send new supplier-map submissions to the VoltChina inbox
+        if: steps.netlify-secrets.outputs.has_secrets == 'true'
+        run: |
+          hooks=$(curl --fail-with-body --silent --show-error \
+            --header "Authorization: Bearer $NETLIFY_AUTH_TOKEN" \
+            "https://api.netlify.com/api/v1/hooks?site_id=$NETLIFY_SITE_ID")
+
+          existing=$(echo "$hooks" | jq --arg email "business@voltchina.net" '
+            any(.[]; .type == "email" and .event == "submission_created" and .form_name == "supplier-map-beta" and .data.email == $email)
+          ')
+
+          if [ "$existing" != "true" ]; then
+            curl --fail-with-body --silent --show-error --request POST \
+              --header "Authorization: Bearer $NETLIFY_AUTH_TOKEN" \
+              --header "Content-Type: application/json" \
+              --data '{"type":"email","event":"submission_created","form_name":"supplier-map-beta","data":{"email":"business@voltchina.net"},"site_id":"'"$NETLIFY_SITE_ID"'"}' \
+              "https://api.netlify.com/api/v1/hooks"
+          fi
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
       - name: Deployment handled by Netlify Git integration
         if: steps.netlify-secrets.outputs.has_secrets != 'true'
         run: echo "Build passed. Netlify deploy is skipped because GitHub Actions deploy secrets are not configured."
