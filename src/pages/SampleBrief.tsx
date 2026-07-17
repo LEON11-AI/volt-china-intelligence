@@ -37,7 +37,7 @@ const SampleBrief: React.FC = () => {
     <main>
       <section className="border-b border-slate-800 bg-slate-950 pb-16 pt-32 md:pb-20 md:pt-40">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <p className="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-volt">Sample Research</p>
+          <p className="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-volt">Sample Research Brief</p>
           <h1 className="mb-6 max-w-4xl text-4xl font-bold leading-tight tracking-tight text-white md:text-6xl">See What a VoltChina Research Brief Looks Like.</h1>
           <p className="max-w-3xl text-lg leading-relaxed text-slate-300 md:text-xl">This sample demonstrates how VoltChina separates confirmed facts, company claims, inference, and verification gaps using public Chinese-language sources.</p>
           <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center"><Link to="/intelligence#research-request" onClick={() => (window as any).gtag?.('event', 'click_submit_research_question')} className="inline-flex items-center gap-2 rounded-lg bg-volt px-6 py-3 font-bold text-white shadow-lg shadow-volt/20 transition-all hover:bg-volt-hover hover:shadow-volt/40">Submit a Research Question <i className="fa-solid fa-arrow-right text-xs" /></Link><p className="text-sm text-slate-400">No call required. You will receive a written scope and fixed quote by email.</p></div>
