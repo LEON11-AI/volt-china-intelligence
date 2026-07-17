@@ -117,14 +117,14 @@ const ResearchIndex: React.FC = () => {
                   <img src="/og-image.jpg" alt="Solid State Battery Report" className="w-full h-full object-cover" />
                 </div>
                 <div className="p-6 flex flex-col flex-grow">
-                  <Link to="/research/solid-state-battery" className="text-xl font-bold text-white mb-2 hover:text-volt" aria-label="Read BYD solid-state breakthroughs">
-                    BYD solid-state breakthroughs
+                  <Link to="/research/byd-solid-state-battery-2026" className="text-xl font-bold text-white mb-2 hover:text-volt" aria-label="Read BYD all-solid-state battery commercialization report">
+                    BYD All-Solid-State Battery Commercialization Timeline
                   </Link>
-                  <p className="text-slate-400 mb-4 text-sm flex-grow">A comprehensive analysis of technical routes and 2030 market forecast.</p>
+                  <p className="text-slate-400 mb-4 text-sm flex-grow">Primary-source assessment of the reported 2027 demonstration and around-2030 production milestones.</p>
                   <div className="flex items-center justify-between mt-auto pt-4 border-t border-slate-800">
                     <div className="text-xs text-slate-500">Report • Technology</div>
-                    <Link to="/research/solid-state-battery" className="px-4 py-2 bg-volt hover:bg-volt-hover text-white rounded-lg font-semibold inline-flex items-center gap-2 text-sm">
-                      <span>Read Analysis</span>
+                    <Link to="/research/byd-solid-state-battery-2026" className="px-4 py-2 bg-volt hover:bg-volt-hover text-white rounded-lg font-semibold inline-flex items-center gap-2 text-sm">
+                      <span>Read Report</span>
                       <i className="fa-solid fa-arrow-right text-xs" />
                     </Link>
                   </div>

@@ -35,7 +35,7 @@ const Hero: React.FC = () => {
         </p>
 
         <div className="mb-4 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <a href="/sample-brief" onClick={() => (window as any).gtag?.('event', 'view_sample_brief')} className="w-full rounded-lg bg-volt px-6 py-3 font-bold text-white shadow-lg shadow-volt/20 transition-all hover:bg-volt-hover hover:shadow-volt/40 sm:w-auto">View a Sample Brief</a>
+          <a href="/research/byd-solid-state-battery-2026" onClick={() => (window as any).gtag?.('event', 'view_byd_solid_state_report')} className="w-full rounded-lg bg-volt px-6 py-3 font-bold text-white shadow-lg shadow-volt/20 transition-all hover:bg-volt-hover hover:shadow-volt/40 sm:w-auto">Read the BYD Report</a>
           <a href="/intelligence#research-request" onClick={() => (window as any).gtag?.('event', 'click_submit_research_question')} className="w-full rounded-lg border border-slate-700 bg-slate-900/80 px-6 py-3 font-bold text-white transition-all hover:bg-slate-800 sm:w-auto">Submit a Research Question</a>
         </div>
         <p className="mb-10 text-sm font-medium text-slate-400">100% async. No calls required. Scope, pricing, delivery, and follow-up are handled in writing.</p>
@@ -43,7 +43,7 @@ const Hero: React.FC = () => {
         <div className="mx-auto mb-16 max-w-2xl rounded-2xl border border-volt/20 bg-slate-900/80 p-6 shadow-2xl shadow-volt/10 backdrop-blur-sm">
           <div className="mb-4 flex items-center justify-center gap-2 text-volt"><i className="fa-solid fa-envelope-open-text" /><span className="text-sm font-bold uppercase tracking-wider">Free Weekly Brief</span></div>
           <h3 className="mb-3 text-lg font-medium leading-snug text-slate-300 md:text-xl"><span className="mb-2 block text-2xl font-bold text-white md:text-3xl">Get the China EV & Hard-Tech Intelligence Brief.</span>A weekly source-backed brief decoding China's EV, battery, smart-driving, robotics, and manufacturing breakthroughs through engineering, cost, yield, and supply-chain signals.</h3>
-          <p className="mb-6 text-sm text-slate-400">Bonus: receive the 15-page BYD Solid-State Battery Engineering Report when you subscribe.</p>
+          <p className="mb-6 text-sm text-slate-400">Also available: the 11-page BYD All-Solid-State Battery Evidence Report, updated 17 July 2026.</p>
           <form onSubmit={handleSubscribe} className="flex flex-col gap-3 sm:flex-row">
             <input type="email" value={email} onChange={(event) => setEmail(event.target.value)} placeholder="Enter your email..." required className="flex-1 rounded-lg border border-slate-700 bg-slate-800 px-4 py-3 text-white transition-all placeholder-slate-500 focus:border-volt focus:outline-none focus:ring-1 focus:ring-volt" />
             <button type="submit" className="flex items-center justify-center whitespace-nowrap rounded-lg bg-volt px-6 py-3 font-bold text-white shadow-lg shadow-volt/20 transition-all hover:bg-volt-hover hover:shadow-volt/40">Subscribe Free</button>

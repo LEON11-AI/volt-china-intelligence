@@ -4,7 +4,6 @@ import App from './App';
 import Business from './src/pages/Business';
 import ResearchPage from './pages/ResearchPage';
 import BlogPage from './pages/BlogPage';
-import SolidStateReport from './src/pages/reports/SolidStateReport';
 import ResearchIndex from './src/pages/ResearchIndex';
 import BYD_ADAS_Strategy from './src/pages/reports/BYD_ADAS_Strategy';
 import BYD_Song_Plus_2026 from './src/pages/reports/BYD_Song_Plus_2026';
@@ -21,16 +20,17 @@ const Router: React.FC = () => {
         <Route path="/business" element={<Business />} />
         <Route path="/intelligence" element={<Business />} />
         <Route path="/sample-brief" element={<SampleBrief />} />
+        <Route path="/research/byd-solid-state-battery-2026" element={<SampleBrief />} />
         <Route path="/submit-query" element={<SubmitQuery />} />
         <Route path="/request-access" element={<RequestAccess />} />
         <Route path="/research" element={<ResearchPage />} />
         <Route path="/research/index" element={<ResearchIndex />} />
-        <Route path="/research/solid-state-battery" element={<SolidStateReport />} />
+        <Route path="/research/solid-state-battery" element={<SampleBrief />} />
         <Route path="/research/byd-adas-strategy" element={<BYD_ADAS_Strategy />} />
         <Route path="/research/byd-song-plus-2026" element={<BYD_Song_Plus_2026 />} />
         <Route path="/research/byd-humanoid-robot" element={<BYD_Humanoid_Robot />} />
         <Route path="/blog" element={<BlogPage />} />
-        <Route path="/reports/solid-state" element={<SolidStateReport />} />
+        <Route path="/reports/solid-state" element={<SampleBrief />} />
       </Routes>
     </BrowserRouter>
   );

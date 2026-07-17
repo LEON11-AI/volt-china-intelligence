@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './src/pages/Home';
 import Business from './src/pages/Business';
 import ResearchIndex from './src/pages/ResearchIndex';
-import SolidStateReport from './src/pages/reports/SolidStateReport';
 import BlogPage from './pages/BlogPage';
 import HuaweiCostAnalysis from './src/pages/exclusive/HuaweiCostAnalysis';
 import HuaweiStocksList from './src/pages/exclusive/HuaweiStocksList';
@@ -26,12 +25,13 @@ const App: React.FC = () => {
         <Route path="/intelligence" element={<Business />} />
         <Route path="/media" element={<Media />} />
         <Route path="/sample-brief" element={<SampleBrief />} />
+        <Route path="/research/byd-solid-state-battery-2026" element={<SampleBrief />} />
         <Route path="/supplier-map-beta/thanks" element={<SupplierMapThanks />} />
         <Route path="/submit-query" element={<SubmitQuery />} />
         <Route path="/request-access" element={<RequestAccess />} />
         <Route path="/research" element={<ResearchIndex />} />
         <Route path="/research/index" element={<ResearchIndex />} />
-        <Route path="/research/solid-state-battery" element={<SolidStateReport />} />
+        <Route path="/research/solid-state-battery" element={<SampleBrief />} />
         <Route path="/research/byd-adas-strategy" element={<BYD_ADAS_Strategy />} />
         <Route path="/research/byd-song-plus-2026" element={<BYD_Song_Plus_2026 />} />
         <Route path="/research/byd-humanoid-robot" element={<BYD_Humanoid_Robot />} />
