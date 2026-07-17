@@ -10,7 +10,7 @@ const SocialProof: React.FC = () => {
     {
       text: "The Intel Inside comparison is sharper than most analyses I've seen... The Galapagos Effect framing nails why protectionism might backfire.",
       name: "Neural Foundry",
-      title: "AI Infrastructure Engineer at Fortune 500",
+      title: "Engineering professional",
     },
   ];
 
@@ -19,14 +19,13 @@ const SocialProof: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-3xl mx-auto mb-14">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-volt mb-4">
-            Trusted by a global niche audience
+            What Readers Say About VoltChina’s Analysis
           </p>
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
             Engineering explanations for readers who want more than headlines.
           </h2>
           <p className="text-slate-400 leading-relaxed">
-            VoltChina reaches a small but high-intent global audience across EV engineering, sourcing and supply-chain work,
-            investment research, and public-sector or regulatory domains tracking China's hard-tech ecosystem.
+            Feedback from viewers and readers who follow VoltChina’s engineering and China-source analysis.
           </p>
         </div>
 

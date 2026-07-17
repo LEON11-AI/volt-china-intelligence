@@ -60,10 +60,10 @@ const ExpertServices: React.FC = () => {
               </div>
 
               <Link
-                to="/submit-query"
+                to="/intelligence#research-request"
                 className="block w-full py-4 text-center bg-volt text-white hover:bg-volt-hover font-bold rounded-lg transition-colors shadow-lg shadow-volt/20 hover:shadow-volt/40"
               >
-                Request a Written Brief
+                Submit a Research Question
               </Link>
               <p className="text-xs text-center text-slate-500 mt-4">
                 Research is source-backed and scope-defined; full terms and limitations are stated before work begins.

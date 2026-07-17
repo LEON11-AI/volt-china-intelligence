@@ -16,7 +16,7 @@ const Navbar: React.FC<{ forceDark?: boolean }> = ({ forceDark = false }) => {
   const navLinks = [
     { name: 'YouTube', href: 'https://www.youtube.com/@VoltChina' },
     { name: 'Free Brief', href: '#brief' },
-    { name: 'Intelligence', href: '/business' },
+    { name: 'Intelligence', href: '/intelligence' },
     { name: 'Media', href: '/media' },
     { name: 'About', href: '#about' },
   ];
@@ -46,9 +46,9 @@ const Navbar: React.FC<{ forceDark?: boolean }> = ({ forceDark = false }) => {
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center gap-2 group">
-              <img src="/VC.png" alt="Volt China Logo" className="w-16 h-16 rounded-xl object-cover" />
-              <span className="text-xl font-bold tracking-tight text-white">
-                VOLT CHINA <span className="font-light text-slate-400">| Intelligence</span>
+              <img src="/VC.png" alt="Volt China Logo" className="h-11 w-11 rounded-xl object-cover sm:h-16 sm:w-16" />
+              <span className="text-base font-bold tracking-tight text-white sm:text-xl">
+                VOLT CHINA <span className="hidden font-light text-slate-400 sm:inline">| Intelligence</span>
               </span>
             </Link>
           </div>
@@ -95,7 +95,7 @@ const Navbar: React.FC<{ forceDark?: boolean }> = ({ forceDark = false }) => {
           <div className="px-4 pt-2 pb-6 space-y-1">
             <div className="flex items-center mb-4 pb-4 border-b border-slate-800">
               <Link to="/" className="flex items-center gap-2 group" onClick={() => setMobileMenuOpen(false)}>
-                <img src="/VC.png" alt="Volt China Logo" className="w-16 h-16 rounded-xl object-cover" />
+                <img src="/VC.png" alt="Volt China Logo" className="w-12 h-12 rounded-xl object-cover" />
                 <span className="text-xl font-bold tracking-tight text-white">
                   VOLT CHINA <span className="font-light text-slate-400">| Intelligence</span>
                 </span>

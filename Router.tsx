@@ -11,6 +11,7 @@ import BYD_Song_Plus_2026 from './src/pages/reports/BYD_Song_Plus_2026';
 import BYD_Humanoid_Robot from './src/pages/reports/BYD_Humanoid_Robot';
 import SubmitQuery from './src/pages/SubmitQuery';
 import RequestAccess from './src/pages/RequestAccess';
+import SampleBrief from './src/pages/SampleBrief';
 
 const Router: React.FC = () => {
   return (
@@ -18,6 +19,8 @@ const Router: React.FC = () => {
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/business" element={<Business />} />
+        <Route path="/intelligence" element={<Business />} />
+        <Route path="/sample-brief" element={<SampleBrief />} />
         <Route path="/submit-query" element={<SubmitQuery />} />
         <Route path="/request-access" element={<RequestAccess />} />
         <Route path="/research" element={<ResearchPage />} />

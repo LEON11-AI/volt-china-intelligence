@@ -1,0 +1,75 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
+
+const classifications = [
+  { label: 'Confirmed', text: 'Public patent publications show BYD activity around solid electrolytes and solid-state lithium-battery concepts. They do not prove a vehicle-ready cell.', tone: 'border-emerald-500/30 bg-emerald-500/10 text-emerald-200' },
+  { label: 'Company-claimed', text: 'Chinese reporting attributes a staged all-solid-state timeline to BYD chief scientist Lian Yubo. The dates remain management commentary, not a disclosed production commitment.', tone: 'border-volt/30 bg-volt/10 text-orange-200' },
+  { label: 'Third-party reported', text: 'Several Chinese outlets repeated the executive comments and patent news. Repetition improves traceability, not technical verification.', tone: 'border-blue-500/30 bg-blue-500/10 text-blue-200' },
+  { label: 'Inferred', text: 'Patent activity plus public commentary suggests continued R&D interest. It does not establish pilot-line yield, cost, or a qualified supply chain.', tone: 'border-violet-500/30 bg-violet-500/10 text-violet-200' },
+  { label: 'Unverified', text: 'No public source in this sample confirms an all-solid-state vehicle program, validated automotive life, production capacity, unit cost, or named qualified suppliers.', tone: 'border-slate-600 bg-slate-800 text-slate-200' },
+];
+
+const findings = [
+  { title: 'The public timeline is staged, not a near-term mass-production statement.', evidence: 'Chinese coverage of Lian Yubo’s 2024 remarks places broader all-solid-state application several years away; later reporting presents 2027 as a demonstration-stage milestone and 2030 as a larger-scale ambition.', date: '2024-09-27 onward', confidence: 'Medium', limitation: 'The wording reaches the public through media coverage, not a detailed BYD technical disclosure or filing.' },
+  { title: 'Public patents establish technical activity, not commercial readiness.', evidence: 'Patent coverage reported by Chinese outlets concerns solid electrolytes, solid lithium batteries, and related materials or cell structures.', date: '2021-01 to 2024-10', confidence: 'High for publication; low for readiness', limitation: 'Patent publication does not disclose cell format, performance at automotive scale, pilot yield, qualification, or launch timing.' },
+  { title: 'Primary company filings do not provide the production evidence needed to underwrite the timeline.', evidence: 'The 2024 annual report and 2025 first-quarter disclosure show normal listed-company disclosure records, but this sample did not locate a detailed all-solid-state commercialization timetable in those public filings.', date: '2025-03 to 2025-04', confidence: 'Medium', limitation: 'Absence from these disclosures is not proof that no internal program exists.' },
+  { title: 'The investment-relevant question remains execution evidence.', evidence: 'A diligence decision would turn on demonstrated cells, pilot output, material sourcing, cycle and safety results, vehicle validation, and cost trajectory — none is established by the public source trail below.', date: 'As of sample review', confidence: 'High', limitation: 'Private supplier, prototype, or partner work may not be public.' },
+];
+
+const sources = [
+  { title: '布局全固态电池 比亚迪多项专利曝光', org: '汽车之家', date: '2021-01-30', type: 'Automotive media / patent reporting', url: 'https://www.autohome.com.cn/news/202101/1107476.html', relevance: 'Early Chinese coverage of multiple BYD solid-state-related patent publications.' },
+  { title: '比亚迪公开“一种固态电解质及固态锂电池”专利', org: '新京报', date: '2021-03-04', type: 'News / patent reporting', url: 'https://www.bjnews.com.cn/detail/161484593215426.html', relevance: 'Confirms a reported public patent disclosure; does not establish production readiness.' },
+  { title: '比亚迪廉玉波发声：固态电池广泛应用还需3～5年', org: '新浪汽车', date: '2024-09-27', type: 'Conference reporting', url: 'https://auto.sina.com.cn/zz/hy/2024-09-29/detail-incqqytr1027056.shtml', relevance: 'Chinese reporting of the chief scientist’s broad timing view and continuing role of LFP.' },
+  { title: '比亚迪首席科学家：20年内磷酸铁锂电池不会淘汰', org: '快科技', date: '2024-09-27', type: 'Conference reporting', url: 'https://news.mydrivers.com/1/1005/1005680.htm', relevance: 'A second contemporaneous account of the public executive remarks.' },
+  { title: '比亚迪廉玉波发声：固态电池广泛应用还需3~5年', org: '搜狐汽车', date: '2024-09-29', type: 'Automotive media reporting', url: 'https://www.sohu.com/a/812579465_114984', relevance: 'Corroborating coverage of the same public remarks; treated as corroboration, not independent proof.' },
+  { title: '比亚迪申请全固态电池专利，使电池具有良好的首效和循环性能', org: '东方财富财富号', date: '2024-10-09', type: 'Patent reporting / third-party post', url: 'https://caifuhao.eastmoney.com/news/20241010100537621429990', relevance: 'Reported later patent activity; the claim is not used as evidence of a production-ready cell.' },
+  { title: '比亚迪股份有限公司2024年年度报告', org: '比亚迪股份 / 巨潮资讯', date: '2025-03-25', type: 'Listed-company annual report', url: 'http://static.cninfo.com.cn/finalpage/2025-03-25/1222881505.PDF', relevance: 'Primary company disclosure used to check for a detailed commercialization commitment.' },
+  { title: '比亚迪股份有限公司2025年第一季度业绩预告', org: '比亚迪股份 / 巨潮资讯', date: '2025-04-08', type: 'Listed-company disclosure', url: 'http://static.cninfo.com.cn/finalpage/2025-04-08/1223026997.pdf', relevance: 'Primary disclosure cross-check; it does not supply an all-solid-state production timetable.' },
+];
+
+const SampleBrief: React.FC = () => {
+  React.useEffect(() => { (window as any).gtag?.('event', 'view_sample_brief'); (window as any).plausible?.('view_sample_brief'); }, []);
+
+  return <div className="min-h-screen bg-slate-950 font-sans text-slate-200">
+    <Navbar forceDark />
+    <main>
+      <section className="border-b border-slate-800 bg-slate-950 pb-16 pt-32 md:pb-20 md:pt-40">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-volt">Sample Research</p>
+          <h1 className="mb-6 max-w-4xl text-4xl font-bold leading-tight tracking-tight text-white md:text-6xl">See What a VoltChina Research Brief Looks Like.</h1>
+          <p className="max-w-3xl text-lg leading-relaxed text-slate-300 md:text-xl">This sample demonstrates how VoltChina separates confirmed facts, company claims, inference, and verification gaps using public Chinese-language sources.</p>
+          <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center"><Link to="/intelligence#research-request" onClick={() => (window as any).gtag?.('event', 'click_submit_research_question')} className="inline-flex items-center gap-2 rounded-lg bg-volt px-6 py-3 font-bold text-white shadow-lg shadow-volt/20 transition-all hover:bg-volt-hover hover:shadow-volt/40">Submit a Research Question <i className="fa-solid fa-arrow-right text-xs" /></Link><p className="text-sm text-slate-400">No call required. You will receive a written scope and fixed quote by email.</p></div>
+        </div>
+      </section>
+
+      <article className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mb-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-6 md:p-8"><div className="mb-4 flex flex-wrap gap-3 text-xs font-medium"><span className="rounded-full border border-slate-700 px-3 py-1 text-slate-300">Illustrative public-source brief</span><span className="rounded-full border border-slate-700 px-3 py-1 text-slate-300">Chinese-source trail included</span><span className="rounded-full border border-slate-700 px-3 py-1 text-slate-300">Not investment advice</span></div><h2 className="mb-3 text-2xl font-bold text-white md:text-3xl">Is BYD’s Solid-State Battery Timeline Supported by Chinese Public Sources?</h2><p className="leading-relaxed text-slate-400">Sample scope: public materials located through 2025-04. This is a model of the written format, not a recommendation or a substitute for technical, legal, or investment diligence.</p></div>
+
+        <SectionNumber number="01" title="Research Question"><p className="text-lg leading-relaxed text-slate-300">What do Chinese-language public sources actually support regarding BYD’s solid-state battery development and commercialization timeline?</p></SectionNumber>
+
+        <SectionNumber number="02" title="Executive Answer"><div className="rounded-2xl border border-volt/25 bg-volt/10 p-6 text-lg leading-relaxed text-slate-100">Chinese public sources support that BYD has pursued solid-state-related battery R&D and public patent activity. They also support that a BYD chief scientist described broad all-solid-state use as years away. They do not establish a factory-qualified, vehicle-production timetable. The frequently repeated 2027 and 2030 milestones should be treated as management commentary reported by Chinese media, not as confirmed launch evidence. A deeper diligence project is warranted only if the decision depends on testing cell performance, pilot output, cost, supply-chain qualification, or vehicle validation.</div></SectionNumber>
+
+        <SectionNumber number="03" title="Evidence Classification"><div className="grid gap-4 md:grid-cols-2">{classifications.map((item) => <div key={item.label} className={`rounded-xl border p-5 ${item.tone}`}><h3 className="mb-2 font-bold">{item.label}</h3><p className="text-sm leading-relaxed">{item.text}</p></div>)}</div></SectionNumber>
+
+        <SectionNumber number="04" title="Key Findings"><div className="space-y-5">{findings.map((finding, index) => <div key={finding.title} className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6"><div className="mb-3 flex items-start gap-3"><span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-volt/15 text-sm font-bold text-volt">{index + 1}</span><h3 className="text-lg font-bold text-white">{finding.title}</h3></div><dl className="grid gap-3 text-sm leading-relaxed sm:grid-cols-[110px_1fr]"><dt className="font-semibold text-slate-400">Evidence</dt><dd className="text-slate-300">{finding.evidence}</dd><dt className="font-semibold text-slate-400">Source date</dt><dd className="text-slate-300">{finding.date}</dd><dt className="font-semibold text-slate-400">Confidence</dt><dd className="text-slate-300">{finding.confidence}</dd><dt className="font-semibold text-slate-400">Limitation</dt><dd className="text-slate-300">{finding.limitation}</dd></dl></div>)}</div></SectionNumber>
+
+        <SectionNumber number="05" title="Chinese-Language Source Trail"><p className="mb-6 leading-relaxed text-slate-400">Each source is linked in the original Chinese. Several media reports cover the same executive remarks; this brief labels them as corroborating reports rather than counting them as independent technical proof.</p><div className="space-y-4">{sources.map((source, index) => <div key={source.url} className="rounded-xl border border-slate-800 bg-slate-900/60 p-5"><div className="mb-3 flex flex-col gap-2 md:flex-row md:items-start md:justify-between"><h3 className="font-bold leading-relaxed text-white">{index + 1}. {source.title}</h3><span className="shrink-0 text-xs text-slate-500">{source.date}</span></div><div className="grid gap-2 text-sm sm:grid-cols-2"><p><span className="text-slate-500">Publisher: </span><span className="text-slate-300">{source.org}</span></p><p><span className="text-slate-500">Source type: </span><span className="text-slate-300">{source.type}</span></p></div><p className="mt-3 text-sm leading-relaxed text-slate-400">{source.relevance}</p><a href={source.url} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 break-all text-sm font-medium text-volt hover:text-orange-300">Open original Chinese source <i className="fa-solid fa-arrow-up-right-from-square text-xs" /></a></div>)}</div></SectionNumber>
+
+        <SectionNumber number="06" title="Verification Gaps"><ul className="grid gap-3 md:grid-cols-2">{['Cell chemistry, format, and independently measured energy density', 'Pilot-line capacity, yield, and manufacturing readiness', 'Automotive safety, cycle-life, and fast-charge validation', 'Vehicle program, launch model, and homologation status', 'Qualified material and equipment suppliers', 'Cost per kWh and a credible scale-down path'].map((gap) => <li key={gap} className="rounded-xl border border-slate-800 bg-slate-900/60 p-4 text-sm leading-relaxed text-slate-300"><i className="fa-solid fa-circle-question mr-2 text-volt" />{gap}</li>)}</ul></SectionNumber>
+
+        <SectionNumber number="07" title="What This Means"><p className="leading-relaxed text-slate-300">For investment research, corporate strategy, competitive analysis, and deeper technical diligence, the public record is sufficient to frame questions — not to close them. The source trail supports monitoring BYD’s work and treating the reported timetable as directional. It does not support treating commercial readiness as established.</p></SectionNumber>
+
+        <SectionNumber number="08" title="Recommended Next Step"><div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6"><p className="leading-relaxed text-slate-300">A focused next-stage brief would test the reported timeline against four evidence sets: BYD or affiliate technical disclosures, patent-family progression, material and equipment supplier signals, and any verifiable pilot or vehicle-validation evidence. The output should state precisely which claims remain company-reported and which can be independently corroborated.</p></div></SectionNumber>
+
+        <section className="mt-16 rounded-3xl border border-volt/25 bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 p-8 text-center shadow-2xl shadow-volt/10 md:p-12"><h2 className="mb-4 text-3xl font-bold text-white">Have a China question that needs verification?</h2><p className="mx-auto mb-7 max-w-2xl leading-relaxed text-slate-300">Submit one focused question. VoltChina will review it and send a written scope, fixed price, and delivery date by email.</p><Link to="/intelligence#research-request" className="inline-flex items-center gap-2 rounded-lg bg-volt px-6 py-3 font-bold text-white shadow-lg shadow-volt/20 transition-all hover:bg-volt-hover hover:shadow-volt/40">Submit a Research Question <i className="fa-solid fa-arrow-right text-xs" /></Link></section>
+      </article>
+    </main>
+    <Footer />
+  </div>;
+};
+
+const SectionNumber: React.FC<{ number: string; title: string; children: React.ReactNode }> = ({ number, title, children }) => <section className="mb-14"><div className="mb-5 flex items-center gap-3"><span className="text-sm font-bold tracking-[0.2em] text-volt">{number}</span><h2 className="text-2xl font-bold text-white md:text-3xl">{title}</h2></div>{children}</section>;
+
+export default SampleBrief;

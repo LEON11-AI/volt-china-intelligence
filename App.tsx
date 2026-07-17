@@ -14,6 +14,8 @@ import SubmitQuery from './src/pages/SubmitQuery';
 import RequestAccess from './src/pages/RequestAccess';
 import Media from './src/pages/Media';
 import SupplierMapThanks from './src/pages/SupplierMapThanks';
+import SampleBrief from './src/pages/SampleBrief';
+import Legal from './src/pages/Legal';
 
 const App: React.FC = () => {
   return (
@@ -21,7 +23,9 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/business" element={<Business />} />
+        <Route path="/intelligence" element={<Business />} />
         <Route path="/media" element={<Media />} />
+        <Route path="/sample-brief" element={<SampleBrief />} />
         <Route path="/supplier-map-beta/thanks" element={<SupplierMapThanks />} />
         <Route path="/submit-query" element={<SubmitQuery />} />
         <Route path="/request-access" element={<RequestAccess />} />
@@ -34,6 +38,8 @@ const App: React.FC = () => {
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/exclusive/vip-cost-8848" element={<HuaweiCostAnalysis />} />
         <Route path="/exclusive/vip-supply-9961" element={<HuaweiStocksList />} />
+        <Route path="/privacy" element={<Legal type="privacy" />} />
+        <Route path="/terms" element={<Legal type="terms" />} />
       </Routes>
     </BrowserRouter>
   );
