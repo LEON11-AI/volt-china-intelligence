@@ -29,7 +29,7 @@ const SampleBrief: React.FC = () => {
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <p className="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-volt">Public Research Report</p>
           <h1 className="mb-6 max-w-5xl text-4xl font-bold leading-tight tracking-tight text-white md:text-6xl">BYD All-Solid-State Battery Commercialization Timeline</h1>
-          <p className="max-w-4xl text-lg leading-relaxed text-slate-300 md:text-xl">What public primary sources actually support about the reported 2027 demonstration and around-2030 mass-production milestones.</p>
+          <p className="max-w-4xl text-lg leading-relaxed text-slate-300 md:text-xl">What publicly accessible corporate, patent, standards, and official-event records support about the reported 2027 demonstration and around-2030 mass-production milestones.</p>
           <p className="mt-5 max-w-4xl text-sm leading-relaxed text-slate-400">This is an independently prepared public research sample created to demonstrate VoltChina&rsquo;s methodology. It was not commissioned by a client.</p>
           <div className="mt-7 flex flex-wrap gap-3 text-xs font-medium"><span className="rounded-full border border-slate-700 px-3 py-1 text-slate-300">Information cut-off: 17 July 2026</span><span className="rounded-full border border-slate-700 px-3 py-1 text-slate-300">Public-source-first method</span></div>
           <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center"><ReportButton /><Link to="/intelligence#research-request" className="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-900/80 px-6 py-3 font-bold text-white transition-all hover:bg-slate-800">Submit a Research Question <i className="fa-solid fa-arrow-right text-xs" /></Link></div>
@@ -39,7 +39,7 @@ const SampleBrief: React.FC = () => {
       <article className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
         <section className="mb-14">
           <SectionHeading number="01" title="Research question" />
-          <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 md:p-8"><p className="text-lg leading-relaxed text-white">What do publicly accessible primary and primary-adjacent sources support about BYD&rsquo;s reported plan to begin batch demonstration vehicle deployment of all-solid-state batteries around 2027 and achieve large-scale production around 2030?</p></div>
+          <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 md:p-8"><p className="text-lg leading-relaxed text-white">What do publicly accessible Chinese-language corporate filings, official event records, standards records, and patent publications support about BYD&rsquo;s reported plan to begin batch demonstration deployment around 2027 and achieve large-scale production around 2030?</p></div>
         </section>
 
         <section className="mb-14">
