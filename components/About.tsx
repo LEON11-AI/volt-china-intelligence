@@ -19,9 +19,6 @@ const About: React.FC = () => {
           </div>
 
           <h2 className="text-3xl font-bold text-white mb-2 tracking-tight">About VoltChina</h2>
-          <p className="text-xl md:text-2xl font-medium text-volt mb-8">
-            Source-backed intelligence from inside China's hard-tech signal layer.
-          </p>
         </div>
 
         <div className="bg-slate-900/50 border border-slate-800 rounded-2xl p-8 md:p-12 shadow-2xl backdrop-blur-sm">
