@@ -17,6 +17,7 @@ const Navbar: React.FC<{ forceDark?: boolean }> = ({ forceDark = false }) => {
     { name: 'YouTube', href: 'https://www.youtube.com/@VoltChina' },
     { name: 'Free Brief', href: '#brief' },
     { name: 'Intelligence', href: '/intelligence' },
+    { name: 'Sourcing Pilot', href: '/sourcing' },
     { name: 'Media', href: '/media' },
     { name: 'About', href: '#about' },
   ];

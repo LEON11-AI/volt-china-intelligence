@@ -9,6 +9,10 @@ const PricingPlans: React.FC = () => (
         <PlanCard title="VoltChina Intelligence" price="From $800" subtitle="For small investment firms, independent researchers, boutique consultancies, and corporate strategy teams with a focused China question." ctaLabel="Submit a Research Question" to="/intelligence#research-request" bullets={['Custom research and technology verification', 'Supplier and competitor mapping', 'Public, verifiable Chinese-source trails', 'Clear conclusions and uncertainty notes']} />
         <PlanCard title="VoltChina Media" price="Custom" subtitle="For relevant brands seeking clearly disclosed access to VoltChina’s global EV and hard-tech audience." ctaLabel="Explore Media" to="/media" bullets={['YouTube sponsorship', 'Newsletter placement', 'Dedicated product explainer', 'Separate from research conclusions']} />
       </div>
+      <div className="mx-auto mt-6 max-w-6xl rounded-2xl border border-slate-800 bg-slate-900/60 p-6 md:flex md:items-center md:justify-between md:gap-8">
+        <div><p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-volt">Commercial Pilot</p><h3 className="text-xl font-bold text-white">Supplier Verification &amp; RFQ Pilot</h3><p className="mt-2 max-w-3xl text-sm leading-relaxed text-slate-400">For overseas buyers with a specific product requirement who need Chinese supplier screening, comparable written quotations, and a direct introduction.</p></div>
+        <Link to="/sourcing" className="mt-5 inline-flex shrink-0 items-center justify-center gap-2 rounded-lg border border-slate-700 bg-slate-800 px-5 py-3 text-sm font-bold text-white transition-colors hover:border-volt/70 hover:bg-slate-700 md:mt-0">Explore the Sourcing Pilot <i className="fa-solid fa-arrow-right text-xs" /></Link>
+      </div>
     </div>
   </section>
 );

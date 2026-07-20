@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './src/pages/Home';
 import Business from './src/pages/Business';
+import Sourcing from './src/pages/Sourcing';
 import ResearchIndex from './src/pages/ResearchIndex';
 import BlogPage from './pages/BlogPage';
 import HuaweiCostAnalysis from './src/pages/exclusive/HuaweiCostAnalysis';
@@ -23,6 +24,7 @@ const App: React.FC = () => {
         <Route path="/" element={<Home />} />
         <Route path="/business" element={<Business />} />
         <Route path="/intelligence" element={<Business />} />
+        <Route path="/sourcing" element={<Sourcing />} />
         <Route path="/media" element={<Media />} />
         <Route path="/sample-brief" element={<SampleBrief />} />
         <Route path="/research/byd-solid-state-battery-2026" element={<SampleBrief />} />
