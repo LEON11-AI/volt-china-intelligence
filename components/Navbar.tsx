@@ -18,9 +18,13 @@ const Navbar: React.FC<{ forceDark?: boolean }> = ({ forceDark = false }) => {
     { name: 'Free Brief', href: '#brief' },
     { name: 'Intelligence', href: '/intelligence' },
     { name: 'Sourcing Pilot', href: '/sourcing' },
-    { name: 'About', href: '#about' },
+    { name: 'About', href: '/#about' },
   ];
 
+  const getHashFromHref = (href: string) => {
+    const index = href.indexOf('#');
+    return index >= 0 ? href.slice(index) : null;
+  };
   const handleScrollTo = (href: string) => {
     if (!href.startsWith('#')) return false;
     const el = document.querySelector(href) as HTMLElement | null;
@@ -59,7 +63,7 @@ const Navbar: React.FC<{ forceDark?: boolean }> = ({ forceDark = false }) => {
               <a
                 key={link.name}
                 href={link.href}
-                onClick={(e) => { if (link.href.startsWith('#')) { e.preventDefault(); handleScrollTo(link.href); } }}
+                onClick={(e) => { const hash = getHashFromHref(link.href); if (hash) { e.preventDefault(); handleScrollTo(hash); } }}
                 target={link.href.startsWith('http') ? '_blank' : undefined}
                 rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                 className="text-sm font-medium text-slate-300 hover:text-white transition-colors"
@@ -108,7 +112,7 @@ const Navbar: React.FC<{ forceDark?: boolean }> = ({ forceDark = false }) => {
                 className="block px-3 py-3 text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800 rounded-md"
                 target={link.href.startsWith('http') ? '_blank' : undefined}
                 rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                onClick={(e) => { if (link.href.startsWith('#')) { e.preventDefault(); handleScrollTo(link.href); } setMobileMenuOpen(false); }}
+                onClick={(e) => { const hash = getHashFromHref(link.href); if (hash) { e.preventDefault(); handleScrollTo(hash); } setMobileMenuOpen(false); }}
               >
                 {link.name}
               </a>
