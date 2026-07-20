@@ -1,17 +1,21 @@
 import React from 'react';
 import { trackEvent } from '../src/lib/analytics';
+import SubmissionNotice from './SubmissionNotice';
 
 const Hero: React.FC = () => {
   const [email, setEmail] = React.useState('');
+  const [noticeOpen, setNoticeOpen] = React.useState(false);
 
   const handleSubscribe = (event: React.FormEvent) => {
     event.preventDefault();
     if (!email) return;
     trackEvent('click_subscribe');
     window.open(`https://voltchina.substack.com/subscribe?email=${encodeURIComponent(email)}&simple=true`, '_blank');
+    setNoticeOpen(true);
   };
 
   return (
+    <>
     <section id="brief" className="relative overflow-hidden scroll-mt-24 pb-20 pt-32 md:scroll-mt-28 lg:pb-32 lg:pt-48">
       <div className="pointer-events-none absolute left-1/2 top-0 h-full w-full max-w-7xl -translate-x-1/2">
         <div className="absolute left-10 top-20 hidden h-72 w-72 rounded-full bg-volt/10 blur-[100px] md:block" />
@@ -57,10 +61,10 @@ const Hero: React.FC = () => {
           <Stat value="Global" label="English-Speaking Audience" />
         </div>
       </div>
-    </section>
+    </section>    <SubmissionNotice isOpen={noticeOpen} onClose={() => setNoticeOpen(false)} title="Subscription page opened" message="Please complete your subscription on the secure page that has just opened. VoltChina will receive your email only after you confirm there." />
+    </>
   );
 };
-
 const Stat: React.FC<{ value: string; label: string }> = ({ value, label }) => <div className="text-center"><div className="text-2xl font-bold text-white">{value}</div><div className="text-xs uppercase tracking-wider text-slate-500">{label}</div></div>;
 
 export default Hero;

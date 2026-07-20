@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { trackEvent } from '../src/lib/analytics';
+import SubmissionNotice from './SubmissionNotice';
 
 const formName = 'sourcing-requirement';
 
@@ -9,7 +10,7 @@ const encode = (data: FormData) => new URLSearchParams(
 
 const SourcingRequestForm: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
+  const [noticeOpen, setNoticeOpen] = useState(false);
   const [error, setError] = useState('');
   const hasTrackedStart = useRef(false);
 
@@ -37,7 +38,8 @@ const SourcingRequestForm: React.FC = () => {
         if (!response.ok) throw new Error('Submission failed');
       }
       trackEvent('sourcing_form_submit');
-      setSubmitted(true);
+      form.reset();
+      setNoticeOpen(true);
     } catch {
       setError('Your requirement could not be submitted. Please try again or email business@voltchina.net.');
     } finally {
@@ -45,11 +47,7 @@ const SourcingRequestForm: React.FC = () => {
     }
   };
 
-  if (submitted) {
-    return <div className="rounded-2xl border border-volt/30 bg-volt/10 p-8 text-center" aria-live="polite"><div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-volt text-white"><i className="fa-solid fa-check" /></div><h3 className="mb-3 text-2xl font-bold text-white">Your sourcing requirement has been received.</h3><p className="mx-auto max-w-xl leading-relaxed text-slate-300">VoltChina will review it and reply by email, normally within two business days. No call or video meeting is required.</p></div>;
-  }
-
-  return <form name={formName} method="POST" action="/" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={submit} onFocus={trackStart} className="rounded-2xl border border-slate-800 bg-slate-950/80 p-6 shadow-2xl shadow-slate-950/50 md:p-8">
+  return <><form name={formName} method="POST" action="/" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={submit} onFocus={trackStart} className="rounded-2xl border border-slate-800 bg-slate-950/80 p-6 shadow-2xl shadow-slate-950/50 md:p-8">
     <input type="hidden" name="form-name" value={formName} />
     <p className="hidden"><label>Do not fill this out if you are human: <input name="bot-field" /></label></p>
     <div className="grid gap-5 sm:grid-cols-2">
@@ -77,7 +75,7 @@ const SourcingRequestForm: React.FC = () => {
     {error && <p className="mt-4 text-sm text-red-300" role="alert">{error}</p>}
     <button type="submit" disabled={isSubmitting} className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-volt px-5 py-3.5 font-bold text-white shadow-lg shadow-volt/20 transition-all hover:bg-volt-hover hover:shadow-volt/40 disabled:cursor-not-allowed disabled:opacity-70">{isSubmitting ? 'Submitting…' : <>Submit My Sourcing Requirement <i className="fa-solid fa-arrow-right text-xs" /></>}</button>
     <p className="mt-4 text-center text-xs leading-relaxed text-slate-500">Submitting a requirement does not create a purchase obligation. VoltChina will confirm suitability, scope, exclusions, fixed service fee, any applicable success-fee terms, and delivery date in writing before work begins.</p>
-  </form>;
+  </form><SubmissionNotice isOpen={noticeOpen} onClose={() => setNoticeOpen(false)} title="Sourcing requirement received" message="Thank you. Your information has been received. Please wait for a written email reply, normally within two business days. No call is required." /></>;
 };
 
 const Input: React.FC<{ label: string; name: string; placeholder: string; type?: string; required?: boolean }> = ({ label, name, placeholder, type = 'text', required = false }) => <div><label htmlFor={name} className="mb-2 block text-sm font-medium text-slate-200">{label}{required && <span className="text-volt"> *</span>}</label><input id={name} name={name} type={type} placeholder={placeholder} required={required} className="w-full rounded-lg border border-slate-700 bg-slate-900 px-3 py-3 text-white outline-none transition-colors placeholder:text-slate-500 focus:border-volt focus:ring-1 focus:ring-volt" /></div>;

@@ -1,10 +1,11 @@
 import React from 'react';
 import { trackEvent } from '../src/lib/analytics';
+import SubmissionNotice from './SubmissionNotice';
 
 const encode = (data: Record<string, string>) => Object.keys(data).map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`).join('&');
 
 const ResearchRequestForm: React.FC = () => {
-  const [submitted, setSubmitted] = React.useState(false);
+  const [noticeOpen, setNoticeOpen] = React.useState(false);
   const [sending, setSending] = React.useState(false);
   const [error, setError] = React.useState(false);
   const [started, setStarted] = React.useState(false);
@@ -31,7 +32,7 @@ const ResearchRequestForm: React.FC = () => {
           body: encode(data),
         });
       if (!response.ok) throw new Error('Form submission failed');
-      setSubmitted(true);
+      setNoticeOpen(true);
       trackEvent('research_form_submit');
       form.reset();
     } catch {
@@ -41,11 +42,8 @@ const ResearchRequestForm: React.FC = () => {
     }
   };
 
-  if (submitted) {
-    return <div className="rounded-2xl border border-volt/30 bg-volt/10 p-8 text-center" aria-live="polite"><div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-volt text-white"><i className="fa-solid fa-check" /></div><h3 className="mb-3 text-2xl font-bold text-white">Your research question has been received.</h3><p className="mx-auto max-w-xl leading-relaxed text-slate-300">VoltChina will review it and reply by email, normally within one business day. No call or video meeting is required.</p></div>;
-  }
-
   return (
+    <>
     <form name="research-request" method="POST" action="/" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={submit} onFocus={trackStart} className="rounded-2xl border border-slate-800 bg-slate-950/80 p-6 shadow-2xl shadow-slate-950/50 md:p-8">
       <input type="hidden" name="form-name" value="research-request" />
       <p className="hidden"><label>Do not fill this out if you are human: <input name="bot-field" /></label></p>
@@ -62,7 +60,8 @@ const ResearchRequestForm: React.FC = () => {
       {error && <p className="mt-5 rounded-lg border border-red-500/30 bg-red-500/10 p-3 text-sm text-red-200" role="alert">Your request could not be sent. Please try again, or email business@voltchina.net.</p>}
       <button type="submit" disabled={sending} className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-volt px-5 py-3.5 font-bold text-white shadow-lg shadow-volt/20 transition-all hover:bg-volt-hover hover:shadow-volt/40 disabled:cursor-not-allowed disabled:opacity-70">{sending ? 'Submitting...' : 'Submit My Research Question'} <i className="fa-solid fa-arrow-right text-xs" /></button>
       <p className="mt-4 text-center text-xs leading-relaxed text-slate-500">Submitting a request does not create a purchase obligation. VoltChina will confirm suitability, scope, fixed price, delivery date, exclusions, and payment terms in writing before work begins.</p>
-    </form>
+    </form>    <SubmissionNotice isOpen={noticeOpen} onClose={() => setNoticeOpen(false)} title="Research request received" message="Thank you. Your information has been received. Please wait for a written email reply, normally within one business day. No call is required." />
+    </>
   );
 };
 
