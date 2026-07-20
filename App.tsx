@@ -12,7 +12,6 @@ import BYD_Song_Plus_2026 from './src/pages/reports/BYD_Song_Plus_2026';
 import BYD_Humanoid_Robot from './src/pages/reports/BYD_Humanoid_Robot';
 import SubmitQuery from './src/pages/SubmitQuery';
 import RequestAccess from './src/pages/RequestAccess';
-import Media from './src/pages/Media';
 import SupplierMapThanks from './src/pages/SupplierMapThanks';
 import SampleBrief from './src/pages/SampleBrief';
 import Legal from './src/pages/Legal';
@@ -25,7 +24,6 @@ const App: React.FC = () => {
         <Route path="/business" element={<Business />} />
         <Route path="/intelligence" element={<Business />} />
         <Route path="/sourcing" element={<Sourcing />} />
-        <Route path="/media" element={<Media />} />
         <Route path="/sample-brief" element={<SampleBrief />} />
         <Route path="/research/byd-solid-state-battery-2026" element={<SampleBrief />} />
         <Route path="/supplier-map-beta/thanks" element={<SupplierMapThanks />} />

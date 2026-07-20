@@ -6,6 +6,7 @@ import ExpertServices from '../../components/ExpertServices';
 import PricingPlans from '../../components/PricingPlans';
 import DatabasePreview from '../../components/DatabasePreview';
 import About from '../../components/About';
+import MediaPartnerships from '../../components/MediaPartnerships';
 import Footer from '../../components/Footer';
 
 const Home: React.FC = () => {
@@ -19,6 +20,7 @@ const Home: React.FC = () => {
         <PricingPlans />
         <ExpertServices />
         <About />
+        <MediaPartnerships />
       </main>
       <Footer />
     </div>
