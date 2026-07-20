@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const ExpertServices: React.FC = () => {
   return (
-    <section id="services" className="py-20 bg-slate-950 relative scroll-mt-24 md:scroll-mt-28">
+    <section id="services" className="relative overflow-hidden bg-slate-950 py-20 scroll-mt-24 md:scroll-mt-28">
       <div className="absolute top-0 right-0 w-1/3 h-full bg-slate-900/20 skew-x-12 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
