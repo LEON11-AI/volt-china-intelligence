@@ -27,15 +27,7 @@
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- Tally Preconnect & Prefetch -->
-    <link rel="preconnect" href="https://tally.so">
-    <link rel="dns-prefetch" href="https://tally.so">
-    <link rel="preload" href="https://tally.so/Widgets/Embed/v1.js" as="script">
-    <link rel="prefetch" href="https://tally.so/embed/vGA7Rg?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1">
-    <link rel="prefetch" href="https://tally.so/embed/GxzNPO?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1">
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -112,9 +104,9 @@
       <input type="text" name="role_organization" />
       <textarea name="research_question"></textarea>
       <textarea name="decision_context"></textarea>
-      <input type="text" name="deadline" />
+      <select name="deadline"><option>Within 5&#8211;7 business days</option><option>Within 2 weeks</option><option>Flexible</option><option>Other</option></select>
       <textarea name="relevant_links"></textarea>
-      <input type="text" name="budget_range" />
+      <select name="budget_range"><option>&#36;800&#8211;&#36;1,200</option><option>&#36;1,200&#8211;&#36;2,500</option><option>&#36;2,500+</option><option>Not sure yet</option></select>
     </form>
   <script type="module" src="/index.tsx"></script>
 </body>

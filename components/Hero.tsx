@@ -1,4 +1,5 @@
 import React from 'react';
+import { trackEvent } from '../src/lib/analytics';
 
 const Hero: React.FC = () => {
   const [email, setEmail] = React.useState('');
@@ -6,7 +7,7 @@ const Hero: React.FC = () => {
   const handleSubscribe = (event: React.FormEvent) => {
     event.preventDefault();
     if (!email) return;
-    (window as any).gtag?.('event', 'click_subscribe');
+    trackEvent('click_subscribe');
     window.open(`https://voltchina.substack.com/subscribe?email=${encodeURIComponent(email)}&simple=true`, '_blank');
   };
 
@@ -24,19 +25,17 @@ const Hero: React.FC = () => {
         </div>
 
         <h1 className="mx-auto mb-6 max-w-5xl text-4xl font-bold leading-tight tracking-tight text-white md:text-6xl lg:text-7xl">
-          Source-verified China intelligence for <br className="hidden md:block" />
-          <span className="bg-gradient-to-b from-white to-slate-400 bg-clip-text text-transparent md:bg-gradient-to-r">pre-diligence and strategy.</span>
+          Verify Chinese EV and hard-tech claims before <br className="hidden md:block" />
+          <span className="bg-gradient-to-b from-white to-slate-400 bg-clip-text text-transparent md:bg-gradient-to-r">committing to deeper diligence.</span>
         </h1>
 
         <p className="mx-auto mb-10 max-w-3xl text-lg leading-relaxed text-slate-400 md:text-xl">
-          VoltChina turns Chinese-language public sources into clear, source-verified English answers on EVs, batteries, smart driving, automotive technology, robotics, suppliers, and manufacturing.
-          <br className="hidden md:block" /><br className="hidden md:block" />
-          Designed for teams that need to decide what deserves deeper investigation before committing to a larger diligence or consulting project.
+          VoltChina helps small investment firms, boutique consultancies, independent researchers, and strategy teams turn difficult-to-check Chinese-language public sources into clear written assessments&mdash;showing what is confirmed, what is claimed, what remains unknown, and what deserves further investigation.
         </p>
 
         <div className="mb-4 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <a href="/research/byd-solid-state-battery-2026" onClick={() => (window as any).gtag?.('event', 'view_byd_solid_state_report')} className="w-full rounded-lg bg-volt px-6 py-3 font-bold text-white shadow-lg shadow-volt/20 transition-all hover:bg-volt-hover hover:shadow-volt/40 sm:w-auto">Read the BYD Report</a>
-          <a href="/intelligence#research-request" onClick={() => (window as any).gtag?.('event', 'click_submit_research_question')} className="w-full rounded-lg border border-slate-700 bg-slate-900/80 px-6 py-3 font-bold text-white transition-all hover:bg-slate-800 sm:w-auto">Submit a Research Question</a>
+          <a href="/research/byd-solid-state-battery-2026" onClick={() => trackEvent('click_public_research_sample')} className="w-full rounded-lg bg-volt px-6 py-3 font-bold text-white shadow-lg shadow-volt/20 transition-all hover:bg-volt-hover hover:shadow-volt/40 sm:w-auto">See a Public Research Sample</a>
+          <a href="/intelligence#research-request" onClick={() => trackEvent('click_submit_research_question')} className="w-full rounded-lg border border-slate-700 bg-slate-900/80 px-6 py-3 font-bold text-white transition-all hover:bg-slate-800 sm:w-auto">Submit a Research Question</a>
         </div>
         <p className="mb-10 text-sm font-medium text-slate-400">100% async. No calls required. Scope, pricing, delivery, and follow-up are handled in writing.</p>
 

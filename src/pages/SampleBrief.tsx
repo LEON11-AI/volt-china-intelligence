@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import { trackEvent } from '../lib/analytics';
 
 const reportUrl = '/reports/VoltChina_BYD_Solid_State_Battery_Evidence_Report_2026.pdf';
 const coverUrl = '/reports/byd-all-solid-state-battery-evidence-report-cover.png';
@@ -13,13 +14,12 @@ const evidence = [
   ['Production readiness is not established', 'No public test certificate, named vehicle program, supplier qualification, unit cost, or capital commitment underwrites a production schedule.'],
 ];
 
-const ReportButton: React.FC<{ className?: string }> = ({ className = '' }) => <a href={reportUrl} target="_blank" rel="noopener noreferrer" onClick={() => (window as any).gtag?.('event', 'download_byd_solid_state_report')} className={`inline-flex items-center gap-2 rounded-lg bg-volt px-6 py-3 font-bold text-white shadow-lg shadow-volt/20 transition-all hover:bg-volt-hover hover:shadow-volt/40 ${className}`}><i className="fa-solid fa-file-pdf" /> Read the Full Evidence Report &mdash; PDF</a>;
+const ReportButton: React.FC<{ className?: string }> = ({ className = '' }) => <a href={reportUrl} target="_blank" rel="noopener noreferrer" onClick={() => trackEvent('download_byd_report')} className={`inline-flex items-center gap-2 rounded-lg bg-volt px-6 py-3 font-bold text-white shadow-lg shadow-volt/20 transition-all hover:bg-volt-hover hover:shadow-volt/40 ${className}`}><i className="fa-solid fa-file-pdf" /> Read the Full Evidence Report &mdash; PDF</a>;
 
 const SampleBrief: React.FC = () => {
   React.useEffect(() => {
-    document.title = 'BYD All-Solid-State Battery Report | VoltChina';
-    (window as any).gtag?.('event', 'view_byd_solid_state_report');
-    (window as any).plausible?.('view_byd_solid_state_report');
+    document.title = 'BYD All-Solid-State Battery Commercialization Timeline | VoltChina';
+    trackEvent('view_public_research_sample');
   }, []);
 
   return <div className="min-h-screen bg-slate-950 font-sans text-slate-200">
