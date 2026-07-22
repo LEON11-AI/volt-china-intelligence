@@ -40,8 +40,8 @@ const Navbar: React.FC<{ forceDark?: boolean }> = ({ forceDark = false }) => {
   };
 
   const navTone = scrolled || forceDark
-    ? 'bg-slate-950/95 md:backdrop-blur-md'
-    : 'bg-slate-950/80 md:bg-transparent';
+    ? 'border-white/10 bg-slate-950/70 backdrop-blur-xl shadow-lg shadow-black/20'
+    : 'border-white/10 bg-slate-950/35 backdrop-blur-lg';
 
   return (
     <nav className={`fixed w-full z-50 border-b border-white/5 py-4 transition-colors duration-200 ${navTone}`}>
@@ -66,7 +66,7 @@ const Navbar: React.FC<{ forceDark?: boolean }> = ({ forceDark = false }) => {
                 onClick={(e) => { const hash = getHashFromHref(link.href); if (hash) { e.preventDefault(); handleScrollTo(hash); } }}
                 target={link.href.startsWith('http') ? '_blank' : undefined}
                 rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                className="text-sm font-medium text-slate-300 hover:text-white transition-colors"
+                className="text-sm font-medium text-slate-300 transition-colors hover:text-volt focus-visible:outline-none focus-visible:text-volt"
               >
                 {link.name}
               </a>
@@ -85,7 +85,7 @@ const Navbar: React.FC<{ forceDark?: boolean }> = ({ forceDark = false }) => {
           <div className="md:hidden">
             <button 
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-slate-300 hover:text-white p-2"
+              className="p-2 text-slate-300 transition-colors hover:text-volt"
             >
               <i className={`fa-solid ${mobileMenuOpen ? 'fa-xmark' : 'fa-bars'} text-xl`}></i>
             </button>
@@ -95,7 +95,7 @@ const Navbar: React.FC<{ forceDark?: boolean }> = ({ forceDark = false }) => {
 
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-20 left-0 w-full bg-slate-900 border-b border-slate-800 shadow-2xl z-50 animate-fade-in-up">
+        <div className="md:hidden absolute top-20 left-0 z-50 w-full border-b border-white/10 bg-slate-950/75 shadow-2xl shadow-black/30 backdrop-blur-xl animate-fade-in-up">
           <div className="px-4 pt-2 pb-6 space-y-1">
             <div className="flex items-center mb-4 pb-4 border-b border-slate-800">
               <Link to="/" className="flex items-center gap-2 group" onClick={() => setMobileMenuOpen(false)}>
@@ -109,7 +109,7 @@ const Navbar: React.FC<{ forceDark?: boolean }> = ({ forceDark = false }) => {
               <a
                 key={link.name}
                 href={link.href}
-                className="block px-3 py-3 text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800 rounded-md"
+                className="block rounded-md px-3 py-3 text-base font-medium text-slate-300 transition-colors hover:bg-white/5 hover:text-volt"
                 target={link.href.startsWith('http') ? '_blank' : undefined}
                 rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                 onClick={(e) => { const hash = getHashFromHref(link.href); if (hash) { e.preventDefault(); handleScrollTo(hash); } setMobileMenuOpen(false); }}
