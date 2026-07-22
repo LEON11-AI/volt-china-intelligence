@@ -15,10 +15,12 @@ import RequestAccess from './src/pages/RequestAccess';
 import SupplierMapThanks from './src/pages/SupplierMapThanks';
 import SampleBrief from './src/pages/SampleBrief';
 import Legal from './src/pages/Legal';
+import ScrollMotion from './components/ScrollMotion';
 
 const App: React.FC = () => {
   return (
     <BrowserRouter>
+      <ScrollMotion />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/business" element={<Business />} />
