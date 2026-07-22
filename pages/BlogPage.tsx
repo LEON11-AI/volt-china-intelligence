@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
+import PageHero from '../components/PageHero';
 
 const BlogPage: React.FC = () => {
   const posts = [
@@ -17,7 +18,7 @@ const BlogPage: React.FC = () => {
       id: 1, 
       title: 'BYD solid-state breakthroughs', 
       date: '2025-11-20',
-      link: '/research/solid-state-battery',
+      link: '/research/byd-solid-state-battery-2026',
       isExternal: false,
       tag: 'Report'
     },
@@ -50,8 +51,9 @@ const BlogPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-slate-950 font-sans">
       <Navbar />
-      <main className="pt-32 pb-20 bg-slate-950 border-t border-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <main className="bg-slate-950">
+        <PageHero compact eyebrow="FREE BRIEF AND EDITORIAL" title="China EV and hard-tech briefs" description="Research reports, editorial analysis, notes, and engineering context from VoltChina." />
+        <div className="mx-auto max-w-7xl px-4 pb-20 pt-16 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white">Research Blog</h2>
             <p className="text-slate-400">Analysis, notes, and charts.</p>

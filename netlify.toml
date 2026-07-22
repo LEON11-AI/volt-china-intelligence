@@ -3,6 +3,35 @@
   publish = "dist"
 
 [[redirects]]
+  from = "/business"
+  to = "/intelligence"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sample-brief"
+  to = "/research/byd-solid-state-battery-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/research/solid-state-battery"
+  to = "/research/byd-solid-state-battery-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/reports/solid-state"
+  to = "/research/byd-solid-state-battery-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/research/index"
+  to = "/research"
+  status = 301
+  force = true
+[[redirects]]
   from = "/media"
   to = "/#media-partnerships"
   status = 301

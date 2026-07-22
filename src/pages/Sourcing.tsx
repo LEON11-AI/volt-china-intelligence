@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Footer from '../../components/Footer';
 import Navbar from '../../components/Navbar';
 import SourcingRequestForm from '../../components/SourcingRequestForm';
+import PageHero from '../../components/PageHero';
 import { trackEvent } from '../lib/analytics';
 
 const pilotIncludes = [
@@ -32,17 +33,16 @@ const Sourcing: React.FC = () => {
   return <div className="min-h-screen overflow-x-hidden bg-slate-950 font-sans text-slate-200">
     <Navbar forceDark />
     <main>
-      <section className="relative overflow-hidden pb-20 pt-32 lg:pb-28 lg:pt-44">
-        <div className="pointer-events-none absolute left-1/2 top-0 h-full w-full max-w-7xl -translate-x-1/2"><div className="absolute -left-24 top-20 h-80 w-80 rounded-full bg-volt/10 blur-[120px]" /><div className="absolute -right-24 bottom-0 h-96 w-96 rounded-full bg-blue-900/10 blur-[120px]" /></div>
-        <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8"><div className="max-w-4xl">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-volt/30 bg-volt/10 px-3 py-1 text-xs font-bold tracking-[0.18em] text-volt"><i className="fa-solid fa-briefcase" /> COMMERCIAL PILOT</div>
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-slate-400">China Supplier Verification &amp; RFQ Pilot</p>
-          <h1 className="mb-6 max-w-5xl text-4xl font-bold leading-tight tracking-tight text-white md:text-6xl">Identify and verify Chinese EV and robotics suppliers before placing an order.</h1>
-          <p className="mb-9 max-w-4xl text-lg leading-relaxed text-slate-300 md:text-xl">VoltChina helps overseas importers, distributors, and technical teams screen Chinese suppliers, collect comparable written quotations, identify verification gaps, and arrange direct introductions.</p>
+      <PageHero
+        eyebrow="COMMERCIAL PILOT"
+        title="Identify and verify Chinese EV and robotics suppliers before placing an order"
+        description="VoltChina helps overseas importers, distributors, and technical teams screen Chinese suppliers, collect comparable written quotations, identify verification gaps, and arrange direct introductions."
+      >
+        <div className="text-center">
           <a href="#sourcing-request" onClick={() => trackEvent('click_submit_sourcing_requirement')} className="inline-flex items-center justify-center gap-2 rounded-lg bg-volt px-6 py-3.5 font-bold text-white shadow-lg shadow-volt/20 transition-all hover:bg-volt-hover hover:shadow-volt/40">Submit a Sourcing Requirement <i className="fa-solid fa-arrow-right text-xs" /></a>
-          <p className="mt-5 max-w-3xl text-sm leading-relaxed text-slate-400">Paid pilot service. 100% async. No call required. Suitability, scope, fixed service fee, and delivery date are confirmed in writing before any work begins.</p>
-        </div></div>
-      </section>
+          <p className="mx-auto mt-5 max-w-3xl text-sm leading-relaxed text-slate-400">Paid pilot service. 100% async. No call required. Suitability, scope, fixed service fee, and delivery date are confirmed in writing before any work begins.</p>
+        </div>
+      </PageHero>
 
       <section className="border-y border-slate-800 bg-slate-900 py-20"><div className="mx-auto grid max-w-6xl gap-8 px-4 sm:px-6 lg:grid-cols-[1fr_0.85fr] lg:px-8">
         <div><p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-volt">Who this is for</p><h2 className="mb-5 text-3xl font-bold text-white md:text-4xl">A defined buying need, not a general supplier search.</h2><p className="max-w-3xl text-lg leading-relaxed text-slate-300">For overseas importers, distributors, system integrators, and technical teams with a specific product requirement, estimated quantity, destination market, and purchasing timeline.</p></div>

@@ -1,0 +1,24 @@
+# VoltChina
+
+> VoltChina provides source-verified Chinese-language intelligence for focused questions about China's EV, battery, smart-driving, robotics, supplier, and manufacturing claims.
+
+## Core pages
+
+- [VoltChina home](https://voltchina.net/): Overview of VoltChina's public research, free brief, and written research service.
+- [VoltChina Intelligence](https://voltchina.net/intelligence): Submit a focused pre-diligence or strategy research question. VoltChina replies in writing with suitability, scope, fixed price, exclusions, and delivery date.
+- [Sourcing Pilot](https://voltchina.net/sourcing): Buyer-side Chinese supplier screening and written RFQ coordination for overseas teams with a specific purchasing requirement.
+- [Research and Editorial Analysis](https://voltchina.net/research): Public research samples and clearly labelled editorial analysis.
+
+## Public research sample
+
+- [BYD All-Solid-State Battery Commercialization Timeline](https://voltchina.net/research/byd-solid-state-battery-2026): A public-source assessment of reported around-2027 demonstration and around-2030 mass-production milestones. Includes a linked 11-page evidence report.
+
+## Scope and standards
+
+VoltChina separates confirmed public facts, company claims, reasonable inference, and evidence gaps. It does not provide investment, legal, or procurement advice, and does not guarantee transaction, delivery, or supplier outcomes.
+
+## Contact
+
+- Research and business inquiries: [business@voltchina.net](mailto:business@voltchina.net)
+- YouTube: [VoltChina](https://www.youtube.com/@VoltChina)
+- Free brief: [VoltChina Substack](https://voltchina.substack.com/)

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import PageHero from '../../components/PageHero';
 import { trackEvent } from '../lib/analytics';
 
 const reportUrl = '/reports/VoltChina_BYD_Solid_State_Battery_Evidence_Report_2026.pdf';
@@ -18,23 +19,24 @@ const ReportButton: React.FC<{ className?: string }> = ({ className = '' }) => <
 
 const SampleBrief: React.FC = () => {
   React.useEffect(() => {
-    document.title = 'BYD All-Solid-State Battery Commercialization Timeline | VoltChina';
     trackEvent('view_public_research_sample');
   }, []);
 
   return <div className="min-h-screen bg-slate-950 font-sans text-slate-200">
     <Navbar forceDark />
     <main>
-      <section className="border-b border-slate-800 bg-slate-950 pb-16 pt-32 md:pb-20 md:pt-40">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <p className="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-volt">Public Research Report</p>
-          <h1 className="mb-6 max-w-5xl text-4xl font-bold leading-tight tracking-tight text-white md:text-6xl">BYD All-Solid-State Battery Commercialization Timeline</h1>
-          <p className="max-w-4xl text-lg leading-relaxed text-slate-300 md:text-xl">What publicly accessible corporate, patent, standards, and official-event records support about the reported 2027 demonstration and around-2030 mass-production milestones.</p>
-          <p className="mt-5 max-w-4xl text-sm leading-relaxed text-slate-400">This is an independently prepared public research sample created to demonstrate VoltChina&rsquo;s methodology. It was not commissioned by a client.</p>
-          <div className="mt-7 flex flex-wrap gap-3 text-xs font-medium"><span className="rounded-full border border-slate-700 px-3 py-1 text-slate-300">Information cut-off: 17 July 2026</span><span className="rounded-full border border-slate-700 px-3 py-1 text-slate-300">Public-source-first method</span></div>
-          <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center"><ReportButton /><Link to="/intelligence#research-request" className="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-900/80 px-6 py-3 font-bold text-white transition-all hover:bg-slate-800">Submit a Research Question <i className="fa-solid fa-arrow-right text-xs" /></Link></div>
+      <PageHero
+        compact
+        eyebrow="PUBLIC RESEARCH REPORT"
+        title="BYD all-solid-state battery commercialization timeline"
+        description="What publicly accessible corporate, patent, standards, and official-event records support about the reported 2027 demonstration and around-2030 mass-production milestones."
+      >
+        <div className="text-center">
+          <p className="mx-auto max-w-4xl text-sm leading-relaxed text-slate-400">This is an independently prepared public research sample created to demonstrate VoltChina閳ユ獨 methodology. It was not commissioned by a client.</p>
+          <div className="mt-5 flex flex-wrap justify-center gap-3 text-xs font-medium"><span className="rounded-full border border-white/15 bg-slate-950/35 px-3 py-1 text-slate-300 backdrop-blur-xl">Information cut-off: 17 July 2026</span><span className="rounded-full border border-white/15 bg-slate-950/35 px-3 py-1 text-slate-300 backdrop-blur-xl">Public-source-first method</span></div>
+          <div className="mt-7 flex flex-col justify-center gap-4 sm:flex-row sm:items-center"><ReportButton /><Link to="/intelligence#research-request" className="inline-flex items-center gap-2 rounded-lg border border-white/20 bg-slate-950/35 px-6 py-3 font-bold text-white shadow-lg shadow-black/20 backdrop-blur-xl transition-all hover:border-volt hover:bg-slate-900">Submit a Research Question <i className="fa-solid fa-arrow-right text-xs" /></Link></div>
         </div>
-      </section>
+      </PageHero>
 
       <article className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
         <section className="mb-14">

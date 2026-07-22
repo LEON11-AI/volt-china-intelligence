@@ -2,32 +2,44 @@ import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { defineConfig, loadEnv, type Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
-
-type RouteMetadata = { path: string; title: string; description: string; image: string };
+import { PAGE_METADATA, SITE_URL, indexablePages, type PageMetadata } from './src/lib/siteMetadata';
 
 const escapeHtml = (value: string) => value.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const schemaJson = (schema: Record<string, unknown>) => JSON.stringify(schema).replace(/</g, '\\u003c');
 
-const metadataHtml = ({ path: routePath, title, description, image }: RouteMetadata, entryScript: string) => {
-  const canonical = `https://voltchina.net/${routePath}`;
-  return `<!doctype html><html lang="en" class="scroll-smooth"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>${escapeHtml(title)}</title><meta name="description" content="${escapeHtml(description)}" /><link rel="canonical" href="${canonical}" /><meta property="og:type" content="website" /><meta property="og:site_name" content="VoltChina" /><meta property="og:title" content="${escapeHtml(title)}" /><meta property="og:description" content="${escapeHtml(description)}" /><meta property="og:url" content="${canonical}" /><meta property="og:image" content="${image}" /><meta property="og:image:secure_url" content="${image}" /><meta name="twitter:card" content="summary_large_image" /><meta name="twitter:site" content="@VoltChinaEV" /><meta name="twitter:title" content="${escapeHtml(title)}" /><meta name="twitter:description" content="${escapeHtml(description)}" /><meta name="twitter:image" content="${image}" /><link rel="icon" href="/VC.png" type="image/png" /><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /><script src="https://cdn.tailwindcss.com"></script><script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','sans-serif']},colors:{volt:{DEFAULT:'#CF0404',hover:'#A90303',light:'#E23838'},slate:{850:'#1e293b',900:'#0f172a',950:'#020617'}}}}}</script></head><body class="bg-slate-950 text-slate-200 antialiased selection:bg-volt selection:text-white"><div id="root"></div><script type="module" crossorigin src="${entryScript}"></script></body></html>`;
+const sharedStyles = `
+      .scroll-reveal { opacity: 0; filter: blur(8px); transform: translate3d(0, 28px, 0); transition: opacity 720ms cubic-bezier(0.16, 1, 0.3, 1), transform 720ms cubic-bezier(0.16, 1, 0.3, 1), filter 720ms cubic-bezier(0.16, 1, 0.3, 1); transition-delay: var(--scroll-reveal-delay, 0ms); will-change: opacity, transform, filter; }
+      .scroll-reveal.scroll-reveal--visible { opacity: 1; filter: blur(0); transform: translate3d(0, 0, 0); }
+      @keyframes page-map-drift { 0% { transform: scale(1.05) translate3d(-0.6%, -0.3%, 0); } 100% { transform: scale(1.1) translate3d(0.6%, 0.35%, 0); } }
+      @keyframes page-hero-reveal { from { opacity: 0; transform: translate3d(0, 26px, 0); filter: blur(6px); } to { opacity: 1; transform: translate3d(0, 0, 0); filter: blur(0); } }
+      .hero-map-motion { animation: page-map-drift 26s ease-in-out infinite alternate; will-change: transform; }
+      .page-hero-reveal { opacity: 0; animation: page-hero-reveal 760ms cubic-bezier(0.16, 1, 0.3, 1) forwards; will-change: opacity, transform, filter; }
+      @media (prefers-reduced-motion: reduce) { .scroll-reveal { opacity: 1; filter: none; transform: none; transition: none; } .hero-map-motion { animation: none; transform: scale(1.05); } .page-hero-reveal { opacity: 1; animation: none; transform: none; filter: none; } }
+`;
+
+const metadataHtml = (page: PageMetadata, entryScript: string) => {
+  const canonical = `${SITE_URL}${page.path}`;
+  const schema = schemaJson(page.schema);
+  return `<!doctype html><html lang="en" class="scroll-smooth"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>${escapeHtml(page.title)}</title><meta name="description" content="${escapeHtml(page.description)}" /><meta name="robots" content="${page.robots ?? 'index,follow,max-image-preview:large'}" /><link rel="canonical" href="${canonical}" /><meta property="og:type" content="website" /><meta property="og:site_name" content="VoltChina" /><meta property="og:title" content="${escapeHtml(page.title)}" /><meta property="og:description" content="${escapeHtml(page.description)}" /><meta property="og:url" content="${canonical}" /><meta property="og:image" content="${page.image}" /><meta property="og:image:secure_url" content="${page.image}" /><meta property="og:image:alt" content="${escapeHtml(page.title)}" /><meta name="twitter:card" content="summary_large_image" /><meta name="twitter:site" content="@VoltChinaEV" /><meta name="twitter:title" content="${escapeHtml(page.title)}" /><meta name="twitter:description" content="${escapeHtml(page.description)}" /><meta name="twitter:image" content="${page.image}" /><script id="voltchina-page-schema" type="application/ld+json">${schema}</script><link rel="icon" href="/VC.png" type="image/png" /><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /><script src="https://cdn.tailwindcss.com"></script><script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','sans-serif']},colors:{volt:{DEFAULT:'#CF0404',hover:'#A90303',light:'#E23838'},slate:{850:'#1e293b',900:'#0f172a',950:'#020617'}}}}}</script><style>${sharedStyles}</style></head><body class="bg-slate-950 text-slate-200 antialiased selection:bg-volt selection:text-white"><div id="root"></div><script type="module" crossorigin src="${entryScript}"></script></body></html>`;
 };
 
 const routeMetadata = (): Plugin => ({
   name: 'route-metadata',
   closeBundle() {
     const outputDirectory = path.resolve(__dirname, 'dist');
-    const builtIndex = readFileSync(path.join(outputDirectory, 'index.html'), 'utf8');
+    const indexPath = path.join(outputDirectory, 'index.html');
+    const builtIndex = readFileSync(indexPath, 'utf8');
     const entryScript = builtIndex.match(/<script type="module" crossorigin src="([^"]+)"><\/script>/)?.[1];
     if (!entryScript) throw new Error('Could not locate the Vite entry script for route metadata.');
-    const routes: RouteMetadata[] = [
-      { path: 'intelligence', title: 'Submit a Research Question | VoltChina Intelligence', description: 'Submit a focused question for a written assessment based on Chinese-language public sources. Scope, fixed price, and delivery are confirmed by email.', image: 'https://voltchina.net/og-image.jpg' },
-      { path: 'research/byd-solid-state-battery-2026', title: 'BYD All-Solid-State Battery Commercialization Timeline | VoltChina', description: 'A public-source assessment of BYD\'s reported around-2027 demonstration and around-2030 mass-production milestones.', image: 'https://voltchina.net/reports/byd-all-solid-state-battery-evidence-report-cover.png' },
-      { path: 'sourcing', title: 'China Supplier Verification & RFQ Pilot | VoltChina', description: 'Buyer-side screening, written RFQ coordination, and direct introductions for overseas teams sourcing Chinese EV and robotics components.', image: 'https://voltchina.net/og-image.jpg' },
-    ];
-    routes.forEach((route) => {
-      const targetDirectory = path.join(outputDirectory, route.path);
+
+    const root = PAGE_METADATA['/'];
+    const rootWithSchema = builtIndex.replace('</head>', `<meta name="robots" content="${root.robots ?? 'index,follow,max-image-preview:large'}" /><script id="voltchina-page-schema" type="application/ld+json">${schemaJson(root.schema)}</script></head>`);
+    writeFileSync(indexPath, rootWithSchema);
+
+    indexablePages.filter((page) => page.path !== '/').forEach((page) => {
+      const targetDirectory = path.join(outputDirectory, page.path.replace(/^\//, ''));
       mkdirSync(targetDirectory, { recursive: true });
-      writeFileSync(path.join(targetDirectory, 'index.html'), metadataHtml(route, entryScript));
+      writeFileSync(path.join(targetDirectory, 'index.html'), metadataHtml(page, entryScript));
     });
   },
 });

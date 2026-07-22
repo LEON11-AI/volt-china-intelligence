@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../../../components/Navbar';
 import Footer from '../../../components/Footer';
+import PageHero from '../../../components/PageHero';
 
 const BYD_Humanoid_Robot: React.FC = () => {
   const [src, setSrc] = useState<string>('');
@@ -38,10 +39,14 @@ const BYD_Humanoid_Robot: React.FC = () => {
   return (
     <div className="min-h-screen bg-slate-950 font-sans">
       <Navbar />
-      <main className="pt-28 pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <main>
+        <PageHero compact eyebrow="EDITORIAL ANALYSIS" title="BYD Humanoid Robotics" description="Editorial analysis of BYD reported humanoid-robotics roadmaps and manufacturing ambitions.">
+          <a href="/research" className="inline-flex items-center gap-2 rounded-lg border border-white/20 bg-slate-950/35 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-black/20 backdrop-blur-xl transition-all hover:border-volt hover:bg-slate-900">Browse Research <i className="fa-solid fa-arrow-right text-xs" /></a>
+        </PageHero>
+        <section className="bg-slate-950 px-4 pb-20 pt-12 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl">
           <div className="flex justify-between items-center mb-6">
-            <a href="#" onClick={handleBack} className="text-blue-400 hover:text-blue-300 flex items-center gap-2">
+            <a href="#" onClick={handleBack} className="text-volt hover:text-volt-light flex items-center gap-2">
               <i className="fa-solid fa-arrow-left"></i>
               Back
             </a>
@@ -64,6 +69,7 @@ const BYD_Humanoid_Robot: React.FC = () => {
             <div className="bg-slate-900 border border-slate-800 rounded-xl p-6 text-slate-400">Place the HTML file under <code>/public/reports/byd-humanoid-robot.html</code>.</div>
           )}
         </div>
+        </section>
       </main>
       <Footer />
     </div>

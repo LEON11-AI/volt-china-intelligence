@@ -16,10 +16,12 @@ import SupplierMapThanks from './src/pages/SupplierMapThanks';
 import SampleBrief from './src/pages/SampleBrief';
 import Legal from './src/pages/Legal';
 import ScrollMotion from './components/ScrollMotion';
+import PageMetadata from './components/PageMetadata';
 
 const App: React.FC = () => {
   return (
     <BrowserRouter>
+      <PageMetadata />
       <ScrollMotion />
       <Routes>
         <Route path="/" element={<Home />} />
