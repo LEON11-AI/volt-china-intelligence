@@ -51,10 +51,8 @@ const About: React.FC = () => {
             </div>
 
             <div className="pt-10 mt-10 border-t border-slate-800/80 text-center">
-              <p className="font-extrabold text-white text-2xl md:text-3xl tracking-[0.16em] uppercase flex items-center justify-center gap-4">
-                <span className="w-10 md:w-16 h-[2px] bg-gradient-to-r from-transparent to-volt"></span>
+              <p className="font-extrabold text-white text-2xl md:text-3xl tracking-[0.16em] uppercase">
                 Mechanism first. Evidence always. No hype.
-                <span className="w-10 md:w-16 h-[2px] bg-gradient-to-l from-transparent to-volt"></span>
               </p>
             </div>
           </div>
