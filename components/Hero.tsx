@@ -28,25 +28,26 @@ const Hero: React.FC = () => {
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-        <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-slate-700/50 bg-slate-800/50 px-3 py-1 text-xs font-medium text-volt animate-fade-in-up">
+        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-slate-700/50 bg-slate-800/50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-volt animate-fade-in-up">
           <span className="relative flex h-2 w-2"><span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-volt opacity-75" /><span className="relative inline-flex h-2 w-2 rounded-full bg-volt" /></span>
           Chinese-Language Source Intelligence
         </div>
 
-        <h1 className="mx-auto mb-6 max-w-5xl text-4xl font-bold leading-tight tracking-tight text-white md:text-6xl lg:text-7xl">
-          Verify Chinese EV and hard-tech claims before <br className="hidden md:block" />
-          <span className="bg-gradient-to-b from-white to-slate-400 bg-clip-text text-transparent md:bg-gradient-to-r">committing to deeper diligence.</span>
+        <h1 className="mx-auto mb-6 max-w-7xl text-5xl font-black uppercase leading-[0.88] tracking-[-0.055em] text-white sm:text-6xl md:text-7xl lg:text-[5rem]">
+          <span className="block">Verify Chinese EV and</span>
+          <span className="block">hard-tech claims before</span>
+          <span className="block bg-gradient-to-b from-white to-slate-400 bg-clip-text text-transparent md:bg-gradient-to-r">committing to deeper diligence.</span>
         </h1>
 
-        <p className="mx-auto mb-10 max-w-3xl text-lg leading-relaxed text-slate-400 md:text-xl">
+        <p className="mx-auto mb-8 max-w-2xl text-base leading-[1.45] text-slate-300 md:text-lg">
           VoltChina helps small investment firms, boutique consultancies, independent researchers, and strategy teams turn difficult-to-check Chinese-language public sources into clear written assessments&mdash;showing what is confirmed, what is claimed, what remains unknown, and what deserves further investigation.
         </p>
 
-        <div className="mb-4 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <div className="mb-3 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <a href="/research/byd-solid-state-battery-2026" onClick={() => trackEvent('click_public_research_sample')} className="w-full rounded-lg bg-volt px-6 py-3 font-bold text-white shadow-lg shadow-volt/20 transition-all hover:bg-volt-hover hover:shadow-volt/40 sm:w-auto">See a Public Research Sample</a>
           <a href="/intelligence#research-request" onClick={() => trackEvent('click_submit_research_question')} className="w-full rounded-lg border border-slate-700 bg-slate-900/80 px-6 py-3 font-bold text-white transition-all hover:bg-slate-800 sm:w-auto">Submit a Research Question</a>
         </div>
-        <p className="mb-10 text-sm font-medium text-slate-400">100% async. No calls required. Scope, pricing, delivery, and follow-up are handled in writing.</p>
+        <p className="mb-8 text-sm font-medium text-slate-400">100% async. No calls required. Scope, pricing, delivery, and follow-up are handled in writing.</p>
 
         <div className="mx-auto mb-16 max-w-2xl rounded-2xl border border-volt/20 bg-slate-900/80 p-6 shadow-2xl shadow-volt/10 backdrop-blur-sm">
           <div className="mb-4 flex items-center justify-center gap-2 text-volt"><i className="fa-solid fa-envelope-open-text" /><span className="text-sm font-bold uppercase tracking-wider">Free Weekly Brief</span></div>
