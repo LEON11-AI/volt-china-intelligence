@@ -16,7 +16,12 @@ const Hero: React.FC = () => {
 
   return (
     <>
+    <style>{'@keyframes hero-map-drift { 0% { transform: scale(1.06) translate3d(-0.7%, -0.4%, 0); } 50% { transform: scale(1.09) translate3d(0.2%, 0.35%, 0); } 100% { transform: scale(1.12) translate3d(0.7%, -0.25%, 0); } } .hero-map-motion { animation: hero-map-drift 28s ease-in-out infinite alternate; will-change: transform; } @media (prefers-reduced-motion: reduce) { .hero-map-motion { animation: none; transform: scale(1.06); } }'}</style>
     <section id="brief" className="relative overflow-hidden scroll-mt-24 pb-20 pt-32 md:scroll-mt-28 lg:pb-32 lg:pt-48">
+      <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+        <img src="/images/china-world-intelligence-map.png" alt="" className="hero-map-motion h-full w-full object-cover object-center opacity-60" />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(2, 6, 23, 0.78) 0%, rgba(2, 6, 23, 0.48) 47%, rgba(2, 6, 23, 0.82) 100%)' }} />
+      </div>
       <div className="pointer-events-none absolute left-1/2 top-0 h-full w-full max-w-7xl -translate-x-1/2">
         <div className="absolute left-10 top-20 hidden h-72 w-72 rounded-full bg-volt/10 blur-[100px] md:block" />
         <div className="absolute bottom-20 right-10 hidden h-96 w-96 rounded-full bg-blue-900/10 blur-[120px] md:block" />
