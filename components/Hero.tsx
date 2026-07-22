@@ -16,7 +16,7 @@ const Hero: React.FC = () => {
 
   return (
     <>
-    <style>{'@keyframes hero-map-drift { 0% { transform: scale(1.06) translate3d(-0.7%, -0.4%, 0); } 50% { transform: scale(1.09) translate3d(0.2%, 0.35%, 0); } 100% { transform: scale(1.12) translate3d(0.7%, -0.25%, 0); } } .hero-map-motion { animation: hero-map-drift 28s ease-in-out infinite alternate; will-change: transform; } @media (prefers-reduced-motion: reduce) { .hero-map-motion { animation: none; transform: scale(1.06); } }'}</style>
+    <style>{'@keyframes hero-map-drift { 0% { transform: scale(1.06) translate3d(-0.7%, -0.4%, 0); } 50% { transform: scale(1.09) translate3d(0.2%, 0.35%, 0); } 100% { transform: scale(1.12) translate3d(0.7%, -0.25%, 0); } } @keyframes hero-title-reveal { from { opacity: 0; transform: translate3d(0, 0.45em, 0); filter: blur(5px); } to { opacity: 1; transform: translate3d(0, 0, 0); filter: blur(0); } } .hero-map-motion { animation: hero-map-drift 28s ease-in-out infinite alternate; will-change: transform; } .hero-title-line { opacity: 0; animation: hero-title-reveal 700ms cubic-bezier(0.16, 1, 0.3, 1) forwards; will-change: transform, opacity, filter; } .hero-title-line:nth-child(1) { animation-delay: 90ms; } .hero-title-line:nth-child(2) { animation-delay: 190ms; } .hero-title-line:nth-child(3) { animation-delay: 290ms; } @media (prefers-reduced-motion: reduce) { .hero-map-motion { animation: none; transform: scale(1.06); } .hero-title-line { animation: none; opacity: 1; transform: none; filter: none; } }'}</style>
     <section id="brief" className="relative overflow-hidden scroll-mt-24 pb-20 pt-32 md:scroll-mt-28 lg:pb-32 lg:pt-48">
       <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
         <img src="/images/china-world-intelligence-map.png" alt="" className="hero-map-motion h-full w-full object-cover object-center opacity-60" />
@@ -34,9 +34,9 @@ const Hero: React.FC = () => {
         </div>
 
         <h1 className="mx-auto mb-6 max-w-7xl text-5xl font-black uppercase leading-[0.88] tracking-[-0.055em] text-white sm:text-6xl md:text-7xl lg:text-[5rem]">
-          <span className="block">Verify Chinese EV and</span>
-          <span className="block">hard-tech claims before</span>
-          <span className="block bg-gradient-to-b from-white to-slate-400 bg-clip-text text-transparent md:bg-gradient-to-r">committing to deeper diligence.</span>
+          <span className="hero-title-line block">Verify Chinese EV and</span>
+          <span className="hero-title-line block">hard-tech claims before</span>
+          <span className="hero-title-line block bg-gradient-to-b from-white to-slate-400 bg-clip-text text-transparent md:bg-gradient-to-r">committing to deeper diligence</span>
         </h1>
 
         <p className="mx-auto mb-8 max-w-2xl text-base leading-[1.45] text-slate-300 md:text-lg">
