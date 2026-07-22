@@ -37,7 +37,7 @@ const ExpertServices: React.FC = () => {
           </div>
 
           <div className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-volt to-orange-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+            <div className="absolute -inset-1 bg-gradient-to-r from-volt to-volt-hover rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
             <div className="relative bg-slate-900 border border-slate-700 rounded-2xl p-8 shadow-2xl">
               <div className="flex justify-between items-start mb-8 gap-6">
                 <div>

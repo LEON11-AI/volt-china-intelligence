@@ -158,7 +158,7 @@ const SolidStateReport: React.FC = () => {
               <span className="bg-blue-900/30 text-blue-300 border border-blue-800 px-4 py-2 rounded-full">Technology Roadmap</span>
               <span className="bg-purple-900/30 text-purple-300 border border-purple-800 px-4 py-2 rounded-full">Commercialization</span>
               <span className="bg-green-900/30 text-green-300 border border-green-800 px-4 py-2 rounded-full">Competition</span>
-              <span className="bg-orange-900/30 text-orange-300 border border-orange-800 px-4 py-2 rounded-full">Investment Outlook</span>
+              <span className="bg-volt/10 text-volt-light border border-volt/40 px-4 py-2 rounded-full">Investment Outlook</span>
             </div>
           </div>
 
@@ -263,7 +263,7 @@ const SolidStateReport: React.FC = () => {
           </div>
 
           <div className="md:col-span-4 p-6 relative bg-slate-900 border border-slate-800 rounded-2xl shadow-xl overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-orange-500/0 to-orange-500/10" />
+            <div className="absolute inset-0 bg-gradient-to-br from-volt/0 to-volt/10" />
             <h2 className="text-2xl font-bold text-white mb-6 relative z-10">Global Competitive Landscape</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
               <div className="border border-slate-800 rounded-lg p-5 bg-slate-900/50 backdrop-blur-sm">
@@ -400,12 +400,12 @@ const SolidStateReport: React.FC = () => {
               <div className="border border-slate-800 rounded-lg p-4 bg-slate-900/50">
                 <div className="flex justify-between items-center mb-2">
                   <h3 className="font-bold text-white">MG4</h3>
-                  <span className="bg-orange-900/30 text-orange-300 border border-orange-800 px-2 py-1 rounded text-xs">Economy</span>
+                  <span className="bg-volt/10 text-volt-light border border-volt/40 px-2 py-1 rounded text-xs">Economy</span>
                 </div>
                 <p className="text-slate-400 text-sm mb-2">First economy model integrating semi-solid tech</p>
                 <div className="flex justify-between text-sm">
-                  <span className="text-slate-500">Price: <span className="font-bold text-orange-400">RMB 99k</span></span>
-                  <span className="text-slate-500">Goal: <span className="font-bold text-orange-400">Mass Adoption</span></span>
+                  <span className="text-slate-500">Price: <span className="font-bold text-volt-light">RMB 99k</span></span>
+                  <span className="text-slate-500">Goal: <span className="font-bold text-volt-light">Mass Adoption</span></span>
                 </div>
               </div>
             </div>
