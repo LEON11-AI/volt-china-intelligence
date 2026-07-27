@@ -63,13 +63,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
   },
   '/intelligence': {
     path: '/intelligence',
-    title: 'China-Language Research for EV & Hard-Tech Diligence | VoltChina',
-    description: 'Written source-verified research for investors, consultancies, independent researchers, and strategy teams assessing Chinese EV and hard-tech claims.',
+    title: 'China Evidence Research for EV & Hard-Tech Diligence | VoltChina',
+    description: 'Rapid claim verification from $500 and China Evidence Briefs from $1,000 for teams assessing Chinese EV and hard-tech claims.',
     image: `${SITE_URL}/og-image.jpg`,
     schema: {
       '@context': 'https://schema.org',
       '@graph': [
-        webPage('/intelligence', 'China-Language Research for EV & Hard-Tech Diligence | VoltChina', 'Written source-verified research for investors, consultancies, independent researchers, and strategy teams assessing Chinese EV and hard-tech claims.'),
+        webPage('/intelligence', 'China Evidence Research for EV & Hard-Tech Diligence | VoltChina', 'Rapid claim verification from $500 and China Evidence Briefs from $1,000 for teams assessing Chinese EV and hard-tech claims.'),
         {
           '@type': 'Service',
           name: 'VoltChina Intelligence',
@@ -77,7 +77,7 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
           provider: { '@id': ORGANIZATION_ID },
           areaServed: 'Worldwide',
           audience: { '@type': 'Audience', audienceType: 'Investment firms, research teams, consultancies, and corporate strategy teams' },
-          offers: { '@type': 'Offer', priceCurrency: 'USD', price: '800', description: 'Starting price for a focused written research brief.' },
+          offers: [{ '@type': 'Offer', name: 'Rapid Claim Verification', priceCurrency: 'USD', price: '500', description: 'Fixed fee for a narrow, publicly verifiable claim.' }, { '@type': 'Offer', name: 'China Evidence Brief', priceCurrency: 'USD', price: '1000', description: 'Fixed fee for a focused source-traced research question.' }, { '@type': 'Offer', name: 'Strategic Intelligence Program', priceCurrency: 'USD', price: '10000', description: 'From $10,000 for multi-company, multi-technology, or ongoing written research.' }],
         },
       ],
     },
