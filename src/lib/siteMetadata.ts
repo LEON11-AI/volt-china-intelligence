@@ -93,8 +93,8 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
         webPage('/robotics', 'Chinese Robotics Platform Access for Research & Integration | VoltChina', 'Written product matching, manufacturer quotation coordination, and project-specific access for qualified teams sourcing Chinese robotics platforms.'),
         {
           '@type': 'Service',
-          name: 'Robotics Access Pilot',
-          serviceType: 'Chinese robotics platform requirement coordination and manufacturer introduction',
+          name: 'Robotics Access',
+          serviceType: 'Chinese robotics requirement mapping, written manufacturer interaction, and decision support',
           provider: { '@id': ORGANIZATION_ID },
           areaServed: 'Worldwide',
           audience: { '@type': 'Audience', audienceType: 'Universities, robotics research teams, embodied-AI labs, and qualified technical integrators' },

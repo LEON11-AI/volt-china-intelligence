@@ -3,7 +3,7 @@ import { trackEvent } from '../src/lib/analytics';
 import SubmissionNotice from './SubmissionNotice';
 
 const formName = 'robotics-requirement';
-const requiredFields = ['work_email', 'contact_name', 'organization_role', 'organization_type', 'destination_country', 'intended_use', 'required_platform', 'quantity', 'purchase_timeframe'];
+const requiredFields = ['work_email', 'contact_name', 'organization_role', 'organization_type', 'destination_country', 'achieve_objective', 'required_platform_type', 'intended_application', 'quantity', 'purchase_timeframe'];
 
 const encode = (data: FormData) => new URLSearchParams(Array.from(data.entries()).map(([key, value]) => [key, String(value)])).toString();
 
@@ -33,7 +33,6 @@ const RoboticsRequestForm: React.FC = () => {
 
     setIsSubmitting(true);
     setError('');
-
     try {
       if (import.meta.env.DEV) {
         await new Promise((resolve) => setTimeout(resolve, 300));
@@ -67,13 +66,16 @@ const RoboticsRequestForm: React.FC = () => {
         <div className="sm:col-span-2"><Input label="Organization and role" name="organization_role" placeholder="Laboratory, university, company, and your role" required /></div>
         <SelectField label="Organization type" name="organization_type" required options={['University or academic research lab', 'Embodied-AI or robotics R&D team', 'Qualified robotics integrator', 'Other qualified technical team']} />
         <Input label="Destination country" name="destination_country" placeholder="Country where the platform will be used" required />
-        <div className="sm:col-span-2"><TextArea label="Intended use / project description" name="intended_use" placeholder="Describe the research, development, integration, or testing project." rows={4} required /></div>
-        <div className="sm:col-span-2"><TextArea label="Required platform or technical configuration" name="required_platform" placeholder="Platform type, payload, mobility, compute, sensors, interfaces, or other required configuration." rows={4} required /></div>
+        <div className="sm:col-span-2"><TextArea label="What are you trying to achieve?" name="achieve_objective" placeholder="Describe the research, integration, testing, or project outcome you are working toward." rows={4} required /></div>
+        <Input label="Required robot/platform type" name="required_platform_type" placeholder="e.g. mobile manipulator, humanoid, legged platform, arm, or component" required />
+        <Input label="Intended application" name="intended_application" placeholder="e.g. embodied-AI research, lab evaluation, integration, or testing" required />
         <Input label="Quantity" name="quantity" placeholder="e.g. 1 research platform or 4 units" required />
-        <Input label="Purchase timeframe" name="purchase_timeframe" placeholder="e.g. Within 3 months" required />
+        <Input label="Purchase timeline" name="purchase_timeframe" placeholder="e.g. Within 3 months" required />
         <Input label="Expected budget range" name="expected_budget" placeholder="Optional" />
+        <div className="sm:col-span-2"><TextArea label="Technical environment / requirements" name="technical_environment" placeholder="Optional: ROS, ROS2, Python SDK, Isaac Sim, MuJoCo, Gazebo, VLA, teleoperation, interfaces, sensors, compute, or other requirements." rows={3} /></div>
+        <div className="sm:col-span-2"><TextArea label="Current robotics platforms / equipment" name="current_platforms" placeholder="Optional: include existing platforms or equipment only if relevant." rows={3} /></div>
         <Input label="Internal integration capability" name="integration_capability" placeholder="Optional: software, controls, mechanical, or systems capability" />
-        <div className="sm:col-span-2"><TextArea label="Local support requirements" name="local_support_requirements" placeholder="Optional: describe any installation, training, maintenance, or support requirement." rows={3} /></div>
+        <Input label="Local support expectations" name="local_support_expectations" placeholder="Optional: describe any support expectation" />
         <div className="sm:col-span-2"><TextArea label="Relevant documents or links" name="relevant_documents" placeholder="Optional: paste requirement documents, technical references, or public links." rows={3} /></div>
       </div>
       {error && <p className="mt-5 rounded-lg border border-red-500/30 bg-red-500/10 p-3 text-sm text-red-200" role="alert">{error}</p>}
