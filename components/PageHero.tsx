@@ -6,9 +6,10 @@ type PageHeroProps = {
   description: string;
   children?: React.ReactNode;
   compact?: boolean;
+  matchHomeHero?: boolean;
 };
 
-const PageHero: React.FC<PageHeroProps> = ({ eyebrow, title, description, children, compact = false }) => (
+const PageHero: React.FC<PageHeroProps> = ({ eyebrow, title, description, children, compact = false, matchHomeHero = false }) => (
   <section data-scroll-motion-skip className={`relative overflow-hidden border-b border-white/10 ${compact ? 'pb-16 pt-32 md:pb-20 md:pt-40' : 'min-h-[68svh] pb-20 pt-32 md:pb-28 md:pt-44'}`}>
     <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
       <img src="/images/china-world-intelligence-map.png" alt="" className="hero-map-motion h-full w-full object-cover object-center opacity-45" />
@@ -22,7 +23,7 @@ const PageHero: React.FC<PageHeroProps> = ({ eyebrow, title, description, childr
         <span className="relative flex h-2 w-2"><span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-volt opacity-75" /><span className="relative inline-flex h-2 w-2 rounded-full bg-volt" /></span>
         {eyebrow}
       </div>
-      <h1 className={`page-hero-reveal mx-auto font-black uppercase leading-[0.9] tracking-[-0.05em] text-white ${compact ? 'max-w-6xl text-4xl sm:text-5xl md:text-6xl' : 'max-w-[90rem] text-5xl sm:text-6xl md:text-7xl lg:text-[clamp(4.5rem,5.25vw,6.75rem)]'}`} style={{ animationDelay: '160ms' }}>{title}</h1>
+      <h1 className={`page-hero-reveal mx-auto font-black uppercase tracking-[-0.05em] text-white ${compact ? 'max-w-6xl text-4xl leading-[0.9] sm:text-5xl md:text-6xl' : matchHomeHero ? 'max-w-[72rem] text-3xl leading-[0.93] [text-wrap:balance] sm:text-5xl md:text-6xl lg:text-[clamp(3.75rem,4vw,4.75rem)]' : 'max-w-[90rem] text-5xl leading-[0.9] sm:text-6xl md:text-7xl lg:text-[clamp(4.5rem,5.25vw,6.75rem)]'}`} style={{ animationDelay: '160ms' }}>{title}</h1>
       <p className="page-hero-reveal mx-auto mt-7 max-w-4xl text-base leading-[1.5] text-slate-300 md:text-lg" style={{ animationDelay: '260ms' }}>{description}</p>
       {children && <div className="page-hero-reveal mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row" style={{ animationDelay: '360ms' }}>{children}</div>}
     </div>

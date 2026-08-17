@@ -36,6 +36,7 @@ const Robotics: React.FC = () => <div className="min-h-screen overflow-x-hidden 
       eyebrow="ROBOTICS ACCESS"
       title="A Clearer Path From Robotics Requirements to Manufacturer-Confirmed Options in China"
       description="VoltChina helps overseas research and technical teams move from broad robotics requirements to structured written inquiries, potentially relevant Chinese platforms, and manufacturer-confirmed project information."
+      matchHomeHero
     >
       <div className="text-center">
         <a href="#robotics-requirement" onClick={() => trackEvent('click_robotics_access')} className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-volt px-6 py-3.5 font-bold text-white shadow-lg shadow-volt/20 transition-all hover:bg-volt-hover hover:shadow-volt/40 sm:w-auto">Tell Us What You Are Trying to Achieve <i className="fa-solid fa-arrow-right text-xs" /></a>

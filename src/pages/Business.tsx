@@ -87,6 +87,7 @@ const Business: React.FC = () => {
         eyebrow="CHINA-SOURCE INTELLIGENCE"
         title="Source-verified China intelligence for pre-diligence and strategy"
         description="VoltChina helps small investment firms, independent researchers, boutique consultancies, and corporate strategy teams turn Chinese-language public sources into clear English answers: screened, verified, translated, and explained for a specific business question."
+        matchHomeHero
       >
         <Link to="/intelligence?service=evidence#research-request" className="rounded-lg bg-volt px-6 py-3 text-center font-bold text-white shadow-lg shadow-volt/20 transition-all hover:bg-volt-hover hover:shadow-volt/40">Submit a Research Question</Link>
         <Link to="/research/byd-solid-state-battery-2026" className="rounded-lg border border-white/20 bg-slate-950/35 px-6 py-3 text-center font-bold text-white shadow-lg shadow-black/20 backdrop-blur-xl transition-all hover:border-volt hover:bg-slate-900">See a Public Research Sample</Link>
