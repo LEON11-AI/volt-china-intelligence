@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './src/pages/Home';
 import Business from './src/pages/Business';
 import Sourcing from './src/pages/Sourcing';
+import Robotics from './src/pages/Robotics';
 import ResearchIndex from './src/pages/ResearchIndex';
 import BlogPage from './pages/BlogPage';
 import HuaweiCostAnalysis from './src/pages/exclusive/HuaweiCostAnalysis';
@@ -17,16 +18,19 @@ import SampleBrief from './src/pages/SampleBrief';
 import Legal from './src/pages/Legal';
 import ScrollMotion from './components/ScrollMotion';
 import PageMetadata from './components/PageMetadata';
+import RouteScroll from './components/RouteScroll';
 
 const App: React.FC = () => {
   return (
     <BrowserRouter>
       <PageMetadata />
+      <RouteScroll />
       <ScrollMotion />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/business" element={<Business />} />
         <Route path="/intelligence" element={<Business />} />
+        <Route path="/robotics" element={<Robotics />} />
         <Route path="/sourcing" element={<Sourcing />} />
         <Route path="/sample-brief" element={<SampleBrief />} />
         <Route path="/research/byd-solid-state-battery-2026" element={<SampleBrief />} />

@@ -148,7 +148,24 @@
       <textarea name="relevant_links"></textarea>
       <select name="budget_range"><option>$500</option><option>$1,000</option><option>$10,000+</option><option>Not sure yet</option></select>
     </form>
-      <form name="sourcing-requirement" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+      <form name="robotics-requirement" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+      <input type="text" name="bot-field" />
+      <input type="hidden" name="form-name" value="robotics-requirement" />
+      <input type="email" name="work_email" required />
+      <input type="text" name="contact_name" required />
+      <input type="text" name="organization_role" required />
+      <input type="text" name="organization_type" required />
+      <input type="text" name="destination_country" required />
+      <textarea name="intended_use" required></textarea>
+      <textarea name="required_platform" required></textarea>
+      <input type="text" name="quantity" required />
+      <input type="text" name="purchase_timeframe" required />
+      <input type="text" name="expected_budget" />
+      <input type="text" name="integration_capability" />
+      <textarea name="local_support_requirements"></textarea>
+      <textarea name="relevant_documents"></textarea>
+    </form>
+    <form name="sourcing-requirement" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
       <input type="text" name="bot-field" />
       <input type="hidden" name="form-name" value="sourcing-requirement" />
       <input type="email" name="work_email" />

@@ -1,71 +1,16 @@
 import React from 'react';
 
-const About: React.FC = () => {
-  return (
-    <section id="about" className="py-24 bg-slate-950 scroll-mt-24 md:scroll-mt-28">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <div className="relative w-28 h-28 mx-auto mb-6 group">
-            <img
-              src="/VC.png"
-              alt="Volt China"
-              loading="lazy"
-              decoding="async"
-              width={112}
-              height={112}
-              className="relative w-full h-full object-cover rounded-xl shadow-2xl bg-slate-900"
-              onError={(e) => { (e.currentTarget as HTMLImageElement).src = '/avatar-default.svg'; }}
-            />
-          </div>
-
-          <h2 className="text-3xl font-bold text-white mb-2 tracking-tight">About VoltChina</h2>
-        </div>
-
-        <div className="bg-slate-900/50 border border-slate-800 rounded-2xl p-8 md:p-12 shadow-2xl backdrop-blur-sm">
-          <div className="text-base md:text-lg text-slate-300 leading-relaxed space-y-6">
-            <p>
-              VoltChina is an independent English-language media and research project focused on China's electric vehicles, batteries, smart-driving systems, humanoid robots, and advanced manufacturing supply chains.
-            </p>
-            <p>
-              We do not sell investment advice, insider leaks, or undisclosed paid puff pieces. We may work with sponsors and partners when the product fits our audience, the relationship is clearly disclosed, and VoltChina keeps full editorial control.
-            </p>
-            <p>
-              The goal is simple: help global readers understand not just what China announced, but why it matters mechanically, industrially, and competitively.
-            </p>
-
-            <div className="bg-slate-950/50 rounded-xl p-6 border border-slate-800/50 my-6">
-              <ul className="space-y-4">
-                <li className="flex items-start">
-                  <i className="fa-solid fa-microchip text-volt mt-1 mr-4 w-5 text-center"></i>
-                  <span><strong className="text-white">Technical materials and patents</strong> for understanding how systems are physically designed.</span>
-                </li>
-                <li className="flex items-start">
-                  <i className="fa-solid fa-industry text-volt mt-1 mr-4 w-5 text-center"></i>
-                  <span><strong className="text-white">Supplier and manufacturing signals</strong> for adding context behind product claims.</span>
-                </li>
-                <li className="flex items-start">
-                  <i className="fa-solid fa-chart-line text-volt mt-1 mr-4 w-5 text-center"></i>
-                  <span><strong className="text-white">Local industry discussions</strong> for spotting real bottlenecks, tradeoffs, and adoption barriers.</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="pt-10 mt-10 border-t border-slate-800/80 text-center">
-              <p className="font-extrabold text-white text-2xl md:text-3xl tracking-[0.16em] uppercase">
-                Mechanism first. Evidence always. No hype.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="flex justify-center mt-12">
-          <a href="mailto:business@voltchina.net" className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white font-medium rounded-lg transition-colors border border-slate-700">
-            <i className="fa-solid fa-envelope"></i> Get in touch
-          </a>
-        </div>
+const About: React.FC = () => (
+  <section id="about" className="scroll-mt-24 border-t border-slate-900 bg-slate-950 py-16 md:scroll-mt-28 md:py-20">
+    <div className="mx-auto grid max-w-6xl gap-8 px-4 sm:px-6 md:grid-cols-[auto_1fr] md:items-center lg:px-8">
+      <img src="/VC.png" alt="VoltChina" loading="lazy" width="88" height="88" className="h-20 w-20 rounded-xl object-cover shadow-2xl md:h-24 md:w-24" />
+      <div>
+        <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-volt">About VoltChina</p>
+        <h2 className="text-3xl font-bold text-white md:text-4xl">China-source context for global technical decisions</h2>
+        <p className="mt-4 max-w-4xl leading-relaxed text-slate-400">VoltChina is an independent English-language research and media project focused on China&apos;s electric vehicles, batteries, smart-driving systems, robotics, and advanced manufacturing. It separates public evidence, company claims, inference, and unknowns so global teams can decide what deserves further investigation.</p>
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default About;
