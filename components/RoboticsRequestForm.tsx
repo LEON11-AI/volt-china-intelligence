@@ -11,9 +11,12 @@ const RoboticsRequestForm: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [noticeOpen, setNoticeOpen] = useState(false);
   const [error, setError] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
   const hasTrackedStart = useRef(false);
+  const feedbackRef = useRef<HTMLDivElement>(null);
 
   const trackStart = () => {
+    setSuccessMessage('');
     if (hasTrackedStart.current) return;
     hasTrackedStart.current = true;
     trackEvent('robotics_form_start');
@@ -26,13 +29,18 @@ const RoboticsRequestForm: React.FC = () => {
     const hasMissingField = requiredFields.some((name) => !String(data.get(name) ?? '').trim());
 
     if (hasMissingField || !form.checkValidity()) {
-      setError('Complete every required field before submitting your robotics requirement.');
-      form.reportValidity();
+      setError('Complete every required field before submitting your robotics requirement. Check the fields marked * and try again.');
+      const firstInvalidField = form.querySelector<HTMLElement>(':invalid');
+      requestAnimationFrame(() => {
+        feedbackRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        firstInvalidField?.focus({ preventScroll: true });
+      });
       return;
     }
 
     setIsSubmitting(true);
     setError('');
+    setSuccessMessage('');
     try {
       if (import.meta.env.DEV) {
         await new Promise((resolve) => setTimeout(resolve, 300));
@@ -48,6 +56,7 @@ const RoboticsRequestForm: React.FC = () => {
       trackEvent('robotics_form_submit');
       form.reset();
       hasTrackedStart.current = false;
+      setSuccessMessage('Your robotics requirement has been received. VoltChina will review the request and reply by email, normally within 1–2 business days.');
       setNoticeOpen(true);
     } catch {
       setError('Your robotics requirement could not be submitted. Please try again or email business@voltchina.net.');
@@ -57,7 +66,7 @@ const RoboticsRequestForm: React.FC = () => {
   };
 
   return <>
-    <form name={formName} method="POST" action="/" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={submit} onFocus={trackStart} className="rounded-2xl border border-slate-800 bg-slate-950/80 p-6 shadow-2xl shadow-slate-950/50 md:p-8">
+    <form name={formName} method="POST" action="/" data-netlify="true" data-netlify-honeypot="bot-field" noValidate onSubmit={submit} onFocus={trackStart} className="rounded-2xl border border-slate-800 bg-slate-950/80 p-6 shadow-2xl shadow-slate-950/50 md:p-8">
       <input type="hidden" name="form-name" value={formName} />
       <p className="hidden"><label>Do not fill this out if you are human: <input name="bot-field" /></label></p>
       <div className="grid gap-5 sm:grid-cols-2">
@@ -78,7 +87,10 @@ const RoboticsRequestForm: React.FC = () => {
         <Input label="Local support expectations" name="local_support_expectations" placeholder="Optional: describe any support expectation" />
         <div className="sm:col-span-2"><TextArea label="Relevant documents or links" name="relevant_documents" placeholder="Optional: paste requirement documents, technical references, or public links." rows={3} /></div>
       </div>
-      {error && <p className="mt-5 rounded-lg border border-red-500/30 bg-red-500/10 p-3 text-sm text-red-200" role="alert">{error}</p>}
+      <div ref={feedbackRef} id="robotics-form-feedback" className="mt-5" aria-live="polite">
+        {error && <p className="rounded-lg border border-red-500/30 bg-red-500/10 p-3 text-sm text-red-200" role="alert">{error}</p>}
+        {successMessage && <p className="rounded-lg border border-emerald-400/30 bg-emerald-400/10 p-3 text-sm text-emerald-100" role="status">{successMessage}</p>}
+      </div>
       <button type="submit" disabled={isSubmitting} className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-volt px-5 py-3.5 font-bold text-white shadow-lg shadow-volt/20 transition-all hover:bg-volt-hover hover:shadow-volt/40 disabled:cursor-not-allowed disabled:opacity-70">{isSubmitting ? 'Submitting…' : <>Submit My Robotics Requirement <i className="fa-solid fa-arrow-right text-xs" /></>}</button>
       <p className="mt-4 text-center text-xs leading-relaxed text-slate-500">Submitting a request does not create a purchase obligation. VoltChina will review the requirement and reply in writing, normally within 1–2 business days.</p>
     </form>
