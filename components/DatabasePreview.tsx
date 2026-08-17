@@ -26,8 +26,9 @@ const DatabasePreview: React.FC = () => (
       </div>
 
       <div className="grid overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60 shadow-2xl shadow-black/25 md:grid-cols-[0.38fr_0.62fr]">
-        <div className="relative min-h-[20rem] overflow-hidden bg-slate-950/70 md:min-h-0">
-          <img src="/reports/byd-all-solid-state-battery-evidence-report-cover.png" alt="Cover of the VoltChina BYD all-solid-state battery evidence report" loading="lazy" className="absolute inset-0 h-full w-full max-w-none object-cover object-center" />
+        <div className="relative isolate min-h-[20rem] overflow-hidden bg-slate-950/70 md:min-h-0">
+          <img src="/reports/byd-all-solid-state-battery-evidence-report-cover.png" alt="" aria-hidden="true" loading="lazy" className="absolute inset-0 h-full w-full scale-110 object-cover object-center opacity-20 blur-xl" />
+          <img src="/reports/byd-all-solid-state-battery-evidence-report-cover.png" alt="Cover of the VoltChina BYD all-solid-state battery evidence report" loading="lazy" className="relative z-10 h-full w-full max-w-full object-contain object-center" />
         </div>
         <div className="flex flex-col justify-center p-6 md:p-10">
           <p className="text-xs font-bold uppercase tracking-[0.18em] text-volt">Public Research Sample</p>
