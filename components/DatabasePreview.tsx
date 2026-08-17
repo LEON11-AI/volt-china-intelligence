@@ -13,7 +13,7 @@ const DatabasePreview: React.FC = () => (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div className="mb-10 text-center">
         <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-volt">Research Evidence</p>
-        <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl">Inspect a real public-source deliverable</h2>
+        <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl">Inspect a Real Public Research Sample</h2>
       </div>
 
       <div className="mb-8 grid gap-4 md:grid-cols-3">

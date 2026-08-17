@@ -32,14 +32,12 @@ const Hero: React.FC = () => {
           Chinese-Language Source Intelligence
         </div>
 
-        <h1 className="mx-auto mb-6 max-w-[90rem] text-5xl font-black uppercase leading-[0.88] tracking-[-0.055em] text-white sm:text-6xl md:text-7xl lg:text-[clamp(5rem,5.5vw,7rem)]">
-          <span className="hero-title-line block">Verify Chinese EV and</span>
-          <span className="hero-title-line block">hard-tech claims before</span>
-          <span className="hero-title-line block bg-gradient-to-b from-white to-slate-400 bg-clip-text text-transparent md:bg-gradient-to-r">committing to deeper diligence</span>
+        <h1 className="hero-title-line mx-auto mb-6 max-w-[72rem] text-3xl font-black uppercase leading-[0.93] tracking-[-0.05em] text-white [text-wrap:balance] sm:text-5xl md:text-6xl lg:text-[clamp(3.75rem,4vw,4.75rem)]">
+          Verify Claims About China&apos;s EV and Hard-Tech Sectors Before Deeper Diligence
         </h1>
 
-        <p className="mx-auto mb-8 max-w-3xl text-base leading-[1.45] text-slate-300 md:text-lg">
-          VoltChina helps small investment firms, boutique consultancies, independent researchers, and strategy teams turn difficult-to-check Chinese-language public sources into clear written assessments&mdash;showing what is confirmed, what is claimed, what remains unknown, and what deserves further investigation.
+        <p className="mx-auto mb-8 max-w-3xl text-base leading-[1.5] text-slate-300 md:text-lg">
+          VoltChina turns difficult-to-check Chinese-language public sources into concise written assessments&mdash;separating confirmed facts, company claims, unknowns, and the questions worth investigating further.
         </p>
 
         <div className="mb-3 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -61,7 +59,7 @@ const Hero: React.FC = () => {
 
         <div className="mx-auto grid max-w-5xl grid-cols-2 gap-4 border-t border-slate-800/50 pt-8 md:grid-cols-4">
           <Stat value="1M+" label="YouTube Views" />
-          <Stat value="5,000+" label="YouTube Subscribers" />
+          <Stat value="6,000+" label="YouTube Subscribers" />
           <Stat value="Weekly" label="English Brief" />
           <Stat value="Global" label="English-Speaking Audience" />
         </div>

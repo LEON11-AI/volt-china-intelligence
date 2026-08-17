@@ -8,6 +8,7 @@ const About: React.FC = () => (
         <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-volt">About VoltChina</p>
         <h2 className="text-3xl font-bold text-white md:text-4xl">China-source context for global technical decisions</h2>
         <p className="mt-4 max-w-4xl leading-relaxed text-slate-400">VoltChina is an independent English-language research and media project focused on China&apos;s electric vehicles, batteries, smart-driving systems, robotics, and advanced manufacturing. It separates public evidence, company claims, inference, and unknowns so global teams can decide what deserves further investigation.</p>
+        <p className="mt-4 max-w-4xl leading-relaxed text-slate-400">VoltChina also helps qualified overseas robotics teams structure platform requirements and coordinate written, project-specific inquiries with relevant Chinese manufacturers.</p>
       </div>
     </div>
   </section>
