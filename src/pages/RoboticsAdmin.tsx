@@ -81,7 +81,7 @@ const signalOptions = [
 ] as const;
 
 const number = (value: number | undefined) => new Intl.NumberFormat('en-US').format(value || 0);
-const rate = (value: number | null) => value === null ? '—' : `${value}%`;
+const rate = (value: number | null | undefined) => typeof value === 'number' && Number.isFinite(value) ? `${value}%` : '—';
 const originLabel = (origin: OpportunityOrigin) => origin === 'website_form' ? 'Website form' : 'Manual / Outbound';
 
 const fetchSummary = async (token: string, days: number) => {
