@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { trackEvent } from '../src/lib/analytics';
+import { trackRoboticsEvent } from '../src/lib/roboticsAnalytics';
 import SubmissionNotice from './SubmissionNotice';
 
 const formName = 'robotics-requirement';
@@ -19,7 +19,8 @@ const RoboticsRequestForm: React.FC = () => {
     setSuccessMessage('');
     if (hasTrackedStart.current) return;
     hasTrackedStart.current = true;
-    trackEvent('robotics_form_start');
+    // No form values are included in analytics.
+    trackRoboticsEvent('robotics_form_start');
   };
 
   const submit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -53,7 +54,7 @@ const RoboticsRequestForm: React.FC = () => {
         if (!response.ok) throw new Error('Submission failed');
       }
 
-      trackEvent('robotics_form_submit');
+      trackRoboticsEvent('robotics_form_submit');
       form.reset();
       hasTrackedStart.current = false;
       setSuccessMessage('Your robotics requirement has been received. VoltChina will review the request and reply by email, normally within 1–2 business days.');

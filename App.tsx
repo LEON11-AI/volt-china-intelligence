@@ -16,6 +16,7 @@ import RequestAccess from './src/pages/RequestAccess';
 import SupplierMapThanks from './src/pages/SupplierMapThanks';
 import SampleBrief from './src/pages/SampleBrief';
 import Legal from './src/pages/Legal';
+import RoboticsAdmin from './src/pages/RoboticsAdmin';
 import ScrollMotion from './components/ScrollMotion';
 import PageMetadata from './components/PageMetadata';
 import RouteScroll from './components/RouteScroll';
@@ -31,6 +32,7 @@ const App: React.FC = () => {
         <Route path="/business" element={<Business />} />
         <Route path="/intelligence" element={<Business />} />
         <Route path="/robotics" element={<Robotics />} />
+        <Route path="/admin/robotics" element={<RoboticsAdmin />} />
         <Route path="/sourcing" element={<Sourcing />} />
         <Route path="/sample-brief" element={<SampleBrief />} />
         <Route path="/research/byd-solid-state-battery-2026" element={<SampleBrief />} />

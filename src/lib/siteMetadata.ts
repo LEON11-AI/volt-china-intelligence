@@ -122,6 +122,14 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
       ],
     },
   },
+  '/admin/robotics': {
+    path: '/admin/robotics',
+    title: 'Robotics Analytics Monitor | VoltChina',
+    description: 'Internal Robotics Access acquisition and opportunity monitoring dashboard.',
+    image: `${SITE_URL}/og-image.jpg`,
+    robots: 'noindex,nofollow,noarchive',
+    schema: webPage('/admin/robotics', 'Robotics Analytics Monitor | VoltChina', 'Internal Robotics Access acquisition and opportunity monitoring dashboard.'),
+  },
   '/research': {
     path: '/research',
     title: 'China EV & Hard-Tech Research and Editorial Analysis | VoltChina',

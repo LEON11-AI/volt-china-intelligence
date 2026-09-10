@@ -1712,9 +1712,51 @@ p.body strong { color: var(--ink); font-weight: 600; }
     let gateStarted = false;
     let gateCompleted = false;
 
+    const trackedEvents = new Set(['checklist_view', 'checklist_item_checked', 'po_gate_started', 'po_gate_completed', 'worksheet_started', 'request_verification']);
+    const telemetryAttributionKey = 'voltchina_robotics_attribution_v1';
+    const telemetrySessionKey = 'voltchina_robotics_session_v1';
+    const safeValue = (value, limit = 120) => typeof value === 'string' ? value.trim().replace(/[\r\n\t]+/g, ' ').slice(0, limit) : '';
+    const telemetryContext = () => {
+      const query = new URLSearchParams(window.location.search);
+      const incoming = {
+        utm_source: safeValue(query.get('utm_source')),
+        utm_medium: safeValue(query.get('utm_medium')),
+        utm_campaign: safeValue(query.get('utm_campaign')),
+        landing_path: safeValue(window.location.pathname, 180),
+        referrer_domain: (() => { try { return document.referrer ? safeValue(new URL(document.referrer).hostname, 120) : ''; } catch { return ''; } })(),
+      };
+      try {
+        const saved = JSON.parse(sessionStorage.getItem(telemetryAttributionKey) || '{}');
+        const hasCampaign = Boolean(incoming.utm_source || incoming.utm_medium || incoming.utm_campaign);
+        const context = hasCampaign ? incoming : {
+          ...incoming,
+          utm_source: safeValue(saved.utm_source),
+          utm_medium: safeValue(saved.utm_medium),
+          utm_campaign: safeValue(saved.utm_campaign),
+          landing_path: safeValue(saved.landing_path || incoming.landing_path, 180),
+          referrer_domain: safeValue(saved.referrer_domain || incoming.referrer_domain, 120),
+        };
+        sessionStorage.setItem(telemetryAttributionKey, JSON.stringify(context));
+        let anonymousSession = sessionStorage.getItem(telemetrySessionKey);
+        if (!anonymousSession) {
+          anonymousSession = typeof crypto?.randomUUID === 'function' ? crypto.randomUUID() : `${Date.now()}-${Math.random().toString(16).slice(2)}`;
+          sessionStorage.setItem(telemetrySessionKey, anonymousSession);
+        }
+        return { ...context, anonymous_session: anonymousSession };
+      } catch {
+        return { ...incoming, anonymous_session: '' };
+      }
+    };
+
     const track = (eventName, properties = {}) => {
       if (typeof window.gtag === 'function') window.gtag('event', eventName, properties);
       if (typeof window.plausible === 'function') window.plausible(eventName, { props: properties });
+      if (!trackedEvents.has(eventName)) return;
+      const payload = JSON.stringify({ type: 'event', event: eventName, attribution: telemetryContext() });
+      try {
+        if (navigator.sendBeacon && navigator.sendBeacon('/api/robotics-analytics', new Blob([payload], { type: 'application/json' }))) return;
+        void fetch('/api/robotics-analytics', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: payload, keepalive: true });
+      } catch { /* Analytics must never interfere with the checklist. */ }
     };
 
     const readState = () => {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../../components/Footer';
 import Navbar from '../../components/Navbar';
@@ -6,6 +6,7 @@ import PageHero from '../../components/PageHero';
 import RoboticsPlatformsInAction from '../../components/RoboticsPlatformsInAction';
 import RoboticsRequestForm from '../../components/RoboticsRequestForm';
 import { trackEvent } from '../lib/analytics';
+import { trackRoboticsEvent } from '../lib/roboticsAnalytics';
 
 const audiences = [
   'Universities and academic research labs',
@@ -30,7 +31,12 @@ const steps = [
   ['Step 5', 'VoltChina organizes the confirmed information, limitations, and unresolved questions for the buyer’s next-step decision'],
 ];
 
-const Robotics: React.FC = () => <div className="min-h-screen overflow-x-hidden bg-slate-950 font-sans text-slate-200">
+const Robotics: React.FC = () => {
+  useEffect(() => {
+    trackRoboticsEvent('robotics_access_view');
+  }, []);
+
+  return <div className="min-h-screen overflow-x-hidden bg-slate-950 font-sans text-slate-200">
   <Navbar forceDark />
   <main>
     <PageHero
@@ -63,5 +69,6 @@ const Robotics: React.FC = () => <div className="min-h-screen overflow-x-hidden 
   </main>
   <Footer />
 </div>;
+};
 
 export default Robotics;

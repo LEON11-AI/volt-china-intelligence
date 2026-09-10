@@ -2,6 +2,14 @@
   command = "npm run build"
   publish = "dist"
 
+[functions]
+  directory = "netlify/functions"
+
+[[redirects]]
+  from = "/api/robotics-analytics"
+  to = "/.netlify/functions/robotics-analytics"
+  status = 200
+
 [[redirects]]
   from = "/business"
   to = "/intelligence"
