@@ -2,7 +2,7 @@ import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { defineConfig, loadEnv, type Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
-import { PAGE_METADATA, SITE_URL, indexablePages, type PageMetadata } from './src/lib/siteMetadata';
+import { PAGE_METADATA, SITE_URL, type PageMetadata } from './src/lib/siteMetadata';
 
 const escapeHtml = (value: string) => value.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const schemaJson = (schema: Record<string, unknown>) => JSON.stringify(schema).replace(/</g, '\\u003c');
@@ -41,7 +41,7 @@ const routeMetadata = (): Plugin => ({
     const rootWithSchema = builtIndex.replace('</head>', `<meta name="robots" content="${root.robots ?? 'index,follow,max-image-preview:large'}" /><script id="voltchina-page-schema" type="application/ld+json">${schemaJson(root.schema)}</script></head>`);
     writeFileSync(indexPath, rootWithSchema);
 
-    indexablePages.filter((page) => page.path !== '/').forEach((page) => {
+    Object.values(PAGE_METADATA).filter((page) => page.path !== '/').forEach((page) => {
       const targetDirectory = path.join(outputDirectory, page.path.replace(/^\//, ''));
       mkdirSync(targetDirectory, { recursive: true });
       writeFileSync(path.join(targetDirectory, 'index.html'), metadataHtml(page, entryScript));
