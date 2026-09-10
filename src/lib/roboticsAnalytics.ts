@@ -2,6 +2,7 @@ import { trackEvent } from './analytics';
 
 export const ROBOTICS_EVENT_NAMES = [
   'robotics_access_view',
+  'robotics_checklist_click',
   'checklist_view',
   'checklist_item_checked',
   'po_gate_started',
@@ -84,8 +85,12 @@ const attribution = (): Attribution => {
   }
 };
 
-const sendToRoboticsStore = (event: RoboticsEventName) => {
-  const payload = JSON.stringify({ type: 'event', event, attribution: attribution() });
+const newEventId = () => typeof crypto?.randomUUID === 'function'
+  ? crypto.randomUUID()
+  : `${Date.now()}-${Math.random().toString(16).slice(2)}`;
+
+const sendToRoboticsStore = (event: RoboticsEventName, context: Attribution) => {
+  const payload = JSON.stringify({ type: 'event', event, event_id: newEventId(), attribution: context });
   try {
     if (navigator.sendBeacon) {
       const sent = navigator.sendBeacon('/api/robotics-analytics', new Blob([payload], { type: 'application/json' }));
@@ -114,5 +119,5 @@ export const trackRoboticsEvent = (event: RoboticsEventName, properties: PublicP
     landing_path: context.landing_path,
     referrer_domain: context.referrer_domain || undefined,
   });
-  sendToRoboticsStore(event);
+  sendToRoboticsStore(event, context);
 };

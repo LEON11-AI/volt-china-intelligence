@@ -1752,7 +1752,8 @@ p.body strong { color: var(--ink); font-weight: 600; }
       if (typeof window.gtag === 'function') window.gtag('event', eventName, properties);
       if (typeof window.plausible === 'function') window.plausible(eventName, { props: properties });
       if (!trackedEvents.has(eventName)) return;
-      const payload = JSON.stringify({ type: 'event', event: eventName, attribution: telemetryContext() });
+      const eventId = typeof crypto?.randomUUID === 'function' ? crypto.randomUUID() : `${Date.now()}-${Math.random().toString(16).slice(2)}`;
+      const payload = JSON.stringify({ type: 'event', event: eventName, event_id: eventId, attribution: telemetryContext() });
       try {
         if (navigator.sendBeacon && navigator.sendBeacon('/api/robotics-analytics', new Blob([payload], { type: 'application/json' }))) return;
         void fetch('/api/robotics-analytics', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: payload, keepalive: true });
