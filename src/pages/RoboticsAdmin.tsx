@@ -36,7 +36,8 @@ type Summary = {
   opportunities: Opportunity[];
 };
 
-const tokenStorageKey = 'voltchina_robotics_admin_token';
+const sessionTokenStorageKey = 'voltchina_robotics_admin_token';
+const rememberedTokenStorageKey = 'voltchina_robotics_admin_token_remembered';
 const metricCards: Array<{ key: MetricKey; label: string; note: string; icon: string }> = [
   { key: 'robotics_access_visitors', label: 'Robotics Access Visitors', note: 'Sessions with a Robotics Access view', icon: 'fa-robot' },
   { key: 'robotics_to_checklist_clicks', label: 'Robotics → Checklist Clicks', note: 'Sessions clicking the Checklist from Robotics Access', icon: 'fa-arrow-right' },
@@ -104,6 +105,7 @@ const saveOpportunity = async (token: string, data: Pick<Opportunity, 'stage'> &
 const RoboticsAdmin: React.FC = () => {
   const [token, setToken] = useState('');
   const [draftToken, setDraftToken] = useState('');
+  const [rememberDevice, setRememberDevice] = useState(true);
   const [days, setDays] = useState(30);
   const [summary, setSummary] = useState<Summary | null>(null);
   const [loading, setLoading] = useState(false);
@@ -131,9 +133,11 @@ const RoboticsAdmin: React.FC = () => {
 
   useEffect(() => {
     try {
-      const saved = sessionStorage.getItem(tokenStorageKey) || '';
+      const remembered = localStorage.getItem(rememberedTokenStorageKey) || '';
+      const saved = remembered || sessionStorage.getItem(sessionTokenStorageKey) || '';
       setToken(saved);
       setDraftToken(saved);
+      setRememberDevice(Boolean(remembered));
       if (saved) void load(saved, days);
     } catch {
       // The monitor can still be opened with a token if session storage is unavailable.
@@ -152,12 +156,37 @@ const RoboticsAdmin: React.FC = () => {
     event.preventDefault();
     const next = draftToken.trim();
     if (!next) {
-      setError('Enter the internal access token to open the monitor.');
+      setError('Enter the dashboard password to open the monitor.');
       return;
     }
-    try { sessionStorage.setItem(tokenStorageKey, next); } catch { /* Session-only persistence is optional. */ }
+    try {
+      if (rememberDevice) {
+        localStorage.setItem(rememberedTokenStorageKey, next);
+        sessionStorage.removeItem(sessionTokenStorageKey);
+      } else {
+        sessionStorage.setItem(sessionTokenStorageKey, next);
+        localStorage.removeItem(rememberedTokenStorageKey);
+      }
+    } catch {
+      // The monitor remains usable in memory if browser storage is unavailable.
+    }
     setToken(next);
     void load(next, days);
+  };
+
+  const forgetDevice = () => {
+    try {
+      localStorage.removeItem(rememberedTokenStorageKey);
+      sessionStorage.removeItem(sessionTokenStorageKey);
+    } catch {
+      // Clearing browser storage is optional; in-memory access is still cleared below.
+    }
+    setToken('');
+    setDraftToken('');
+    setSummary(null);
+    setError('');
+    setNotice('');
+    setRememberDevice(true);
   };
 
   const addManualOpportunity = async (event: FormEvent<HTMLFormElement>) => {
@@ -201,11 +230,12 @@ const RoboticsAdmin: React.FC = () => {
           <h1 className="mt-3 text-3xl font-bold text-white sm:text-4xl">Robotics Analytics Monitor</h1>
           <p className="mt-4 leading-relaxed text-slate-400">This unlisted dashboard aggregates anonymous behavior and separately maintained opportunity stages. It never displays form answers, names, emails, budgets, or technical requirements.</p>
           <form onSubmit={connect} className="mt-7 space-y-4">
-            <div><label htmlFor="admin-token" className="mb-2 block text-sm font-semibold text-slate-200">Internal access token</label><input id="admin-token" type="password" autoComplete="current-password" value={draftToken} onChange={(event) => setDraftToken(event.target.value)} className="min-h-11 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 text-white outline-none transition-colors focus:border-volt focus:ring-1 focus:ring-volt" /></div>
+            <div><label htmlFor="admin-token" className="mb-2 block text-sm font-semibold text-slate-200">Dashboard password</label><input id="admin-token" name="dashboard-password" type="password" autoComplete="current-password" value={draftToken} onChange={(event) => setDraftToken(event.target.value)} className="min-h-11 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 text-white outline-none transition-colors focus:border-volt focus:ring-1 focus:ring-volt" /></div>
+            <label className="flex min-h-11 cursor-pointer items-center gap-3 rounded-lg border border-slate-800 bg-slate-950/70 px-3 text-sm leading-relaxed text-slate-300"><input type="checkbox" checked={rememberDevice} onChange={(event) => setRememberDevice(event.target.checked)} className="h-4 w-4 accent-[#CF0404]" /> Keep me signed in on this device</label>
             {error && <p className="rounded-lg border border-red-500/30 bg-red-500/10 p-3 text-sm text-red-200" role="alert">{error}</p>}
             <button type="submit" className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-volt px-5 py-3 font-bold text-white shadow-lg shadow-volt/20 transition-colors hover:bg-volt-hover"><i className="fa-solid fa-lock" aria-hidden="true" /> Open monitor</button>
           </form>
-          <p className="mt-5 text-xs leading-relaxed text-slate-500">The token is retained only in this browser session. Configure <code className="rounded bg-slate-800 px-1 py-0.5 text-slate-300">ROBOTICS_ADMIN_TOKEN</code> in Netlify before first use.</p>
+          <p className="mt-5 text-xs leading-relaxed text-slate-500">The dashboard password is the private <code className="rounded bg-slate-800 px-1 py-0.5 text-slate-300">ROBOTICS_ADMIN_TOKEN</code> configured in Netlify. When the checkbox is selected, it is stored only in this browser until you sign out. Do not select it on a shared computer.</p>
         </section>
       </main>
     </div>;
@@ -215,7 +245,7 @@ const RoboticsAdmin: React.FC = () => {
     <main className="mx-auto max-w-[1440px] px-4 py-6 sm:px-6 lg:px-8" data-scroll-motion-skip>
       <header className="flex flex-col gap-5 border-b border-slate-800 pb-6 md:flex-row md:items-end md:justify-between">
         <div><a href="/robotics" className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-slate-400 transition-colors hover:text-volt focus-visible:outline-none focus-visible:text-volt"><i className="fa-solid fa-arrow-left" aria-hidden="true" /> Robotics Access</a><p className="mt-5 text-xs font-bold uppercase tracking-[0.2em] text-volt">Internal operations · no PII</p><h1 className="mt-2 text-3xl font-bold text-white sm:text-4xl">Robotics Analytics Monitor</h1><p className="mt-3 max-w-3xl leading-relaxed text-slate-400">Anonymous acquisition and checklist behavior, followed by an anonymous opportunity ID and human-maintained stages. This is an operational lens, not a CRM.</p></div>
-        <div className="flex flex-wrap items-center gap-2" aria-label="Reporting period">{[7, 30, 90].map((value) => <button key={value} type="button" onClick={() => setRange(value)} className={`min-h-11 rounded-lg border px-4 text-sm font-bold transition-colors ${days === value ? 'border-volt bg-volt text-white' : 'border-slate-700 bg-slate-900 text-slate-300 hover:border-slate-500 hover:text-white'}`}>{value} days</button>)}<button type="button" onClick={() => void load()} className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-slate-700 bg-slate-900 px-4 text-sm font-bold text-white transition-colors hover:border-volt/70 hover:bg-slate-800"><i className={`fa-solid fa-rotate ${loading ? 'animate-spin' : ''}`} aria-hidden="true" /> Refresh</button></div>
+        <div className="flex flex-wrap items-center gap-2" aria-label="Reporting period">{[7, 30, 90].map((value) => <button key={value} type="button" onClick={() => setRange(value)} className={`min-h-11 rounded-lg border px-4 text-sm font-bold transition-colors ${days === value ? 'border-volt bg-volt text-white' : 'border-slate-700 bg-slate-900 text-slate-300 hover:border-slate-500 hover:text-white'}`}>{value} days</button>)}<button type="button" onClick={() => void load()} className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-slate-700 bg-slate-900 px-4 text-sm font-bold text-white transition-colors hover:border-volt/70 hover:bg-slate-800"><i className={`fa-solid fa-rotate ${loading ? 'animate-spin' : ''}`} aria-hidden="true" /> Refresh</button><button type="button" onClick={forgetDevice} className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-slate-700 bg-slate-900 px-4 text-sm font-bold text-slate-300 transition-colors hover:border-red-400/70 hover:bg-red-500/10 hover:text-white"><i className="fa-solid fa-right-from-bracket" aria-hidden="true" /> Sign out</button></div>
       </header>
 
       {error && <div className="mt-6 rounded-xl border border-red-500/30 bg-red-500/10 p-4 text-sm text-red-100" role="alert"><p className="font-bold">Monitor unavailable</p><p className="mt-1 leading-relaxed">{error}</p></div>}
