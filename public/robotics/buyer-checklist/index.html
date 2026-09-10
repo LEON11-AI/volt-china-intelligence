@@ -1,0 +1,1820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>China Humanoid Robot Buyer Checklist 2026 — VoltChina</title>
+<meta name="description" content="A free, printable buyer-side checklist for universities, robotics labs, and technical teams evaluating Chinese humanoid robot platforms.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://voltchina.net/robotics/buyer-checklist">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="VoltChina">
+<meta property="og:title" content="China Humanoid Robot Buyer Checklist 2026 | VoltChina">
+<meta property="og:description" content="A free buyer-side checklist for evaluating Chinese humanoid robot platforms before issuing a purchase order.">
+<meta property="og:url" content="https://voltchina.net/robotics/buyer-checklist">
+<meta property="og:image" content="https://voltchina.net/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="China Humanoid Robot Buyer Checklist 2026 | VoltChina">
+<meta name="twitter:description" content="A free buyer-side checklist for evaluating Chinese humanoid robot platforms before issuing a purchase order.">
+<meta name="twitter:image" content="https://voltchina.net/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&display=swap">
+<style>
+/* ============ DESIGN TOKENS ============ */
+:root {
+  --ink: #0E1F38;
+  --ink-2: #162942;
+  --ink-3: #1E3553;
+  --gold: #B8924A;
+  --gold-2: #D4B87A;
+  --gold-soft: #F5EFE0;
+  --paper: #FAF8F4;
+  --paper-2: #F4F1EA;
+  --mist: #EDEAE2;
+  --slate: #4A5568;
+  --slate-2: #6B7280;
+  --line: #D9D4C7;
+  --line-soft: #E8E4DA;
+  --green: #2D6A4F;
+  --green-soft: #E8F0EB;
+  --blue: #2C5F8A;
+  --blue-soft: #E6EEF4;
+  --amber: #9A7B2E;
+  --amber-soft: #F7F0DC;
+  --red: #8B3A3A;
+  --red-soft: #F5E8E8;
+  --serif: 'Cormorant Garamond', 'Georgia', 'Times New Roman', serif;
+  --sans: 'Manrope', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* ============ RESET & BASE ============ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body {
+  font-family: var(--sans);
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+/* ============ LAYOUT ============ */
+.doc {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: 0 0 60px rgba(14,31,56,.08);
+}
+.page {
+  padding: 56px 64px 48px;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.page + .page { border-top: 1px solid var(--line-soft); }
+
+/* ============ HEADER / FOOTER ============ */
+.doc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 36px;
+}
+.brand {
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.brand span { color: var(--gold); }
+.doc-title-sm {
+  font-size: 10.5px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--slate-2);
+  font-weight: 600;
+}
+.doc-footer {
+  margin-top: auto;
+  padding-top: 28px;
+  border-top: 1px solid var(--line-soft);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px;
+  letter-spacing: .06em;
+  color: var(--slate-2);
+  font-weight: 500;
+}
+.doc-footer .pg { font-variant-numeric: tabular-nums; }
+
+/* ============ TYPOGRAPHY ============ */
+.eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.eyebrow::before {
+  content: '';
+  width: 28px;
+  height: 1.5px;
+  background: var(--gold);
+  display: inline-block;
+}
+h1.hero-title {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 52px;
+  line-height: 1.08;
+  color: var(--ink);
+  letter-spacing: -.01em;
+  margin-bottom: 18px;
+}
+h1.hero-title em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--gold);
+}
+.hero-sub {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--slate);
+  line-height: 1.5;
+  max-width: 560px;
+  margin-bottom: 32px;
+}
+h2.section-title {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 1.15;
+  color: var(--ink);
+  letter-spacing: -.005em;
+  margin-bottom: 6px;
+}
+h2.section-title .num {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  color: var(--gold);
+  vertical-align: super;
+  margin-right: 10px;
+}
+.section-sub {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  color: var(--slate-2);
+  margin-bottom: 28px;
+  text-transform: uppercase;
+}
+h3.cat-title {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  padding: 18px 0 10px;
+  border-top: 2px solid var(--ink);
+  margin-top: 28px;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+h3.cat-title .cat-num {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--gold);
+  font-style: italic;
+}
+p.body { font-size: 14.5px; color: var(--slate); line-height: 1.7; margin-bottom: 14px; }
+p.body strong { color: var(--ink); font-weight: 600; }
+
+/* ============ TAGS ============ */
+.tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 0; }
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  color: var(--slate);
+  background: transparent;
+}
+
+/* ============ CALLOUT BOX ============ */
+.callout {
+  background: var(--paper-2);
+  border-left: 3px solid var(--gold);
+  padding: 22px 26px;
+  margin: 24px 0;
+}
+.callout .callout-label {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.callout p { font-size: 14px; color: var(--ink); line-height: 1.65; font-weight: 500; }
+.callout.warn { background: var(--amber-soft); border-left-color: var(--amber); }
+.callout.warn .callout-label { color: var(--amber); }
+.callout.info { background: var(--blue-soft); border-left-color: var(--blue); }
+.callout.info .callout-label { color: var(--blue); }
+.callout.dark { background: var(--ink); border-left-color: var(--gold); }
+.callout.dark .callout-label { color: var(--gold-2); }
+.callout.dark p { color: rgba(255,255,255,.88); }
+
+/* ============ EVIDENCE LABELS ============ */
+.evidence-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 20px 0; }
+.ev-card {
+  padding: 18px 20px;
+  border-radius: 2px;
+  border: 1px solid var(--line-soft);
+}
+.ev-card .ev-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.ev-card .ev-label::before {
+  content: '';
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.ev-card.green { background: var(--green-soft); border-color: rgba(45,106,79,.2); }
+.ev-card.green .ev-label { color: var(--green); }
+.ev-card.green .ev-label::before { background: var(--green); }
+.ev-card.blue { background: var(--blue-soft); border-color: rgba(44,95,138,.2); }
+.ev-card.blue .ev-label { color: var(--blue); }
+.ev-card.blue .ev-label::before { background: var(--blue); }
+.ev-card.amber { background: var(--amber-soft); border-color: rgba(154,123,46,.2); }
+.ev-card.amber .ev-label { color: var(--amber); }
+.ev-card.amber .ev-label::before { background: var(--amber); }
+.ev-card p { font-size: 12.5px; color: var(--slate); line-height: 1.55; }
+
+/* ============ HOW-TO STEPS ============ */
+.steps { list-style: none; counter-reset: step; margin: 16px 0; }
+.steps li {
+  counter-increment: step;
+  padding: 10px 0 10px 44px;
+  position: relative;
+  font-size: 14px;
+  color: var(--slate);
+  border-bottom: 1px solid var(--line-soft);
+  line-height: 1.6;
+}
+.steps li:last-child { border-bottom: none; }
+.steps li::before {
+  content: counter(step, decimal-leading-zero);
+  position: absolute;
+  left: 0; top: 10px;
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--gold);
+}
+
+/* ============ CHECKLIST ITEMS ============ */
+.checklist { margin-top: 8px; }
+.ci {
+  display: flex;
+  gap: 18px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--line-soft);
+  align-items: flex-start;
+  transition: background .15s;
+}
+.ci:hover { background: var(--paper-2); }
+.ci-num {
+  flex-shrink: 0;
+  width: 36px; height: 36px;
+  background: var(--ink);
+  color: #fff;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  letter-spacing: .04em;
+}
+.ci-body { flex: 1; min-width: 0; }
+.ci-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+}
+.ci-check input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px; height: 18px;
+  border: 1.5px solid var(--slate-2);
+  border-radius: 2px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  cursor: pointer;
+  position: relative;
+  transition: all .15s;
+  background: #fff;
+}
+.ci-check input[type="checkbox"]:checked {
+  background: var(--ink);
+  border-color: var(--ink);
+}
+.ci-check input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  left: 5px; top: 1px;
+  width: 5px; height: 10px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.ci-text { font-size: 13.5px; color: var(--ink); line-height: 1.6; font-weight: 500; }
+.ci-text strong { font-weight: 700; }
+.ci-evidence {
+  margin-top: 8px;
+  margin-left: 30px;
+  font-size: 11px;
+  color: var(--slate-2);
+  font-style: italic;
+  letter-spacing: .03em;
+  border-top: 1px dashed var(--line);
+  padding-top: 6px;
+}
+
+/* ============ GATE ITEMS (PO gate) ============ */
+.gate-list { margin-top: 12px; }
+.gate-item {
+  display: flex;
+  gap: 16px;
+  padding: 14px 18px;
+  background: var(--paper-2);
+  margin-bottom: 8px;
+  border-left: 3px solid var(--ink);
+  align-items: flex-start;
+}
+.gate-item .gi-num {
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--gold);
+  line-height: 1;
+  flex-shrink: 0;
+  width: 32px;
+  text-align: center;
+}
+.gate-item .gi-check { display: flex; gap: 10px; align-items: flex-start; flex: 1; }
+.gate-item .gi-check input[type="checkbox"] {
+  appearance: none; -webkit-appearance: none;
+  width: 17px; height: 17px;
+  border: 1.5px solid var(--slate-2);
+  border-radius: 2px;
+  flex-shrink: 0; margin-top: 3px;
+  cursor: pointer; background: #fff; position: relative;
+}
+.gate-item .gi-check input[type="checkbox"]:checked { background: var(--ink); border-color: var(--ink); }
+.gate-item .gi-check input[type="checkbox"]:checked::after {
+  content: ''; position: absolute; left: 4px; top: 1px;
+  width: 5px; height: 9px; border: solid #fff;
+  border-width: 0 2px 2px 0; transform: rotate(45deg);
+}
+.gate-item .gi-text { font-size: 13.5px; color: var(--ink); line-height: 1.55; font-weight: 500; }
+.gate-item .gi-text strong { font-weight: 700; }
+
+/* ============ DECISION BAR ============ */
+.decision-bar {
+  background: var(--ink);
+  padding: 22px 26px;
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+.decision-bar .db-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--gold-2);
+}
+.decision-bar .db-options { display: flex; gap: 20px; flex-wrap: wrap; }
+.decision-bar .db-opt {
+  display: flex; align-items: center; gap: 8px;
+  color: rgba(255,255,255,.85); font-size: 13px; font-weight: 500;
+  cursor: pointer;
+}
+.decision-bar .db-opt input[type="checkbox"] {
+  appearance: none; -webkit-appearance: none;
+  width: 16px; height: 16px; border: 1.5px solid rgba(255,255,255,.5);
+  border-radius: 2px; cursor: pointer; position: relative; background: transparent;
+}
+.decision-bar .db-opt input[type="checkbox"]:checked { background: var(--gold); border-color: var(--gold); }
+.decision-bar .db-opt input[type="checkbox"]:checked::after {
+  content: ''; position: absolute; left: 4px; top: 0px;
+  width: 4px; height: 8px; border: solid var(--ink);
+  border-width: 0 2px 2px 0; transform: rotate(45deg);
+}
+
+/* ============ WORKSHEET ============ */
+.ws-field { margin-bottom: 18px; }
+.ws-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.ws-input {
+  border: none;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  width: 100%;
+  padding: 6px 2px;
+  font-family: var(--sans);
+  font-size: 14px;
+  color: var(--ink);
+  outline: none;
+  transition: border-color .15s;
+}
+.ws-input:focus { border-bottom-color: var(--gold); }
+.ws-input[contenteditable="true"]:empty::before {
+  content: attr(data-placeholder);
+  color: var(--slate-2);
+  font-style: italic;
+  font-size: 13px;
+}
+.ws-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.ws-checks { display: flex; flex-wrap: wrap; gap: 14px 22px; margin-top: 4px; }
+.ws-check {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 13px; color: var(--slate); cursor: pointer;
+}
+.ws-check input[type="checkbox"] {
+  appearance: none; -webkit-appearance: none;
+  width: 15px; height: 15px; border: 1.5px solid var(--slate-2);
+  border-radius: 2px; cursor: pointer; position: relative; background: #fff;
+}
+.ws-check input[type="checkbox"]:checked { background: var(--ink); border-color: var(--ink); }
+.ws-check input[type="checkbox"]:checked::after {
+  content: ''; position: absolute; left: 3px; top: 0px;
+  width: 4px; height: 8px; border: solid #fff;
+  border-width: 0 2px 2px 0; transform: rotate(45deg);
+}
+.ws-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+}
+.ws-table td {
+  border: 1px solid var(--line);
+  padding: 14px 12px;
+  font-size: 13px;
+  color: var(--slate);
+  vertical-align: top;
+}
+.ws-table td:first-child {
+  width: 36px;
+  text-align: center;
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--gold);
+  background: var(--paper-2);
+}
+
+/* ============ SUPPLIER RECORD ============ */
+.record-field { margin-bottom: 16px; }
+.record-field .rf-label {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-bottom: 4px;
+}
+.record-field .rf-line {
+  border-bottom: 1px solid var(--line);
+  min-height: 28px;
+  padding: 4px 0;
+}
+
+/* ============ SOURCES TABLE ============ */
+.src-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+}
+.src-table th {
+  background: var(--ink);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: 14px 18px;
+  text-align: left;
+}
+.src-table td {
+  padding: 13px 18px;
+  font-size: 13px;
+  border-bottom: 1px solid var(--line-soft);
+  color: var(--slate);
+}
+.src-table tr:nth-child(even) td { background: var(--paper-2); }
+.src-table td:first-child { color: var(--blue); font-weight: 600; }
+
+/* ============ CTA BLOCK ============ */
+.cta-block {
+  background: var(--ink);
+  padding: 36px 40px;
+  margin-top: 32px;
+  position: relative;
+  overflow: hidden;
+}
+.cta-block::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px; height: 100%;
+  background: var(--gold);
+}
+.cta-block .cta-eyebrow {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--gold-2);
+  margin-bottom: 14px;
+}
+.cta-block h3 {
+  font-family: var(--serif);
+  font-size: 26px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 12px;
+  line-height: 1.25;
+}
+.cta-block p {
+  font-size: 14px;
+  color: rgba(255,255,255,.72);
+  line-height: 1.65;
+  margin-bottom: 18px;
+  max-width: 520px;
+}
+.cta-block .cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  color: var(--gold-2);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 3px;
+}
+
+/* ============ COVER SPECIAL ============ */
+.cover {
+  background: var(--ink);
+  color: #fff;
+  padding: 0;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+.cover::after {
+  content: '';
+  position: absolute;
+  bottom: 0; right: 0;
+  width: 340px; height: 340px;
+  background: radial-gradient(circle at center, rgba(184,146,74,.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cover-inner {
+  padding: 56px 64px 48px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+.cover .brand { color: #fff; }
+.cover .doc-title-sm { color: rgba(255,255,255,.5); }
+.cover .doc-header { border-bottom-color: rgba(255,255,255,.15); }
+.cover-content { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+.cover .eyebrow { color: var(--gold-2); }
+.cover .eyebrow::before { background: var(--gold-2); }
+.cover h1.hero-title { color: #fff; font-size: 58px; }
+.cover .hero-sub { color: rgba(255,255,255,.65); }
+.cover .tag { border-color: rgba(255,255,255,.25); color: rgba(255,255,255,.7); background: rgba(255,255,255,.05); }
+.cover-meta {
+  display: flex;
+  gap: 40px;
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,.12);
+}
+.cover-meta .cm-item .cm-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--gold-2);
+  margin-bottom: 5px;
+}
+.cover-meta .cm-item .cm-val {
+  font-family: var(--serif);
+  font-size: 16px;
+  color: rgba(255,255,255,.85);
+  font-style: italic;
+}
+.cover .doc-footer { border-top-color: rgba(255,255,255,.12); color: rgba(255,255,255,.4); }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 700px) {
+  .page { padding: 32px 24px; }
+  .cover-inner { padding: 32px 24px; }
+  h1.hero-title { font-size: 36px; }
+  .cover h1.hero-title { font-size: 40px; }
+  h2.section-title { font-size: 26px; }
+  .evidence-grid { grid-template-columns: 1fr; }
+  .ws-row { grid-template-columns: 1fr; gap: 0; }
+  .cover-meta { flex-wrap: wrap; gap: 20px; }
+  .decision-bar { flex-direction: column; align-items: flex-start; gap: 14px; }
+}
+
+/* ============ LIGHTWEIGHT CHECKLIST CONTROLS ============ */
+.checklist-utility {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(250,248,244,.96);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 8px 22px rgba(14,31,56,.06);
+  backdrop-filter: blur(10px);
+}
+.checklist-utility__status { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 18px; }
+.checklist-utility__label { color: var(--slate-2); font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.checklist-utility__value { color: var(--ink); font-size: 12px; font-weight: 700; }
+.checklist-utility__gate { color: var(--red); }
+.checklist-utility__gate[data-state="ready"] { color: var(--green); }
+.checklist-utility button {
+  appearance: none;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  font: 700 11px/1 var(--sans);
+  letter-spacing: .04em;
+  padding: 9px 11px;
+}
+.checklist-utility button:hover { border-color: var(--ink); background: var(--paper-2); }
+.checklist-utility button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+@media (max-width: 700px) {
+  .checklist-utility { align-items: flex-start; flex-direction: column; gap: 10px; padding: 12px 24px; }
+  .checklist-utility button { min-height: 40px; }
+}
+
+/* ============ PRINT ============ */
+@media print {
+  body { background: #fff; }
+  .checklist-utility { display: none !important; }
+  .doc { box-shadow: none; max-width: none; }
+  .page {
+    padding: 24px 48px 20px;
+    min-height: auto;
+    height: auto;
+    page-break-after: always;
+    display: block;
+  }
+  .page:last-child { page-break-after: auto; }
+  .cover {
+    page-break-after: always;
+    min-height: auto;
+    height: auto;
+  }
+  .cover-inner {
+    height: auto;
+    min-height: auto;
+    padding: 32px 48px 24px;
+    display: block;
+  }
+  .cover-content {
+    flex: none;
+    display: block;
+    padding-top: 90px;
+    padding-bottom: 50px;
+  }
+  .cover-meta { margin-top: 40px; }
+  .doc-footer { margin-top: 24px; }
+  .doc-header { margin-bottom: 14px; padding-bottom: 8px; }
+  h2.section-title { font-size: 26px; margin-bottom: 3px; }
+  .section-sub { margin-bottom: 14px; font-size: 11px; }
+  .eyebrow { margin-bottom: 8px; font-size: 10px; }
+  .callout { padding: 14px 18px; margin: 14px 0; }
+  .callout p { font-size: 13px; }
+  .steps { margin: 10px 0; }
+  .steps li { padding: 7px 0 7px 40px; font-size: 13px; }
+  .evidence-grid { margin: 14px 0; gap: 10px; }
+  .ev-card { padding: 14px 16px; }
+  .ev-card p { font-size: 11.5px; }
+  h3.cat-title { padding: 14px 0 8px; margin-top: 20px; }
+  .ci { padding: 10px 14px; }
+  .ci-text { font-size: 12.5px; }
+  .ci-evidence { margin-top: 6px; font-size: 10.5px; }
+  .gate-item { padding: 4px 12px; margin-bottom: 2px; }
+  .gate-item .gi-text { font-size: 11px; line-height: 1.38; }
+  .gate-item .gi-num { font-size: 16px; width: 22px; }
+  .gate-list { margin-top: 4px; }
+  .gate-item .gi-check input[type="checkbox"] { width: 12px; height: 12px; margin-top: 2px; }
+  .decision-bar { padding: 8px 14px; margin-top: 6px; gap: 12px; }
+  .decision-bar .db-opt { font-size: 11px; }
+  .decision-bar .db-label { font-size: 9.5px; }
+  .callout.warn { padding: 8px 14px; margin: 10px 0; }
+  .callout.warn p { font-size: 11.5px; }
+  .callout.warn .callout-label { font-size: 9.5px; margin-bottom: 4px; }
+  .ws-field { margin-bottom: 6px; }
+  .ws-label { font-size: 9.5px; margin-bottom: 2px; letter-spacing: .03em; }
+  .ws-input { font-size: 11.5px; padding: 1px 2px; }
+  .ws-checks { gap: 8px 16px; margin-top: 2px; }
+  .ws-check { font-size: 11px; }
+  .ws-check input[type="checkbox"] { width: 12px; height: 12px; }
+  .ws-row { gap: 18px; }
+  .ws-table td { padding: 7px 10px; font-size: 11px; }
+  p.body { font-size: 12.5px; margin-bottom: 8px; }
+  .record-field { margin-bottom: 8px; }
+  .callout.info { padding: 9px 14px; margin: 10px 0; }
+  .callout.info p { font-size: 11px; }
+  .callout.info .callout-label { font-size: 9px; margin-bottom: 3px; }
+  .src-table { margin: 10px 0; }
+  .src-table th { padding: 10px 14px; font-size: 10px; }
+  .src-table td { padding: 9px 14px; font-size: 11.5px; }
+  .cta-block { padding: 24px 32px; margin-top: 16px; }
+  .cta-block h3 { font-size: 22px; margin-bottom: 8px; }
+  .cta-block p { font-size: 12.5px; margin-bottom: 12px; }
+  .cta-block .cta-eyebrow { font-size: 9.5px; margin-bottom: 10px; }
+  .doc-footer { margin-top: 14px; padding-top: 12px; font-size: 9px; }
+  .ci:hover { background: transparent; }
+  .ci-check input[type="checkbox"],
+  .gate-item .gi-check input[type="checkbox"],
+  .ws-check input[type="checkbox"],
+  .decision-bar .db-opt input[type="checkbox"] {
+    appearance: auto; -webkit-appearance: auto;
+  }
+  .ws-input:focus { outline: none; }
+  .ws-input[contenteditable="true"]:empty::before { content: attr(data-placeholder); }
+}
+</style>
+</head>
+<body>
+<div class="checklist-utility" aria-live="polite">
+  <div class="checklist-utility__status">
+    <span class="checklist-utility__label">Your review</span>
+    <span class="checklist-utility__value" id="checklist-progress">0 / 24 reviewed</span>
+    <span class="checklist-utility__label">Pre-purchase gate</span>
+    <span class="checklist-utility__value checklist-utility__gate" id="gate-status" data-state="hold">Hold</span>
+  </div>
+  <button type="button" id="clear-local-progress">Clear local progress</button>
+</div>
+<div class="doc">
+
+<!-- ============ PAGE 1: COVER ============ -->
+<section class="page cover">
+  <div class="cover-inner">
+    <header class="doc-header">
+      <div class="brand">VOLT<span>CHINA</span></div>
+      <div class="doc-title-sm">China Humanoid Robot Buyer Checklist 2026</div>
+    </header>
+    <div class="cover-content">
+      <div class="eyebrow">Buyer-Side Procurement Tool</div>
+      <h1 class="hero-title">Buyer Checklist <em>2026</em></h1>
+      <p class="hero-sub">What Labs and R&amp;D Teams Should Verify Before Buying a Chinese Humanoid Robot</p>
+      <div class="tag-row">
+        <span class="tag">University Labs</span>
+        <span class="tag">Embodied-AI &amp; R&amp;D</span>
+        <span class="tag">Technical Procurement</span>
+      </div>
+      <div class="cover-meta">
+        <div class="cm-item">
+          <div class="cm-label">Edition</div>
+          <div class="cm-val">Public Research Edition</div>
+        </div>
+        <div class="cm-item">
+          <div class="cm-label">Sources Reviewed</div>
+          <div class="cm-val">10 September 2026</div>
+        </div>
+        <div class="cm-item">
+          <div class="cm-label">Pages</div>
+          <div class="cm-val">10 Sections</div>
+        </div>
+      </div>
+    </div>
+    <footer class="doc-footer">
+      <span>VoltChina · Buyer-side procurement tool</span>
+      <span class="pg">Cover</span>
+    </footer>
+  </div>
+</section>
+
+<!-- ============ PAGE 2: HOW TO USE ============ -->
+<section class="page">
+  <header class="doc-header">
+    <div class="brand">VOLT<span>CHINA</span></div>
+    <div class="doc-title-sm">China Humanoid Robot Buyer Checklist 2026</div>
+  </header>
+
+  <div class="eyebrow">A Procurement Working Paper</div>
+  <h2 class="section-title">How to Use This Checklist</h2>
+  <p class="section-sub">Purpose &amp; Evidence Labels</p>
+
+  <p class="body">Use it to compare quotations, request missing evidence, and record the questions that must be resolved before a purchase order. The goal is not to find the &ldquo;best robot&rdquo; &mdash; it is to make the quoted configuration, software access, delivery and support specific enough to <strong>approve or hold</strong>.</p>
+
+  <div class="callout">
+    <div class="callout-label">Start With the Experiment</div>
+    <p>What must your team be able to do on the delivered robot in its first month?</p>
+  </div>
+
+  <h3 class="cat-title" style="border-top:none; margin-top:8px; padding-top:0;">Four-Step Workflow</h3>
+  <ol class="steps">
+    <li>Write down the exact robot, configuration and software versions being quoted.</li>
+    <li>Mark each requirement Must-have, Preferred or N/A. Explain any N/A.</li>
+    <li>Save the supporting document, version, date and responsible person.</li>
+    <li>Tick a box only when the requirement is resolved for your order.</li>
+  </ol>
+
+  <h3 class="cat-title">Evidence Labels</h3>
+  <div class="evidence-grid">
+    <div class="ev-card green">
+      <div class="ev-label">Manufacturer-Confirmed</div>
+      <p>A traceable written answer for the exact configuration and intended use.</p>
+    </div>
+    <div class="ev-card blue">
+      <div class="ev-label">Publicly Documented</div>
+      <p>An identifiable public source describes the feature; it may cover another configuration or release.</p>
+    </div>
+    <div class="ev-card amber">
+      <div class="ev-label">Needs Direct Confirmation</div>
+      <p>Evidence is missing, incomplete or not yet matched to this order.</p>
+    </div>
+  </div>
+
+  <div class="callout info" style="margin-top:28px;">
+    <div class="callout-label">Scope Note</div>
+    <p>Public research edition. Order-specific manufacturer confirmations and physical platform testing are outside this checklist.</p>
+  </div>
+
+  <footer class="doc-footer">
+    <span>VoltChina · Buyer-side procurement tool · Sources reviewed 10 September 2026</span>
+    <span class="pg">Page 2 / 10</span>
+  </footer>
+</section>
+
+<!-- ============ PAGE 3: CHECKLIST 1-2 ============ -->
+<section class="page">
+  <header class="doc-header">
+    <div class="brand">VOLT<span>CHINA</span></div>
+    <div class="doc-title-sm">Procurement Checklist</div>
+  </header>
+
+  <div class="eyebrow">Procurement Checklist</div>
+  <h2 class="section-title"><span class="num">Part I</span>Configuration &amp; Software Access</h2>
+  <p class="section-sub">24 Verification Items Across Six Categories</p>
+
+  <!-- Category 1 -->
+  <h3 class="cat-title"><span class="cat-num">1</span>Configuration and Control Access</h3>
+  <div class="checklist">
+    <div class="ci">
+      <div class="ci-num">01</div>
+      <div class="ci-body">
+        <label class="ci-check"><input type="checkbox"><span class="ci-text"><strong>Exact configuration.</strong> List the manufacturer SKU, hardware revision, body and hand DOF, compute, sensors, batteries, accessories and quantities. Map reseller package names to this list.</span></label>
+        <div class="ci-evidence">Evidence, version or open question</div>
+      </div>
+    </div>
+    <div class="ci">
+      <div class="ci-num">02</div>
+      <div class="ci-body">
+        <label class="ci-check"><input type="checkbox"><span class="ci-text"><strong>Standard vs EDU or Research.</strong> Get a written comparison of development permissions, hardware differences, paid unlocks and upgrade restrictions.</span></label>
+        <div class="ci-evidence">Evidence, version or open question</div>
+      </div>
+    </div>
+    <div class="ci">
+      <div class="ci-num">03</div>
+      <div class="ci-body">
+        <label class="ci-check"><input type="checkbox"><span class="ci-text"><strong>Low-level control.</strong> Specify which leg, torso, arm and hand joints allow position, velocity, torque/current or impedance/PD commands. Identify read-only signals.</span></label>
+        <div class="ci-evidence">Evidence, version or open question</div>
+      </div>
+    </div>
+    <div class="ci">
+      <div class="ci-num">04</div>
+      <div class="ci-body">
+        <label class="ci-check"><input type="checkbox"><span class="ci-text"><strong>Control timing and handover.</strong> Confirm command and feedback rates, timeout behaviour and how external control interacts with the manufacturer controller. Obtain the approved recovery procedure.</span></label>
+        <div class="ci-evidence">Evidence, version or open question</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Category 2 -->
+  <h3 class="cat-title"><span class="cat-num">2</span>SDK, ROS and Simulation</h3>
+  <div class="checklist">
+    <div class="ci">
+      <div class="ci-num">05</div>
+      <div class="ci-body">
+        <label class="ci-check"><input type="checkbox"><span class="ci-text"><strong>SDK and API deliverables.</strong> Identify the source code, binaries, documentation and examples you receive, plus supported languages, processor architectures and operating systems.</span></label>
+        <div class="ci-evidence">Evidence, version or open question</div>
+      </div>
+    </div>
+    <div class="ci">
+      <div class="ci-num">06</div>
+      <div class="ci-body">
+        <label class="ci-check"><input type="checkbox"><span class="ci-text"><strong>ROS or ROS 2.</strong> Specify the distribution, middleware, message definitions, sensor drivers and control interfaces. Identify who maintains every bridge or package.</span></label>
+        <div class="ci-evidence">Evidence, version or open question</div>
+      </div>
+    </div>
+    <div class="ci">
+      <div class="ci-num">07</div>
+      <div class="ci-body">
+        <label class="ci-check"><input type="checkbox"><span class="ci-text"><strong>Simulation.</strong> Check Isaac Sim or Isaac Lab, MuJoCo and Gazebo separately. Request versions, assets, actuator models, control bridges and runnable examples.</span></label>
+        <div class="ci-evidence">Evidence, version or open question</div>
+      </div>
+    </div>
+    <div class="ci">
+      <div class="ci-num">08</div>
+      <div class="ci-body">
+        <label class="ci-check"><input type="checkbox"><span class="ci-text"><strong>Configuration match.</strong> Match the simulation joint order, limits, hands, sensors and dynamics to the quotation. List every simplified or unavailable feature.</span></label>
+        <div class="ci-evidence">Evidence, version or open question</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout warn" style="margin-top:24px;">
+    <div class="callout-label">Important</div>
+    <p>An imported robot model is only one part of a working simulation workflow. An Isaac Gym example does not establish Isaac Sim or Isaac Lab compatibility.</p>
+  </div>
+
+  <footer class="doc-footer">
+    <span>VoltChina · Buyer-side procurement tool · Sources reviewed 10 September 2026</span>
+    <span class="pg">Page 3 / 10</span>
+  </footer>
+</section>
+
+<!-- ============ PAGE 4: CHECKLIST 3-4 ============ -->
+<section class="page">
+  <header class="doc-header">
+    <div class="brand">VOLT<span>CHINA</span></div>
+    <div class="doc-title-sm">Procurement Checklist</div>
+  </header>
+
+  <div class="eyebrow">Procurement Checklist</div>
+  <h2 class="section-title"><span class="num">Part II</span>Data, Hardware &amp; Task Fit</h2>
+  <p class="section-sub">VLA, Teleoperation, Sensors &amp; Runtime</p>
+
+  <!-- Category 3 -->
+  <h3 class="cat-title"><span class="cat-num">3</span>VLA, Teleoperation and Data</h3>
+  <div class="checklist">
+    <div class="ci">
+      <div class="ci-num">09</div>
+      <div class="ci-body">
+        <label class="ci-check"><input type="checkbox"><span class="ci-text"><strong>VLA scope.</strong> Identify what is included: data collection, datasets, training code, model weights, inference runtime or a demonstrated task. Name model and software versions.</span></label>
+        <div class="ci-evidence">Evidence, version or open question</div>
+      </div>
+    </div>
+    <div class="ci">
+      <div class="ci-num">10</div>
+      <div class="ci-body">
+        <label class="ci-check"><input type="checkbox"><span class="ci-text"><strong>Teleoperation package.</strong> List the leader device or XR headset, cameras, host computer, hand controllers, calibration tools and software. Confirm which items cost extra.</span></label>
+        <div class="ci-evidence">Evidence, version or open question</div>
+      </div>
+    </div>
+    <div class="ci">
+      <div class="ci-num">11</div>
+      <div class="ci-body">
+        <label class="ci-check"><input type="checkbox"><span class="ci-text"><strong>Usable training data.</strong> Request a sample episode with time-aligned images, robot states and actions. Confirm timestamps, calibration, dropped-frame reporting, storage and export rights.</span></label>
+        <div class="ci-evidence">Evidence, version or open question</div>
+      </div>
+    </div>
+    <div class="ci">
+      <div class="ci-num">12</div>
+      <div class="ci-body">
+        <label class="ci-check"><input type="checkbox"><span class="ci-text"><strong>Demonstrated workflow.</strong> Ask for a configuration-matched capture, replay or inference demonstration. Record task conditions and failures as well as successful runs.</span></label>
+        <div class="ci-evidence">Evidence, version or open question</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Category 4 -->
+  <h3 class="cat-title"><span class="cat-num">4</span>Hardware and Task Performance</h3>
+  <div class="checklist">
+    <div class="ci">
+      <div class="ci-num">13</div>
+      <div class="ci-body">
+        <label class="ci-check"><input type="checkbox"><span class="ci-text"><strong>Compute.</strong> Separate the motion-control computer from resources available to your application. Confirm CPU/GPU, memory, storage, power, access and expansion options.</span></label>
+        <div class="ci-evidence">Evidence, version or open question</div>
+      </div>
+    </div>
+    <div class="ci">
+      <div class="ci-num">14</div>
+      <div class="ci-body">
+        <label class="ci-check"><input type="checkbox"><span class="ci-text"><strong>Hands and payload.</strong> Specify the end-effector model, active DOF, tactile sensing and control access. Define payload per arm or combined, including reach, posture and movement.</span></label>
+        <div class="ci-evidence">Evidence, version or open question</div>
+      </div>
+    </div>
+    <div class="ci">
+      <div class="ci-num">15</div>
+      <div class="ci-body">
+        <label class="ci-check"><input type="checkbox"><span class="ci-text"><strong>Sensors and interfaces.</strong> List exact sensor models, raw data access, calibration, connectors, protocols, bandwidth and available power. Distinguish measured forces from estimates.</span></label>
+        <div class="ci-evidence">Evidence, version or open question</div>
+      </div>
+    </div>
+    <div class="ci">
+      <div class="ci-num">16</div>
+      <div class="ci-body">
+        <label class="ci-check"><input type="checkbox"><span class="ci-text"><strong>Runtime and facility fit.</strong> Define task cycle, payload, compute load, battery state and temperature for runtime testing. Confirm charging, space, floor, lifting and power needs.</span></label>
+        <div class="ci-evidence">Evidence, version or open question</div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="doc-footer">
+    <span>VoltChina · Buyer-side procurement tool · Sources reviewed 10 September 2026</span>
+    <span class="pg">Page 4 / 10</span>
+  </footer>
+</section>
+
+<!-- ============ PAGE 5: CHECKLIST 5-6 ============ -->
+<section class="page">
+  <header class="doc-header">
+    <div class="brand">VOLT<span>CHINA</span></div>
+    <div class="doc-title-sm">Procurement Checklist</div>
+  </header>
+
+  <div class="eyebrow">Procurement Checklist</div>
+  <h2 class="section-title"><span class="num">Part III</span>Safety, Delivery &amp; Support</h2>
+  <p class="section-sub">Ownership, Cost, Warranty &amp; Clearance</p>
+
+  <!-- Category 5 -->
+  <h3 class="cat-title"><span class="cat-num">5</span>Safety, Software and Ownership</h3>
+  <div class="checklist">
+    <div class="ci">
+      <div class="ci-num">17</div>
+      <div class="ci-body">
+        <label class="ci-check"><input type="checkbox"><span class="ci-text"><strong>Stopping and recovery.</strong> Document emergency stop, protective stop, power-loss and communication-loss behaviour. Agree commissioning, operating boundaries and facility training.</span></label>
+        <div class="ci-evidence">Evidence, version or open question</div>
+      </div>
+    </div>
+    <div class="ci">
+      <div class="ci-num">18</div>
+      <div class="ci-body">
+        <label class="ci-check"><input type="checkbox"><span class="ci-text"><strong>Updates and restoration.</strong> Confirm whether updates can be deferred, how to restore the system and calibration, and how long the delivered software is supported.</span></label>
+        <div class="ci-evidence">Evidence, version or open question</div>
+      </div>
+    </div>
+    <div class="ci">
+      <div class="ci-num">19</div>
+      <div class="ci-body">
+        <label class="ci-check"><input type="checkbox"><span class="ci-text"><strong>Accounts and connectivity.</strong> Identify activation, download and runtime dependencies. Confirm account ownership, staff handover, offline operation and recurring charges.</span></label>
+        <div class="ci-evidence">Evidence, version or open question</div>
+      </div>
+    </div>
+    <div class="ci">
+      <div class="ci-num">20</div>
+      <div class="ci-body">
+        <label class="ci-check"><input type="checkbox"><span class="ci-text"><strong>Licensing and IT approval.</strong> Review code, model, dataset and asset licences separately. Confirm rights, data export, telemetry, remote access and network requirements.</span></label>
+        <div class="ci-evidence">Evidence, version or open question</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Category 6 -->
+  <h3 class="cat-title"><span class="cat-num">6</span>Cost, Delivery and Support</h3>
+  <div class="checklist">
+    <div class="ci">
+      <div class="ci-num">21</div>
+      <div class="ci-body">
+        <label class="ci-check"><input type="checkbox"><span class="ci-text"><strong>Complete cost.</strong> Obtain an itemised quote covering accessories, licences, freight, insurance, taxes, installation, training, spares and recurring support. Keep unknown costs visible.</span></label>
+        <div class="ci-evidence">Evidence, version or open question</div>
+      </div>
+    </div>
+    <div class="ci">
+      <div class="ci-num">22</div>
+      <div class="ci-body">
+        <label class="ci-check"><input type="checkbox"><span class="ci-text"><strong>Delivery and acceptance.</strong> Specify contracting entity, trade term, importer responsibilities, battery documents, delivery milestones, acceptance tests and remedies for non-conformance.</span></label>
+        <div class="ci-evidence">Evidence, version or open question</div>
+      </div>
+    </div>
+    <div class="ci">
+      <div class="ci-num">23</div>
+      <div class="ci-body">
+        <label class="ci-check"><input type="checkbox"><span class="ci-text"><strong>Warranty and repairs.</strong> Confirm coverage for research use, permitted modifications, development-related damage, replacement parts and calibration. Document cost responsibility.</span></label>
+        <div class="ci-evidence">Evidence, version or open question</div>
+      </div>
+    </div>
+    <div class="ci">
+      <div class="ci-num">24</div>
+      <div class="ci-body">
+        <label class="ci-check"><input type="checkbox"><span class="ci-text"><strong>Support and procurement clearance.</strong> Name the support provider, location, language, response commitments, training scope and spares lead times. Obtain relevant institutional and trade approvals.</span></label>
+        <div class="ci-evidence">Evidence, version or open question</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout info" style="margin-top:24px;">
+    <div class="callout-label">For Each Compatibility Claim</div>
+    <p>Record the robot SKU, hardware revision, joints and hands, firmware, SDK or repository version, OS or ROS release, simulator version, use case, source and date.</p>
+  </div>
+
+  <footer class="doc-footer">
+    <span>VoltChina · Buyer-side procurement tool · Sources reviewed 10 September 2026</span>
+    <span class="pg">Page 5 / 10</span>
+  </footer>
+</section>
+
+<!-- ============ PAGE 6: PRE-PURCHASE GATE ============ -->
+<section class="page">
+  <header class="doc-header">
+    <div class="brand">VOLT<span>CHINA</span></div>
+    <div class="doc-title-sm">Pre-Purchase Gate</div>
+  </header>
+
+  <div class="eyebrow">Pre-Purchase Gate</div>
+  <h2 class="section-title">Do Not Issue the PO Until These 10 Items Are Confirmed</h2>
+  <p class="section-sub">Hold Rule &amp; Decision Gate</p>
+
+  <div class="callout warn">
+    <div class="callout-label">Hold Rule</div>
+    <p>For each item, record a document reference, owner and date. A required unresolved item means <strong>Hold</strong>. A formally approved deviation remains a deviation; it is not a verified capability.</p>
+  </div>
+
+  <div class="gate-list">
+    <div class="gate-item">
+      <div class="gi-num">01</div>
+      <label class="gi-check"><input type="checkbox"><span class="gi-text"><strong>The exact robot is defined.</strong> The quote specifies the SKU, revision, joints, hands, compute, sensors, accessories and quantities.</span></label>
+    </div>
+    <div class="gate-item">
+      <div class="gi-num">02</div>
+      <label class="gi-check"><input type="checkbox"><span class="gi-text"><strong>Development rights are in writing.</strong> The delivered configuration provides the controls and data the project needs.</span></label>
+    </div>
+    <div class="gate-item">
+      <div class="gi-num">03</div>
+      <label class="gi-check"><input type="checkbox"><span class="gi-text"><strong>The research workflow has evidence.</strong> The required SDK, ROS, simulation, teleoperation or VLA path is configuration-matched.</span></label>
+    </div>
+    <div class="gate-item">
+      <div class="gi-num">04</div>
+      <label class="gi-check"><input type="checkbox"><span class="gi-text"><strong>Performance is tied to the task.</strong> Payload, reach, runtime and data requirements have defined conditions and acceptance criteria.</span></label>
+    </div>
+    <div class="gate-item">
+      <div class="gi-num">05</div>
+      <label class="gi-check"><input type="checkbox"><span class="gi-text"><strong>The facility can operate it safely.</strong> Stopping, recovery, commissioning, lifting and operator training are understood and accepted.</span></label>
+    </div>
+    <div class="gate-item">
+      <div class="gi-num">06</div>
+      <label class="gi-check"><input type="checkbox"><span class="gi-text"><strong>Software and account dependencies are clear.</strong> Licences, fees, account ownership, connectivity, data rights and restoration are documented.</span></label>
+    </div>
+    <div class="gate-item">
+      <div class="gi-num">07</div>
+      <label class="gi-check"><input type="checkbox"><span class="gi-text"><strong>The commercial commitment is complete.</strong> Total cost, milestones, changes, cancellation terms and responsibilities are agreed.</span></label>
+    </div>
+    <div class="gate-item">
+      <div class="gi-num">08</div>
+      <label class="gi-check"><input type="checkbox"><span class="gi-text"><strong>Delivery and acceptance are enforceable.</strong> Dates, logistics, documents, tests, defect remedies and sign-off roles are specified.</span></label>
+    </div>
+    <div class="gate-item">
+      <div class="gi-num">09</div>
+      <label class="gi-check"><input type="checkbox"><span class="gi-text"><strong>Support covers research use.</strong> Warranty exclusions, repairs, spares, training and service responsibilities are explicit.</span></label>
+    </div>
+    <div class="gate-item">
+      <div class="gi-num">10</div>
+      <label class="gi-check"><input type="checkbox"><span class="gi-text"><strong>The purchase has required clearances.</strong> Seller, funding or tender conditions, destination, end use and trade requirements have been reviewed.</span></label>
+    </div>
+  </div>
+
+  <div class="decision-bar">
+    <div class="db-label">Decision</div>
+    <div class="db-options">
+      <label class="db-opt"><input type="checkbox"> Ready for internal approval</label>
+      <label class="db-opt"><input type="checkbox"> Hold</label>
+      <label class="db-opt"><input type="checkbox"> Approved with documented deviations</label>
+    </div>
+  </div>
+
+  <div style="margin-top:20px;">
+    <div class="ws-field">
+      <div class="ws-label">Decision Owner and Date</div>
+      <div class="ws-input" contenteditable="true" data-placeholder="Name, role, date"></div>
+    </div>
+    <div class="ws-field">
+      <div class="ws-label">Outstanding Requirement / Consequence / Action Owner / Due Date</div>
+      <div class="ws-input" contenteditable="true" data-placeholder="List each open item with its impact, owner and deadline" style="min-height:48px;"></div>
+    </div>
+  </div>
+
+  <footer class="doc-footer">
+    <span>VoltChina · Buyer-side procurement tool · Sources reviewed 10 September 2026</span>
+    <span class="pg">Page 6 / 10</span>
+  </footer>
+</section>
+
+<!-- ============ PAGE 7: WORKSHEET A ============ -->
+<section class="page">
+  <header class="doc-header">
+    <div class="brand">VOLT<span>CHINA</span></div>
+    <div class="doc-title-sm">Buyer Requirements Worksheet — A</div>
+  </header>
+
+  <div class="eyebrow">Buyer Requirements Worksheet — A</div>
+  <h2 class="section-title">Project and Purchase</h2>
+  <p class="section-sub">Turn General Interest Into a Reviewable Brief</p>
+
+  <div class="callout">
+    <div class="callout-label">Purpose</div>
+    <p>Turn general interest into a requirements brief that technical and procurement teams can actually review.</p>
+  </div>
+
+  <div class="ws-row">
+    <div class="ws-field">
+      <div class="ws-label">Organisation or Lab</div>
+      <div class="ws-input" contenteditable="true" data-placeholder="Institution, department, lab name"></div>
+    </div>
+    <div class="ws-field">
+      <div class="ws-label">Technical Contact / Role / Work Email</div>
+      <div class="ws-input" contenteditable="true" data-placeholder="Name, title, email"></div>
+    </div>
+  </div>
+
+  <div class="ws-field">
+    <div class="ws-label">Procurement Decision-Maker or Approval Process</div>
+    <div class="ws-input" contenteditable="true" data-placeholder="Who approves, what steps, thresholds"></div>
+  </div>
+
+  <div class="ws-field">
+    <div class="ws-label">Primary Use</div>
+    <div class="ws-checks">
+      <label class="ws-check"><input type="checkbox"> Locomotion / whole-body RL</label>
+      <label class="ws-check"><input type="checkbox"> VLA / imitation learning</label>
+      <label class="ws-check"><input type="checkbox"> Manipulation</label>
+      <label class="ws-check"><input type="checkbox"> Teleoperation / data collection</label>
+      <label class="ws-check"><input type="checkbox"> HRI / education</label>
+      <label class="ws-check"><input type="checkbox"> Other</label>
+    </div>
+  </div>
+
+  <div class="ws-field">
+    <div class="ws-label">First Experiment and Measurable Success Criteria</div>
+    <div class="ws-input" contenteditable="true" data-placeholder="Describe the first-month experiment and how success is measured" style="min-height:40px;"></div>
+  </div>
+
+  <div class="ws-field">
+    <div class="ws-label">Required Form</div>
+    <div class="ws-checks">
+      <label class="ws-check"><input type="checkbox"> Biped</label>
+      <label class="ws-check"><input type="checkbox"> Wheeled mobile manipulation</label>
+      <label class="ws-check"><input type="checkbox"> Fixed dual arm</label>
+      <label class="ws-check"><input type="checkbox"> Modular</label>
+      <label class="ws-check"><input type="checkbox"> Open to alternatives</label>
+    </div>
+  </div>
+
+  <div class="ws-field">
+    <div class="ws-label">Shortlisted Manufacturer / Model / Configuration</div>
+    <div class="ws-input" contenteditable="true" data-placeholder="Vendor, model name, SKU or package"></div>
+  </div>
+
+  <div class="ws-row">
+    <div class="ws-field">
+      <div class="ws-label">Quantity Now / Possible Expansion</div>
+      <div class="ws-input" contenteditable="true" data-placeholder="e.g. 1 now, 3 within 12 months"></div>
+    </div>
+    <div class="ws-field">
+      <div class="ws-label">Budget Amount / Currency</div>
+      <div class="ws-input" contenteditable="true" data-placeholder="Amount and currency"></div>
+    </div>
+  </div>
+
+  <div class="ws-field">
+    <div class="ws-label">Budget Basis</div>
+    <div class="ws-checks">
+      <label class="ws-check"><input type="checkbox"> Per robot</label>
+      <label class="ws-check"><input type="checkbox"> Total project</label>
+      <label class="ws-check"><input type="checkbox"> Still being defined</label>
+    </div>
+  </div>
+
+  <div class="ws-field">
+    <div class="ws-label">Included in Budget</div>
+    <div class="ws-checks">
+      <label class="ws-check"><input type="checkbox"> Tax</label>
+      <label class="ws-check"><input type="checkbox"> Shipping/import</label>
+      <label class="ws-check"><input type="checkbox"> Accessories</label>
+      <label class="ws-check"><input type="checkbox"> Training</label>
+      <label class="ws-check"><input type="checkbox"> Integration</label>
+      <label class="ws-check"><input type="checkbox"> Support/licences</label>
+    </div>
+  </div>
+
+  <div class="ws-field">
+    <div class="ws-label">Budget Reserved for First Three Years of Support and Operation</div>
+    <div class="ws-input" contenteditable="true" data-placeholder="Annual or total amount for support, spares, consumables"></div>
+  </div>
+
+  <div class="ws-field">
+    <div class="ws-label">Funding Status or Constraints</div>
+    <div class="ws-input" contenteditable="true" data-placeholder="Grant name, restrictions, spend deadlines"></div>
+  </div>
+
+  <div class="ws-row">
+    <div class="ws-field">
+      <div class="ws-label">Delivery Country / City / Facility</div>
+      <div class="ws-input" contenteditable="true" data-placeholder="Destination address or facility"></div>
+    </div>
+    <div class="ws-field">
+      <div class="ws-label">Importer or Logistics Owner, if Known</div>
+      <div class="ws-input" contenteditable="true" data-placeholder="Broker, institution logistics, or self-import"></div>
+    </div>
+  </div>
+
+  <footer class="doc-footer">
+    <span>VoltChina · Buyer-side procurement tool · Sources reviewed 10 September 2026</span>
+    <span class="pg">Page 7 / 10</span>
+  </footer>
+</section>
+
+<!-- ============ PAGE 8: WORKSHEET B ============ -->
+<section class="page">
+  <header class="doc-header">
+    <div class="brand">VOLT<span>CHINA</span></div>
+    <div class="doc-title-sm">Buyer Requirements Worksheet — B</div>
+  </header>
+
+  <div class="eyebrow">Buyer Requirements Worksheet — B</div>
+  <h2 class="section-title">Technical Fit and Integration</h2>
+  <p class="section-sub">Stack, Interfaces, Skills &amp; Acceptance Criteria</p>
+
+  <div class="ws-field">
+    <div class="ws-label">Operating System + Version / ROS Distribution / Middleware</div>
+    <div class="ws-input" contenteditable="true" data-placeholder="e.g. Ubuntu 22.04, ROS 2 Humble, DDS vendor"></div>
+  </div>
+
+  <div class="ws-field">
+    <div class="ws-label">Simulator + Version</div>
+    <div class="ws-input" contenteditable="true" data-placeholder="Isaac Sim / Isaac Lab / MuJoCo / Gazebo, version"></div>
+  </div>
+
+  <div class="ws-field">
+    <div class="ws-label">Languages / Frameworks / Target Models / Data Format</div>
+    <div class="ws-input" contenteditable="true" data-placeholder="Python, C++, PyTorch, ROS bags, HDF5, etc."></div>
+  </div>
+
+  <div class="ws-field">
+    <div class="ws-label">Existing Workstation or GPU Resources</div>
+    <div class="ws-input" contenteditable="true" data-placeholder="GPU model, VRAM, CPU, RAM, storage"></div>
+  </div>
+
+  <div class="ws-field">
+    <div class="ws-label">Control Access Required</div>
+    <div class="ws-checks">
+      <label class="ws-check"><input type="checkbox"> High-level commands</label>
+      <label class="ws-check"><input type="checkbox"> Joint position/velocity</label>
+      <label class="ws-check"><input type="checkbox"> Torque/current</label>
+      <label class="ws-check"><input type="checkbox"> PD/impedance</label>
+      <label class="ws-check"><input type="checkbox"> Custom locomotion</label>
+      <label class="ws-check"><input type="checkbox"> Not yet defined</label>
+    </div>
+  </div>
+
+  <div class="ws-field">
+    <div class="ws-label">Hands / End Effectors / Tactile Requirements</div>
+    <div class="ws-input" contenteditable="true" data-placeholder="Gripper type, DOF, tactile sensors, force range"></div>
+  </div>
+
+  <div class="ws-field">
+    <div class="ws-label">Object Mass / Reach / Posture / Task Speed</div>
+    <div class="ws-input" contenteditable="true" data-placeholder="Payload kg, reach mm, required poses, cycle time"></div>
+  </div>
+
+  <div class="ws-field">
+    <div class="ws-label">Sensors / External Interfaces / Data Rates</div>
+    <div class="ws-input" contenteditable="true" data-placeholder="Cameras, LiDAR, IMU, force/torque, USB/Ethernet/Can, bandwidth"></div>
+  </div>
+
+  <div class="ws-field">
+    <div class="ws-label">Runtime Target and Task Cycle</div>
+    <div class="ws-input" contenteditable="true" data-placeholder="Battery runtime, duty cycle, charging time"></div>
+  </div>
+
+  <div class="ws-field">
+    <div class="ws-label">Team Skills</div>
+    <div class="ws-checks">
+      <label class="ws-check"><input type="checkbox"> ROS 2</label>
+      <label class="ws-check"><input type="checkbox"> C++ / Python</label>
+      <label class="ws-check"><input type="checkbox"> RL / VLA</label>
+      <label class="ws-check"><input type="checkbox"> Low-level controls</label>
+      <label class="ws-check"><input type="checkbox"> Mechanical / electrical maintenance</label>
+      <label class="ws-check"><input type="checkbox"> New to physical robots</label>
+    </div>
+  </div>
+
+  <div class="ws-field">
+    <div class="ws-label">Integration Team Size / Available Person-Weeks</div>
+    <div class="ws-input" contenteditable="true" data-placeholder="Headcount and effort available for integration"></div>
+  </div>
+
+  <div class="ws-field">
+    <div class="ws-label">Work the Supplier Must Complete Before Handover</div>
+    <div class="ws-input" contenteditable="true" data-placeholder="Calibration, demo, training, integration support, deliverables" style="min-height:40px;"></div>
+  </div>
+
+  <div class="callout info" style="margin-top:20px;">
+    <div class="callout-label">Task Fit</div>
+    <p>Write acceptance criteria as: <strong>task + quoted configuration + test conditions + data to retain + pass/fail result</strong>. Avoid a stand-alone claim such as &ldquo;supports ROS 2&rdquo;.</p>
+  </div>
+
+  <footer class="doc-footer">
+    <span>VoltChina · Buyer-side procurement tool · Sources reviewed 10 September 2026</span>
+    <span class="pg">Page 8 / 10</span>
+  </footer>
+</section>
+
+<!-- ============ PAGE 9: WORKSHEET C/D ============ -->
+<section class="page">
+  <header class="doc-header">
+    <div class="brand">VOLT<span>CHINA</span></div>
+    <div class="doc-title-sm">Buyer Requirements Worksheet — C/D</div>
+  </header>
+
+  <div class="eyebrow">Buyer Requirements Worksheet — C/D</div>
+  <h2 class="section-title">Support, Constraints and Timing</h2>
+  <p class="section-sub">Training, Repairs, Network, Deadlines &amp; Decisive Requirements</p>
+
+  <div class="ws-field">
+    <div class="ws-label">Training Language / Participants / Preferred Format</div>
+    <div class="ws-input" contenteditable="true" data-placeholder="Language, number of trainees, on-site or remote"></div>
+  </div>
+
+  <div class="ws-row">
+    <div class="ws-field">
+      <div class="ws-label">Support Location / Time Zone</div>
+      <div class="ws-input" contenteditable="true" data-placeholder="Region, time zone, local presence"></div>
+    </div>
+    <div class="ws-field">
+      <div class="ws-label">Maximum Acceptable Downtime</div>
+      <div class="ws-input" contenteditable="true" data-placeholder="e.g. 5 business days for repair"></div>
+    </div>
+  </div>
+
+  <div class="ws-field">
+    <div class="ws-label">Repair Needs</div>
+    <div class="ws-checks">
+      <label class="ws-check"><input type="checkbox"> Remote diagnosis</label>
+      <label class="ws-check"><input type="checkbox"> Local technician</label>
+      <label class="ws-check"><input type="checkbox"> Onsite repair</label>
+      <label class="ws-check"><input type="checkbox"> Loan unit</label>
+      <label class="ws-check"><input type="checkbox"> Spare kit</label>
+      <label class="ws-check"><input type="checkbox"> Supplier recommendation</label>
+    </div>
+  </div>
+
+  <div class="ws-field">
+    <div class="ws-label">Safety / Facility / IT Contact</div>
+    <div class="ws-input" contenteditable="true" data-placeholder="Names and roles for safety, facilities, IT security"></div>
+  </div>
+
+  <div class="ws-field">
+    <div class="ws-label">Network Restrictions</div>
+    <div class="ws-checks">
+      <label class="ws-check"><input type="checkbox"> Offline required</label>
+      <label class="ws-check"><input type="checkbox"> No external telemetry</label>
+      <label class="ws-check"><input type="checkbox"> Controlled remote access</label>
+      <label class="ws-check"><input type="checkbox"> Institution review needed</label>
+    </div>
+  </div>
+
+  <div class="ws-field">
+    <div class="ws-label">Tender / Funding / Import / Procurement Restrictions</div>
+    <div class="ws-input" contenteditable="true" data-placeholder="Eligible vendors, currency rules, import licences, procurement thresholds"></div>
+  </div>
+
+  <div class="ws-row">
+    <div class="ws-field">
+      <div class="ws-label">Target Selection Date / PO Date</div>
+      <div class="ws-input" contenteditable="true" data-placeholder="Decision and order dates"></div>
+    </div>
+    <div class="ws-field">
+      <div class="ws-label">Required Arrival Date / First Experiment</div>
+      <div class="ws-input" contenteditable="true" data-placeholder="Delivery deadline and first-use date"></div>
+    </div>
+  </div>
+
+  <div class="ws-field">
+    <div class="ws-label">Hard Deadline and Consequence of Delay</div>
+    <div class="ws-input" contenteditable="true" data-placeholder="What happens if delivery slips — grant expiry, project milestone, etc."></div>
+  </div>
+
+  <h3 class="cat-title" style="margin-top:24px;">Three Requirements That Decide This Purchase</h3>
+  <table class="ws-table">
+    <tr>
+      <td>1.</td>
+      <td contenteditable="true" data-placeholder="Requirement" style="min-height:36px;"></td>
+      <td contenteditable="true" data-placeholder="Why it matters"></td>
+      <td contenteditable="true" data-placeholder="Acceptance criteria"></td>
+      <td contenteditable="true" data-placeholder="Status / owner"></td>
+    </tr>
+    <tr>
+      <td>2.</td>
+      <td contenteditable="true" data-placeholder="Requirement" style="min-height:36px;"></td>
+      <td contenteditable="true" data-placeholder="Why it matters"></td>
+      <td contenteditable="true" data-placeholder="Acceptance criteria"></td>
+      <td contenteditable="true" data-placeholder="Status / owner"></td>
+    </tr>
+    <tr>
+      <td>3.</td>
+      <td contenteditable="true" data-placeholder="Requirement" style="min-height:36px;"></td>
+      <td contenteditable="true" data-placeholder="Why it matters"></td>
+      <td contenteditable="true" data-placeholder="Acceptance criteria"></td>
+      <td contenteditable="true" data-placeholder="Status / owner"></td>
+    </tr>
+  </table>
+
+  <footer class="doc-footer">
+    <span>VoltChina · Buyer-side procurement tool · Sources reviewed 10 September 2026</span>
+    <span class="pg">Page 9 / 10</span>
+  </footer>
+</section>
+
+<!-- ============ PAGE 10: SUPPLIER ANSWER RECORD ============ -->
+<section class="page">
+  <header class="doc-header">
+    <div class="brand">VOLT<span>CHINA</span></div>
+    <div class="doc-title-sm">Evidence Capture</div>
+  </header>
+
+  <div class="eyebrow">Evidence Capture</div>
+  <h2 class="section-title">Supplier Answer Record</h2>
+  <p class="section-sub">One Record Per Material Supplier Answer</p>
+
+  <div class="callout warn">
+    <div class="callout-label">Copy This Page</div>
+    <p>Use one record per material supplier answer. A distributor response is <strong>not automatically manufacturer-confirmed</strong>.</p>
+  </div>
+
+  <div class="record-field">
+    <div class="rf-label">Question or Requirement</div>
+    <div class="rf-line" contenteditable="true" data-placeholder="Which checklist item or question does this answer?"></div>
+  </div>
+  <div class="record-field">
+    <div class="rf-label">Exact Configuration and Hardware or Software Version</div>
+    <div class="rf-line" contenteditable="true" data-placeholder="SKU, revision, firmware, SDK version, OS, ROS release"></div>
+  </div>
+  <div class="record-field">
+    <div class="rf-label">Supplier Answer and Limitations</div>
+    <div class="rf-line" contenteditable="true" data-placeholder="What they confirmed, and what they did not cover" style="min-height:48px;"></div>
+  </div>
+  <div class="record-field">
+    <div class="rf-label">Source Link or Attached Document / Version / Date</div>
+    <div class="rf-line" contenteditable="true" data-placeholder="URL, document name, version, date"></div>
+  </div>
+  <div class="record-field">
+    <div class="rf-label">Manufacturer or Seller Contact / Organisation / Role</div>
+    <div class="rf-line" contenteditable="true" data-placeholder="Name, company, title, email"></div>
+  </div>
+  <div class="record-field">
+    <div class="rf-label">Demonstration or Test Conditions and Result</div>
+    <div class="rf-line" contenteditable="true" data-placeholder="What was shown, under what conditions, pass or fail"></div>
+  </div>
+  <div class="record-field">
+    <div class="rf-label">Open Issue / Impact / Next Action / Owner / Due Date</div>
+    <div class="rf-line" contenteditable="true" data-placeholder="What remains unresolved, who follows up, by when"></div>
+  </div>
+
+  <div style="margin-top:20px;">
+    <div class="ws-label" style="margin-bottom:10px;">Evidence Classification</div>
+    <div class="ws-checks">
+      <label class="ws-check"><input type="checkbox"> Manufacturer-confirmed</label>
+      <label class="ws-check"><input type="checkbox"> Publicly documented</label>
+      <label class="ws-check"><input type="checkbox"> Needs direct confirmation</label>
+    </div>
+  </div>
+
+  <div class="callout info" style="margin-top:24px;">
+    <div class="callout-label">Evidence Hygiene</div>
+    <p>Attach the quotation, manual, support email or test log to the reference above. Preserve the exact hardware configuration and software version in every supplier answer.</p>
+  </div>
+
+  <footer class="doc-footer">
+    <span>VoltChina · Buyer-side procurement tool · Sources reviewed 10 September 2026</span>
+    <span class="pg">Page 10 / 10</span>
+  </footer>
+</section>
+
+<!-- ============ PAGE 11: SOURCES & NEXT STEP ============ -->
+<section class="page">
+  <header class="doc-header">
+    <div class="brand">VOLT<span>CHINA</span></div>
+    <div class="doc-title-sm">Research Notes</div>
+  </header>
+
+  <div class="eyebrow">Research Notes</div>
+  <h2 class="section-title">Sources and Next Step</h2>
+  <p class="section-sub">Selected Source Material &amp; Scope</p>
+
+  <p class="body">Public sources were reviewed on <strong>10 September 2026</strong>. Product pages, terms and code repositories can change. Reconfirm time-sensitive specifications, support terms and applicable rules for the actual purchase.</p>
+
+  <h3 class="cat-title" style="margin-top:20px;">Selected Source Material</h3>
+  <table class="src-table">
+    <thead>
+      <tr><th style="width:45%;">Source</th><th>Use in This Checklist</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Unitree G1 configuration table</td><td>Configuration, research access and warranty table</td></tr>
+      <tr><td>Unitree after-sales terms</td><td>Warranty scope and development-related exclusions</td></tr>
+      <tr><td>Unitree Isaac Lab examples</td><td>Model and end-effector-specific examples</td></tr>
+      <tr><td>LimX TRON 2 SDK guide</td><td>High and low-level interface documentation</td></tr>
+      <tr><td>Fourier GR-1 training guide</td><td>Separate Isaac Gym and MuJoCo references</td></tr>
+      <tr><td>Galaxea R1 ROS 2 guide</td><td>Configuration-specific software interfaces</td></tr>
+      <tr><td>ROKAE product catalogue</td><td>Distinguishes complete platforms and arm products</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout info" style="margin-top:20px;">
+    <div class="callout-label">Scope</div>
+    <p>This checklist supports requirements gathering and evidence capture. It does <strong>not</strong> replace your institution&rsquo;s technical, safety, legal or procurement approval.</p>
+  </div>
+
+  <div class="cta-block">
+    <div class="cta-eyebrow">Turn Your Shortlist Into a Verification Plan</div>
+    <h3>Evaluating a Chinese robot for your lab or R&amp;D team?</h3>
+    <p>Share your intended use, shortlisted configuration and the questions you cannot yet resolve.</p>
+    <a href="https://voltchina.net/robotics" class="cta-link" target="_blank" rel="noopener">Submit requirements at voltchina.net/robotics</a>
+  </div>
+
+  <footer class="doc-footer">
+    <span>VoltChina · Buyer-side procurement tool · Sources reviewed 10 September 2026</span>
+    <span class="pg">Sources &amp; Next Step</span>
+  </footer>
+</section>
+
+</div><!-- /.doc -->
+<script>
+  (() => {
+    const storageKey = 'voltchina-buyer-checklist-v1';
+    const allFields = Array.from(document.querySelectorAll('input[type="checkbox"], [contenteditable="true"]'));
+    const reviewItems = Array.from(document.querySelectorAll('.ci-check input[type="checkbox"]'));
+    const gateItems = Array.from(document.querySelectorAll('.gate-item input[type="checkbox"]'));
+    const worksheetFields = Array.from(document.querySelectorAll('.ws-input[contenteditable="true"], .ws-table [contenteditable="true"], .ws-check input[type="checkbox"], .rf-line[contenteditable="true"]'));
+    const progress = document.getElementById('checklist-progress');
+    const gateStatus = document.getElementById('gate-status');
+    const clearButton = document.getElementById('clear-local-progress');
+    let worksheetStarted = false;
+    let gateStarted = false;
+    let gateCompleted = false;
+
+    const track = (eventName, properties = {}) => {
+      if (typeof window.gtag === 'function') window.gtag('event', eventName, properties);
+      if (typeof window.plausible === 'function') window.plausible(eventName, { props: properties });
+    };
+
+    const readState = () => {
+      try { return JSON.parse(localStorage.getItem(storageKey) || '{}'); } catch { return {}; }
+    };
+
+    const writeState = () => {
+      const state = {};
+      allFields.forEach((field, index) => {
+        const key = `field-${index}`;
+        state[key] = field.matches('input') ? field.checked : field.textContent;
+      });
+      try { localStorage.setItem(storageKey, JSON.stringify(state)); } catch { /* Local saving is optional. */ }
+    };
+
+    const restoreState = () => {
+      const state = readState();
+      allFields.forEach((field, index) => {
+        const savedValue = state[`field-${index}`];
+        if (typeof savedValue === 'undefined') return;
+        if (field.matches('input')) field.checked = Boolean(savedValue);
+        else field.textContent = String(savedValue);
+      });
+    };
+
+    const updateProgress = () => {
+      const complete = reviewItems.filter((input) => input.checked).length;
+      if (progress) progress.textContent = `${complete} / ${reviewItems.length} reviewed`;
+    };
+
+    const updateGate = () => {
+      const complete = gateItems.filter((input) => input.checked).length;
+      const isReady = complete === gateItems.length;
+      if (gateStatus) {
+        gateStatus.textContent = isReady ? 'Ready' : `Hold · ${complete} / ${gateItems.length}`;
+        gateStatus.dataset.state = isReady ? 'ready' : 'hold';
+      }
+      if (isReady && !gateCompleted) {
+        gateCompleted = true;
+        track('po_gate_completed');
+      }
+      if (!isReady) gateCompleted = false;
+    };
+
+    restoreState();
+    gateCompleted = gateItems.length > 0 && gateItems.every((input) => input.checked);
+    updateProgress();
+    updateGate();
+    track('checklist_view');
+
+    allFields.forEach((field) => {
+      const save = () => writeState();
+      field.addEventListener('input', save);
+      field.addEventListener('change', save);
+    });
+
+    reviewItems.forEach((input, index) => {
+      input.addEventListener('change', () => {
+        updateProgress();
+        track('checklist_item_checked', { item_number: index + 1, checked: input.checked });
+      });
+    });
+
+    gateItems.forEach((input) => {
+      input.addEventListener('change', () => {
+        if (!gateStarted) {
+          gateStarted = true;
+          track('po_gate_started');
+        }
+        updateGate();
+      });
+    });
+
+    worksheetFields.forEach((field) => {
+      const startWorksheet = () => {
+        if (worksheetStarted) return;
+        worksheetStarted = true;
+        track('worksheet_started');
+      };
+      field.addEventListener('focus', startWorksheet, { once: true });
+      field.addEventListener('input', startWorksheet, { once: true });
+      field.addEventListener('change', startWorksheet, { once: true });
+    });
+
+    document.querySelector('.cta-block .cta-link')?.addEventListener('click', () => track('request_verification'));
+
+    clearButton?.addEventListener('click', () => {
+      if (!window.confirm('Clear all checklist selections and locally saved worksheet notes from this browser?')) return;
+      try { localStorage.removeItem(storageKey); } catch { /* Nothing to clear. */ }
+      allFields.forEach((field) => {
+        if (field.matches('input')) field.checked = false;
+        else field.textContent = '';
+      });
+      worksheetStarted = false;
+      gateStarted = false;
+      gateCompleted = false;
+      updateProgress();
+      updateGate();
+    });
+  })();
+</script>
+</body>
+</html>

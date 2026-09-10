@@ -7,6 +7,7 @@
 - [VoltChina home](https://voltchina.net/): Overview of VoltChina's public research, free brief, and written research service.
 - [VoltChina Intelligence](https://voltchina.net/intelligence): Submit a focused pre-diligence or strategy research question. VoltChina replies in writing with suitability, scope, fixed price, exclusions, and delivery date.
 - [Robotics Access](https://voltchina.net/robotics): Written product matching, project requirement coordination, manufacturer quotation requests, and introductions for qualified robotics research and integration teams.
+- [China Humanoid Robot Buyer Checklist 2026](https://voltchina.net/robotics/buyer-checklist): A free buyer-side tool with 24 review items, a pre-purchase gate, a requirements worksheet, and a supplier answer record for teams evaluating Chinese humanoid robot platforms.
 - [Sourcing Pilot](https://voltchina.net/sourcing): Legacy buyer-side Chinese supplier screening and written RFQ coordination page retained for existing links.
 - [Research and Editorial Analysis](https://voltchina.net/research): Public research samples and clearly labelled editorial analysis.
 

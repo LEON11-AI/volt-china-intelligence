@@ -37,6 +37,11 @@
   status = 301
   force = true
 [[redirects]]
+  from = "/robotics/buyer-checklist"
+  to = "/robotics/buyer-checklist/index.html"
+  status = 200
+  force = true
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
