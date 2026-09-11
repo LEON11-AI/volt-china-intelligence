@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { trackRoboticsEvent } from '../src/lib/roboticsAnalytics';
+import { getOrCreateRoboticsLeadId, getRoboticsAttribution, trackRoboticsEvent } from '../src/lib/roboticsAnalytics';
 import SubmissionNotice from './SubmissionNotice';
 
 const formName = 'robotics-requirement';
@@ -12,6 +12,7 @@ const RoboticsRequestForm: React.FC = () => {
   const [noticeOpen, setNoticeOpen] = useState(false);
   const [error, setError] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
+  const [leadId, setLeadId] = useState('');
   const hasTrackedStart = useRef(false);
   const feedbackRef = useRef<HTMLDivElement>(null);
 
@@ -43,6 +44,17 @@ const RoboticsRequestForm: React.FC = () => {
     setError('');
     setSuccessMessage('');
     try {
+      const resolvedLeadId = leadId || getOrCreateRoboticsLeadId();
+      const attribution = getRoboticsAttribution();
+      setLeadId(resolvedLeadId);
+      data.set('lead_id', resolvedLeadId);
+      data.set('utm_source', attribution.utm_source);
+      data.set('utm_medium', attribution.utm_medium);
+      data.set('utm_campaign', attribution.utm_campaign);
+      data.set('utm_content', attribution.utm_content);
+      data.set('utm_term', attribution.utm_term);
+      data.set('landing_page', attribution.landing_page);
+      data.set('referrer', attribution.referrer);
       if (import.meta.env.DEV) {
         await new Promise((resolve) => setTimeout(resolve, 300));
       } else {
@@ -54,7 +66,7 @@ const RoboticsRequestForm: React.FC = () => {
         if (!response.ok) throw new Error('Submission failed');
       }
 
-      trackRoboticsEvent('robotics_form_submit');
+      trackRoboticsEvent('robotics_form_submit', { lead_id: resolvedLeadId });
       form.reset();
       hasTrackedStart.current = false;
       setSuccessMessage('Your robotics requirement has been received. VoltChina will review the request and reply by email, normally within 1–2 business days.');
@@ -69,6 +81,14 @@ const RoboticsRequestForm: React.FC = () => {
   return <>
     <form name={formName} method="POST" action="/" data-netlify="true" data-netlify-honeypot="bot-field" noValidate onSubmit={submit} onFocus={trackStart} className="rounded-2xl border border-slate-800 bg-slate-950/80 p-6 shadow-2xl shadow-slate-950/50 md:p-8">
       <input type="hidden" name="form-name" value={formName} />
+      <input type="hidden" name="lead_id" value={leadId} />
+      <input type="hidden" name="utm_source" />
+      <input type="hidden" name="utm_medium" />
+      <input type="hidden" name="utm_campaign" />
+      <input type="hidden" name="utm_content" />
+      <input type="hidden" name="utm_term" />
+      <input type="hidden" name="landing_page" />
+      <input type="hidden" name="referrer" />
       <p className="hidden"><label>Do not fill this out if you are human: <input name="bot-field" /></label></p>
       <div className="grid gap-5 sm:grid-cols-2">
         <Input label="Work email" name="work_email" type="email" placeholder="you@organization.com" required />

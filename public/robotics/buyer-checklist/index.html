@@ -703,6 +703,7 @@ p.body strong { color: var(--ink); font-weight: 600; }
 .checklist-utility__value { color: var(--ink); font-size: 12px; font-weight: 700; }
 .checklist-utility__gate { color: var(--red); }
 .checklist-utility__gate[data-state="ready"] { color: var(--green); }
+.checklist-utility__actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
 .checklist-utility button {
   appearance: none;
   border: 1px solid var(--line);
@@ -716,15 +717,55 @@ p.body strong { color: var(--ink); font-weight: 600; }
 }
 .checklist-utility button:hover { border-color: var(--ink); background: var(--paper-2); }
 .checklist-utility button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+/* ============ OPTIONAL LEAD CAPTURE ============ */
+.lead-capture {
+  max-width: 900px;
+  margin: 0 auto 22px;
+  padding: 26px 32px 30px;
+  background: var(--ink);
+  color: #fff;
+  border-bottom: 3px solid var(--gold);
+  box-shadow: 0 14px 28px rgba(14,31,56,.12);
+}
+.lead-capture[hidden] { display: none; }
+.lead-capture__eyebrow { color: var(--gold-2); font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+.lead-capture h2 { font-family: var(--serif); font-size: 30px; line-height: 1.15; margin: 7px 0 8px; }
+.lead-capture__intro { color: rgba(255,255,255,.76); font-size: 13px; line-height: 1.65; max-width: 650px; }
+.lead-form { margin-top: 20px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.lead-form__field { display: grid; gap: 6px; }
+.lead-form__field--wide { grid-column: 1 / -1; }
+.lead-form label, .lead-form legend { color: rgba(255,255,255,.84); font-size: 11px; font-weight: 700; letter-spacing: .04em; }
+.lead-form input, .lead-form select { width: 100%; min-height: 42px; border: 1px solid rgba(255,255,255,.28); border-radius: 2px; background: rgba(255,255,255,.08); color: #fff; font: 500 13px/1.3 var(--sans); padding: 10px 11px; }
+.lead-form select option { color: var(--ink); background: #fff; }
+.lead-form input::placeholder { color: rgba(255,255,255,.45); }
+.lead-form input:focus, .lead-form select:focus { outline: 2px solid var(--gold-2); outline-offset: 2px; }
+.lead-form__consent { display: flex; align-items: flex-start; gap: 9px; color: rgba(255,255,255,.78); font-size: 12px; line-height: 1.45; cursor: pointer; }
+.lead-form__consent input { width: 16px; min-height: 16px; margin-top: 1px; accent-color: var(--gold-2); }
+.lead-form__submit { appearance: none; border: 1px solid var(--gold-2); border-radius: 2px; background: var(--gold-2); color: var(--ink); cursor: pointer; font: 800 12px/1 var(--sans); letter-spacing: .04em; min-height: 44px; padding: 12px 16px; }
+.lead-form__submit:hover { background: #fff; border-color: #fff; }
+.lead-form__submit:disabled { cursor: wait; opacity: .7; }
+.lead-form__note { color: rgba(255,255,255,.5); font-size: 11px; line-height: 1.55; }
+.lead-feedback { margin-top: 18px; }
+.lead-feedback__success { border-top: 1px solid rgba(255,255,255,.18); padding-top: 18px; }
+.lead-feedback__success h3 { font-family: var(--serif); font-size: 27px; margin-bottom: 5px; }
+.lead-feedback__success p { color: rgba(255,255,255,.78); font-size: 13px; }
+.lead-feedback__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px; }
+.lead-feedback__actions a, .lead-feedback__actions button { appearance: none; border: 1px solid var(--gold-2); border-radius: 2px; background: transparent; color: var(--gold-2); cursor: pointer; font: 700 12px/1 var(--sans); padding: 11px 13px; text-decoration: none; }
+.lead-feedback__actions a:hover, .lead-feedback__actions button:hover { background: rgba(255,255,255,.08); }
+.lead-feedback__error { color: #ffd2d2; font-size: 12px; line-height: 1.5; }
 @media (max-width: 700px) {
   .checklist-utility { align-items: flex-start; flex-direction: column; gap: 10px; padding: 12px 24px; }
   .checklist-utility button { min-height: 40px; }
+  .lead-capture { margin-bottom: 14px; padding: 24px; }
+  .lead-capture h2 { font-size: 27px; }
+  .lead-form { grid-template-columns: 1fr; }
 }
 
 /* ============ PRINT ============ */
 @media print {
   body { background: #fff; }
-  .checklist-utility { display: none !important; }
+  .checklist-utility, .lead-capture { display: none !important; }
   .doc { box-shadow: none; max-width: none; }
   .page {
     padding: 24px 48px 20px;
@@ -820,8 +861,38 @@ p.body strong { color: var(--ink); font-weight: 600; }
     <span class="checklist-utility__label">Pre-purchase gate</span>
     <span class="checklist-utility__value checklist-utility__gate" id="gate-status" data-state="hold">Hold</span>
   </div>
-  <button type="button" id="clear-local-progress">Clear local progress</button>
+  <div class="checklist-utility__actions">
+    <button type="button" id="download-printable-checklist">Download Printable PDF</button>
+    <button type="button" id="clear-local-progress">Clear local progress</button>
+  </div>
 </div>
+<section class="lead-capture" id="checklist-lead-capture" hidden aria-labelledby="checklist-lead-title">
+  <div class="lead-capture__eyebrow">Free Buyer Tool</div>
+  <h2 id="checklist-lead-title">Want a printable copy for your procurement team?</h2>
+  <p class="lead-capture__intro">Get the China Humanoid Robot Buyer Checklist 2026 for your internal review. You can keep using every checklist item, the PO Gate, and the local worksheet without submitting this form.</p>
+  <form class="lead-form" id="robotics-checklist-lead-form" name="robotics_checklist_lead" method="POST" action="/" data-netlify="true" data-netlify-honeypot="bot-field" novalidate>
+    <input type="hidden" name="form-name" value="robotics_checklist_lead">
+    <input type="hidden" name="lead_id" id="checklist-lead-id">
+    <input type="hidden" name="robotics_marketing_opt_in" id="checklist-marketing-opt-in" value="no">
+    <input type="hidden" name="utm_source" id="checklist-utm-source">
+    <input type="hidden" name="utm_medium" id="checklist-utm-medium">
+    <input type="hidden" name="utm_campaign" id="checklist-utm-campaign">
+    <input type="hidden" name="utm_content" id="checklist-utm-content">
+    <input type="hidden" name="utm_term" id="checklist-utm-term">
+    <input type="hidden" name="landing_page" id="checklist-landing-page">
+    <input type="hidden" name="referrer" id="checklist-referrer">
+    <p style="display:none"><label>Do not fill this out if you are human: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+    <div class="lead-form__field"><label for="checklist-work-email">Work or university email</label><input id="checklist-work-email" type="email" name="work_email" autocomplete="email" required placeholder="you@organisation.edu"></div>
+    <div class="lead-form__field"><label for="checklist-organisation">Organisation / lab</label><input id="checklist-organisation" type="text" name="organisation_lab" autocomplete="organization" required placeholder="University, lab, or organisation"></div>
+    <div class="lead-form__field"><label for="checklist-country">Delivery country</label><input id="checklist-country" type="text" name="delivery_country" autocomplete="country-name" required placeholder="Country where the platform will be used"></div>
+    <div class="lead-form__field"><label for="checklist-stage">Purchase stage</label><select id="checklist-stage" name="purchase_stage" required><option value="" selected disabled>Select one</option><option>Exploring</option><option>Building requirements</option><option>Shortlisting platforms</option><option>Comparing quotes</option><option>Preparing a PO / tender</option><option>Already purchased</option></select></div>
+    <div class="lead-form__field lead-form__field--wide"><label for="checklist-intended-use">Primary intended use <span style="font-weight:400; opacity:.7">(optional)</span></label><select id="checklist-intended-use" name="primary_intended_use"><option value="">Select if useful</option><option>Locomotion / Whole-body RL</option><option>VLA / Imitation Learning</option><option>Manipulation</option><option>Teleoperation / Data Collection</option><option>HRI / Education</option><option>Other / Not Yet Defined</option></select></div>
+    <label class="lead-form__consent lead-form__field--wide"><input id="checklist-marketing-consent" type="checkbox"> <span>Send me occasional VoltChina robotics procurement updates.</span></label>
+    <button class="lead-form__submit" type="submit">Get the Printable Checklist</button>
+    <p class="lead-form__note">This form saves a separate Robotics Lead in Netlify Forms. It does not subscribe you to VoltChina&rsquo;s EV newsletter unless you opt in above.</p>
+  </form>
+  <div class="lead-feedback" id="checklist-lead-feedback" aria-live="polite"></div>
+</section>
 <div class="doc">
 
 <!-- ============ PAGE 1: COVER ============ -->
@@ -1708,13 +1779,19 @@ p.body strong { color: var(--ink); font-weight: 600; }
     const progress = document.getElementById('checklist-progress');
     const gateStatus = document.getElementById('gate-status');
     const clearButton = document.getElementById('clear-local-progress');
+    const downloadButtons = Array.from(document.querySelectorAll('#download-printable-checklist, [data-download-printable-checklist]'));
+    const leadCapture = document.getElementById('checklist-lead-capture');
+    const leadForm = document.getElementById('robotics-checklist-lead-form');
+    const leadFeedback = document.getElementById('checklist-lead-feedback');
     let worksheetStarted = false;
     let gateStarted = false;
     let gateCompleted = false;
+    let leadFormViewed = false;
 
-    const trackedEvents = new Set(['checklist_view', 'checklist_item_checked', 'po_gate_started', 'po_gate_completed', 'worksheet_started', 'request_verification']);
+    const trackedEvents = new Set(['checklist_view', 'checklist_item_checked', 'po_gate_started', 'po_gate_completed', 'worksheet_started', 'request_verification', 'checklist_lead_form_view', 'checklist_lead_form_submit', 'download_printable_checklist']);
     const telemetryAttributionKey = 'voltchina_robotics_attribution_v1';
     const telemetrySessionKey = 'voltchina_robotics_session_v1';
+    const telemetryLeadIdKey = 'voltchina_robotics_lead_id_v1';
     const safeValue = (value, limit = 120) => typeof value === 'string' ? value.trim().replace(/[\r\n\t]+/g, ' ').slice(0, limit) : '';
     const telemetryContext = () => {
       const query = new URLSearchParams(window.location.search);
@@ -1722,19 +1799,23 @@ p.body strong { color: var(--ink); font-weight: 600; }
         utm_source: safeValue(query.get('utm_source')),
         utm_medium: safeValue(query.get('utm_medium')),
         utm_campaign: safeValue(query.get('utm_campaign')),
-        landing_path: safeValue(window.location.pathname, 180),
-        referrer_domain: (() => { try { return document.referrer ? safeValue(new URL(document.referrer).hostname, 120) : ''; } catch { return ''; } })(),
+        utm_content: safeValue(query.get('utm_content')),
+        utm_term: safeValue(query.get('utm_term')),
+        landing_page: safeValue(window.location.pathname, 180),
+        referrer: (() => { try { return document.referrer ? safeValue(new URL(document.referrer).hostname, 120) : ''; } catch { return ''; } })(),
       };
       try {
         const saved = JSON.parse(sessionStorage.getItem(telemetryAttributionKey) || '{}');
-        const hasCampaign = Boolean(incoming.utm_source || incoming.utm_medium || incoming.utm_campaign);
+        const hasCampaign = Boolean(incoming.utm_source || incoming.utm_medium || incoming.utm_campaign || incoming.utm_content || incoming.utm_term);
         const context = hasCampaign ? incoming : {
           ...incoming,
           utm_source: safeValue(saved.utm_source),
           utm_medium: safeValue(saved.utm_medium),
           utm_campaign: safeValue(saved.utm_campaign),
-          landing_path: safeValue(saved.landing_path || incoming.landing_path, 180),
-          referrer_domain: safeValue(saved.referrer_domain || incoming.referrer_domain, 120),
+          utm_content: safeValue(saved.utm_content),
+          utm_term: safeValue(saved.utm_term),
+          landing_page: safeValue(saved.landing_page || incoming.landing_page, 180),
+          referrer: safeValue(saved.referrer || incoming.referrer, 180),
         };
         sessionStorage.setItem(telemetryAttributionKey, JSON.stringify(context));
         let anonymousSession = sessionStorage.getItem(telemetrySessionKey);
@@ -1748,12 +1829,30 @@ p.body strong { color: var(--ink); font-weight: 600; }
       }
     };
 
+    const newLeadId = () => {
+      try {
+        const existing = safeValue(sessionStorage.getItem(telemetryLeadIdKey), 64);
+        if (/^RBT-\d{4}-[A-Z0-9]{8,40}$/.test(existing)) return existing;
+        const fragment = typeof crypto?.randomUUID === 'function'
+          ? crypto.randomUUID().replace(/-/g, '').slice(0, 12).toUpperCase()
+          : `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 8)}`.toUpperCase();
+        const leadId = `RBT-${new Date().getUTCFullYear()}-${fragment}`;
+        sessionStorage.setItem(telemetryLeadIdKey, leadId);
+        return leadId;
+      } catch {
+        return `RBT-${new Date().getUTCFullYear()}-${Math.random().toString(36).slice(2, 14).toUpperCase()}`;
+      }
+    };
+
     const track = (eventName, properties = {}) => {
-      if (typeof window.gtag === 'function') window.gtag('event', eventName, properties);
-      if (typeof window.plausible === 'function') window.plausible(eventName, { props: properties });
+      const publicProperties = { ...properties };
+      delete publicProperties.lead_id;
+      if (typeof window.gtag === 'function') window.gtag('event', eventName, publicProperties);
+      if (typeof window.plausible === 'function') window.plausible(eventName, { props: publicProperties });
       if (!trackedEvents.has(eventName)) return;
       const eventId = typeof crypto?.randomUUID === 'function' ? crypto.randomUUID() : `${Date.now()}-${Math.random().toString(16).slice(2)}`;
-      const payload = JSON.stringify({ type: 'event', event: eventName, event_id: eventId, attribution: telemetryContext() });
+      const leadId = typeof properties.lead_id === 'string' && /^RBT-\d{4}-[A-Z0-9]{8,40}$/.test(properties.lead_id) ? properties.lead_id : '';
+      const payload = JSON.stringify({ type: 'event', event: eventName, event_id: eventId, lead_id: leadId, attribution: telemetryContext() });
       try {
         if (navigator.sendBeacon && navigator.sendBeacon('/api/robotics-analytics', new Blob([payload], { type: 'application/json' }))) return;
         void fetch('/api/robotics-analytics', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: payload, keepalive: true });
@@ -1786,6 +1885,11 @@ p.body strong { color: var(--ink); font-weight: 600; }
     const updateProgress = () => {
       const complete = reviewItems.filter((input) => input.checked).length;
       if (progress) progress.textContent = `${complete} / ${reviewItems.length} reviewed`;
+      if (leadCapture) leadCapture.hidden = complete < 3;
+      if (complete >= 3 && !leadFormViewed) {
+        leadFormViewed = true;
+        track('checklist_lead_form_view', { checklist_items_reviewed: complete });
+      }
     };
 
     const updateGate = () => {
@@ -1817,7 +1921,7 @@ p.body strong { color: var(--ink); font-weight: 600; }
     reviewItems.forEach((input, index) => {
       input.addEventListener('change', () => {
         updateProgress();
-        track('checklist_item_checked', { item_number: index + 1, checked: input.checked });
+        track('checklist_item_checked', { item_number: index + 1, checked: input.checked, checklist_items_reviewed: reviewItems.filter((item) => item.checked).length });
       });
     });
 
@@ -1843,6 +1947,44 @@ p.body strong { color: var(--ink); font-weight: 600; }
     });
 
     document.querySelector('.cta-block .cta-link')?.addEventListener('click', () => track('request_verification'));
+
+    downloadButtons.forEach((button) => button.addEventListener('click', () => {
+      track('download_printable_checklist');
+      window.print();
+    }));
+
+    leadForm?.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (!leadForm.checkValidity()) {
+        leadForm.reportValidity();
+        return;
+      }
+      const submitButton = leadForm.querySelector('button[type="submit"]');
+      const data = new FormData(leadForm);
+      const context = telemetryContext();
+      const leadId = newLeadId();
+      data.set('form-name', 'robotics_checklist_lead');
+      data.set('lead_id', leadId);
+      data.set('robotics_marketing_opt_in', document.getElementById('checklist-marketing-consent')?.checked ? 'yes' : 'no');
+      ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'landing_page', 'referrer'].forEach((key) => data.set(key, context[key] || ''));
+      if (submitButton) { submitButton.disabled = true; submitButton.textContent = 'Submitting…'; }
+      if (leadFeedback) leadFeedback.textContent = '';
+      try {
+        const response = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(Array.from(data.entries()).map(([key, value]) => [key, String(value)])).toString(),
+        });
+        if (!response.ok) throw new Error('Submission failed');
+        track('checklist_lead_form_submit', { lead_id: leadId });
+        leadForm.hidden = true;
+        if (leadFeedback) leadFeedback.innerHTML = `<div class="lead-feedback__success"><h3>Thank you.</h3><p>Your printable Buyer Checklist is ready.</p><div class="lead-feedback__actions"><button type="button" data-download-printable-checklist>Download the Printable PDF</button><a href="https://voltchina.net/robotics">Request a Buyer-Side Verification Review</a></div><p style="margin-top:12px">Choose Download the Printable PDF to open a PDF-ready copy in your browser. Evaluating a specific robot or quotation? Request a Buyer-Side Verification Review.</p></div>`;
+        leadFeedback.querySelector('[data-download-printable-checklist]')?.addEventListener('click', () => { track('download_printable_checklist', { lead_id: leadId }); window.print(); });
+      } catch {
+        if (leadFeedback) leadFeedback.innerHTML = '<p class="lead-feedback__error">Your details could not be submitted. Please try again or contact business@voltchina.net.</p>';
+        if (submitButton) { submitButton.disabled = false; submitButton.textContent = 'Get the Printable Checklist'; }
+      }
+    });
 
     clearButton?.addEventListener('click', () => {
       if (!window.confirm('Clear all checklist selections and locally saved worksheet notes from this browser?')) return;

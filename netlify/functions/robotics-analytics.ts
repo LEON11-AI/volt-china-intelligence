@@ -11,9 +11,15 @@ const eventNames = new Set([
   'robotics_form_start',
   'request_verification',
   'robotics_form_submit',
+  'checklist_lead_form_view',
+  'checklist_lead_form_submit',
+  'download_printable_checklist',
+  'pricing_section_view',
+  'verification_pricing_cta_click',
+  'procurement_pricing_cta_click',
 ]);
 
-const opportunityStages = new Set(['new', 'qualified', 'proposal', 'paid']);
+const opportunityStages = new Set(['new', 'qualified', 'verification_proposed', 'procurement_proposed', 'proposal', 'negotiation', 'paid', 'closed_lost']);
 const opportunitySignals = new Set(['organization', 'defined_use', 'timeframe', 'commercial_detail']);
 const store = () => getStore({ name: 'robotics-analytics', consistency: 'strong' });
 
@@ -22,25 +28,28 @@ type Attribution = {
   utm_source: string;
   utm_medium: string;
   utm_campaign: string;
-  landing_path: string;
-  referrer_domain: string;
+  utm_content: string;
+  utm_term: string;
+  landing_page: string;
+  referrer: string;
 };
 
 type EventRecord = Attribution & {
   event: string;
   event_id: string;
+  lead_id: string;
   at: string;
 };
 
-type OpportunityStage = 'new' | 'qualified' | 'proposal' | 'paid';
-type OpportunityOrigin = 'website_form' | 'manual_outbound';
+type OpportunityStage = 'new' | 'qualified' | 'verification_proposed' | 'procurement_proposed' | 'proposal' | 'negotiation' | 'paid' | 'closed_lost';
+type OpportunityOrigin = 'checklist_lead' | 'website_form' | 'manual_outbound';
 
 type Opportunity = {
   id: string;
   label: string;
   origin: OpportunityOrigin;
   source: string;
-  attribution?: Pick<Attribution, 'utm_source' | 'utm_medium' | 'utm_campaign' | 'landing_path' | 'referrer_domain'>;
+  attribution?: Pick<Attribution, 'utm_source' | 'utm_medium' | 'utm_campaign' | 'utm_content' | 'utm_term' | 'landing_page' | 'referrer'>;
   stage: OpportunityStage;
   signals: string[];
   created_at: string;
@@ -64,6 +73,10 @@ const validToken = (value: unknown, limit = 100) => {
 };
 
 const validSession = (value: unknown) => validToken(value, 80);
+const validLeadId = (value: unknown) => {
+  const leadId = validToken(value, 64);
+  return /^RBT-\d{4}-[A-Z0-9]{8,40}$/.test(leadId) ? leadId : '';
+};
 
 const safeAttribution = (value: unknown): Attribution => {
   const raw = value && typeof value === 'object' ? value as Record<string, unknown> : {};
@@ -72,8 +85,10 @@ const safeAttribution = (value: unknown): Attribution => {
     utm_source: cleanString(raw.utm_source),
     utm_medium: cleanString(raw.utm_medium),
     utm_campaign: cleanString(raw.utm_campaign),
-    landing_path: cleanString(raw.landing_path, 180),
-    referrer_domain: cleanString(raw.referrer_domain, 120),
+    utm_content: cleanString(raw.utm_content),
+    utm_term: cleanString(raw.utm_term),
+    landing_page: cleanString(raw.landing_page, 180),
+    referrer: cleanString(raw.referrer, 180),
   };
 };
 
@@ -102,12 +117,12 @@ const readJsonList = async <T>(prefix: string) => {
 };
 
 const sessionOrRecord = (record: EventRecord, index: number) => record.anonymous_session || `${record.at}-${index}`;
-const campaignParts = (record: Pick<Attribution, 'utm_source' | 'utm_medium' | 'utm_campaign' | 'referrer_domain'>) => [
-  record.utm_source || (record.referrer_domain ? `Referral: ${record.referrer_domain}` : 'Direct / untagged'),
+const campaignParts = (record: Pick<Attribution, 'utm_source' | 'utm_medium' | 'utm_campaign' | 'referrer'>) => [
+  record.utm_source || (record.referrer ? `Referral: ${record.referrer}` : 'Direct / untagged'),
   record.utm_medium || '—',
   record.utm_campaign || '—',
 ];
-const campaignKey = (record: Pick<Attribution, 'utm_source' | 'utm_medium' | 'utm_campaign' | 'referrer_domain'>) => campaignParts(record).join('|');
+const campaignKey = (record: Pick<Attribution, 'utm_source' | 'utm_medium' | 'utm_campaign' | 'referrer'>) => campaignParts(record).join('|');
 
 const daysFromRequest = (request: Request) => {
   const value = Number(new URL(request.url).searchParams.get('days') || 30);
@@ -130,19 +145,22 @@ const nextOpportunityId = async (prefix: 'RBT' | 'MAN', year: number) => {
 
 const websiteOpportunityFromEvent = async (record: EventRecord) => {
   const year = new Date(record.at).getUTCFullYear();
-  const id = await nextOpportunityId('RBT', year);
+  const isChecklistLead = record.event === 'checklist_lead_form_submit';
+  const id = record.lead_id || await nextOpportunityId('RBT', year);
   const now = new Date().toISOString();
   const opportunity: Opportunity = {
     id,
-    label: 'Robotics form submission',
-    origin: 'website_form',
-    source: 'Website form',
+    label: isChecklistLead ? 'Buyer Checklist lead' : 'Robotics form submission',
+    origin: isChecklistLead ? 'checklist_lead' : 'website_form',
+    source: isChecklistLead ? 'Buyer Checklist' : 'Website form',
     attribution: {
       utm_source: record.utm_source,
       utm_medium: record.utm_medium,
       utm_campaign: record.utm_campaign,
-      landing_path: record.landing_path,
-      referrer_domain: record.referrer_domain,
+      utm_content: record.utm_content,
+      utm_term: record.utm_term,
+      landing_page: record.landing_page,
+      referrer: record.referrer,
     },
     stage: 'new',
     signals: [],
@@ -163,7 +181,7 @@ const buildSummary = async (request: Request) => {
     .filter((item) => opportunityStages.has(item.stage))
     .sort((a, b) => Date.parse(b.updated_at) - Date.parse(a.updated_at));
   const windowOpportunities = allOpportunities.filter((item) => Date.parse(item.created_at) >= after);
-  const websiteOpportunities = windowOpportunities.filter((item) => item.origin === 'website_form');
+  const websiteOpportunities = windowOpportunities.filter((item) => item.origin === 'website_form' || item.origin === 'checklist_lead');
 
   const sessionsFor = (event: string, filter?: (record: EventRecord) => boolean) => new Set(
     events.reduce<string[]>((sessions, record, index) => {
@@ -178,21 +196,22 @@ const buildSummary = async (request: Request) => {
     robotics_to_checklist_clicks: sessionsFor('robotics_checklist_click'),
     buyer_checklist_opens: sessionsFor('checklist_view'),
     checklist_engagement: sessionsFor('checklist_item_checked'),
+    checklist_leads: eventsFor('checklist_lead_form_submit'),
     po_gate_started: sessionsFor('po_gate_started'),
     po_gate_completed: sessionsFor('po_gate_completed'),
     request_verification_clicks: eventsFor('request_verification'),
     form_submits: eventsFor('robotics_form_submit'),
-    qualified_leads: websiteOpportunities.filter((item) => ['qualified', 'proposal', 'paid'].includes(item.stage)).length,
-    proposals_sent: websiteOpportunities.filter((item) => ['proposal', 'paid'].includes(item.stage)).length,
+    qualified_leads: websiteOpportunities.filter((item) => ['qualified', 'verification_proposed', 'procurement_proposed', 'proposal', 'negotiation', 'paid'].includes(item.stage)).length,
+    proposals_sent: websiteOpportunities.filter((item) => ['verification_proposed', 'procurement_proposed', 'proposal', 'negotiation', 'paid'].includes(item.stage)).length,
     paid_projects: websiteOpportunities.filter((item) => item.stage === 'paid').length,
   };
 
-  type Campaign = { source: string; medium: string; campaign: string; access: Set<string>; checklistClicks: Set<string>; checklist: Set<string>; engaged: Set<string>; requests: number; forms: number; qualified: number; paid: number; };
+  type Campaign = { source: string; medium: string; campaign: string; access: Set<string>; checklistClicks: Set<string>; checklist: Set<string>; engaged: Set<string>; leads: number; requests: number; forms: number; qualified: number; paid: number; };
   const campaigns = new Map<string, Campaign>();
-  const getCampaign = (attribution: Pick<Attribution, 'utm_source' | 'utm_medium' | 'utm_campaign' | 'referrer_domain'>) => {
+  const getCampaign = (attribution: Pick<Attribution, 'utm_source' | 'utm_medium' | 'utm_campaign' | 'referrer'>) => {
     const [source, medium, campaign] = campaignParts(attribution);
     const key = campaignKey(attribution);
-    const current = campaigns.get(key) || { source, medium, campaign, access: new Set(), checklistClicks: new Set(), checklist: new Set(), engaged: new Set(), requests: 0, forms: 0, qualified: 0, paid: 0 };
+    const current = campaigns.get(key) || { source, medium, campaign, access: new Set(), checklistClicks: new Set(), checklist: new Set(), engaged: new Set(), leads: 0, requests: 0, forms: 0, qualified: 0, paid: 0 };
     campaigns.set(key, current);
     return current;
   };
@@ -204,12 +223,13 @@ const buildSummary = async (request: Request) => {
     if (event.event === 'robotics_checklist_click') current.checklistClicks.add(session);
     if (event.event === 'checklist_view') current.checklist.add(session);
     if (event.event === 'checklist_item_checked') current.engaged.add(session);
+    if (event.event === 'checklist_lead_form_submit') current.leads += 1;
     if (event.event === 'request_verification') current.requests += 1;
     if (event.event === 'robotics_form_submit') current.forms += 1;
   });
   websiteOpportunities.forEach((opportunity) => {
-    const current = getCampaign(opportunity.attribution || { utm_source: '', utm_medium: '', utm_campaign: '', referrer_domain: '' });
-    if (['qualified', 'proposal', 'paid'].includes(opportunity.stage)) current.qualified += 1;
+    const current = getCampaign(opportunity.attribution || { utm_source: '', utm_medium: '', utm_campaign: '', referrer: '' });
+    if (['qualified', 'verification_proposed', 'procurement_proposed', 'proposal', 'negotiation', 'paid'].includes(opportunity.stage)) current.qualified += 1;
     if (opportunity.stage === 'paid') current.paid += 1;
   });
 
@@ -222,12 +242,13 @@ const buildSummary = async (request: Request) => {
       robotics_to_checklist_clicks: row.checklistClicks.size,
       buyer_checklist_opens: row.checklist.size,
       checklist_engagement: row.engaged.size,
+      checklist_leads: row.leads,
       request_verification_clicks: row.requests,
       form_submits: row.forms,
       qualified_leads: row.qualified,
       paid_projects: row.paid,
     }))
-    .sort((a, b) => (b.form_submits + b.request_verification_clicks + b.buyer_checklist_opens + b.robotics_access_visitors) - (a.form_submits + a.request_verification_clicks + a.buyer_checklist_opens + a.robotics_access_visitors));
+    .sort((a, b) => (b.form_submits + b.checklist_leads + b.request_verification_clicks + b.buyer_checklist_opens + b.robotics_access_visitors) - (a.form_submits + a.checklist_leads + a.request_verification_clicks + a.buyer_checklist_opens + a.robotics_access_visitors));
 
   const rate = (numerator: number, denominator: number) => denominator ? Math.round((numerator / denominator) * 1000) / 10 : null;
   return {
@@ -236,8 +257,10 @@ const buildSummary = async (request: Request) => {
     metrics,
     rates: {
       robotics_to_checklist_ctr: rate(metrics.robotics_to_checklist_clicks, metrics.robotics_access_visitors),
+      checklist_lead_capture_rate: rate(metrics.checklist_leads, metrics.buyer_checklist_opens),
       verification_request_rate: rate(metrics.request_verification_clicks, metrics.buyer_checklist_opens),
-      qualified_lead_rate: rate(metrics.qualified_leads, metrics.form_submits),
+      qualified_lead_rate: rate(metrics.qualified_leads, metrics.checklist_leads + metrics.form_submits),
+      paid_project_conversion: rate(metrics.paid_projects, metrics.checklist_leads + metrics.form_submits),
     },
     campaigns: campaignRows,
     opportunities: allOpportunities.slice(0, 20),
@@ -296,9 +319,9 @@ export default async (request: Request) => {
       const event = cleanString(body.event, 50);
       if (!eventNames.has(event)) return response({ error: 'Unsupported event.' }, 400);
       const eventId = validToken(body.event_id, 100) || crypto.randomUUID();
-      const record: EventRecord = { event, event_id: eventId, at: new Date().toISOString(), ...safeAttribution(body.attribution) };
+      const record: EventRecord = { event, event_id: eventId, lead_id: validLeadId(body.lead_id), at: new Date().toISOString(), ...safeAttribution(body.attribution) };
       const write = await store().setJSON(eventKey(record), record, { onlyIfNew: true });
-      if (write.modified && event === 'robotics_form_submit') await websiteOpportunityFromEvent(record);
+      if (write.modified && (event === 'robotics_form_submit' || event === 'checklist_lead_form_submit')) await websiteOpportunityFromEvent(record);
       return response({ accepted: true }, 202);
     }
 
